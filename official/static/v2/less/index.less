@@ -1,0 +1,168 @@
+@charset "UTF-8";
+@import "mixins";
+
+.clearfix {
+  &:before {
+    content: "";
+    clear: both;
+  }
+  &:after {
+    content: "";
+    clear: both;
+  }
+}
+
+body {
+  background-color: #f0f0f0;
+
+}
+
+header {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  .logo {
+    height: 90%;
+    max-height: 100%;
+    width: auto;
+
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 3%;
+    -webkit-transform: translateY(-50%);
+  }
+
+  nav {
+    color: #fff;
+    font-size: 1.5rem;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    right: 3%;
+    -webkit-transform: translateY(-50%);
+    .bor{
+      display:block;
+      position: absolute;
+      width:100%;
+      height:2px;
+      background-color: #fe393d;
+      bottom: 0;
+      left:0;
+    }
+    ul {
+
+    }
+    li {      text-align: center;
+
+      float: left;
+      height:2.5rem;
+      line-height:2.5rem;
+
+      width:7rem;
+      &.active{
+        font-weight: bold;
+      }
+    }
+    a{
+      display:block;
+      width:100%;
+      padding: 0 1rem;
+
+      &:hover{
+        color:#cacaca;
+      }
+    }
+  }
+
+}
+
+.mainbox {
+}
+
+.bigpic {
+  position: relative;
+
+  .layer1 {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .layer2 {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .pic2 {
+    left: 15%;
+    height: 50%;
+    width: auto;
+
+    position: absolute;
+    z-index: 5;
+    top: 47%;
+    -webkit-transform: translateY(-50%);
+  }
+
+}
+
+.intro {
+  position: relative;
+  padding: 5.7rem 0;
+  background-color: #fff;
+
+  ul {
+    width: 100%;
+
+  }
+  li {
+    margin: 1rem 0;
+    position: relative;
+    float: left;
+    width: 25%;
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+
+    @media (max-width: 991px) {
+      width: 50%;
+    }
+
+  }
+  //.l {
+  //  .fl();
+  //  width: 50%;
+  //}
+  //.r {
+  //  .fl();
+  //  width: 50%;
+  //
+  //}
+  img {
+    position: absolute;
+    left: 40%;
+    margin-left: -.3rem;
+    height: 100%;
+    width: auto;
+    .transform_translateX(-100%);
+  }
+  h3, p {
+    margin-left: 40%;
+  }
+  h3 {
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1.2rem;
+    margin-top: .5rem;
+  }
+}
