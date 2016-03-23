@@ -7,7 +7,7 @@ function initnav(){
     $("header nav a").on("click", function () {
         var url = $(this).attr("url");
         $(".bor").animate({
-            "left": ($(this).parent().index() - 1) * 25 + "%"
+            "left": ($(this).parent().index() ) * 25 + "%"
         }, 300, "", function () {
             location.href = url;
         });
