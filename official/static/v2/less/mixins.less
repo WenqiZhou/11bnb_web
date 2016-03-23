@@ -1,3 +1,5 @@
+@import "mixins/media";
+
 .fl() {
   float: left;
 }
@@ -5,6 +7,14 @@
 .fr() {
   float: right;
 }
+
+.border_radius(@radius:100%) {
+  border-radius: @radius;
+  -o-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+
 //旋转
 .transform_rotate(@deg) {
   transform: rotate(@deg);
@@ -16,14 +26,22 @@
 
 //偏移
 
-
-.transform_translateY(translateY) {
-  transform: translateY(translateY);
-  -ms-transform: translateY(translateY); /* IE 9 */
-  -moz-transform: translateY(translateY); /* Firefox */
-  -webkit-transform: translateY(translateY); /* Safari 和 Chrome */
-  -o-transform: translateY(translateY); /* Opera */
+.transform_translate(@translateX,@translateY) {
+  transform: translate(@translateX, @translateY);
+  -ms-transform: translate(@translateX, @translateY); /* IE 9 */
+  -moz-transform: translate(@translateX, @translateY); /* Firefox */
+  -webkit-transform: translate(@translateX, @translateY); /* Safari 和 Chrome */
+  -o-transform: translate(@translateX, @translateY); /* Opera */
 }
+
+.transform_translateY(@translateY) {
+  transform: translateY(@translateY);
+  -ms-transform: translateY(@translateY); /* IE 9 */
+  -moz-transform: translateY(@translateY); /* Firefox */
+  -webkit-transform: translateY(@translateY); /* Safari 和 Chrome */
+  -o-transform: translateY(@translateY); /* Opera */
+}
+
 .transform_translateX(@translateX) {
   transform: translateX(@translateX);
   -ms-transform: translateX(@translateX); /* IE 9 */
@@ -31,3 +49,51 @@
   -webkit-transform: translateX(@translateX); /* Safari 和 Chrome */
   -o-transform: translateX(@translateX); /* Opera */
 }
+
+.box_shadow(@x,@y,@w1,@c) {
+  box-shadow: @arguments;
+  -o-box-shadow: @arguments;
+  -mo-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  -webkit-box-shadow: @arguments;
+}
+
+//keyframes
+.keyframes (@name, @frames) {
+  @-webkit-keyframes @name { @frames();
+  }
+  @-moz-keyframes @name { @frames();
+  }
+  @-ms-keyframes @name { @frames();
+  }
+  @-o-keyframes @name { @frames();
+  }
+  @keyframes @name { @frames();
+  }
+}
+//transform
+.transform(@attr) {
+  -webkit-transform: @attr;
+  -moz-transform: @attr;
+  -o-transform: @attr;
+  -ms-transform: @attr;
+  transform: @attr;
+}
+
+
+.transformOrigin(@attr) {
+  -webkit-transform-origin: @attr;
+  -moz-transform-origin: @attr;
+  -o-transform-origin: @attr;
+  -ms-transform-origin: @attr;
+  transform-origin: @attr;
+}
+
+.animation(@attr) {
+  -webkit-animation: @attr;
+  -moz-animation: @attr;
+  -ms-animation: @attr;
+  -o-animation: @attr;
+  animation: @attr;
+}
+

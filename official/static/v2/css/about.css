@@ -1,0 +1,215 @@
+@charset "UTF-8";
+header {
+  display: block;
+  position: absolute;
+  width: 100%;
+}
+@media screen and (max-width: 640px) {
+  header {
+    height: 40px;
+  }
+}
+@media screen and (min-width: 641px) {
+  header {
+    height: 70px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  header {
+    height: 70px;
+  }
+}
+header .logo {
+  height: 90%;
+  max-height: 100%;
+  width: auto;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 3%;
+  -webkit-transform: translateY(-50%);
+}
+header nav {
+  color: #fff;
+  font-size: 2rem;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  right: 3%;
+  -webkit-transform: translateY(-50%);
+}
+header nav .bor {
+  display: block;
+  position: absolute;
+  width: 25%;
+  height: 2px;
+  background-color: #fe393d;
+  bottom: 0;
+  left: 0;
+}
+header nav li {
+  text-align: center;
+  position: relative;
+  float: left;
+  height: 4.8rem;
+  line-height: 4.8rem;
+  width: 10rem;
+}
+header nav li.active {
+  font-weight: bold;
+}
+header nav a {
+  display: block;
+  width: 100%;
+}
+header nav a:hover {
+  color: #cacaca;
+}
+.clearfix::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+body {
+  background-color: #f0f0f0;
+}
+html {
+  font-size: 45%;
+}
+@media (max-width: 767px) {
+  html {
+    font-size: 30%;
+  }
+}
+.mainbox {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 980px;
+}
+.hp:hover {
+  cursor: pointer;
+}
+.banner {
+  position: relative;
+}
+.banner .swiper-slide.f1 .text {
+  text-align: center;
+}
+.banner .text {
+  color: #fff;
+  position: absolute;
+  z-index: 20;
+  width: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  /* IE 9 */
+  -moz-transform: translate(-50%, -50%);
+  /* Firefox */
+  -webkit-transform: translate(-50%, -50%);
+  /* Safari 和 Chrome */
+  -o-transform: translate(-50%, -50%);
+  /* Opera */
+}
+.banner .text h2 {
+  font-weight: bold;
+  font-size: 6rem;
+  line-height: 110%;
+}
+.banner .text p {
+  font-size: 3rem;
+  line-height: 180%;
+}
+.banner .layer1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.banner .swiper-pagination-bullet {
+  border-radius: 100%;
+  -o-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border: solid 2px #fff;
+}
+.banner .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  border: none;
+  background-color: #fff;
+}
+.intro hr {
+  background-color: #c9c9c9;
+  margin: auto;
+  width: 90%;
+}
+.intro h2 {
+  font-size: 3.6rem;
+  line-height: 400%;
+}
+.intro h5 {
+  font-size: 2.4rem;
+  line-height: 300%;
+}
+.intro p {
+  color: #555555;
+  font-size: 2.8rem;
+  line-height: 200%;
+}
+.intro > p {
+  width: 90%;
+}
+@media screen and (max-width: 640px) {
+  .intro > p {
+    margin: 10px auto;
+  }
+}
+@media screen and (min-width: 641px) {
+  .intro > p {
+    margin: 40px auto;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .intro > p {
+    margin: 60px auto;
+  }
+}
+.intro .item {
+  position: relative;
+  width: 90%;
+}
+@media screen and (max-width: 640px) {
+  .intro .item {
+    margin: 40px auto;
+  }
+}
+@media screen and (min-width: 641px) {
+  .intro .item {
+    margin: 80px auto;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .intro .item {
+    margin: 120px auto;
+  }
+}
+.intro .item img {
+  position: absolute;
+  width: 16%;
+}
+.intro .item h2,
+.intro .item h5,
+.intro .item p {
+  margin-left: 25%;
+}
+.intro .item p {
+  font-size: 2.4rem;
+  line-height: 200%;
+}
+header nav .bor {
+  left: 25%;
+}

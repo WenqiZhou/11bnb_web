@@ -1,20 +1,23 @@
 @charset "UTF-8";
-.clearfix:before {
-  content: "";
-  clear: both;
-}
-.clearfix:after {
-  content: "";
-  clear: both;
-}
-body {
-  background-color: #f0f0f0;
-}
 header {
   display: block;
   position: absolute;
   width: 100%;
-  height: 70px;
+}
+@media screen and (max-width: 640px) {
+  header {
+    height: 40px;
+  }
+}
+@media screen and (min-width: 641px) {
+  header {
+    height: 70px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  header {
+    height: 70px;
+  }
 }
 header .logo {
   height: 90%;
@@ -28,7 +31,7 @@ header .logo {
 }
 header nav {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 2rem;
   position: absolute;
   z-index: 5;
   top: 50%;
@@ -38,7 +41,7 @@ header nav {
 header nav .bor {
   display: block;
   position: absolute;
-  width: 100%;
+  width: 25%;
   height: 2px;
   background-color: #fe393d;
   bottom: 0;
@@ -46,10 +49,11 @@ header nav .bor {
 }
 header nav li {
   text-align: center;
+  position: relative;
   float: left;
-  height: 2.5rem;
-  line-height: 2.5rem;
-  width: 7rem;
+  height: 4.8rem;
+  line-height: 4.8rem;
+  width: 10rem;
 }
 header nav li.active {
   font-weight: bold;
@@ -57,15 +61,39 @@ header nav li.active {
 header nav a {
   display: block;
   width: 100%;
-  padding: 0 1rem;
 }
 header nav a:hover {
   color: #cacaca;
 }
-.bigpic {
+.clearfix::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+body {
+  background-color: #f0f0f0;
+}
+html {
+  font-size: 45%;
+}
+@media (max-width: 767px) {
+  html {
+    font-size: 30%;
+  }
+}
+.mainbox {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 980px;
+}
+.hp:hover {
+  cursor: pointer;
+}
+.banner {
   position: relative;
 }
-.bigpic .layer1 {
+.banner .layer1 {
   position: absolute;
   z-index: 1;
   top: 0;
@@ -73,7 +101,7 @@ header nav a:hover {
   height: 80%;
   background-color: rgba(0, 0, 0, 0.2);
 }
-.bigpic .layer2 {
+.banner .layer2 {
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -81,7 +109,7 @@ header nav a:hover {
   height: 20%;
   background-color: rgba(255, 255, 255, 0.5);
 }
-.bigpic .pic2 {
+.banner .pic2 {
   left: 15%;
   height: 50%;
   width: auto;
@@ -92,8 +120,8 @@ header nav a:hover {
 }
 .intro {
   position: relative;
-  padding: 5.7rem 0;
-  background-color: #fff;
+  padding: 6.9rem 0;
+  background-color: #f8f8f8;
 }
 .intro ul {
   width: 100%;
@@ -135,10 +163,10 @@ header nav a:hover {
   margin-left: 40%;
 }
 .intro h3 {
-  font-size: 1.9rem;
-  margin-bottom: 1rem;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
 }
 .intro p {
-  font-size: 1.2rem;
-  margin-top: .5rem;
+  font-size: 1.8rem;
+  line-height: 3rem;
 }

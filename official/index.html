@@ -10,15 +10,8 @@
 
     <link rel="stylesheet" href="static/v2/css/reset.css">
     <link rel="stylesheet" href="static/v2/css/index.css">
-    <!--<link rel="stylesheet" href="static/css/responsive.css">-->
-    <!--<script src="static/js/respond.js"></script>-->
-    <!--<script type="text/javascript" src="static/js/jquery.js"></script>-->
-    <!--<script type="text/javascript" src="static/js/main.js"></script>-->
-    <!--<!–[if lt IE 9]>-->
-    <!--<script src="static/js/html5.min.js"></script>-->
-    <!--<![endif]–>-->
-    <style>
-    </style>
+    <script type="text/javascript" src="static/v2/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="static/v2/js/base.js"></script>
 </head>
 <body>
 <header>
@@ -35,13 +28,13 @@
         <span class="bor"></span>
     </nav>
 </header>
-<div class="mainbox bigpic">
+<div class="banner">
     <img class="pic1" src="static/v2/image/big.png" alt="">
     <img class="pic2" src="static/v2/image/big2.png" alt="">
     <div class="layer1"></div>
     <div class="layer2"></div>
 </div>
-<div class="mainbox intro clearfix">
+<div class=" intro clearfix">
     <ul>
         <li>
             <div>
@@ -77,5 +70,10 @@
         </li>
     </ul>
 </div>
+<script>
+    $(document).ready(function () {
+        initnav();
+    });
+</script>
 </body>
 </html>

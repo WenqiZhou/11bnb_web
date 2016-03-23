@@ -1,0 +1,66 @@
+header {
+  display: block;
+  position: absolute;
+  width: 100%;
+}
+@media screen and (max-width: 640px) {
+  header {
+    height: 40px;
+  }
+}
+@media screen and (min-width: 641px) {
+  header {
+    height: 70px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  header {
+    height: 70px;
+  }
+}
+header .logo {
+  height: 90%;
+  max-height: 100%;
+  width: auto;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 3%;
+  -webkit-transform: translateY(-50%);
+}
+header nav {
+  color: #fff;
+  font-size: 2rem;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  right: 3%;
+  -webkit-transform: translateY(-50%);
+}
+header nav .bor {
+  display: block;
+  position: absolute;
+  width: 25%;
+  height: 2px;
+  background-color: #fe393d;
+  bottom: 0;
+  left: 0;
+}
+header nav li {
+  text-align: center;
+  position: relative;
+  float: left;
+  height: 4.8rem;
+  line-height: 4.8rem;
+  width: 10rem;
+}
+header nav li.active {
+  font-weight: bold;
+}
+header nav a {
+  display: block;
+  width: 100%;
+}
+header nav a:hover {
+  color: #cacaca;
+}

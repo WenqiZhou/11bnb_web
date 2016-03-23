@@ -1,0 +1,37 @@
+@fs_p: 2.8rem;
+
+.clearfix {
+  &::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+}
+
+body {
+  background-color: #f0f0f0;
+
+}
+
+html {
+  font-size: 45%;
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 30%;
+  }
+}
+
+.mainbox {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 980px;
+}
+
+.hp {
+  &:hover {
+    cursor: pointer;
+  }
+}

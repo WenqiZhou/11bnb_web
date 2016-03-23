@@ -1,0 +1,203 @@
+@charset "UTF-8";
+header {
+  display: block;
+  position: absolute;
+  width: 100%;
+}
+@media screen and (max-width: 640px) {
+  header {
+    height: 40px;
+  }
+}
+@media screen and (min-width: 641px) {
+  header {
+    height: 70px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  header {
+    height: 70px;
+  }
+}
+header .logo {
+  height: 90%;
+  max-height: 100%;
+  width: auto;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 3%;
+  -webkit-transform: translateY(-50%);
+}
+header nav {
+  color: #fff;
+  font-size: 2rem;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  right: 3%;
+  -webkit-transform: translateY(-50%);
+}
+header nav .bor {
+  display: block;
+  position: absolute;
+  width: 25%;
+  height: 2px;
+  background-color: #fe393d;
+  bottom: 0;
+  left: 0;
+}
+header nav li {
+  text-align: center;
+  position: relative;
+  float: left;
+  height: 4.8rem;
+  line-height: 4.8rem;
+  width: 10rem;
+}
+header nav li.active {
+  font-weight: bold;
+}
+header nav a {
+  display: block;
+  width: 100%;
+}
+header nav a:hover {
+  color: #cacaca;
+}
+.clearfix::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+body {
+  background-color: #f0f0f0;
+}
+html {
+  font-size: 45%;
+}
+@media (max-width: 767px) {
+  html {
+    font-size: 30%;
+  }
+}
+.mainbox {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 980px;
+}
+.hp:hover {
+  cursor: pointer;
+}
+.top {
+  display: block;
+  height: 160px;
+}
+.intro hr {
+  background-color: #c9c9c9;
+  margin: auto;
+  width: 90%;
+}
+.intro p {
+  color: #555555;
+  font-size: 2.8rem;
+  line-height: 200%;
+}
+.intro > p {
+  margin: 15px auto;
+  width: 90%;
+}
+.intro > p:nth-child(1) {
+  padding-bottom: 15px;
+  border-bottom: solid 1px #c9c9c9;
+}
+.intro > p:nth-child(2) {
+  text-align: right;
+}
+.job-box {
+  box-shadow: 4px 4px 8px #d4d4d4;
+  -o-box-shadow: 4px 4px 8px #d4d4d4;
+  -mo-box-shadow: 4px 4px 8px #d4d4d4;
+  -moz-box-shadow: 4px 4px 8px #d4d4d4;
+  -webkit-box-shadow: 4px 4px 8px #d4d4d4;
+  border-radius: 6px;
+  -o-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  position: relative;
+  background-color: #fff;
+  width: 90%;
+  margin: auto;
+}
+.job-box .job-bar {
+  font-size: 2.4rem;
+  line-height: 200%;
+  width: 95%;
+  margin: auto;
+}
+.job-box .job-bar ul {
+  padding: 10px 0;
+  display: block;
+  border-bottom: solid 2px #ddd;
+}
+.job-box .job-bar ul::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.job-box .job-bar li {
+  line-height: 2rem;
+  color: #cacaca;
+  padding: 0 10px;
+  float: left;
+}
+.job-box .job-bar li:hover {
+  cursor: pointer;
+}
+.job-box .job-bar li:not(:last-child) {
+  border-right: solid 2px #ddd;
+}
+.job-box .job-bar li.active {
+  color: #fe393d;
+}
+.job-box .job-bar li:not(.active):hover {
+  color: #959595;
+}
+.job-box .job-list {
+  width: 95%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.job-box .job-list .job {
+  padding: 50px 0;
+}
+.job-box .job-list .job:not(:last-child) {
+  border-bottom: solid 2px #ddd;
+}
+.job-box .job-list h2 {
+  font-size: 3rem;
+  line-height: 220%;
+  display: inline-block;
+  border-bottom: solid 4px #fe393d;
+}
+.job-box .job-list dt {
+  font-weight: bold;
+  font-size: 1.8rem;
+  line-height: 180%;
+  margin-top: 22px;
+}
+.job-box .job-list dd {
+  font-size: 1.8rem;
+  line-height: 180%;
+  color: #555555;
+}
+header nav {
+  color: #555555;
+}
+header nav a:hover {
+  color: #959595;
+}
+header nav .bor {
+  left: 75%;
+}

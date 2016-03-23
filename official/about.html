@@ -6,17 +6,18 @@
     <meta name="author" content="依依短租">
     <meta name="description" content="以分享和快乐为基因的短租预订平台，给你依依不舍的民宿体验。依依短租致力发挥分享经济的最大价值，搭建一个安全、便捷、妙趣的短租平台，让住宿成为新的社交体验"/>
     <meta name="keywords" content="日租,短租,周租,住宿,酒店式公寓,短租公寓,单身公寓,青年旅社,学生租房">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"
+          name="viewport">
 
     <link rel="stylesheet" href="static/v2/css/reset.css">
-    <link rel="stylesheet" href="static/v2/css/index.css">
-    <!--<link rel="stylesheet" href="static/css/responsive.css">-->
-    <!--<script src="static/js/respond.js"></script>-->
-    <!--<script type="text/javascript" src="static/js/jquery.js"></script>-->
-    <!--<script type="text/javascript" src="static/js/main.js"></script>-->
-    <!--<!–[if lt IE 9]>-->
-    <!--<script src="static/js/html5.min.js"></script>-->
-    <!--<![endif]–>-->
+    <link rel="stylesheet" href="static/v2/swp/swiper-3.3.1.min.css">
+    <link rel="stylesheet" href="static/v2/css/about.css">
+    <script type="text/javascript" src="static/v2/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="static/v2/swp/swiper-3.3.1.min.js"></script>
+    <script type="text/javascript" src="static/v2/js/base.js"></script>
+    <!–[if lt IE 9]>
+    <script src="static/js/html5.min.js"></script>
+    <![endif]–>
     <style>
     </style>
 </head>
@@ -28,54 +29,145 @@
     <nav>
         <ul>
             <li><a href="index.html">首页</a></li>
-            <li class="active">关于<span class="bor"></span>
-            </li>
+            <li class="active">关于</li>
             <li><a href="news.html">新闻</a></li>
             <li><a href="join_us.html">加入我们</a></li>
+
+            <!--<li><a href="javascript:void(0);">首页</a></li>-->
+            <!--<li class="active">关于</li>-->
+            <!--<li><a href="javascript:void(0);">新闻</a></li>-->
+            <!--<li><a href="javascript:void(0);">加入我们</a></li>-->
         </ul>
+        <span class="bor"></span>
     </nav>
 </header>
-<div class="mainbox bigpic">
-    <img class="pic1" src="static/v2/image/big.png" alt="">
-    <img class="pic2" src="static/v2/image/big2.png" alt="">
-    <div class="layer1"></div>
-    <div class="layer2"></div>
+<div class="banner">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide f1">
+                <div class="layer1"></div>
+                <img class="pic1" src="static/v2/image/ban-p21.png" alt="">
+                <div class="text">
+                    <h2>“依依短租，全国领先的</h2>
+                    <h2>短租民宿预订平台”</h2>
+                    <p>以分享快乐为基因，给你依依不舍的体验</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="layer1"></div>
+                <img class="pic1" src="static/v2/image/ban-p22.png" alt="">
+                <div class="text">
+                    <h2>“比酒店更妙趣更划算”</h2>
+                    <p>民宿、公寓、别墅、客栈、家庭旅馆</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="layer1"></div>
+                <img class="pic1" src="static/v2/image/ban-p23.png" alt="">
+                <div class="text">
+                    <h2>“一屋一世界”</h2>
+                    <p>有故事的房东和房子，秉承宾至如归的待客之道</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="layer1"></div>
+                <img class="pic1" src="static/v2/image/ban-p24.png" alt="">
+                <div class="text">
+                    <h2>“乐于分享和体验的房客”</h2>
+                    <p>很潮的人，自信独立不守旧，追求快乐和品质生活</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="layer1"></div>
+                <img class="pic1" src="static/v2/image/ban-p25.png" alt="">
+                <div class="text">
+                    <h2>“四海有家的使命”</h2>
+                    <p>用分享经济连接房东和房客，让全国老百姓200<br>
+                        万亿不动产“动”起来</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+    </div>
+
+
 </div>
 <div class="mainbox intro clearfix">
-    <ul>
-        <li>
-            <div>
-                <img src="static/v2/image/icon-i1.png" alt="">
-                <h3>价格便宜</h3>
-                <p>比同等酒店</p>
-                <p>最多便宜50%</p>
-            </div>
-        </li>
-        <li>
-            <div>
-                <img src="static/v2/image/icon-i2.png" alt="">
-                <h3>值得信赖</h3>
-                <p>验证与保障机制</p>
-                <p>让分享和信任发生</p>
-            </div>
-        </li>
-        <li>
-            <div>
-                <img src="static/v2/image/icon-i3.png" alt="">
-                <h3>居家体验</h3>
-                <p>家的感觉，下厨洗衣</p>
-                <p>欢聚在一起</p>
-            </div>
-        </li>
-        <li>
-            <div>
-                <img src="static/v2/image/icon-i4.png" alt="">
-                <h3>融入当地</h3>
-                <p>入乡随俗</p>
-                <p>像当地人一样生活</p>
-            </div>
-        </li>
-    </ul>
+
+    <p>
+        依依短租是全国领先的短租民宿预订平台，以分享快乐为基因，给你依依不舍的体验。立志用分享经济的商业模式为全国的房东和房客搭建一个便捷妙趣的民宿预订平台和社区，让全国200万亿的不动产“动”起来，让房客享受有别于传统酒店的居家体验和当地风情。”</p>
+    <hr>
+    <div class="item">
+        <img src="static/v2/image/p1.png" alt="">
+        <h2>代建功</h2>
+        <h5>11bnb联合创始人和CEO</h5>
+        <p>代建功的激情来源于驾驭变化和挑战不确定性。<br>
+            2015年从美国斯坦福大学商学院毕业并获得管理硕士学位，与斯坦福两位校友创立11bnb， 立志通过分享经济的模式让中国老百姓200万亿不动产“动”起来。<br>
+            代建功于1999年参与创建了全球排名第一的房地产家居互联网企业搜房网，担任搜房网执行董事、CEO兼总裁，全程参与了搜房网从创立到美国纽交所上市的全过程，带领搜房网从年收入100万增长到30亿，取得了连续15年持续增长的业绩。代建功见证并参与了中国20年来中国房地产业的大发展，熟悉中国住宅市场并对“家”情有独钟。<br>
+            毕业于广西大学商学院获经济学学士，曾于1999年攻读清华大学工程管理硕士。</p>
+    </div>
+
+
+    <div class="item">
+        <img src="static/v2/image/p2.png" alt="">
+        <h2>张强</h2>
+        <h5>11bnb联合创始人和COO</h5>
+        <p>在全球排名第一的斯坦福大学商学院，张强深深地被硅谷创业文化所吸引，毕业后他和两个同学创立了11bnb。<br>
+            带着与生俱来的超高能量，他一直都在努力用科技改变世界。本科以全年级第一的成绩毕业于清华大学材料学院。在美国康奈尔大学攻读博士期间，他发表的12篇国际论文被引用超千次。<br>
+            2005年成为全球100强陶氏化学的高级工程师并成功开发数十款创新产品。当他意识到自己真正的梦想是领导一个世界级的企业，开始了职业转型，担任全球市场总监，后进入斯坦福大学商学院攻读管理硕士学位。除了精通市场营销和产品运营，还熟悉金融财务并通过了CFA二级考试。
+        </p>
+    </div>
+
+    <div class="item">
+        <img src="static/v2/image/p3.png" alt="">
+        <h2>王冠</h2>
+        <h5>11bnb联合创始人和CTO</h5>
+        <p>
+            本科就读于香港科技大学和加拿大滑铁卢大学，并以最高荣誉奖毕业于滑铁卢大学计算机科学系。尚未毕业，王冠就被苹果邀请加入并作为核心工程师负责苹果手机系统的开发与优化。2012年，怀揣着更大的梦想，王冠进入世界排名第一的斯坦福大学计算机系攻读博士学位并辅修工程管理硕士。在校期间，王冠主攻大数据和人工智能，深度参与多个国家级科研项目，并与谷歌，亚马逊，百度等互联网巨头合作研发了一系列顶尖的人工智能系统。2015年，效仿两位师兄
+            - 谷歌创始人拉里•佩奇和谢尔盖•布林，王冠休学和两位同学回国创立了11bnb。</p>
+    </div>
+
+    <div class="item">
+        <img src="static/v2/image/p4.png" alt="">
+        <h2>王勇</h2>
+        <h5>11bnb合伙人和产品技术副总裁</h5>
+        <p>
+            资深技术专家和产品经理。王勇2010年毕业于大连理工大学软件工程专业，一直致力于用卓越的产品和技术改变人们的生活方式。王勇2009年毕业前就受邀加入百度搜索核心团队，师从百度首席架构师林仕鼎，深入参与了百度核心基础架构项目：PB级别的网页存储和分布式计算。
+            2011年加入腾讯公司，作为核心成员负责腾讯微博千亿级别的基础架构，2014年设计架构了微信私有云平台，主导优化万亿请求规模的微信底层架构。在腾讯期间，王勇还独立领导了用户量千万级别的私密社交移动互联网产品的开发。</p>
+    </div>
+
+    <div class="item">
+        <img src="static/v2/image/p5.png" alt="">
+        <h2>周文祺</h2>
+        <h5>11bnb合伙人和技术总监</h5>
+        <p>资深技术专家和项目经理。
+            西安交通大学通讯工程系直读硕士，后进入加拿大滑铁卢大学，同时获得计算机专业学位和软件工程学位。毕业前受邀加入北美IBM，逐步成为核心工程师，主导管理软件Roadmap的研发。2014年周文祺主导开发了加拿大最大的女鞋品牌Aldo的手机购物平台（App
+            Store 鞋类产品中排行第一）和未来店铺模型设计-全自动化店铺相关产品开发，并在加拿大多伦多和蒙特利尔最繁华的中心商业区完成试点，目前已经在全北美推广。</p>
+    </div>
+
 </div>
+<script>
+
+    $(document).ready(function () {
+        initnav();
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            slidesPerView: 1,
+            paginationClickable: true,
+//        spaceBetween: 30,
+            loop: true,
+            slidesOffsetAfter: 100,
+            autoplay: 3000,
+        });
+    });
+
+</script>
 </body>
 </html>
