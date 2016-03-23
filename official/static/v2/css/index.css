@@ -1,4 +1,25 @@
 @charset "UTF-8";
+.clearfix::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+body {
+  background-color: #f0f0f0;
+  overflow-x: hidden;
+}
+html {
+  font-size: 45%;
+}
+.mainbox {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 980px;
+}
+.hp:hover {
+  cursor: pointer;
+}
 header {
   display: block;
   position: absolute;
@@ -29,6 +50,11 @@ header .logo {
   left: 3%;
   -webkit-transform: translateY(-50%);
 }
+@media screen and (max-width: 640px) {
+  header .logo {
+    display: none;
+  }
+}
 header nav {
   color: #fff;
   font-size: 2rem;
@@ -37,6 +63,11 @@ header nav {
   top: 50%;
   right: 3%;
   -webkit-transform: translateY(-50%);
+}
+header nav::after {
+  display: table;
+  clear: both;
+  content: "";
 }
 header nav .bor {
   display: block;
@@ -47,6 +78,12 @@ header nav .bor {
   bottom: 0;
   left: 0;
 }
+@media screen and (max-width: 640px) {
+  header nav {
+    width: 100%;
+    position: relative;
+  }
+}
 header nav li {
   text-align: center;
   position: relative;
@@ -54,6 +91,11 @@ header nav li {
   height: 4.8rem;
   line-height: 4.8rem;
   width: 10rem;
+}
+@media screen and (max-width: 640px) {
+  header nav li {
+    width: 25%;
+  }
 }
 header nav li.active {
   font-weight: bold;
@@ -64,31 +106,6 @@ header nav a {
 }
 header nav a:hover {
   color: #cacaca;
-}
-.clearfix::after {
-  display: table;
-  clear: both;
-  content: "";
-}
-body {
-  background-color: #f0f0f0;
-}
-html {
-  font-size: 45%;
-}
-@media (max-width: 767px) {
-  html {
-    font-size: 30%;
-  }
-}
-.mainbox {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 980px;
-}
-.hp:hover {
-  cursor: pointer;
 }
 .banner {
   position: relative;

@@ -71,6 +71,7 @@
   @keyframes @name { @frames();
   }
 }
+
 //transform
 .transform(@attr) {
   -webkit-transform: @attr;
@@ -79,7 +80,6 @@
   -ms-transform: @attr;
   transform: @attr;
 }
-
 
 .transformOrigin(@attr) {
   -webkit-transform-origin: @attr;
@@ -97,3 +97,25 @@
   animation: @attr;
 }
 
+//flex
+
+.flex-box() {
+  /* 设置弹性布局 */
+  display: -webkit-box; /* android 2.1-3.0, ios 3.2-4.3 */
+  display: -webkit-flex; /* Chrome 21+ */
+  display: -ms-flexbox; /* WP IE 10 */
+  display: flex; /* android 4.4 */
+}
+
+.flex() {
+  align-self: baseline;
+  box-self: baseline;
+}
+
+.flex(@n) {
+  /* 子元素自动占据剩余的空间 */
+  -webkit-box-flex: @n; /* android 2.1-3.0, ios 3.2-4.3 */
+  -webkit-flex: @n; /* Chrome 21+ */
+  -ms-flex: @n; /* WP IE 10 */
+  flex: @n; /* android 4.4 */
+}

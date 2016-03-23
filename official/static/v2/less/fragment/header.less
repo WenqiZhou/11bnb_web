@@ -1,4 +1,5 @@
 @import "../mixins";
+@import "../common";
 
 header {
   display: block;
@@ -7,10 +8,10 @@ header {
   //height: 70px;
   .height(40px, 70px, 70px);
   .logo {
+    .media-sm({ display: none; });
     height: 90%;
     max-height: 100%;
     width: auto;
-
     position: absolute;
     z-index: 5;
     top: 50%;
@@ -19,6 +20,7 @@ header {
   }
 
   nav {
+    .clearfix();
     color: #fff;
     font-size: 2rem;
     position: absolute;
@@ -35,6 +37,7 @@ header {
       bottom: 0;
       left: 0;
     }
+    .media-sm({ width: 100%; position: relative; });
     ul {
 
     }
@@ -46,6 +49,7 @@ header {
       line-height: 4.8rem;
 
       width: 10rem;
+      .media-sm({ width: 25%; });
       &.active {
         font-weight: bold;
       }
@@ -62,6 +66,8 @@ header {
   }
 
 }
+
+.media-lg({ });
 
 //.keyframes("kft1", { to {
 //  .transform(translateX(0%));
