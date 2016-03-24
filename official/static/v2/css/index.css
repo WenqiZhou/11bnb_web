@@ -16,6 +16,7 @@ html {
   margin-right: auto;
   width: 100%;
   max-width: 980px;
+  overflow-x: hidden;
 }
 .hp:hover {
   cursor: pointer;
@@ -99,8 +100,8 @@ header nav .bor {
     transform: translateY(0%);
   }
   header nav li {
-    height: 3.8rem !important;
-    line-height: 3.8rem !important;
+    height: 45px !important;
+    line-height: 45px !important;
   }
 }
 header nav li {
@@ -165,7 +166,7 @@ header nav a:hover {
     position: absolute;
     z-index: 30;
     display: block;
-    width: 38%;
+    width: 40%;
     top: 30%;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -236,6 +237,10 @@ header nav a:hover {
   .intro li p {
     margin: auto;
     text-align: center;
+  }
+  .intro li h3,
+  .intro li p {
+    line-height: 1.5;
   }
   .intro li img {
     position: relative;

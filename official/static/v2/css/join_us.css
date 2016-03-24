@@ -16,6 +16,7 @@ html {
   margin-right: auto;
   width: 100%;
   max-width: 980px;
+  overflow-x: hidden;
 }
 .hp:hover {
   cursor: pointer;
@@ -99,8 +100,8 @@ header nav .bor {
     transform: translateY(0%);
   }
   header nav li {
-    height: 3.8rem !important;
-    line-height: 3.8rem !important;
+    height: 45px !important;
+    line-height: 45px !important;
   }
 }
 header nav li {
@@ -132,10 +133,11 @@ footer {
 @media screen and (max-width: 640px) {
   footer {
     display: block;
+    padding: 3rem 0;
   }
   footer img {
     width: 35%;
-    margin: 3rem auto ;
+    margin: auto auto ;
   }
 }
 .top {
