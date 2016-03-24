@@ -126,6 +126,18 @@ header nav a {
 header nav a:hover {
   color: #cacaca;
 }
+footer {
+  display: none;
+}
+@media screen and (max-width: 640px) {
+  footer {
+    display: block;
+  }
+  footer img {
+    width: 35%;
+    margin: 3rem auto ;
+  }
+}
 header {
   position: absolute;
 }
@@ -139,7 +151,7 @@ header {
 }
 @media screen and (max-width: 640px) {
   .top {
-    height: 13rem;
+    height: 5rem;
   }
 }
 @media screen and (min-width: 641px) {
@@ -228,6 +240,21 @@ header {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+@media screen and (max-width: 640px) {
+  .intro .item {
+    width: 95%;
+  }
+  .intro .item .date {
+    padding: 0.8rem 0;
+    height: 4.7rem;
+    width: 4.7rem;
+  }
+  .intro .item .text {
+    line-height: 4.7rem;
+    width: 52%;
+    color: #555555;
+  }
 }
 header nav {
   color: #555555;

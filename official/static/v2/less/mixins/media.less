@@ -2,24 +2,30 @@
 @media_md_min: 641px;
 @media_lg_min: 1025px;
 
-
 .media-sm(@frames) {
-  @media screen and(max-width: @media_sm_max) {
+  @media screen and(max-width: 640px) {
     @frames();
   }
 }
 
 .media-md(@frames) {
-  @media screen and(min-width: @media_md_min) {
+  @media screen and(min-width: 641px) and(max-width: 1024px) {
     @frames();
   }
 }
 
 .media-lg(@frames) {
-  @media screen and(min-width: @media_lg_min) {
+  @media screen and(min-width: 1025px) {
     @frames();
   }
 }
+
+.media(@min,@max,@frames) {
+  @media screen and(min-width: @min) and(max-width: @max) {
+    @frames();
+  }
+}
+
 
 //font
 

@@ -2,6 +2,7 @@
 @import "mixins";
 @import "fragment/header";
 @import "common";
+@import "mixins/media";
 
 //header{
 //  position: absolute;
@@ -35,16 +36,33 @@
     top: 47%;
     -webkit-transform: translateY(-50%);
   }
+  .pic2-sm {
+    display: none;
+  }
   .media-sm({ //
-.pic2{display:none;}
+    .pic2 {
+      display: none;
+    } //
+    .pic2-sm {
+      position: absolute;
+      z-index: 30;
+      display: block;
+      width: 38%;
+      top: 30%;
+      left: 50%;
+      .transform(translateX(-50%));
+    } //
   });
 }
 
 .media-sm({ //
   .sm-layer3 {
     background-color: #fff;
-    height: 40px;
+    height: 90px;
   } });
+//.media(500px, 800px, { .sm-layer3 {
+//  height: 120px;
+//}  })
 
 .intro {
   position: relative;
@@ -58,6 +76,7 @@
     position: relative;
     float: left;
     width: 25%;
+    //height:200px;
   }
   img {
     position: absolute;
@@ -72,11 +91,11 @@
   }
   h3 {
     font-size: 2.4rem;
-    line-height: 3.6rem;
+    line-height: 2;
   }
   p {
     font-size: 1.8rem;
-    line-height: 3rem;
+    line-height: 2;
   }
 
   .media-md({ li {
@@ -84,7 +103,7 @@
   } });
 
   .media-sm(
-  { li {
+  { padding: 2.5rem 0; li {
     width: 50%;
     img, h3, p {
       margin: auto;
@@ -95,6 +114,8 @@
       .transform(translateX(0%));
       left: 0;
       margin: auto;
+      width: 70px;
+      height: 70px;
     }
 
   } }
