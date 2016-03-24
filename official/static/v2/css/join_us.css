@@ -197,6 +197,7 @@ footer {
 .job-box .job-bar li {
   line-height: 2rem;
   color: #cacaca;
+  padding: 0 2rem;
   text-align: center;
   float: left;
 }
@@ -262,6 +263,7 @@ footer {
     /* WP IE 10 */
     flex: 1 !important;
     /* android 4.4 */
+    padding: 0 !important;
   }
 }
 header nav {
