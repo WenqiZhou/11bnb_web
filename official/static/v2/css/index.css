@@ -151,6 +151,18 @@ header nav a:hover {
   top: 47%;
   -webkit-transform: translateY(-50%);
 }
+@media screen and (max-width: 640px) {
+  .banner .layer2,
+  .banner .layer1 {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  .sm-layer3 {
+    background-color: #fff;
+    height: 40px;
+  }
+}
 .intro {
   position: relative;
   padding: 6.9rem 0;

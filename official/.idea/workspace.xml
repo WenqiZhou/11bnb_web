@@ -21,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+            <state relative-caret-position="465">
+              <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -35,17 +35,17 @@
         <entry file="file://$PROJECT_DIR$/about.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="778">
-              <caret line="167" column="11" selection-start-line="167" selection-start-column="11" selection-end-line="167" selection-end-column="11" />
+              <caret line="173" column="11" selection-start-line="173" selection-start-column="11" selection-end-line="173" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.less" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.less" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/v2/less/index.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+            <state relative-caret-position="306">
+              <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -64,9 +64,15 @@
       <file leaf-file-name="about.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/v2/less/about.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="825">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <folding>
+                <marker date="1458783416000" expanded="true" signature="90:1646" placeholder="{...}" />
+                <marker date="1458783416000" expanded="true" signature="139:168" placeholder="{...}" />
+                <marker date="1458783416000" expanded="true" signature="178:201" placeholder="{...}" />
+                <marker date="1458783416000" expanded="true" signature="1477:1640" placeholder="{...}" />
+                <marker date="1458783416000" expanded="true" signature="1477:1642" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -129,7 +135,6 @@
         <option value="$PROJECT_DIR$/static/v2/css/index.css" />
         <option value="$PROJECT_DIR$/static/v2/css/reset.css" />
         <option value="$PROJECT_DIR$/join_us.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/static/v2/less/join_us.less" />
         <option value="$PROJECT_DIR$/static/v2/js/base.js" />
         <option value="$PROJECT_DIR$/static/v2/less/mixins.less" />
@@ -140,6 +145,7 @@
         <option value="$PROJECT_DIR$/about.html" />
         <option value="$PROJECT_DIR$/static/v2/less/fragment/header.less" />
         <option value="$PROJECT_DIR$/static/v2/less/about.less" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/static/v2/less/index.less" />
       </list>
     </option>
@@ -533,12 +539,12 @@
       <workItem from="1458288601005" duration="5403000" />
       <workItem from="1458526805660" duration="7406000" />
       <workItem from="1458546764415" duration="10682000" />
-      <workItem from="1458610366095" duration="47002000" />
+      <workItem from="1458610366095" duration="47872000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70493000" />
+    <option name="totallyTimeSpent" value="71363000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -837,7 +843,7 @@
     <entry file="file://$PROJECT_DIR$/about.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="778">
-          <caret line="167" column="11" selection-start-line="167" selection-start-column="11" selection-end-line="167" selection-end-column="11" />
+          <caret line="173" column="11" selection-start-line="173" selection-start-column="11" selection-end-line="173" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -860,24 +866,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/v2/less/about.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state relative-caret-position="825">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding>
+            <marker date="1458783416000" expanded="true" signature="90:1646" placeholder="{...}" />
+            <marker date="1458783416000" expanded="true" signature="139:168" placeholder="{...}" />
+            <marker date="1458783416000" expanded="true" signature="178:201" placeholder="{...}" />
+            <marker date="1458783416000" expanded="true" signature="1477:1640" placeholder="{...}" />
+            <marker date="1458783416000" expanded="true" signature="1477:1642" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/v2/less/index.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+        <state relative-caret-position="306">
+          <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
           <folding />
         </state>
       </provider>
