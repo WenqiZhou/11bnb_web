@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ebd3b993-4cfa-4001-a4bd-1acaaf747e16" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/static/v2/css/about.css" afterPath="$PROJECT_DIR$/official/static/v2/css/about.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/about.html" afterPath="$PROJECT_DIR$/official/about.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/static/v2/less/about.less" afterPath="$PROJECT_DIR$/official/static/v2/less/about.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/join_us.html" afterPath="$PROJECT_DIR$/official/join_us.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/static/v2/less/join_us.less" afterPath="$PROJECT_DIR$/official/static/v2/less/join_us.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="11bnb_web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,14 +27,13 @@
       <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/official/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-31.208334">
+            <state vertical-scroll-proportion="-21.166666">
               <caret line="163" column="9" selection-start-line="163" selection-start-column="9" selection-end-line="163" selection-end-column="9" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -57,9 +52,10 @@
       <file leaf-file-name="about.less" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/official/static/v2/less/about.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.075">
-              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.31875">
+              <caret line="76" column="12" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
               <folding>
+                <element signature="e#116#796#0" expanded="false" />
                 <element signature="e#239#560#0" expanded="false" />
                 <element signature="e#570#794#0" expanded="false" />
                 <element signature="e#841#846#0" expanded="false" />
@@ -343,7 +339,6 @@
             <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -353,6 +348,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="70" column="12" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
           <folding>
+            <element signature="e#116#796#0" expanded="false" />
             <element signature="e#239#560#0" expanded="false" />
             <element signature="e#570#794#0" expanded="false" />
             <element signature="e#841#846#0" expanded="false" />
@@ -375,8 +371,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="140" column="1" selection-start-line="140" selection-start-column="1" selection-end-line="140" selection-end-column="1" />
           <folding>
-            <marker date="1458797747000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1458797747000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1458798950000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1458798950000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -406,7 +402,6 @@
             <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -432,8 +427,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="143" column="1" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
           <folding>
-            <marker date="1458797747000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1458797747000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1458798950000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1458798950000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -494,36 +489,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/official/static/v2/less/common.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/official/news.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.833334">
-          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="93" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/official/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.208334">
-          <caret line="163" column="9" selection-start-line="163" selection-start-column="9" selection-end-line="163" selection-end-column="9" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/official/join_us.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-23.458334">
@@ -556,11 +521,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/official/news.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.833334">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="93" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/official/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.166666">
+          <caret line="163" column="9" selection-start-line="163" selection-start-column="9" selection-end-line="163" selection-end-column="9" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/official/static/v2/less/common.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/official/static/v2/less/about.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.075">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.31875">
+          <caret line="76" column="12" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
           <folding>
+            <element signature="e#116#796#0" expanded="false" />
             <element signature="e#239#560#0" expanded="false" />
             <element signature="e#570#794#0" expanded="false" />
             <element signature="e#841#846#0" expanded="false" />

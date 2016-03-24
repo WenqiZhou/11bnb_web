@@ -216,7 +216,7 @@ footer {
   }
   .banner .swiper-button-next,
   .banner .swiper-button-prev {
-    top: 75%;
+    top: 84%;
     -webkit-transform: scale(0.5);
     -moz-transform: scale(0.5);
     -o-transform: scale(0.5);
@@ -231,7 +231,7 @@ footer {
     text-align: left !important;
     width: 100%;
     padding: 1.5rem 13% 1.5rem 13%;
-    color: #000;
+    color: #3d3d3d;
     transform: translate(0%, 0%);
     -ms-transform: translate(0%, 0%);
     /* IE 9 */
