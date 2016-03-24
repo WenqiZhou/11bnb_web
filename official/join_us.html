@@ -29,8 +29,8 @@
         </ul>
         <span class="bor"></span>
     </nav>
+    <div class="top"></div>
 </header>
-<div class="top"></div>
 
 <div class="mainbox intro clearfix">
 
@@ -75,6 +75,8 @@
                 </dl>
             </div>
 
+        </div>
+        <div class="job-list">
 
             <div class="job">
                 <h2>Web前端工程师2</h2>
@@ -100,9 +102,11 @@
                         -信奉编程是一种艺术形式，对代码的清洁、优美和高效有近乎变态的追求。
                     </dd>
                 </dl>
-
-
             </div>
+
+        </div>
+        <div class="job-list">
+
             <div class="job">
                 <h2>Web前端工程师3</h2>
                 <dl>
@@ -127,10 +131,7 @@
                         -信奉编程是一种艺术形式，对代码的清洁、优美和高效有近乎变态的追求。
                     </dd>
                 </dl>
-
-
             </div>
-
 
         </div>
 
@@ -142,11 +143,9 @@
         initnav();
         $(".job-bar li").on("click", function () {
             var $this = $(this);
-            var $jobList = $('.job-list');
             if (!$this.hasClass("active")) {
                 $this.addClass("active").siblings().removeClass("active");
-                console.log($jobList.find('job'));
-                $jobList.find('job').eq($this.index()).slideDown('slow').siblings().slideUp('slow');
+                $('.job-list').eq($this.index()).slideDown('slow').siblings('.job-list').slideUp('slow');
             }
         });
         $(".job-bar li").eq(0).click();

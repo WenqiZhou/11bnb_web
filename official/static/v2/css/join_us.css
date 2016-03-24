@@ -22,7 +22,7 @@ html {
 }
 header {
   display: block;
-  position: absolute;
+  position: relative;
   width: 100%;
 }
 @media screen and (max-width: 640px) {
@@ -121,7 +121,7 @@ header nav a:hover {
 }
 .top {
   display: block;
-  height: 160px;
+  height: 100%;
 }
 .intro hr {
   background-color: #c9c9c9;
@@ -130,7 +130,7 @@ header nav a:hover {
 }
 .intro p {
   color: #555555;
-  font-size: 2.8rem;
+  font-size: 2rem;
   line-height: 200%;
 }
 .intro > p {
