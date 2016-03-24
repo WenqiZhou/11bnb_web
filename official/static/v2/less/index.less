@@ -3,10 +3,8 @@
 @import "fragment/header";
 @import "common";
 
-
 .banner {
   position: relative;
-
   .layer1 {
     position: absolute;
     z-index: 1;
@@ -33,31 +31,23 @@
     top: 47%;
     -webkit-transform: translateY(-50%);
   }
+  .media-sm({ //
 
+  });
 }
 
 .intro {
   position: relative;
   padding: 6.9rem 0;
   background-color: #f8f8f8;
-
   ul {
     width: 100%;
-
   }
   li {
     margin: 1rem 0;
     position: relative;
     float: left;
     width: 25%;
-    @media (max-width: 767px) {
-      width: 100%;
-    }
-
-    @media (max-width: 991px) {
-      width: 50%;
-    }
-
   }
   img {
     position: absolute;
@@ -65,7 +55,7 @@
     margin-left: -.3rem;
     height: 100%;
     width: auto;
-    .transform_translateX(-100%);
+    .transform(translateX(-100%));
   }
   h3, p {
     margin-left: 40%;
@@ -78,4 +68,25 @@
     font-size: 1.8rem;
     line-height: 3rem;
   }
+
+  .media-md({ li {
+    width: 50%;
+  } });
+
+  .media-sm(
+  { li {
+    width: 50%;
+    img, h3, p {
+      margin: auto;
+      text-align: center;
+    }
+    img {
+      position: relative;
+      .transform(translateX(0%));
+      left: 0;
+      margin: auto;
+    }
+
+  } }
+  );
 }

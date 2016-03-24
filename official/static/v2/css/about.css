@@ -86,7 +86,7 @@ header nav .bor {
   header nav {
     width: 100%;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     top: 0;
     right: 0;
     -webkit-transform: translateY(0%);
@@ -94,6 +94,10 @@ header nav .bor {
     -o-transform: translateY(0%);
     -ms-transform: translateY(0%);
     transform: translateY(0%);
+  }
+  header nav li {
+    height: 3.8rem !important;
+    line-height: 3.8rem !important;
   }
 }
 header nav li {
@@ -182,6 +186,7 @@ header nav a:hover {
 @media screen and (max-width: 640px) {
   .banner .text {
     position: relative;
+    height: 7rem;
     width: 100%;
     transform: translate(0%, 0%);
     -ms-transform: translate(0%, 0%);
