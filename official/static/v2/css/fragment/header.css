@@ -39,6 +39,9 @@ header {
     height: 70px;
   }
 }
+header.header {
+  position: absolute;
+}
 header .logo {
   height: 90%;
   max-height: 100%;
