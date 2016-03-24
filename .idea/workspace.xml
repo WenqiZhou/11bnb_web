@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd3b993-4cfa-4001-a4bd-1acaaf747e16" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/static/v2/css/about.css" afterPath="$PROJECT_DIR$/official/static/v2/css/about.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/static/v2/css/fragment/header.css" afterPath="$PROJECT_DIR$/official/static/v2/css/fragment/header.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/static/v2/less/fragment/header.less" afterPath="$PROJECT_DIR$/official/static/v2/less/fragment/header.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/static/v2/css/index.css" afterPath="$PROJECT_DIR$/official/static/v2/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/index.html" afterPath="$PROJECT_DIR$/official/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/static/v2/css/join_us.css" afterPath="$PROJECT_DIR$/official/static/v2/css/join_us.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/join_us.html" afterPath="$PROJECT_DIR$/official/join_us.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/static/v2/less/join_us.less" afterPath="$PROJECT_DIR$/official/static/v2/less/join_us.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/static/v2/css/news.css" afterPath="$PROJECT_DIR$/official/static/v2/css/news.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="11bnb_web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,8 +43,10 @@
         <entry file="file://$PROJECT_DIR$/official/static/v2/less/about.less">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="70" column="12" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
-              <folding />
+              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+              <folding>
+                <marker date="1458783931000" expanded="true" signature="90:1646" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,17 +65,30 @@
         <entry file="file://$PROJECT_DIR$/official/static/v2/css/about.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="138" column="1" selection-start-line="138" selection-start-column="1" selection-end-line="138" selection-end-column="1" />
+              <caret line="143" column="1" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
+              <folding>
+                <marker date="1458783931000" expanded="true" signature="305:327" placeholder="{...}" />
+                <marker date="1458783931000" expanded="true" signature="3589:3974" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/official/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.19320843">
+              <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/official/index.html">
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/official/static/v2/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.8333334">
-              <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
+            <state vertical-scroll-proportion="-14.444445">
+              <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -110,11 +124,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.less" pinned="false" current-in-tab="true">
+      <file leaf-file-name="header.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/official/static/v2/less/fragment/header.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.09068924">
-              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+            <state vertical-scroll-proportion="-4.117647">
+              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -128,12 +142,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/official/index.html" />
         <option value="$PROJECT_DIR$/official/about.html" />
         <option value="$PROJECT_DIR$/official/static/v2/css/about.css" />
         <option value="$PROJECT_DIR$/official/static/v2/less/about.less" />
         <option value="$PROJECT_DIR$/official/join_us.html" />
         <option value="$PROJECT_DIR$/official/static/v2/less/join_us.less" />
+        <option value="$PROJECT_DIR$/official/index.html" />
+        <option value="$PROJECT_DIR$/official/static/v2/css/index.css" />
         <option value="$PROJECT_DIR$/official/static/v2/less/fragment/header.less" />
       </list>
     </option>
@@ -391,7 +406,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="70" column="12" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
-          <folding />
+          <folding>
+            <marker date="1458783931000" expanded="true" signature="90:1646" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -407,7 +424,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="140" column="1" selection-start-line="140" selection-start-column="1" selection-end-line="140" selection-end-column="1" />
-          <folding />
+          <folding>
+            <marker date="1458783931000" expanded="true" signature="305:327" placeholder="{...}" />
+            <marker date="1458783931000" expanded="true" signature="3589:3974" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -462,16 +482,21 @@
     <entry file="file://$PROJECT_DIR$/official/static/v2/css/about.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="138" column="1" selection-start-line="138" selection-start-column="1" selection-end-line="138" selection-end-column="1" />
-          <folding />
+          <caret line="143" column="1" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
+          <folding>
+            <marker date="1458783931000" expanded="true" signature="305:327" placeholder="{...}" />
+            <marker date="1458783931000" expanded="true" signature="3589:3974" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/official/static/v2/less/about.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="70" column="12" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
-          <folding />
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding>
+            <marker date="1458783931000" expanded="true" signature="90:1646" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -479,14 +504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/official/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8333334">
-          <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
           <folding />
         </state>
       </provider>
@@ -517,8 +534,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/official/static/v2/less/fragment/header.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09068924">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        <state vertical-scroll-proportion="-4.117647">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/official/static/v2/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.444445">
+          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/official/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19320843">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
           <folding />
         </state>
       </provider>
