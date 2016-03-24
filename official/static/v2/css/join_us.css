@@ -197,7 +197,7 @@ footer {
 .job-box .job-bar li {
   line-height: 2rem;
   color: #cacaca;
-  padding: 0 2rem;
+  text-align: center;
   float: left;
 }
 .job-box .job-bar li:hover {
@@ -239,6 +239,30 @@ footer {
   font-size: 1.8rem;
   line-height: 180%;
   color: #555555;
+}
+@media screen and (max-width: 640px) {
+  .job-box ul {
+    /* 设置弹性布局 */
+    display: -webkit-box !important;
+    /* android 2.1-3.0, ios 3.2-4.3 */
+    display: -webkit-flex !important;
+    /* Chrome 21+ */
+    display: -ms-flexbox !important;
+    /* WP IE 10 */
+    display: flex !important;
+    /* android 4.4 */
+  }
+  .job-box ul li {
+    /* 子元素自动占据剩余的空间 */
+    -webkit-box-flex: 1 !important;
+    /* android 2.1-3.0, ios 3.2-4.3 */
+    -webkit-flex: 1 !important;
+    /* Chrome 21+ */
+    -ms-flex: 1 !important;
+    /* WP IE 10 */
+    flex: 1 !important;
+    /* android 4.4 */
+  }
 }
 header nav {
   color: #555555;
