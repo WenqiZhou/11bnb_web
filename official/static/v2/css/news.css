@@ -132,10 +132,11 @@ footer {
 @media screen and (max-width: 640px) {
   footer {
     display: block;
+    padding: 3rem 0;
   }
   footer img {
     width: 35%;
-    margin: 3rem auto ;
+    margin: auto auto ;
   }
 }
 header {
@@ -151,7 +152,7 @@ header {
 }
 @media screen and (max-width: 640px) {
   .top {
-    height: 5rem;
+    height: 60px;
   }
 }
 @media screen and (min-width: 641px) {
@@ -250,6 +251,8 @@ header {
     padding: 0.8rem 0;
     height: 4.7rem;
     width: 4.7rem;
+    height: 56px;
+    width: 56px;
   }
   .intro .item .text {
     line-height: 4.7rem;
