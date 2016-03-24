@@ -131,6 +131,7 @@ header nav a:hover {
 }
 .banner .text {
   color: #fff;
+  text-align: center;
   position: absolute;
   z-index: 20;
   width: auto;
@@ -155,7 +156,7 @@ header nav a:hover {
   font-size: 3rem;
   line-height: 180%;
 }
-.banner .layer1 {
+.banner .imgBox .layer1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -176,6 +177,11 @@ header nav a:hover {
   background-color: #fff;
 }
 @media screen and (min-width: 641px) {
+  .banner .text {
+    width: 100%;
+    padding: 0.5rem 5% 1.5rem 5%;
+    color: #000;
+  }
   .banner .text h2 {
     font-size: 4rem;
   }
@@ -184,10 +190,17 @@ header nav a:hover {
   }
 }
 @media screen and (max-width: 640px) {
+  .banner .swiper-button-next,
+  .banner .swiper-button-prev {
+    top: 30%;
+  }
   .banner .text {
     position: relative;
     height: 7rem;
     width: 100%;
+    padding: 0.5rem 5% 1.5rem 5%;
+    color: #000;
+    background: #fff;
     transform: translate(0%, 0%);
     -ms-transform: translate(0%, 0%);
     /* IE 9 */
