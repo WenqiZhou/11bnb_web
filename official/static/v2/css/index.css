@@ -16,6 +16,7 @@ html {
   margin-right: auto;
   width: 100%;
   max-width: 980px;
+  overflow-x: hidden;
 }
 .hp:hover {
   cursor: pointer;
@@ -165,7 +166,7 @@ header nav a:hover {
     position: absolute;
     z-index: 30;
     display: block;
-    width: 38%;
+    width: 40%;
     top: 30%;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -236,6 +237,10 @@ header nav a:hover {
   .intro li p {
     margin: auto;
     text-align: center;
+  }
+  .intro li h3,
+  .intro li p {
+    line-height: 1.5;
   }
   .intro li img {
     position: relative;

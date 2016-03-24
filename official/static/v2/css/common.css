@@ -15,6 +15,7 @@ html {
   margin-right: auto;
   width: 100%;
   max-width: 980px;
+  overflow-x: hidden;
 }
 .hp:hover {
   cursor: pointer;

@@ -16,6 +16,7 @@ html {
   margin-right: auto;
   width: 100%;
   max-width: 980px;
+  overflow-x: hidden;
 }
 .hp:hover {
   cursor: pointer;
@@ -254,11 +255,20 @@ header {
     height: 56px;
     width: 56px;
   }
+  .intro .item .date span {
+    display: block;
+    font-size: 1.2rem;
+  }
+  .intro .item .date span:nth-child(2) {
+    font-weight: bold;
+    font-size: 3.0rem;
+  }
   .intro .item .text {
     line-height: 4.7rem;
-    width: 52%;
+    line-height: 56px;
+    width: 60%;
     color: #555555;
-    font-size: 2.2rem;
+    font-size: 1.9rem;
   }
 }
 header nav {
