@@ -152,8 +152,7 @@ header nav a:hover {
   -webkit-transform: translateY(-50%);
 }
 @media screen and (max-width: 640px) {
-  .banner .layer2,
-  .banner .layer1 {
+  .banner .pic2 {
     display: none;
   }
 }

@@ -123,6 +123,14 @@ header nav a {
 header nav a:hover {
   color: #cacaca;
 }
+header {
+  position: absolute;
+}
+@media screen and (max-width: 640px) {
+  header nav {
+    background-color: transparent;
+  }
+}
 .top {
   display: block;
 }
