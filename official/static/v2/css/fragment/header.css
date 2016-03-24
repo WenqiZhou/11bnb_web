@@ -98,8 +98,8 @@ header nav .bor {
     transform: translateY(0%);
   }
   header nav li {
-    height: 3.8rem !important;
-    line-height: 3.8rem !important;
+    height: 45px !important;
+    line-height: 45px !important;
   }
 }
 header nav li {

@@ -99,8 +99,8 @@ header nav .bor {
     transform: translateY(0%);
   }
   header nav li {
-    height: 3.8rem !important;
-    line-height: 3.8rem !important;
+    height: 45px !important;
+    line-height: 45px !important;
   }
 }
 header nav li {
@@ -243,6 +243,7 @@ header {
 }
 @media screen and (max-width: 640px) {
   .intro .item {
+    margin: 10px auto;
     width: 95%;
   }
   .intro .item .date {
@@ -254,6 +255,7 @@ header {
     line-height: 4.7rem;
     width: 52%;
     color: #555555;
+    font-size: 2.2rem;
   }
 }
 header nav {

@@ -99,8 +99,8 @@ header nav .bor {
     transform: translateY(0%);
   }
   header nav li {
-    height: 3.8rem !important;
-    line-height: 3.8rem !important;
+    height: 45px !important;
+    line-height: 45px !important;
   }
 }
 header nav li {
@@ -185,7 +185,7 @@ header nav a:hover {
   border: none;
   background-color: #fff;
 }
-@media screen and (min-width: 641px) {
+@media screen and (min-width: 641px) and (max-width: 1024px) {
   .text {
     width: 100%;
     padding: 0.5rem 5% 1.5rem 5%;
