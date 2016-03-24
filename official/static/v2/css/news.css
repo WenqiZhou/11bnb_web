@@ -181,11 +181,6 @@ header {
   background-color: #fff;
   padding: 30px 0;
 }
-.intro .box {
-  width: auto;
-  margin: auto;
-  display: table;
-}
 .intro .item {
   margin: 20px auto;
   position: relative;
@@ -196,6 +191,7 @@ header {
   content: "";
 }
 .intro .item .date {
+  margin-left: 18%;
   float: left;
   border-radius: 100%;
   -o-border-radius: 100%;
@@ -249,6 +245,7 @@ header {
     width: 95%;
   }
   .intro .item .date {
+    margin-left: auto;
     padding: 0.8rem 0;
     height: 4.7rem;
     width: 4.7rem;
