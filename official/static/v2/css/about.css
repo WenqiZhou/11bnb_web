@@ -40,6 +40,9 @@ header {
     height: 70px;
   }
 }
+header.header {
+  position: absolute;
+}
 header .logo {
   height: 90%;
   max-height: 100%;
@@ -125,6 +128,8 @@ header nav a:hover {
 }
 .banner {
   position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 .banner .swiper-slide.f1 .text {
   text-align: center;
@@ -156,6 +161,10 @@ header nav a:hover {
   font-size: 3rem;
   line-height: 180%;
 }
+.banner .imgBox {
+  height: auto;
+  position: relative;
+}
 .banner .imgBox .layer1 {
   position: absolute;
   top: 0;
@@ -165,42 +174,52 @@ header nav a:hover {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.banner .swiper-pagination-bullet {
+.swiper-pagination-bullet {
   border-radius: 100%;
   -o-border-radius: 100%;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border: solid 2px #fff;
 }
-.banner .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
   border: none;
   background-color: #fff;
 }
 @media screen and (min-width: 641px) {
-  .banner .text {
+  .text {
     width: 100%;
     padding: 0.5rem 5% 1.5rem 5%;
     color: #000;
   }
-  .banner .text h2 {
+  .text h2 {
     font-size: 4rem;
   }
-  .banner .text p {
+  .text p {
     font-size: 2.5rem;
   }
 }
 @media screen and (max-width: 640px) {
+  .banner {
+    background-color: #fff;
+  }
   .banner .swiper-button-next,
   .banner .swiper-button-prev {
-    top: 30%;
+    top: 75%;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  .banner .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #959595;
   }
   .banner .text {
     position: relative;
-    height: 7rem;
+    text-align: left !important;
     width: 100%;
-    padding: 0.5rem 5% 1.5rem 5%;
+    padding: 1.5rem 13% 1.5rem 13%;
     color: #000;
-    background: #fff;
     transform: translate(0%, 0%);
     -ms-transform: translate(0%, 0%);
     /* IE 9 */
@@ -212,12 +231,19 @@ header nav a:hover {
     /* Opera */
     left: 0;
     top: 0;
+    text-overflow: ellipsis;
   }
   .banner .text h2 {
-    font-size: 3.6rem;
+    font-size: 2rem;
   }
   .banner .text p {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+  }
+  .intro .item h2 {
+    line-height: 100%;
+  }
+  .intro .item p {
+    font-size: 1.8rem !important;
   }
 }
 .intro hr {
@@ -235,7 +261,7 @@ header nav a:hover {
 }
 .intro p {
   color: #555555;
-  font-size: 2.8rem;
+  font-size: 1.8rem;
   line-height: 200%;
 }
 .intro > p {
