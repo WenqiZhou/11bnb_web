@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd3b993-4cfa-4001-a4bd-1acaaf747e16" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/static/v2/css/about.css" afterPath="$PROJECT_DIR$/official/static/v2/css/about.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/about.html" afterPath="$PROJECT_DIR$/official/about.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/static/v2/less/about.less" afterPath="$PROJECT_DIR$/official/static/v2/less/about.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/static/v2/css/join_us.css" afterPath="$PROJECT_DIR$/official/static/v2/css/join_us.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/official/static/v2/less/join_us.less" afterPath="$PROJECT_DIR$/official/static/v2/less/join_us.less" />
     </list>
     <ignored path="11bnb_web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,8 +51,8 @@
       <file leaf-file-name="about.less" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/official/static/v2/less/about.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7980653">
-              <caret line="98" column="20" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.7617896">
+              <caret line="96" column="18" selection-start-line="96" selection-start-column="18" selection-end-line="96" selection-end-column="18" />
               <folding>
                 <element signature="e#239#560#0" expanded="false" />
                 <element signature="e#570#794#0" expanded="false" />
@@ -375,8 +371,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="140" column="1" selection-start-line="140" selection-start-column="1" selection-end-line="140" selection-end-column="1" />
           <folding>
-            <marker date="1458801959000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1458801959000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1458801971000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1458801971000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -431,8 +427,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="143" column="1" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
           <folding>
-            <marker date="1458801959000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1458801959000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1458801971000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1458801971000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -559,8 +555,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/official/static/v2/less/about.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7980653">
-          <caret line="98" column="20" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.7617896">
+          <caret line="96" column="18" selection-start-line="96" selection-start-column="18" selection-end-line="96" selection-end-column="18" />
           <folding>
             <element signature="e#239#560#0" expanded="false" />
             <element signature="e#570#794#0" expanded="false" />
