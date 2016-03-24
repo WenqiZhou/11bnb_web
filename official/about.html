@@ -99,8 +99,8 @@
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
         <!-- Add Arrows -->
-        <div class="swiper-button-next swiper-button-black"></div>
-        <div class="swiper-button-prev swiper-button-black"></div>
+        <span class="prev-icon">&lt;</span>
+        <span class="next-icon">&gt;</span>
     </div>
 
 
@@ -168,8 +168,8 @@
         initnav();
         var swiper = new Swiper('.swiper-container', {
             pagination: '.swiper-pagination',
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
+            nextButton: '.next-icon',
+            prevButton: '.prev-icon',
             slidesPerView: 1,
             paginationClickable: true,
 //        spaceBetween: 30,
