@@ -126,6 +126,18 @@ header nav a {
 header nav a:hover {
   color: #cacaca;
 }
+footer {
+  display: none;
+}
+@media screen and (max-width: 640px) {
+  footer {
+    display: block;
+  }
+  footer img {
+    width: 35%;
+    margin: 3rem auto ;
+  }
+}
 .banner {
   position: relative;
   width: 100%;
@@ -238,6 +250,19 @@ header nav a:hover {
   }
   .banner .text p {
     font-size: 1.5rem;
+  }
+  .intro .item img {
+    position: relative !important;
+    margin: 0.5rem auto;
+  }
+  .intro .item h2,
+  .intro .item h5,
+  .intro .item p {
+    margin-left: 0 !important;
+  }
+  .intro .item h2,
+  .intro .item h5 {
+    text-align: center;
   }
   .intro .item h2 {
     line-height: 100%;

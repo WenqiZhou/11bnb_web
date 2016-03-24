@@ -2,7 +2,7 @@
 @import "mixins";
 @import "fragment/header";
 @import "common";
-
+@import "fragment/footer";
 .banner {
   position: relative;
   width: 100%;
@@ -101,6 +101,16 @@
   }
   .intro {
     .item {
+      img{
+        position: relative !important;
+        margin: 0.5rem auto;
+      }
+      h2,h5,p {
+        margin-left: 0 !important;
+      }
+      h2, h5 {
+        text-align: center;
+      }
       h2{
         line-height: 100%;
       }
