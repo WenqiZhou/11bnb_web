@@ -77,7 +77,34 @@
 
 
             <div class="job">
-                <h2>Web前端工程师</h2>
+                <h2>Web前端工程师2</h2>
+                <dl>
+                    <dt>职位：</dt>
+                    <dd>Web前端资深工程师/Team Leader/实习生</dd>
+                    <dt>责任：</dt>
+                    <dd>Web前端的总体架构设计和开发工作；分享最新的前端计数，<br>
+                        与设计团队和后端团队密切配合；高效的完成开发，测试盒发布工作流程。
+                    </dd>
+                    <dt>要求：</dt>
+                    <dd>-精通HTML/HTML5，CSS3，LESS，对他们的使用技巧烂熟于胸，可以手写出各种匪夷所思的设计效果的div片段；<br>
+                        -熟悉前端MVC框架；Backbone和Marionette。如果你更熟悉EmberJS或AngularJS，相信它们更好，请说服我们；<br>
+                        -具有几种JavaScript工具使用经验，越多越好，<br>
+                        包括jQuery，PaperJS，D3.js，Ralphael.js，PrototypeJS，UnderscoreJS，momentJS，SockJS等等；
+                    </dd>
+                    <dt>Plus：</dt>
+                    <dd>-JavaScript是你的second nature，崇拜像Jeremy Ashkenas这样的大牛；<br>
+                        -掌握RequireJS来组织modules，如果熟悉更好的方法，请告诉我们并欢迎创新；<br>
+                        -鼓励使用CoffeeScript书写前端代码，我们觉得比原生JavaScript代码要简洁干净很多；<br>
+                        -熟悉Node.js或者有Java+springMVC的经验；<br>
+                        -在github上有参与开源项目，能给我们看到你的stack overflow账号；<br>
+                        -信奉编程是一种艺术形式，对代码的清洁、优美和高效有近乎变态的追求。
+                    </dd>
+                </dl>
+
+
+            </div>
+            <div class="job">
+                <h2>Web前端工程师3</h2>
                 <dl>
                     <dt>职位：</dt>
                     <dd>Web前端资深工程师/Team Leader/实习生</dd>
@@ -114,11 +141,12 @@
     $(document).ready(function () {
         initnav();
         $(".job-bar li").on("click", function () {
-            if (!$(this).hasClass("active")) {
-                $(".job-bar li").removeClass("active");
-                $(".job-list").hide();
-                $(".job-list").eq($(this).index()).show();
-                $(this).addClass("active");
+            var $this = $(this);
+            var $jobList = $('.job-list');
+            if (!$this.hasClass("active")) {
+                $this.addClass("active").siblings().removeClass("active");
+                console.log($jobList.find('job'));
+                $jobList.find('job').eq($this.index()).slideDown('slow').siblings().slideUp('slow');
             }
         });
         $(".job-bar li").eq(0).click();

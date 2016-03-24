@@ -11,6 +11,7 @@
 
   .text {
     color: #fff;
+    text-align: center;
     h2 {
       font-weight: bold;
       font-size: 6rem;
@@ -27,7 +28,7 @@
     left: 50%;
     .transform_translate(-50%, -50%);
   }
-
+.imgBox{
   .layer1 {
     position: absolute;
     top: 0;
@@ -37,6 +38,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
   }
+}
 
   .swiper-button-next, .swiper-button-prev {
   }
@@ -52,6 +54,9 @@
   }
 
   .media-md({ .text {
+    width:100%;
+    padding:0.5rem 5% 1.5rem 5%;
+    color:#000;
     h2 {
       font-size: 4rem;
     }
@@ -62,12 +67,18 @@
 
   .media-sm({
 
+  .swiper-button-next, .swiper-button-prev {
+    top:30%;
+  }
+
 
 
     .text {
-      position: relative;
-
+      position:relative;
       width:100%;
+      padding:0.5rem 5% 1.5rem 5%;
+      color:#000;
+      background: #fff;
       .transform_translate(0%, 0%);
       left:0;top:0;
 
