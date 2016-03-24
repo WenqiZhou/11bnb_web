@@ -188,6 +188,25 @@ footer {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
+.next-icon,
+.prev-icon {
+  color: #fff;
+  font-size: 12rem;
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  cursor: pointer;
+}
+.next-icon:hover,
+.prev-icon:hover {
+  color: #808688;
+}
+.next-icon {
+  right: 1rem;
+}
+.prev-icon {
+  left: 1rem;
+}
 .swiper-pagination-bullet {
   border-radius: 100%;
   -o-border-radius: 100%;
@@ -211,19 +230,24 @@ footer {
   .text p {
     font-size: 2.5rem;
   }
+  .prev-icon,
+  .next-icon {
+    top: 50%;
+  }
 }
 @media screen and (max-width: 640px) {
   .banner {
     background-color: #fff;
   }
-  .banner .swiper-button-next,
-  .banner .swiper-button-prev {
-    top: 84%;
-    -webkit-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-    -o-transform: scale(0.5);
-    -ms-transform: scale(0.5);
-    transform: scale(0.5);
+  .banner .next-icon,
+  .banner .prev-icon {
+    font-size: 5rem;
+    top: 77%;
+    color: #3e3e3e;
+  }
+  .banner .next-icon:hover,
+  .banner .prev-icon:hover {
+    color: #000;
   }
   .banner .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background-color: #959595;

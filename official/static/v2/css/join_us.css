@@ -199,7 +199,7 @@ footer {
 .job-box .job-bar li {
   line-height: 2rem;
   color: #cacaca;
-  padding: 0 10px;
+  padding: 0 2rem;
   float: left;
 }
 .job-box .job-bar li:hover {
@@ -247,6 +247,9 @@ header nav {
 }
 header nav a:hover {
   color: #959595;
+}
+header nav {
+  background-color: transparent;
 }
 header nav .bor {
   left: 75%;
