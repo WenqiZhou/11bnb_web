@@ -138,6 +138,14 @@
       h2{
         line-height: 100%;
       }
+      h5{
+        &:not(:first-child){
+          display: block;
+        }
+        &:first-child{
+          display: none;
+        }
+      }
       p{
         font-size: @fs_p - 1 !important;
       }
@@ -190,6 +198,12 @@
     }
 
     h5 {
+      &:first-child {
+        display: block;
+      }
+      &:not(:first-child){
+        display: none;
+      }
     }
 
     p {

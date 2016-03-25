@@ -293,6 +293,12 @@ footer {
   .intro .item h2 {
     line-height: 100%;
   }
+  .intro .item h5:not(:first-child) {
+    display: block;
+  }
+  .intro .item h5:first-child {
+    display: none;
+  }
   .intro .item p {
     font-size: 1.8rem !important;
   }
@@ -360,6 +366,12 @@ footer {
 .intro .item h5,
 .intro .item p {
   margin-left: 25%;
+}
+.intro .item h5:first-child {
+  display: block;
+}
+.intro .item h5:not(:first-child) {
+  display: none;
 }
 .intro .item p {
   font-size: 2.4rem;
