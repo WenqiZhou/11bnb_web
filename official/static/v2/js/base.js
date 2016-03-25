@@ -14,6 +14,7 @@ function initnav() {
     });
 }
 
+
 function isWeiXin() {
     var ua = window.navigator.userAgent.toLowerCase();
     if (ua.match(/MicroMessenger/i) == 'micromessenger') {
@@ -21,4 +22,9 @@ function isWeiXin() {
     } else {
         return false;
     }
+}
+function getWidth(container,scale){
+    var $imgBox = $(container);
+    var deviceWidth = $(document).width();
+    $imgBox.height(deviceWidth*scale);
 }

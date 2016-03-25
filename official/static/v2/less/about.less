@@ -33,6 +33,7 @@
   .imgBox{
     height: auto;
     position: relative;
+    background: rgba(0,0,0,0,5);
     .layer1 {
       position: absolute;
       top: 0;
@@ -47,21 +48,29 @@
 
   .next-icon, .prev-icon {
     display: block;
-    color: #fff;
-    font-size: 7rem;
+    height: 62px;
+    width: 34px;
+    background: url(../image/ban-icon-l.png) center no-repeat;
     position: absolute;
     z-index: 2;
     top: 40%;
     cursor: pointer;
     &:hover{
-      color: #808688;
+      background: url(../image/ban-icon-r.png) center no-repeat;
     }
   }
   .next-icon {
     right: 1rem;
+    .transform(rotate(180deg));
+    &:hover{
+      .transform(rotate(360deg));
+    }
   }
   .prev-icon {
     left: 1rem;
+    &:hover {
+      .transform(rotate(180deg));
+    }
   }
 
   .swiper-pagination-bullet {
@@ -95,12 +104,15 @@
   .banner{
     background-color:#fff;
     .next-icon, .prev-icon {
-      font-size: 5rem;
       top:74%;
-      color: #3e3e3e;
-      &:hover {
-        color: #000;
-      }
+      .transform(scale(0.5))!important;
+    }
+    .next-icon {
+      background: url(../image/sm-ban-r.png) center no-repeat !important;
+      .transform(rotate(0deg));
+    }
+    .prev-icon {
+      background: url(../image/sm-ban-l.png) center no-repeat !important;
     }
     .swiper-pagination-bullet.swiper-pagination-bullet-active{
       background-color:#959595;
@@ -110,7 +122,7 @@
       position:relative;
       text-align: left !important;
       width:100%;
-      padding:1.5rem 13% 1.5rem 13%;
+      padding:1.5rem 13% 2.8rem 13%;
       color:#3d3d3d;
       .transform_translate(0%, 0%);
       left: 0;
