@@ -272,9 +272,11 @@ header {
     font-size: 3.0rem;
   }
   .intro .item .text {
-    padding-left: 10px;
+    margin-left: 0;
+    padding-left: 0;
     width: 75%;
-    left: 4.7rem;
+    left: 25%;
+    right: 0;
     color: #555555;
     font-size: 1.9rem;
   }
