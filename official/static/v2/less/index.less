@@ -83,14 +83,14 @@
 }
 
 //sm
-.media-sm({html{font-size: 100px;}});
-.media-sm({
-header{
-  li{
+.media-sm({ html {
+  font-size: 100px;
+} });
+.media-sm({ header {
+  li {
     font-size: 0.33rem;
   }
-}
-});
+} });
 .media-sm({ //
   .banner {
 
@@ -121,7 +121,7 @@ header{
 { .intro {
   padding: 0rem 0;
   li {
-    margin:.36rem auto;
+    margin: .36rem auto;
     width: 50%;
     img, h3, p {
       margin: auto;
@@ -130,8 +130,12 @@ header{
     h3, p {
       line-height: 1.5;
     }
-    h3{font-size: .28rem}
-    p{font-size: .28rem}
+    h3 {
+      font-size: .28rem
+    }
+    p {
+      font-size: .28rem
+    }
     img {
       position: relative;
       .transform(translateX(0%));
@@ -139,6 +143,9 @@ header{
       margin: auto;
       width: 1.2rem;
       height: 1.2rem;
+    }
+    &:nth-child(2) img {
+      height: 1.3rem;
     }
 
   }
