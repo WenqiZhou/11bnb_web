@@ -13,3 +13,8 @@ function initnav(){
         });
     });
 }
+function getWidth(container,scale){
+    var $imgBox = $(container);
+    var deviceWidth = $(document).width();
+    $imgBox.height(deviceWidth*scale);
+}

@@ -99,8 +99,8 @@
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
         <!-- Add Arrows -->
-        <span class="prev-icon">&lt;</span>
-        <span class="next-icon">&gt;</span>
+        <span class="prev-icon"></span>
+        <span class="next-icon"></span>
     </div>
 
 
@@ -176,6 +176,7 @@
 
     $(document).ready(function () {
         initnav();
+        getWidth('.imgBox',657/1440);
         var swiper = new Swiper('.swiper-container', {
             pagination: '.swiper-pagination',
             nextButton: '.next-icon',
