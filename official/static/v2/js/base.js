@@ -9,6 +9,7 @@ function initnav() {
         $(".bor").animate({
             "left": ($(this).parent().index() ) * 25 + "%"
         }, 300, "", function () {
+            navtimer();
             location.href = url;
         });
     });
@@ -23,8 +24,24 @@ function isWeiXin() {
         return false;
     }
 }
-function getWidth(container,scale){
+function getWidth(container, scale) {
     var $imgBox = $(container);
     var deviceWidth = $(document).width();
-    $imgBox.height(deviceWidth*scale);
+    $imgBox.height(deviceWidth * scale);
+}
+
+
+function navtimer() {
+    var left = $(".bor").css("left");
+    var _this = this;
+    _this.run = function () {
+        _this.timer = setInterval(function () {
+            $(".bor").css("left", left);
+            console.log(123);
+        }, 1000);
+    }
+    _this.sleep = function () {
+        clearInterval(_this.timer);
+        setTimeout(_this.run, 2000);
+    }
 }
