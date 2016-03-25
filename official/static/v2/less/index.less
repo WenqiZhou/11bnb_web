@@ -83,17 +83,32 @@
 }
 
 //sm
+//.loop(@cw) when (@cw > 0) {
+//  .loop((@cw - 50));
+//  @media screen  and(min-width: (1px*@cw) ) {
+//    html {
+//      font-size: 1px*@cw/750*100;
+//    }
+//  }
+//}
+//
+//.loop(1024);
+
 .media-sm({ html {
   font-size: 100px;
 } });
 .media-sm({ header {
   li {
-    font-size: 0.33rem;
+    font-size: 0.39rem;
   }
 } });
+@media screen and(min-width: 567px) and(max-width: 640px) {
+  header li {
+    font-size: 0.2rem !important;
+  }
+}
 .media-sm({ //
   .banner {
-
     .pic2 {
       display: none;
     }

@@ -213,7 +213,12 @@ header nav a:hover {
 }
 @media screen and (max-width: 640px) {
   header li {
-    font-size: 0.33rem;
+    font-size: 0.39rem;
+  }
+}
+@media screen and (min-width: 567px) and (max-width: 640px) {
+  header li {
+    font-size: 0.2rem !important;
   }
 }
 @media screen and (max-width: 640px) {
@@ -275,5 +280,8 @@ header nav a:hover {
     margin: auto;
     width: 1.2rem;
     height: 1.2rem;
+  }
+  .intro li:nth-child(2) img {
+    height: 1.3rem;
   }
 }
