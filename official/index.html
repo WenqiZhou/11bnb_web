@@ -9,7 +9,7 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 
     <link rel="stylesheet" href="static/v2/css/reset.css">
-    <link rel="stylesheet" href="static/v2/css/index.css?12d1">
+    <link rel="stylesheet" href="static/v2/css/index.css?12d111">
     <script type="text/javascript" src="static/v2/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="static/v2/js/base.js"></script>
     <script>
@@ -42,7 +42,11 @@
     </nav>
 </header>
 <div class="banner">
-    <img class="pic2-sm" src="static/v2/image/big2-sm.png" alt="">
+    <img class="pic2-sm" src="static/v2/image/big2-sm2.png" alt="">
+    <div class="pic2-sm-text">
+        <div>长按二维码</div>
+        <div>下载依依短租APP</div>
+    </div>
     <img class="pic1" src="static/v2/image/big.png" alt="">
     <img class="pic2" src="static/v2/image/big2.png" alt="">
     <div class="layer1"></div>
@@ -86,11 +90,12 @@
         </li>
     </ul>
 </div>
-
 <script>
-
     $(document).ready(function () {
         initnav();
+        if (!isWeiXin()) {
+            $(".pic2-sm-text > div:eq(0)").text("扫描二维码");
+        }
     });
 </script>
 </body>

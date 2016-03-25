@@ -9,6 +9,9 @@
 //}
 
 .banner {
+  .pic2-sm-text {
+    display: none;
+  }
   position: relative;
   .layer1 {
     position: absolute;
@@ -94,12 +97,13 @@
 //
 //.loop(1024);
 
+
 .media-sm({ html {
   font-size: 100px;
 } });
 .media-sm({ header {
   li {
-    font-size: 0.39rem;
+    font-size: 0.35rem;
   }
 } });
 @media screen and(min-width: 567px) and(max-width: 640px) {
@@ -107,6 +111,7 @@
     font-size: 0.2rem !important;
   }
 }
+
 .media-sm({ //
   .banner {
     .pic2 {
@@ -121,6 +126,17 @@
       top: 30%;
       left: 50%;
       .transform(translateX(-50%));
+    }
+    .pic2-sm-text {
+      display: block;
+      position: absolute;
+      z-index: 30;
+      top: 130%;
+      left: 50%;
+      .transform(translateX(-50%));
+      font-size: .28rem;
+      text-align: center;
+      color: #3d3d3d;
     }
     //
 
@@ -156,12 +172,12 @@
       .transform(translateX(0%));
       left: 0;
       margin: auto;
-      width: 1.2rem;
+      //width: 1.2rem;
       height: 1.2rem;
     }
-    &:nth-child(2) img {
-      height: 1.3rem;
-    }
+    //&:nth-child(2) img {
+    //  height: 1.25rem;
+    //}
 
   }
 } }

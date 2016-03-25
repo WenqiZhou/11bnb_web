@@ -1,4 +1,4 @@
-function initnav(){
+function initnav() {
     $("header nav a").each(function () {
         var url = $(this).attr("href");
         $(this).attr("href", "javascript:void(0);");
@@ -12,4 +12,13 @@ function initnav(){
             location.href = url;
         });
     });
+}
+
+function isWeiXin() {
+    var ua = window.navigator.userAgent.toLowerCase();
+    if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+        return true;
+    } else {
+        return false;
+    }
 }

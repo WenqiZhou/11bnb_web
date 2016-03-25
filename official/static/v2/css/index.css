@@ -135,6 +135,9 @@ header nav a:hover {
 .banner {
   position: relative;
 }
+.banner .pic2-sm-text {
+  display: none;
+}
 .banner .layer1 {
   position: absolute;
   z-index: 1;
@@ -213,7 +216,7 @@ header nav a:hover {
 }
 @media screen and (max-width: 640px) {
   header li {
-    font-size: 0.39rem;
+    font-size: 0.35rem;
   }
 }
 @media screen and (min-width: 567px) and (max-width: 640px) {
@@ -237,6 +240,21 @@ header nav a:hover {
     -o-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
+  }
+  .banner .pic2-sm-text {
+    display: block;
+    position: absolute;
+    z-index: 30;
+    top: 130%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    font-size: .28rem;
+    text-align: center;
+    color: #3d3d3d;
   }
 }
 @media screen and (max-width: 640px) {
@@ -278,10 +296,6 @@ header nav a:hover {
     transform: translateX(0%);
     left: 0;
     margin: auto;
-    width: 1.2rem;
     height: 1.2rem;
-  }
-  .intro li:nth-child(2) img {
-    height: 1.3rem;
   }
 }
