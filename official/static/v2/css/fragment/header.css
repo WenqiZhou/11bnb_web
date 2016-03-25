@@ -131,3 +131,50 @@ header nav a {
 header nav a:hover {
   color: #cacaca;
 }
+@-webkit-keyframes "toabout" {
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@-moz-keyframes "toabout" {
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@-ms-keyframes "toabout" {
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@-o-keyframes "toabout" {
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@keyframes "toabout" {
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+.bor.about {
+  -webkit-animation: toabout 1s;
+  -moz-animation: toabout 1s;
+  -ms-animation: toabout 1s;
+  -o-animation: toabout 1s;
+  animation: toabout 1s;
+}
