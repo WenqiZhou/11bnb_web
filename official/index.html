@@ -9,7 +9,7 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 
     <link rel="stylesheet" href="static/v2/css/reset.css">
-    <link rel="stylesheet" href="static/v2/css/index.css?11">
+    <link rel="stylesheet" href="static/v2/css/index.css?121">
     <script type="text/javascript" src="static/v2/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="static/v2/js/base.js"></script>
 </head>
@@ -75,6 +75,24 @@
 </div>
 
 <script>
+    window.onresize = function () {
+        document.addEventListener('DOMContentLoaded', function () {
+            var html = document.documentElement;
+            var windowWidth = html.clientWidth;
+            if (windowWidth <= 640) {
+                html.style.fontSize = windowWidth / 750 * 100 + 'px';
+            }
+        }, false);
+    };
+    (function () {
+        document.addEventListener('DOMContentLoaded', function () {
+            var html = document.documentElement;
+            var windowWidth = html.clientWidth;
+            if (windowWidth <= 640) {
+                html.style.fontSize = windowWidth / 750 * 100 + 'px';
+            }
+        }, false);
+    })();
     $(document).ready(function () {
         initnav();
     });
