@@ -21,6 +21,11 @@ html {
 .hp:hover {
   cursor: pointer;
 }
+@media screen and (max-width: 640px) {
+  body {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+}
 header {
   display: block;
   position: relative;
@@ -158,30 +163,6 @@ header nav a:hover {
 .banner .pic2-sm {
   display: none;
 }
-@media screen and (max-width: 640px) {
-  .banner .pic2 {
-    display: none;
-  }
-  .banner .pic2-sm {
-    position: absolute;
-    z-index: 30;
-    display: block;
-    width: 40%;
-    top: 30%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-}
-@media screen and (max-width: 640px) {
-  .sm-layer3 {
-    background-color: #fff;
-    height: 90px;
-  }
-}
 .intro {
   position: relative;
   padding: 6.9rem 0;
@@ -199,7 +180,7 @@ header nav a:hover {
 .intro img {
   position: absolute;
   left: 40%;
-  margin-left: -0.3rem;
+  margin-left: -1.3rem;
   height: 100%;
   width: auto;
   -webkit-transform: translateX(-100%);
@@ -226,10 +207,45 @@ header nav a:hover {
   }
 }
 @media screen and (max-width: 640px) {
+  html {
+    font-size: 100px;
+  }
+}
+@media screen and (max-width: 640px) {
+  header li {
+    font-size: 0.33rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  .banner .pic2 {
+    display: none;
+  }
+  .banner .pic2-sm {
+    position: absolute;
+    z-index: 30;
+    display: block;
+    width: 40%;
+    top: 30%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+@media screen and (max-width: 640px) {
+  .sm-layer3 {
+    background-color: #fff;
+    height: 2.28rem;
+  }
+}
+@media screen and (max-width: 640px) {
   .intro {
-    padding: 2.5rem 0;
+    padding: 0rem 0;
   }
   .intro li {
+    margin: .36rem auto;
     width: 50%;
   }
   .intro li img,
@@ -242,6 +258,12 @@ header nav a:hover {
   .intro li p {
     line-height: 1.5;
   }
+  .intro li h3 {
+    font-size: 0.28rem;
+  }
+  .intro li p {
+    font-size: 0.28rem;
+  }
   .intro li img {
     position: relative;
     -webkit-transform: translateX(0%);
@@ -251,7 +273,7 @@ header nav a:hover {
     transform: translateX(0%);
     left: 0;
     margin: auto;
-    width: 70px;
-    height: 70px;
+    width: 1.2rem;
+    height: 1.2rem;
   }
 }

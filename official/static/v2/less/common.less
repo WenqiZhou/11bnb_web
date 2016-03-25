@@ -1,3 +1,5 @@
+@import "mixins";
+@import "mixins/media";
 @fs_p: 2.8rem;
 
 .clearfix {
@@ -7,6 +9,7 @@
     content: "";
   }
 }
+
 body {
   background-color: #f0f0f0;
   overflow-x: hidden;
@@ -35,3 +38,7 @@ html {
     cursor: pointer;
   }
 }
+
+.media-sm({ body {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+} });
