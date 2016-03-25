@@ -265,6 +265,11 @@ footer {
     display: flex !important;
     /* android 4.4 */
   }
+  .job-box ul::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
   .job-box ul li {
     float: none!important;
     /* 子元素自动占据剩余的空间 */
