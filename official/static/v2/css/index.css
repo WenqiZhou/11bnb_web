@@ -276,4 +276,7 @@ header nav a:hover {
     width: 1.2rem;
     height: 1.2rem;
   }
+  .intro li:nth-child(2) img {
+    height: 1.3rem;
+  }
 }

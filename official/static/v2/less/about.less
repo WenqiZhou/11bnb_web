@@ -140,11 +140,12 @@
         line-height: 100%;
       }
       h5{
-        &:not(:first-child){
-          display: block;
+        line-height: 200% !important;
+        &:not(:nth-of-type(1)){
+          display: block !important;
         }
-        &:first-child{
-          display: none;
+        &:nth-of-type(1) {
+          display: none !important;
         }
       }
       p{
@@ -199,10 +200,10 @@
     }
 
     h5 {
-      &:first-child {
+      &:nth-of-type(1) {
         display: block;
       }
-      &:not(:first-child){
+      &:not(:nth-of-type(1)){
         display: none;
       }
     }
