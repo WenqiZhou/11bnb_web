@@ -26,6 +26,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 86518958e1e11706e71e317531bd9fcbe7cef18a
               <caret line="171" column="35" selection-start-line="171" selection-start-column="35" selection-end-line="171" selection-end-column="35" />
 =======
               <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
@@ -81,6 +84,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 86518958e1e11706e71e317531bd9fcbe7cef18a
               <caret line="74" column="11" selection-start-line="74" selection-start-column="11" selection-end-line="74" selection-end-column="11" />
 =======
               <caret line="67" column="80" selection-start-line="67" selection-start-column="80" selection-end-line="67" selection-end-column="80" />
@@ -95,6 +101,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 86518958e1e11706e71e317531bd9fcbe7cef18a
               <caret line="142" column="9" selection-start-line="142" selection-start-column="9" selection-end-line="142" selection-end-column="9" />
 =======
               <caret line="110" column="9" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
@@ -108,10 +117,13 @@
         <entry file="file://$PROJECT_DIR$/official/static/v2/less/mixins.less">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
             <state vertical-scroll-proportion="0.3083434">
               <caret line="72" column="7" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
 =======
+>>>>>>> 86518958e1e11706e71e317531bd9fcbe7cef18a
             <state vertical-scroll-proportion="0.0">
               <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
 >>>>>>> feature/tuobaocheng/aboutPage
@@ -132,6 +144,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 86518958e1e11706e71e317531bd9fcbe7cef18a
               <caret line="10" column="36" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="36" />
 =======
               <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
@@ -146,6 +161,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 86518958e1e11706e71e317531bd9fcbe7cef18a
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 =======
               <caret line="265" column="16" selection-start-line="265" selection-start-column="16" selection-end-line="265" selection-end-column="16" />
@@ -221,8 +239,11 @@
       <sortByType />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
       <pane id="Scratches" />
       <pane id="Scope" />
+>>>>>>> 86518958e1e11706e71e317531bd9fcbe7cef18a
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -323,6 +344,11 @@
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
+      <pane id="Scope" />
+      <pane id="Scratches" />
+=======
+>>>>>>> 86518958e1e11706e71e317531bd9fcbe7cef18a
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -381,6 +407,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
+    <frame x="10" y="23" width="1910" height="975" extended-state="7" />
+    <editor active="false" />
+=======
     <frame x="10" y="23" width="1910" height="975" extended-state="0" />
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -391,11 +421,15 @@
 =======
     <editor active="false" />
 >>>>>>> feature/tuobaocheng/join_usPage
+>>>>>>> 86518958e1e11706e71e317531bd9fcbe7cef18a
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973822" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973822" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -405,6 +439,7 @@
 =======
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973822" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
 >>>>>>> feature/tuobaocheng/join_usPage
+>>>>>>> 86518958e1e11706e71e317531bd9fcbe7cef18a
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -729,6 +764,91 @@
     <entry file="file://$PROJECT_DIR$/official/about.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="171" column="35" selection-start-line="171" selection-start-column="35" selection-end-line="171" selection-end-column="35" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/official/news.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="93" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/official/static/v2/less/about.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="97" column="12" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="12" />
+          <folding>
+            <element signature="e#239#560#0" expanded="false" />
+            <element signature="e#570#794#0" expanded="false" />
+            <element signature="e#1083#1276#0" expanded="false" />
+            <element signature="e#1803#2131#0" expanded="false" />
+            <element signature="e#2145#2468#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/official/static/v2/less/common.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/official/static/v2/less/mixins.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="11" selection-start-line="74" selection-start-column="11" selection-end-line="74" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/official/join_us.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="142" column="9" selection-start-line="142" selection-start-column="9" selection-end-line="142" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/official/static/v2/less/join_us.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1870#1967#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/official/static/v2/less/news.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/official/static/v2/less/fragment/footer.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/official/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -816,6 +936,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="143" column="1" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 86518958e1e11706e71e317531bd9fcbe7cef18a
         </state>
       </provider>
     </entry>
@@ -863,6 +986,9 @@
         <state vertical-scroll-proportion="0.45828438">
           <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 86518958e1e11706e71e317531bd9fcbe7cef18a
         </state>
       </provider>
     </entry>
@@ -920,6 +1046,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 86518958e1e11706e71e317531bd9fcbe7cef18a
           <caret line="171" column="35" selection-start-line="171" selection-start-column="35" selection-end-line="171" selection-end-column="35" />
 =======
           <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
@@ -974,10 +1103,13 @@
     <entry file="file://$PROJECT_DIR$/official/static/v2/less/join_us.less">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
         <state vertical-scroll-proportion="0.3083434">
           <caret line="72" column="7" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
 =======
+>>>>>>> 86518958e1e11706e71e317531bd9fcbe7cef18a
         <state vertical-scroll-proportion="0.0">
           <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
 >>>>>>> feature/tuobaocheng/aboutPage
