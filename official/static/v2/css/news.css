@@ -234,7 +234,7 @@ html {
     height: 70px;
   }
 }
-.header.header {
+.header.header-about {
   position: absolute;
 }
 .header .logo {
@@ -469,10 +469,10 @@ header {
     font-size: 1.9rem;
   }
 }
-header nav {
+.header .nav {
   color: #555555;
 }
-header nav a:hover {
+.header .nav a:hover {
   color: #959595;
 }
 header nav .bor {

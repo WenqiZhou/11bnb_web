@@ -234,7 +234,7 @@ html {
     height: 70px;
   }
 }
-.header.header {
+.header.header-about {
   position: absolute;
 }
 .header .logo {
@@ -406,12 +406,12 @@ html {
   }
 }
 @media screen and (max-width: 640px) {
-  header li {
+  .header li {
     font-size: 0.35rem;
   }
 }
 @media screen and (min-width: 567px) and (max-width: 640px) {
-  header li {
+  .header li {
     font-size: 0.2rem !important;
   }
 }

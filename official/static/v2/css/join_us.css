@@ -234,7 +234,7 @@ html {
     height: 70px;
   }
 }
-.header.header {
+.header.header-about {
   position: absolute;
 }
 .header .logo {
@@ -475,15 +475,15 @@ footer {
     padding: 0 !important;
   }
 }
-header nav {
+.header .nav {
   color: #555555;
 }
-header nav a:hover {
+.header .nav a:hover {
   color: #959595;
 }
-header nav {
+.header .nav {
   background-color: transparent;
 }
-header nav .bor {
+.header .nav .bor {
   left: 75%;
 }
