@@ -21,31 +21,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1005">
+              <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="common.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/v2/less/common.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="89" column="38" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
+            <state relative-caret-position="318">
+              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/v2/css/common.css">
+      <file leaf-file-name="about.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="89" column="36" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
+            <state relative-caret-position="375">
+              <caret line="182" column="37" selection-start-line="182" selection-start-column="37" selection-end-line="182" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/v2/js/base.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
+            <state relative-caret-position="330">
+              <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="news.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/news.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1350">
+              <caret line="90" column="17" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="join_us.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/join_us.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2085">
+              <caret line="139" column="18" selection-start-line="139" selection-start-column="18" selection-end-line="139" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -54,8 +84,18 @@
       <file leaf-file-name="mixins.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/v2/less/mixins.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
+            <state relative-caret-position="1650">
               <caret line="110" column="2" selection-start-line="110" selection-start-column="2" selection-end-line="110" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/v2/less/fragment/header.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-15">
+              <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -67,23 +107,23 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/static/v2/css/reset.css" />
-        <option value="$PROJECT_DIR$/static/v2/less/fragment/header.less" />
         <option value="$PROJECT_DIR$/static/v2/less/fragment/footer.less" />
         <option value="$PROJECT_DIR$/static/v2/less/mixins.less" />
         <option value="$PROJECT_DIR$/static/v2/less/mixins/media.less" />
         <option value="$PROJECT_DIR$/static/v2/css/index.css" />
         <option value="$PROJECT_DIR$/static/v2/less/join_us.less" />
-        <option value="$PROJECT_DIR$/about.html" />
-        <option value="$PROJECT_DIR$/join_us.html" />
         <option value="$PROJECT_DIR$/static/v2/less/about.less" />
         <option value="$PROJECT_DIR$/static/v2/less/news.less" />
-        <option value="$PROJECT_DIR$/news.html" />
         <option value="$PROJECT_DIR$/test.html" />
+        <option value="$PROJECT_DIR$/static/v2/less/index.less" />
+        <option value="$PROJECT_DIR$/static/v2/css/common.css" />
+        <option value="$PROJECT_DIR$/static/v2/less/common.less" />
+        <option value="$PROJECT_DIR$/about.html" />
         <option value="$PROJECT_DIR$/static/v2/js/base.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/static/v2/less/index.less" />
-        <option value="$PROJECT_DIR$/static/v2/less/common.less" />
-        <option value="$PROJECT_DIR$/static/v2/css/common.css" />
+        <option value="$PROJECT_DIR$/static/v2/less/fragment/header.less" />
+        <option value="$PROJECT_DIR$/news.html" />
+        <option value="$PROJECT_DIR$/join_us.html" />
       </list>
     </option>
   </component>
@@ -121,7 +161,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -157,32 +196,6 @@
               <option name="myItemId" value="v2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vue" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="official" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="official" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="swp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -273,120 +286,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="official" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="official" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="image" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="official" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="official" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="official" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="official" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mixins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="official" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="official" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fragment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="official" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="official" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -410,6 +309,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -506,11 +406,12 @@
       <workItem from="1458526805660" duration="7406000" />
       <workItem from="1458546764415" duration="10682000" />
       <workItem from="1458610366095" duration="53683000" />
+      <workItem from="1459130290608" duration="533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98803000" />
+    <option name="totallyTimeSpent" value="100428000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -520,18 +421,18 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23564357" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -550,14 +451,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/v2/less/mixins.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -578,7 +471,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1875">
           <caret line="125" column="12" selection-start-line="125" selection-start-column="12" selection-end-line="125" selection-end-column="12" />
-          <folding />
+          <folding>
+            <marker date="1459130636000" expanded="true" signature="2713:2771" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="2820:2843" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="3255:3279" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="3653:3778" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4222:4341" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4379:4420" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4397:4418" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4480:4516" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4593:4618" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4716:4835" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4852:4980" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4995:5128" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5174:5249" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5260:5278" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5289:5361" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5373:5646" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5753:5795" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5857:5894" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5871:5892" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7019:7026" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7079:7132" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7183:7209" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7394:7421" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7437:7466" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7481:7510" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7527:7782" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -609,7 +529,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
-          <folding />
+          <folding>
+            <marker date="1459130636000" expanded="true" signature="2713:2771" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="2820:2843" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="3255:3279" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="3653:3778" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4222:4341" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4379:4420" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4397:4418" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4480:4516" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4593:4618" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4716:4835" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4852:4980" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4995:5128" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5174:5249" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5260:5278" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5289:5361" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5373:5646" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5753:5795" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5857:5894" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5871:5892" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7019:7026" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7079:7132" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7183:7209" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7394:7421" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7437:7466" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7481:7510" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7527:7782" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -692,19 +639,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/v2/less/fragment/header.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="44" column="54" selection-start-line="44" selection-start-column="54" selection-end-line="44" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/v2/less/fragment/footer.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -737,32 +675,32 @@
         <state relative-caret-position="1338">
           <caret line="215" column="1" selection-start-line="215" selection-start-column="1" selection-end-line="215" selection-end-column="1" />
           <folding>
-            <marker date="1458906297000" expanded="true" signature="15343:15401" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="15450:15473" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="15885:15909" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="16283:16408" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="16852:16971" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="17009:17050" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="17027:17048" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="17110:17146" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="17196:17221" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="17319:17438" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="17455:17583" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="17598:17731" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="17777:17852" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="17863:17881" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="17892:17964" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="17976:18249" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="18356:18398" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="18460:18497" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="18474:18495" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="19622:19629" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="19682:19735" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="19786:19812" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="19997:20024" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="20040:20069" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="20084:20113" placeholder="{...}" />
-            <marker date="1458906297000" expanded="true" signature="20130:20385" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="2713:2771" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="2820:2843" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="3255:3279" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="3653:3778" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4222:4341" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4379:4420" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4397:4418" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4480:4516" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4593:4618" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4716:4835" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4852:4980" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="4995:5128" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5174:5249" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5260:5278" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5289:5361" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5373:5646" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5753:5795" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5857:5894" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="5871:5892" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7019:7026" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7079:7132" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7183:7209" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7394:7421" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7437:7466" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7481:7510" placeholder="{...}" />
+            <marker date="1459130636000" expanded="true" signature="7527:7782" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -805,14 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/join_us.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/v2/less/about.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="477">
@@ -825,14 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="117" column="28" selection-start-line="117" selection-start-column="28" selection-end-line="117" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -851,15 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/news.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -888,14 +801,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="50" column="23" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/v2/less/index.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -906,32 +811,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/v2/less/mixins.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
+        <state relative-caret-position="1650">
           <caret line="110" column="2" selection-start-line="110" selection-start-column="2" selection-end-line="110" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/v2/less/common.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="89" column="38" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/v2/css/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="89" column="36" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
+        <state relative-caret-position="15">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/v2/js/base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
+        <state relative-caret-position="330">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/v2/css/fragment/footer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="65" column="3" selection-start-line="65" selection-start-column="3" selection-end-line="65" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/v2/less/common.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/v2/less/fragment/header.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="90" column="17" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/join_us.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2085">
+          <caret line="139" column="18" selection-start-line="139" selection-start-column="18" selection-end-line="139" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="182" column="37" selection-start-line="182" selection-start-column="37" selection-end-line="182" selection-end-column="37" />
           <folding />
         </state>
       </provider>

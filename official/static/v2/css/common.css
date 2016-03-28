@@ -27,629 +27,189 @@ html {
 }
 @-webkit-keyframes "about" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 25%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 25%;
   }
 }
 @-moz-keyframes "about" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 25%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 25%;
   }
 }
 @-ms-keyframes "about" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 25%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 25%;
   }
 }
 @-o-keyframes "about" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 25%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 25%;
   }
 }
 @keyframes "about" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 25%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
-  }
-}
-@-webkit-keyframes "about" {
-  50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
-  }
-  100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
-  }
-}
-@-moz-keyframes "about" {
-  50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
-  }
-  100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
-  }
-}
-@-ms-keyframes "about" {
-  50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
-  }
-  100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
-  }
-}
-@-o-keyframes "about" {
-  50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
-  }
-  100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
-  }
-}
-@keyframes "about" {
-  50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
-  }
-  100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 25%;
   }
 }
 @-webkit-keyframes "join_us" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 75%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 75%;
   }
 }
 @-moz-keyframes "join_us" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 75%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 75%;
   }
 }
 @-ms-keyframes "join_us" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 75%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 75%;
   }
 }
 @-o-keyframes "join_us" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 75%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 75%;
   }
 }
 @keyframes "join_us" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 75%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 75%;
   }
 }
 @-webkit-keyframes "news" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 50%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 50%;
   }
 }
 @-moz-keyframes "news" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 50%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 50%;
   }
 }
 @-ms-keyframes "news" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 50%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 50%;
   }
 }
 @-o-keyframes "news" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 50%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 50%;
   }
 }
 @keyframes "news" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 50%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 50%;
   }
 }
 @-webkit-keyframes "index" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 0%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 0%;
   }
 }
 @-moz-keyframes "index" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 0%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 0%;
   }
 }
 @-ms-keyframes "index" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 0%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 0%;
   }
 }
 @-o-keyframes "index" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 0%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 0%;
   }
 }
 @keyframes "index" {
   50% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 0%;
   }
   100% {
-    transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    /* IE 9 */
-    -moz-transform: translateX(100%);
-    /* Firefox */
-    -webkit-transform: translateX(100%);
-    /* Safari 和 Chrome */
-    -o-transform: translateX(100%);
-    /* Opera */
+    left: 0%;
   }
 }
 .bor.index {
-  -webkit-animation: index 2s;
-  -moz-animation: index 2s;
-  -ms-animation: index 2s;
-  -o-animation: index 2s;
-  animation: index 2s;
+  -webkit-animation: index 0.6s;
+  -moz-animation: index 0.6s;
+  -ms-animation: index 0.6s;
+  -o-animation: index 0.6s;
+  animation: index 0.6s;
 }
 .bor.join_us {
-  -webkit-animation: join_us 2s;
-  -moz-animation: join_us 2s;
-  -ms-animation: join_us 2s;
-  -o-animation: join_us 2s;
-  animation: join_us 2s;
+  -webkit-animation: join_us 0.6s;
+  -moz-animation: join_us 0.6s;
+  -ms-animation: join_us 0.6s;
+  -o-animation: join_us 0.6s;
+  animation: join_us 0.6s;
 }
 .bor.news {
-  -webkit-animation: news 2s;
-  -moz-animation: news 2s;
-  -ms-animation: news 2s;
-  -o-animation: news 2s;
-  animation: news 2s;
+  -webkit-animation: news 0.6s;
+  -moz-animation: news 0.6s;
+  -ms-animation: news 0.6s;
+  -o-animation: news 0.6s;
+  animation: news 0.6s;
 }
 .bor.about {
-  -webkit-animation: about 2s;
-  -moz-animation: about 2s;
-  -ms-animation: about 2s;
-  -o-animation: about 2s;
-  animation: about 2s;
+  -webkit-animation: about 0.6s;
+  -moz-animation: about 0.6s;
+  -ms-animation: about 0.6s;
+  -o-animation: about 0.6s;
+  animation: about 0.6s;
 }

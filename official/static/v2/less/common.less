@@ -1,5 +1,6 @@
 @import "mixins";
 @import "mixins/media";
+
 @fs_p: 2.8rem;
 
 .clearfix {
@@ -43,51 +44,42 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 } });
 
+.keyframes("about", { 50% {
+  left: 25%
+} 100% {
+    left: 25%
+  } });
 
-.keyframes("about",{
-50%{
-  .transform_translateX(100%);
-}
-100%{
-  .transform_translateX(100%);
-}
-});
-.keyframes("about",{
-50%{
-  .transform_translateX(100%);
-}
-100%{
-  .transform_translateX(100%);
-}
-});
-.keyframes("join_us",{
-50%{
-  .transform_translateX(100%);
-}
-100%{
-  .transform_translateX(100%);
-}
-});
-.keyframes("news",{
-50%{
-  .transform_translateX(100%);
-}
-100%{
-  .transform_translateX(100%);
-}
-});
-.keyframes("index",{
-50%{
-  .transform_translateX(100%);
-}
-100%{
-  .transform_translateX(100%);
-}
-});
+.keyframes("join_us", { 50% {
+  left: 75%
+} 100% {
+    left: 75%
+  } });
+.keyframes("news", { 50% {
+  left: 50%
+} 100% {
+    left: 50%
+  } });
+.keyframes("index", { 50% {
+  left: 0%
+} 100% {
+    left: 0%
+  } });
 
 
-.bor.index{.animation(index 2s );}
-.bor.join_us{.animation(join_us 2s );}
-.bor.news{.animation(news 2s );}
-.bor.about{.animation(about 2s );}
+.bor.index {
+  .animation(index .6s);
+}
+
+.bor.join_us {
+  .animation(join_us .6s);
+}
+
+.bor.news {
+  .animation(news .6s);
+}
+
+.bor.about {
+  .animation(about .6s);
+}
 
