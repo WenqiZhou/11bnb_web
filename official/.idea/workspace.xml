@@ -21,41 +21,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file leaf-file-name="common.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/v2/less/common.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="71" selection-start-line="27" selection-start-column="71" selection-end-line="27" selection-end-column="71" />
+            <state relative-caret-position="441">
+              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.i8.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/v2/less/fragment/header.i8.less">
+      <file leaf-file-name="join_us.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/v2/less/join_us.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+            <state relative-caret-position="411">
+              <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.i8.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/v2/less/fragment/footer.i8.less">
+      <file leaf-file-name="news.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/v2/less/news.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            <state relative-caret-position="498">
+              <caret line="140" column="9" selection-start-line="140" selection-start-column="9" selection-end-line="140" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about.i8.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/v2/less/about.i8.less">
+      <file leaf-file-name="base.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/v2/js/base.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+            <state relative-caret-position="369">
+              <caret line="75" column="42" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -94,28 +94,28 @@
       <file leaf-file-name="index.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/v2/less/index.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-975">
-              <caret line="76" column="3" selection-start-line="76" selection-start-column="3" selection-end-line="76" selection-end-column="3" />
+            <state relative-caret-position="273">
+              <caret line="174" column="5" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.less" pinned="false" current-in-tab="true">
+      <file leaf-file-name="about.less" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/v2/less/about.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="219" column="22" selection-start-line="219" selection-start-column="22" selection-end-line="219" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/v2/less/fragment/header.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="67" column="7" selection-start-line="67" selection-start-column="7" selection-end-line="67" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/v2/less/common.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+            <state relative-caret-position="288">
+              <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -134,18 +134,18 @@
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/static/v2/css/common.css" />
         <option value="$PROJECT_DIR$/static/v2/less/common.less" />
-        <option value="$PROJECT_DIR$/static/v2/js/base.js" />
         <option value="$PROJECT_DIR$/news.html" />
         <option value="$PROJECT_DIR$/join_us.html" />
-        <option value="$PROJECT_DIR$/static/v2/less/news.less" />
-        <option value="$PROJECT_DIR$/static/v2/less/about.less" />
         <option value="$PROJECT_DIR$/static/v2/less/fragment/header.less" />
         <option value="$PROJECT_DIR$/about.html" />
         <option value="$PROJECT_DIR$/static/v2/less/join_us.less" />
-        <option value="$PROJECT_DIR$/static/v2/less/index.less" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/static/v2/less/index.i8.less" />
         <option value="$PROJECT_DIR$/static/v2/less/news.i8.less" />
+        <option value="$PROJECT_DIR$/static/v2/less/index.less" />
+        <option value="$PROJECT_DIR$/static/v2/js/base.js" />
+        <option value="$PROJECT_DIR$/static/v2/less/news.less" />
+        <option value="$PROJECT_DIR$/static/v2/less/about.less" />
       </list>
     </option>
   </component>
@@ -311,6 +311,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="official" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="official" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -428,12 +450,12 @@
       <workItem from="1458526805660" duration="7406000" />
       <workItem from="1458546764415" duration="10682000" />
       <workItem from="1458610366095" duration="53683000" />
-      <workItem from="1459130290608" duration="2399000" />
+      <workItem from="1459130290608" duration="2824000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102294000" />
+    <option name="totallyTimeSpent" value="102719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -478,32 +500,32 @@
         <state relative-caret-position="600">
           <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
           <folding>
-            <marker date="1459133980000" expanded="true" signature="2713:2771" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="2820:2843" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="3255:3279" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="3653:3778" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="4222:4341" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="4379:4420" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="4397:4418" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="4480:4516" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="4599:4624" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="4722:4841" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="4858:4986" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="5001:5134" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="5180:5255" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="5266:5284" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="5295:5367" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="5379:5652" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="5759:5801" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="5863:5900" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="5877:5898" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="7027:7034" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="7087:7140" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="7191:7217" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="7402:7429" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="7445:7474" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="7489:7518" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="7535:7790" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="2713:2771" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="2820:2843" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="3255:3279" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="3653:3778" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="4222:4341" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="4379:4420" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="4397:4418" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="4480:4516" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="4599:4624" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="4722:4841" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="4858:4986" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="5001:5134" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="5180:5255" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="5266:5284" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="5295:5367" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="5379:5652" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="5759:5801" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="5863:5900" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="5877:5898" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="7027:7034" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="7087:7140" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="7191:7217" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="7402:7429" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="7445:7474" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="7489:7518" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="7535:7790" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -616,32 +638,32 @@
         <state relative-caret-position="1338">
           <caret line="215" column="1" selection-start-line="215" selection-start-column="1" selection-end-line="215" selection-end-column="1" />
           <folding>
-            <marker date="1459133980000" expanded="true" signature="2713:2771" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="2820:2843" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="3255:3279" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="3653:3778" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="4222:4341" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="4379:4420" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="4397:4418" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="4480:4516" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="4599:4624" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="4722:4841" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="4858:4986" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="5001:5134" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="5180:5255" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="5266:5284" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="5295:5367" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="5379:5652" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="5759:5801" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="5863:5900" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="5877:5898" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="7027:7034" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="7087:7140" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="7191:7217" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="7402:7429" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="7445:7474" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="7489:7518" placeholder="{...}" />
-            <marker date="1459133980000" expanded="true" signature="7535:7790" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="2713:2771" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="2820:2843" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="3255:3279" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="3653:3778" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="4222:4341" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="4379:4420" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="4397:4418" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="4480:4516" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="4599:4624" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="4722:4841" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="4858:4986" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="5001:5134" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="5180:5255" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="5266:5284" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="5295:5367" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="5379:5652" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="5759:5801" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="5863:5900" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="5877:5898" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="7027:7034" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="7087:7140" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="7191:7217" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="7402:7429" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="7445:7474" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="7489:7518" placeholder="{...}" />
+            <marker date="1459134162000" expanded="true" signature="7535:7790" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -726,14 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/v2/js/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/news.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
@@ -758,22 +772,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/v2/less/about.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2739">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/v2/less/news.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="137" column="3" selection-start-line="137" selection-start-column="3" selection-end-line="137" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/v2/less/mixins.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1365">
@@ -782,26 +780,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/v2/less/join_us.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/v2/less/mixins/media.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-417">
           <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/v2/less/common.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -862,14 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/v2/less/index.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-975">
-          <caret line="76" column="3" selection-start-line="76" selection-start-column="3" selection-end-line="76" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/v2/less/join_us.i8.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -878,10 +852,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/v2/js/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="75" column="42" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/v2/less/fragment/header.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="67" column="7" selection-start-line="67" selection-start-column="7" selection-end-line="67" selection-end-column="7" />
+        <state relative-caret-position="288">
+          <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/v2/less/common.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/v2/less/join_us.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/v2/less/news.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="140" column="9" selection-start-line="140" selection-start-column="9" selection-end-line="140" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/v2/less/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="174" column="5" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/v2/less/about.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="219" column="22" selection-start-line="219" selection-start-column="22" selection-end-line="219" selection-end-column="22" />
           <folding />
         </state>
       </provider>

@@ -1,12 +1,12 @@
 function initnav() {
 
     var ua = navigator.userAgent;
-    $("header nav a").each(function () {
+    $(".header .nav a").each(function () {
         var url = $(this).attr("href");
         $(this).attr("href", "javascript:void(0);");
         $(this).attr("url", url);
     });
-    $("header nav a").on("click", function () {
+    $(".header .nav a").on("click", function () {
         var index = $(this).parent().index();
         var url = $(this).attr("url");
         $(".bor").animate({
