@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .clearfix::after {
   display: table;
   clear: both;
@@ -214,55 +215,35 @@ html {
   animation: about 0.6s;
 }
 .header {
+  z-index: 103;
   display: block;
-  position: relative;
+  position: absolute;
   width: 100%;
+  height: 90px;
 }
-@media screen and (max-width: 640px) {
-  .header {
-    height: 40px;
-  }
-}
-@media screen and (min-width: 641px) {
-  .header {
-    height: 70px;
-  }
-}
-@media screen and (min-width: 1025px) {
-  .header {
-    height: 70px;
-  }
+.header.join_us {
+  position: relative;
 }
 .header.header-about {
   position: absolute;
 }
 .header .logo {
-  height: 90%;
+  float: left;
+  height: 75%;
   max-height: 100%;
   width: auto;
-  position: absolute;
-  z-index: 5;
-  top: 50%;
-  left: 3%;
-  -webkit-transform: translateY(-50%);
-}
-@media screen and (max-width: 640px) {
-  .header .logo {
-    display: none;
-  }
+  margin-top: 5px;
+  margin-left: 20px;
 }
 .header .nav {
+  height: 70%;
+  padding-top: 10px;
+  display: block;
   color: #fff;
-  font-size: 2rem;
-  position: absolute;
-  z-index: 5;
-  top: 50%;
+  font-size: 2em;
+  position: relative;
   right: 3%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  float: right;
 }
 .header .nav::after {
   display: table;
@@ -274,40 +255,19 @@ html {
   position: absolute;
   width: 25%;
   height: 2px;
+  z-index: 5;
   background-color: #fe393d;
   bottom: 0;
   left: 0;
-}
-@media screen and (max-width: 640px) {
-  .header .nav {
-    width: 100%;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.3);
-    top: 0;
-    right: 0;
-    -webkit-transform: translateY(0%);
-    -moz-transform: translateY(0%);
-    -o-transform: translateY(0%);
-    -ms-transform: translateY(0%);
-    transform: translateY(0%);
-  }
-  .header .nav li {
-    height: 45px !important;
-    line-height: 45px !important;
-  }
 }
 .header .nav li {
   text-align: center;
   position: relative;
   float: left;
-  height: 4.8rem;
-  line-height: 4.8rem;
-  width: 10rem;
-}
-@media screen and (max-width: 640px) {
-  .header .nav li {
-    width: 25%;
-  }
+  height: 50%;
+  line-height: 45px;
+  font-size: 14px;
+  width: 100px;
 }
 .header .nav li.active {
   font-weight: bold;
@@ -318,4 +278,86 @@ html {
 }
 .header .nav a:hover {
   color: #cacaca;
+}
+.footer {
+  display: none;
+}
+header {
+  position: absolute;
+}
+.top {
+  display: block;
+  height: 160px;
+}
+.intro {
+  width: 95%;
+  margin-bottom: 10px;
+  background-color: #fff;
+  padding: 30px 0;
+}
+.intro .item {
+  height: 92px;
+  margin: 20px auto;
+  position: relative;
+}
+.intro .item::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.intro .item .date {
+  margin-left: 18%;
+  float: left;
+  color: #fff;
+  text-align: center;
+  display: block;
+  height: 92px;
+  width: 92px;
+  padding: 21px 0;
+}
+.intro .item .date span {
+  display: block;
+  font-size: 12px;
+}
+.intro .item .date span.n2 {
+  font-weight: bold;
+  font-size: 24px;
+}
+.intro .item.n1 .date {
+  background-color: #fe393d;
+}
+.intro .item.n2 .date {
+  background-color: #dd5053;
+}
+.intro .item.n3 .date {
+  background-color: #c26668;
+}
+.intro .item.n4 .date {
+  background-color: #aa7778;
+}
+.intro .item.n5 .date {
+  background-color: #9a8a8a;
+}
+.intro .item.n6 .date {
+  background-color: #959595;
+}
+.intro .item .text {
+  position: absolute;
+  z-index: 2;
+  line-height: 92px;
+  font-size: 17px;
+  padding-left: 100px;
+  left: 18%;
+}
+.header .nav {
+  color: #555555;
+}
+.header .nav a:hover {
+  color: #959595;
+}
+.header .nav .bor {
+  left: 50%;
+}
+.footer {
+  display: none;
 }
