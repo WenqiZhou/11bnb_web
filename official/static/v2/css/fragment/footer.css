@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .clearfix::after {
   display: table;
   clear: both;
@@ -214,147 +213,16 @@ html {
   -o-animation: about 0.6s;
   animation: about 0.6s;
 }
-.header {
-  z-index: 3;
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 90px;
-}
-.header.join_us {
-  position: relative;
-}
-.header.header-about {
-  position: absolute;
-}
-.header .logo {
-  float: left;
-  height: 90%;
-  max-height: 100%;
-  width: auto;
-  margin-top: 5px;
-  margin-left: 20px;
-}
-.header .nav {
-  height: 100%;
-  line-height: 90px;
-  padding-top: 40px;
-  display: block;
-  color: #fff;
-  font-size: 2em;
-  position: relative;
-  right: 3%;
-  float: right;
-}
-.header .nav::after {
-  display: table;
-  clear: both;
-  content: "";
-}
-.header .nav .bor {
-  display: block;
-  position: absolute;
-  width: 25%;
-  height: 2px;
-  z-index: 5;
-  background-color: #fe393d;
-  bottom: 0;
-  left: 0;
-}
-.header .nav li {
-  text-align: center;
-  position: relative;
-  float: left;
-  height: 50%;
-  line-height: 45px;
-  width: 100px;
-}
-.header .nav li.active {
-  font-weight: bold;
-}
-.header .nav a {
-  display: block;
-  width: 100%;
-}
-.header .nav a:hover {
-  color: #cacaca;
-}
 .footer {
   display: none;
 }
-header {
-  position: absolute;
-}
-.top {
-  display: block;
-  height: 160px;
-}
-.intro {
-  width: 95%;
-  margin-bottom: 10px;
-  background-color: #fff;
-  padding: 30px 0;
-}
-.intro .item {
-  height: 92px;
-  margin: 20px auto;
-  position: relative;
-}
-.intro .item::after {
-  display: table;
-  clear: both;
-  content: "";
-}
-.intro .item .date {
-  margin-left: 18%;
-  float: left;
-  color: #fff;
-  text-align: center;
-  display: block;
-  height: 92px;
-  width: 92px;
-  padding: 21px 0;
-}
-.intro .item .date span {
-  display: block;
-  font-size: 12px;
-}
-.intro .item .date span.n2 {
-  font-weight: bold;
-  font-size: 24px;
-}
-.intro .item.n1 .date {
-  background-color: #fe393d;
-}
-.intro .item.n2 .date {
-  background-color: #dd5053;
-}
-.intro .item.n3 .date {
-  background-color: #c26668;
-}
-.intro .item.n4 .date {
-  background-color: #aa7778;
-}
-.intro .item.n5 .date {
-  background-color: #9a8a8a;
-}
-.intro .item.n6 .date {
-  background-color: #959595;
-}
-.intro .item .text {
-  position: absolute;
-  z-index: 2;
-  line-height: 92px;
-  font-size: 17px;
-  padding-left: 100px;
-  left: 18%;
-}
-.header .nav {
-  color: #555555;
-}
-.header .nav a:hover {
-  color: #959595;
-}
-.header .nav .bor {
-  left: 50%;
+@media screen and (max-width: 640px) {
+  .footer {
+    display: block;
+    padding: 3rem 0;
+  }
+  .footer img {
+    width: 35%;
+    margin: auto auto ;
+  }
 }

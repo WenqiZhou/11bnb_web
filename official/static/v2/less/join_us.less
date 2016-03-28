@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import "mixins";
-@import "fragment/header";
 @import "common";
+@import "fragment/header";
 @import "fragment/footer";
 
 .top {
@@ -104,7 +104,7 @@
     margin-bottom: 10px;
   }
   .media-sm({ .job {
-    padding: 2rem 0!important;
+    padding: 2rem 0 !important;
   } ul {
       .flex-box() !important;
       .clearfix();
@@ -136,3 +136,13 @@
   }
 }
 
+.footer {
+  display: none;
+}
+
+
+@media screen and(max-width: 640px) {
+  .footer {
+    display: block;
+  }
+}

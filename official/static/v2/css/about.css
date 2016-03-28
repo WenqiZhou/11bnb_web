@@ -320,18 +320,21 @@ html {
 .header .nav a:hover {
   color: #cacaca;
 }
-footer {
+.footer {
   display: none;
 }
 @media screen and (max-width: 640px) {
-  footer {
+  .footer {
     display: block;
     padding: 3rem 0;
   }
-  footer img {
+  .footer img {
     width: 35%;
     margin: auto auto ;
   }
+}
+.banner-unslider-test {
+  display: none;
 }
 .banner {
   position: relative;
@@ -608,4 +611,12 @@ footer {
 }
 .header .nav .bor {
   left: 25%;
+}
+.footer {
+  display: none;
+}
+@media screen and (max-width: 640px) {
+  .footer {
+    display: block;
+  }
 }

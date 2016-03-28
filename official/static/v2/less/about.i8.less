@@ -9,6 +9,10 @@
 
 .banner-unslider-test {
 
+  .dots{
+    z-index: 300;
+  }
+
   li {
     position: relative;
   }
@@ -21,6 +25,7 @@
   }
 
   .text {
+    width: 100%;
     color: #fff;
     text-align: center;
     h2 {
@@ -35,23 +40,23 @@
     }
     position: absolute;
     z-index: 20;
-    width: auto;
-    top: 50%;
-    left: 20%;
+    top: 40%;
+    left: 0;
   }
   .imgBox {
     height: auto;
     position: relative;
-    background: rgba(0, 0, 0, 0, 5);
+    //background: rgba(0, 0, 0, 0, 5);
     .layer1 {
-      display: none;
+      filter: alpha(opacity=20);
+      display: block;
       position: absolute;
       top: 0;
       left: 0;
       z-index: 10;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: #000;
     }
   }
 }
@@ -60,26 +65,43 @@
   display: block;
   height: 62px;
   width: 34px;
-  background: url(../image/ban-icon-l.png) center no-repeat;
+  //background: url(../image/ban-icon-l.png) center no-repeat;
   position: absolute;
-  z-index: 2;
+  z-index: 200;
   top: 40%;
   cursor: pointer;
-  &:hover {
+  //&:hover {
     background: url(../image/ban-icon-r.png) center no-repeat;
-  }
+  //}
 }
 
+//.next-icon {
+//  right: 3%;
+//  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+//  &:hover {
+//    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+//  }
+//}
+//
+//.prev-icon {
+//  left: 3%;
+//  &:hover {
+//    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+//  }
+//}
 .next-icon {
-  right: 1rem;
-  &:hover {
-  }
+  right: 3%;
+  //filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  //&:hover {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+  //}
 }
 
 .prev-icon {
-  left: 1rem;
-  &:hover {
-  }
+  left: 3%;
+  //&:hover {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  //}
 }
 
 .swiper-pagination-bullet {

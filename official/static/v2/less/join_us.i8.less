@@ -24,11 +24,11 @@
   > p {
     margin: 15px auto;
     width: 90%;
-    &:nth-child(1) {
+    &.n1 {
       padding-bottom: 15px;
       border-bottom: solid 1px #c9c9c9;
     }
-    &:nth-child(2) {
+    &.n2 {
       text-align: right;
     }
   }
@@ -80,9 +80,10 @@
     width: 95%;
     margin: auto;
     .job {
-      padding: 50px 0;
-      &:not(:last-child) {
-        border-bottom: solid 2px #ddd;
+      padding: 20px 0;
+      border-top: solid 2px #ddd;
+      &.n1 {
+        border-top: none;
       }
 
     }

@@ -207,6 +207,7 @@
 
 
 <div class="banner banner-unslider-test">
+
     <ul>
         <li>
             <div class="imgBox">
@@ -260,72 +261,18 @@
         </li>
     </ul>
 
-
     <!-- The HTML -->
-    <a href="#" class="unslider-arrow prev">Previous slide</a>
-    <a href="#" class="unslider-arrow next">Next slide</a>
+    <span class="unslider-arrow prev prev-icon"></span>
+    <span class="unslider-arrow next next-icon"></span>
+
+
+
 
 
 </div>
 
 
 <div class="banner banner-ot">
-
-
-    <div class="banner-unslider">
-        <ul>
-            <li>
-                <div class="imgBox">
-                    <div class="layer1"></div>
-                    <img class="pic1" src="static/v2/image/ban-p21.png" alt="">
-                </div>
-                <div class="text">
-                    <h2>“依依短租，全国领先的短租民宿预订平台”</h2>
-                    <p>以分享快乐为基因，给你依依不舍的体验</p>
-                </div>
-            </li>
-            <li>
-                <div class="imgBox">
-                    <div class="layer1"></div>
-                    <img class="pic1" src="static/v2/image/ban-p22.png" alt="">
-                </div>
-                <div class="text">
-                    <h2>“比酒店更妙趣更划算”</h2>
-                    <p>民宿、公寓、别墅、客栈、家庭旅馆</p>
-                </div>
-            </li>
-            <li>
-                <div class="imgBox">
-                    <div class="layer1"></div>
-                    <img class="pic1" src="static/v2/image/ban-p23.png" alt="">
-                </div>
-                <div class="text">
-                    <h2>“一屋一世界”</h2>
-                    <p>有故事的房东和房子，秉承宾至如归的待客之道</p>
-                </div>
-            </li>
-            <li>
-                <div class="imgBox">
-                    <div class="layer1"></div>
-                    <img class="pic1" src="static/v2/image/ban-p24.png" alt="">
-                </div>
-                <div class="text">
-                    <h2>“乐于分享和体验的房客”</h2>
-                    <p>很潮的人，自信独立不守旧，追求快乐和品质生活</p>
-                </div>
-            </li>
-            <li>
-                <div class="imgBox">
-                    <div class="layer1"></div>
-                    <img class="pic1" src="static/v2/image/ban-p25.png" alt="">
-                </div>
-                <div class="text">
-                    <h2>“四海有家的使命”</h2>
-                    <p>用分享经济连接房东和房客，让全国老百姓200万亿不动产“动”起来</p>
-                </div>
-            </li>
-        </ul>
-    </div>
 
 
     <div class="swiper-container">
@@ -461,15 +408,25 @@
 <script>
 
     $(document).ready(function () {
+
+
         initnav();
-        window.onresize = function () {
-            getWidth('.imgBox', 657 / 1440);
+
+        function initimgsize() {
+            var ua = navigator.userAgent;
+            if (ua.indexOf("MSIE") > -1) {
+                getWidth('.imgBox', 630 / 1440);
+            } else {
+                getWidth('.imgBox', 657 / 1440);
+            }
         }
-        getWidth('.imgBox', 657 / 1440);
+
+        window.onresize = initimgsize;
+        initimgsize();
         var ua = navigator.userAgent;
         if (ua.indexOf("MSIE") > -1) {
-            $('.banner-unslider-test').unslider({
-                speed: 3000,               //  The speed to animate each slide (in milliseconds)
+            var unslider = $('.banner-unslider-test').unslider({
+                speed: 500,               //  The speed to animate each slide (in milliseconds)
                 delay: 5000,              //  The delay between slide animations (in milliseconds)
                 complete: function () {
                 },  //  A function that gets called after every slide animation
