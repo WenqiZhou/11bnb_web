@@ -1,0 +1,241 @@
+@charset "UTF-8";
+@import "mixins";
+@import "fragment/header";
+@import "common";
+@import "fragment/footer";
+.banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  .swiper-slide.f1 .text {
+    text-align: center;
+  }
+
+  .text {
+    color: #fff;
+    text-align: center;
+    h2 {
+      font-weight: bold;
+      font-size: 6rem;
+      line-height: 110%;
+    }
+    p {
+      font-size: 3rem;
+      line-height: 180%;
+    }
+    position: absolute;
+    z-index: 20;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    .transform_translate(-50%, -50%);
+  }
+  .imgBox{
+    height: auto;
+    position: relative;
+    background: rgba(0,0,0,0,5);
+    .layer1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+  .next-icon, .prev-icon {
+    display: block;
+    height: 62px;
+    width: 34px;
+    background: url(../image/ban-icon-l.png) center no-repeat;
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    cursor: pointer;
+    &:hover{
+      background: url(../image/ban-icon-r.png) center no-repeat;
+    }
+  }
+  .next-icon {
+    right: 1rem;
+    .transform(rotate(180deg));
+    &:hover{
+      .transform(rotate(360deg));
+    }
+  }
+  .prev-icon {
+    left: 1rem;
+    &:hover {
+      .transform(rotate(180deg));
+    }
+  }
+
+  .swiper-pagination-bullet {
+    .border_radius();
+    border: solid 2px #fff;
+    //background-color: rgba(0, 0, 0, 0);
+    &.swiper-pagination-bullet-active {
+      border: none;
+      background-color: #fff;
+    }
+  }
+
+  .media-md({
+  .text {
+    width:100%;
+    padding:0.5rem 5% 1.5rem 5%;
+    color:#000;
+    h2 {
+      font-size: 4rem;
+    }
+    p {
+      font-size: 2.5rem;
+    }
+  }
+  .prev-icon,.next-icon {
+    top: 50%;
+  }
+  });
+
+  .media-sm({
+  .banner{
+    background-color:#fff;
+    .next-icon, .prev-icon {
+      top:70%;
+      .transform(scale(0.5))!important;
+    }
+    .next-icon {
+      background: url(../image/sm-ban-r.png) center no-repeat !important;
+      .transform(rotate(0deg));
+    }
+    .prev-icon {
+      background: url(../image/sm-ban-l.png) center no-repeat !important;
+    }
+    .swiper-pagination-bullet.swiper-pagination-bullet-active{
+      background-color:#959595;
+
+    }
+    .text {
+      position:relative;
+      text-align: left !important;
+      width:100%;
+      padding:1.5rem 13% 2.8rem 13%;
+      color:#3d3d3d;
+      .transform_translate(0%, 0%);
+      left: 0;
+      top: 0;
+      text-overflow: ellipsis;
+      h2 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .intro {
+    .item {
+      img{
+        position: relative !important;
+        margin: 0.5rem auto;
+      }
+      h2,h5,p {
+        margin-left: 0 !important;
+      }
+      h2, h5 {
+        text-align: center;
+      }
+      h2{
+        line-height: 100%;
+      }
+      h5{
+        line-height: 150% !important;
+        font-size: 2rem !important;
+        &:not(:nth-of-type(1)){
+          display: block !important;
+        }
+        &:nth-of-type(1) {
+          display: none !important;
+        }
+      }
+      p{
+        font-size: @fs_p - 1 !important;
+      }
+    }
+  }
+   });
+
+.intro {
+  hr {
+    background-color: #c9c9c9;
+    margin: auto;
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 3.6rem;
+    line-height: 400%;
+  }
+  h5 {
+    font-size: 2.4rem;
+    line-height: 300%;
+  }
+
+  p {
+    color: #555555;
+    font-size: @fs_p - 1;
+    line-height: 200%;
+  }
+
+  > p {
+    //margin: 6rem auto;
+
+    .margin(10px auto, 40px auto, 60px auto);
+    width: 90%;
+  }
+
+  .item {
+    position: relative;
+    .margin(40px auto, 80px auto, 120px auto);
+    width: 90%;
+    img {
+      position: absolute;
+      width: 16%;
+    }
+    h2, h5, p {
+      margin-left: 25%;
+    }
+
+    h2 {
+    }
+
+    h5 {
+      &:nth-of-type(1) {
+        display: block;
+      }
+      &:not(:nth-of-type(1)){
+        display: none;
+      }
+    }
+
+    p {
+      font-size: 2.4rem;
+      line-height: 200%;
+    }
+
+  }
+
+}
+
+header {
+  nav {
+    .bor {
+      left: 25%;
+    }
+  }
+
+}
+
