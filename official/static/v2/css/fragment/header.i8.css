@@ -217,21 +217,7 @@ html {
   display: block;
   position: relative;
   width: 100%;
-}
-@media screen and (max-width: 640px) {
-  .header {
-    height: 40px;
-  }
-}
-@media screen and (min-width: 641px) {
-  .header {
-    height: 70px;
-  }
-}
-@media screen and (min-width: 1025px) {
-  .header {
-    height: 70px;
-  }
+  height: 90px;
 }
 .header.header-about {
   position: absolute;
@@ -277,24 +263,6 @@ html {
   background-color: #fe393d;
   bottom: 0;
   left: 0;
-}
-@media screen and (max-width: 640px) {
-  .header .nav {
-    width: 100%;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.3);
-    top: 0;
-    right: 0;
-    -webkit-transform: translateY(0%);
-    -moz-transform: translateY(0%);
-    -o-transform: translateY(0%);
-    -ms-transform: translateY(0%);
-    transform: translateY(0%);
-  }
-  .header .nav li {
-    height: 45px !important;
-    line-height: 45px !important;
-  }
 }
 .header .nav li {
   text-align: center;
