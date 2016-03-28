@@ -21,30 +21,223 @@ html {
 .hp:hover {
   cursor: pointer;
 }
-header {
+@media screen and (max-width: 640px) {
+  body {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+}
+@-webkit-keyframes "about" {
+  50% {
+    left: 25%;
+  }
+  100% {
+    left: 25%;
+  }
+}
+@-moz-keyframes "about" {
+  50% {
+    left: 25%;
+  }
+  100% {
+    left: 25%;
+  }
+}
+@-ms-keyframes "about" {
+  50% {
+    left: 25%;
+  }
+  100% {
+    left: 25%;
+  }
+}
+@-o-keyframes "about" {
+  50% {
+    left: 25%;
+  }
+  100% {
+    left: 25%;
+  }
+}
+@keyframes "about" {
+  50% {
+    left: 25%;
+  }
+  100% {
+    left: 25%;
+  }
+}
+@-webkit-keyframes "join_us" {
+  50% {
+    left: 75%;
+  }
+  100% {
+    left: 75%;
+  }
+}
+@-moz-keyframes "join_us" {
+  50% {
+    left: 75%;
+  }
+  100% {
+    left: 75%;
+  }
+}
+@-ms-keyframes "join_us" {
+  50% {
+    left: 75%;
+  }
+  100% {
+    left: 75%;
+  }
+}
+@-o-keyframes "join_us" {
+  50% {
+    left: 75%;
+  }
+  100% {
+    left: 75%;
+  }
+}
+@keyframes "join_us" {
+  50% {
+    left: 75%;
+  }
+  100% {
+    left: 75%;
+  }
+}
+@-webkit-keyframes "news" {
+  50% {
+    left: 50%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+@-moz-keyframes "news" {
+  50% {
+    left: 50%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+@-ms-keyframes "news" {
+  50% {
+    left: 50%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+@-o-keyframes "news" {
+  50% {
+    left: 50%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+@keyframes "news" {
+  50% {
+    left: 50%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+@-webkit-keyframes "index" {
+  50% {
+    left: 0%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@-moz-keyframes "index" {
+  50% {
+    left: 0%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@-ms-keyframes "index" {
+  50% {
+    left: 0%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@-o-keyframes "index" {
+  50% {
+    left: 0%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@keyframes "index" {
+  50% {
+    left: 0%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+.bor.index {
+  -webkit-animation: index 0.6s;
+  -moz-animation: index 0.6s;
+  -ms-animation: index 0.6s;
+  -o-animation: index 0.6s;
+  animation: index 0.6s;
+}
+.bor.join_us {
+  -webkit-animation: join_us 0.6s;
+  -moz-animation: join_us 0.6s;
+  -ms-animation: join_us 0.6s;
+  -o-animation: join_us 0.6s;
+  animation: join_us 0.6s;
+}
+.bor.news {
+  -webkit-animation: news 0.6s;
+  -moz-animation: news 0.6s;
+  -ms-animation: news 0.6s;
+  -o-animation: news 0.6s;
+  animation: news 0.6s;
+}
+.bor.about {
+  -webkit-animation: about 0.6s;
+  -moz-animation: about 0.6s;
+  -ms-animation: about 0.6s;
+  -o-animation: about 0.6s;
+  animation: about 0.6s;
+}
+.header {
   display: block;
   position: relative;
   width: 100%;
 }
 @media screen and (max-width: 640px) {
-  header {
+  .header {
     height: 40px;
   }
 }
 @media screen and (min-width: 641px) {
-  header {
+  .header {
     height: 70px;
   }
 }
 @media screen and (min-width: 1025px) {
-  header {
+  .header {
     height: 70px;
   }
 }
-header.header {
+.header.header-about {
   position: absolute;
 }
-header .logo {
+.header .logo {
   height: 90%;
   max-height: 100%;
   width: auto;
@@ -55,11 +248,11 @@ header .logo {
   -webkit-transform: translateY(-50%);
 }
 @media screen and (max-width: 640px) {
-  header .logo {
+  .header .logo {
     display: none;
   }
 }
-header nav {
+.header .nav {
   color: #fff;
   font-size: 2rem;
   position: absolute;
@@ -72,12 +265,12 @@ header nav {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-header nav::after {
+.header .nav::after {
   display: table;
   clear: both;
   content: "";
 }
-header nav .bor {
+.header .nav .bor {
   display: block;
   position: absolute;
   width: 25%;
@@ -87,7 +280,7 @@ header nav .bor {
   left: 0;
 }
 @media screen and (max-width: 640px) {
-  header nav {
+  .header .nav {
     width: 100%;
     position: relative;
     background-color: rgba(0, 0, 0, 0.3);
@@ -99,12 +292,12 @@ header nav .bor {
     -ms-transform: translateY(0%);
     transform: translateY(0%);
   }
-  header nav li {
+  .header .nav li {
     height: 45px !important;
     line-height: 45px !important;
   }
 }
-header nav li {
+.header .nav li {
   text-align: center;
   position: relative;
   float: left;
@@ -113,32 +306,35 @@ header nav li {
   width: 10rem;
 }
 @media screen and (max-width: 640px) {
-  header nav li {
+  .header .nav li {
     width: 25%;
   }
 }
-header nav li.active {
+.header .nav li.active {
   font-weight: bold;
 }
-header nav a {
+.header .nav a {
   display: block;
   width: 100%;
 }
-header nav a:hover {
+.header .nav a:hover {
   color: #cacaca;
 }
-footer {
+.footer {
   display: none;
 }
 @media screen and (max-width: 640px) {
-  footer {
+  .footer {
     display: block;
     padding: 3rem 0;
   }
-  footer img {
+  .footer img {
     width: 35%;
     margin: auto auto ;
   }
+}
+.banner-unslider-test {
+  display: none;
 }
 .banner {
   position: relative;
@@ -178,6 +374,7 @@ footer {
 .banner .imgBox {
   height: auto;
   position: relative;
+  background: rgba(0, 0, 0, 0);
 }
 .banner .imgBox .layer1 {
   position: absolute;
@@ -190,8 +387,10 @@ footer {
 }
 .next-icon,
 .prev-icon {
-  color: #fff;
-  font-size: 7rem;
+  display: block;
+  height: 62px;
+  width: 34px;
+  background: url(../image/ban-icon-l.png) center no-repeat;
   position: absolute;
   z-index: 2;
   top: 40%;
@@ -199,13 +398,32 @@ footer {
 }
 .next-icon:hover,
 .prev-icon:hover {
-  color: #808688;
+  background: url(../image/ban-icon-r.png) center no-repeat;
 }
 .next-icon {
   right: 1rem;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.next-icon:hover {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 .prev-icon {
   left: 1rem;
+}
+.prev-icon:hover {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 .swiper-pagination-bullet {
   border-radius: 100%;
@@ -241,13 +459,23 @@ footer {
   }
   .banner .next-icon,
   .banner .prev-icon {
-    font-size: 5rem;
-    top: 74%;
-    color: #3e3e3e;
+    top: 70%;
+    -webkit-transform: scale(0.5) !important;
+    -moz-transform: scale(0.5) !important;
+    -o-transform: scale(0.5) !important;
+    -ms-transform: scale(0.5) !important;
+    transform: scale(0.5) !important;
   }
-  .banner .next-icon:hover,
-  .banner .prev-icon:hover {
-    color: #000;
+  .banner .next-icon {
+    background: url(../image/sm-ban-r.png) center no-repeat !important;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  .banner .prev-icon {
+    background: url(../image/sm-ban-l.png) center no-repeat !important;
   }
   .banner .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background-color: #959595;
@@ -256,7 +484,7 @@ footer {
     position: relative;
     text-align: left !important;
     width: 100%;
-    padding: 1.5rem 13% 1.5rem 13%;
+    padding: 1.5rem 13% 2.8rem 13%;
     color: #3d3d3d;
     transform: translate(0%, 0%);
     -ms-transform: translate(0%, 0%);
@@ -292,6 +520,16 @@ footer {
   }
   .intro .item h2 {
     line-height: 100%;
+  }
+  .intro .item h5 {
+    line-height: 150% !important;
+    font-size: 2rem !important;
+  }
+  .intro .item h5:not( :nth-of-type(1)) {
+    display: block !important;
+  }
+  .intro .item h5:nth-of-type(1) {
+    display: none !important;
   }
   .intro .item p {
     font-size: 1.8rem !important;
@@ -361,10 +599,24 @@ footer {
 .intro .item p {
   margin-left: 25%;
 }
+.intro .item h5:nth-of-type(1) {
+  display: block;
+}
+.intro .item h5:not( :nth-of-type(1)) {
+  display: none;
+}
 .intro .item p {
   font-size: 2.4rem;
   line-height: 200%;
 }
-header nav .bor {
+.header .nav .bor {
   left: 25%;
+}
+.footer {
+  display: none;
+}
+@media screen and (max-width: 640px) {
+  .footer {
+    display: block;
+  }
 }
