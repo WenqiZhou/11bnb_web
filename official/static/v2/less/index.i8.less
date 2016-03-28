@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import "mixins";
-@import "fragment/header";
+@import "fragment/header.i8";
 @import "common";
 @import "mixins/media";
 
@@ -9,9 +9,7 @@
 //}
 
 .banner {
-  .pic1-sm {
-    display: none;
-  }
+  .pic1-sm{display:none;}
   .pic2-sm-text {
     display: none;
   }
@@ -100,6 +98,7 @@
 //
 //.loop(1024);
 
+
 .media-sm({ html {
   font-size: 100px;
 } });
@@ -116,12 +115,8 @@
 
 .media-sm({ //
   .banner {
-    .pic1-sm {
-      display: block;
-    }
-    .pic1 {
-      display: none;
-    }
+    .pic1-sm{display:block;}
+    .pic1{display:none;}
 
     .pic2 {
       display: none;
@@ -191,7 +186,3 @@
   }
 } }
 );
-
-.header {
-  position: absolute;
-}

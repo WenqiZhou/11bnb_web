@@ -475,6 +475,6 @@ header {
 .header .nav a:hover {
   color: #959595;
 }
-header nav .bor {
+.header .nav .bor {
   left: 50%;
 }

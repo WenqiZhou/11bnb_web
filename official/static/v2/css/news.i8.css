@@ -320,182 +320,161 @@ html {
 .header .nav a:hover {
   color: #cacaca;
 }
-.banner {
-  position: relative;
-}
-.banner .pic1-sm {
+footer {
   display: none;
 }
-.banner .pic2-sm-text {
-  display: none;
+@media screen and (max-width: 640px) {
+  footer {
+    display: block;
+    padding: 3rem 0;
+  }
+  footer img {
+    width: 35%;
+    margin: auto auto ;
+  }
 }
-.banner .layer1 {
+header {
   position: absolute;
-  z-index: 1;
-  top: 0;
-  width: 100%;
-  height: 80%;
-  background-color: rgba(0, 0, 0, 0.2);
 }
-.banner .layer2 {
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  width: 100%;
-  height: 20%;
-  background-color: rgba(255, 255, 255, 0.5);
+@media screen and (max-width: 640px) {
+  header nav {
+    background-color: transparent;
+  }
 }
-.banner .pic2 {
-  left: 15%;
-  height: 50%;
-  width: auto;
-  position: absolute;
-  z-index: 5;
-  top: 47%;
-  -webkit-transform: translateY(-50%);
+.top {
+  display: block;
 }
-.banner .pic2-sm {
-  display: none;
+@media screen and (max-width: 640px) {
+  .top {
+    height: 60px;
+  }
+}
+@media screen and (min-width: 641px) {
+  .top {
+    height: 160px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .top {
+    height: 160px;
+  }
 }
 .intro {
-  position: relative;
-  padding: 6.9rem 0;
-  background-color: #f8f8f8;
+  width: 95%;
+  border-radius: 6px;
+  -o-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  box-shadow: 4px 4px 8px #d4d4d4;
+  -o-box-shadow: 4px 4px 8px #d4d4d4;
+  -mo-box-shadow: 4px 4px 8px #d4d4d4;
+  -moz-box-shadow: 4px 4px 8px #d4d4d4;
+  -webkit-box-shadow: 4px 4px 8px #d4d4d4;
+  margin-bottom: 10px;
+  background-color: #fff;
+  padding: 30px 0;
 }
-.intro ul {
-  width: 100%;
-}
-.intro li {
-  margin: 1rem 0;
+.intro .item {
+  margin: 20px auto;
   position: relative;
+}
+.intro .item::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.intro .item .date {
+  margin-left: 18%;
   float: left;
-  width: 25%;
+  border-radius: 100%;
+  -o-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  color: #fff;
+  text-align: center;
+  display: block;
+  height: 7.7rem;
+  width: 7.7rem;
+  padding: 1.8rem 0;
 }
-.intro img {
+.intro .item .date span {
+  display: block;
+  font-size: 1.7rem;
+}
+.intro .item .date span:nth-child(2) {
+  font-weight: bold;
+  font-size: 3.4rem;
+}
+.intro .item:nth-child(1) .date {
+  background-color: #fe393d;
+}
+.intro .item:nth-child(2) .date {
+  background-color: #dd5053;
+}
+.intro .item:nth-child(3) .date {
+  background-color: #c26668;
+}
+.intro .item:nth-child(4) .date {
+  background-color: #aa7778;
+}
+.intro .item:nth-child(5) .date {
+  background-color: #9a8a8a;
+}
+.intro .item:nth-child(6) .date {
+  background-color: #959595;
+}
+.intro .item .text {
   position: absolute;
-  left: 40%;
-  margin-left: -1.3rem;
-  height: 100%;
-  width: auto;
-  -webkit-transform: translateX(-100%);
-  -moz-transform: translateX(-100%);
-  -o-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  transform: translateX(-100%);
-}
-.intro h3,
-.intro p {
-  margin-left: 40%;
-}
-.intro h3 {
+  z-index: 2;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   font-size: 2.4rem;
-  line-height: 2;
-}
-.intro p {
-  font-size: 1.8rem;
-  line-height: 2;
-}
-@media screen and (min-width: 641px) and (max-width: 1024px) {
-  .intro li {
-    width: 50%;
-  }
+  padding-left: 8.7rem;
+  left: 18%;
 }
 @media screen and (max-width: 640px) {
-  html {
-    font-size: 100px;
+  .intro .item {
+    height: 4.7rem;
+    height: 56px;
+    margin: 10px auto;
+    width: 95%;
   }
-}
-@media screen and (max-width: 640px) {
-  .header li {
-    font-size: 0.35rem;
+  .intro .item .date {
+    margin-left: auto;
+    padding: 0.8rem 0;
+    height: 4.7rem;
+    width: 4.7rem;
+    height: 56px;
+    width: 56px;
   }
-}
-@media screen and (min-width: 567px) and (max-width: 640px) {
-  .header li {
-    font-size: 0.2rem !important;
-  }
-}
-@media screen and (max-width: 640px) {
-  .banner .pic1-sm {
+  .intro .item .date span {
     display: block;
+    font-size: 1.2rem;
   }
-  .banner .pic1 {
-    display: none;
+  .intro .item .date span:nth-child(2) {
+    font-weight: bold;
+    font-size: 3.0rem;
   }
-  .banner .pic2 {
-    display: none;
-  }
-  .banner .pic2-sm {
-    position: absolute;
-    z-index: 30;
-    display: block;
-    width: 40%;
-    top: 36%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-  .banner .pic2-sm-text {
-    display: block;
-    position: absolute;
-    z-index: 30;
-    top: 120%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    font-size: .28rem;
-    text-align: center;
-    color: #3d3d3d;
+  .intro .item .text {
+    margin-left: 0;
+    padding-left: 0;
+    width: 75%;
+    left: 25%;
+    right: 0;
+    color: #555555;
+    font-size: 1.9rem;
   }
 }
-@media screen and (max-width: 640px) {
-  .sm-layer3 {
-    background-color: #fff;
-    height: 1.8rem;
-  }
+.header .nav {
+  color: #555555;
 }
-@media screen and (max-width: 640px) {
-  .intro {
-    padding: 0rem 0;
-  }
-  .intro li {
-    margin: .36rem auto;
-    width: 50%;
-  }
-  .intro li img,
-  .intro li h3,
-  .intro li p {
-    margin: auto;
-    text-align: center;
-  }
-  .intro li h3,
-  .intro li p {
-    line-height: 1.5;
-  }
-  .intro li h3 {
-    font-size: 0.28rem;
-  }
-  .intro li p {
-    font-size: 0.28rem;
-  }
-  .intro li img {
-    position: relative;
-    -webkit-transform: translateX(0%);
-    -moz-transform: translateX(0%);
-    -o-transform: translateX(0%);
-    -ms-transform: translateX(0%);
-    transform: translateX(0%);
-    left: 0;
-    margin: auto;
-    height: 1.2rem;
-  }
+.header .nav a:hover {
+  color: #959595;
 }
-.header {
-  position: absolute;
+header nav .bor {
+  left: 50%;
 }
