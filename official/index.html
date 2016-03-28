@@ -13,14 +13,27 @@
 
     <link rel="stylesheet" href="static/v2/css/reset.css">
 
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="static/v2/css/index.i8.css?12d3d111">
+    <!--[if lt IE 10]>
+    <script type="text/javascript" src="static/v2/js/PIE.js"></script>
+    <style>
+        $(function() {
+        if (window.PIE) {
+        $('.rounded').each(function() {
+            PIE.attach(this);
+        });
+        }
+        });
+    </style>
     <![endif]-->
-    <!--[if gt IE 8]><!-->
+
+    <!--&lt;!&ndash;[if lte IE 8]>-->
+    <!--<link rel="stylesheet" href="static/v2/css/index.i8.css?12d3d111">-->
+    <!--<![endif]&ndash;&gt;-->
+    <!--&lt;!&ndash;[if gt IE 8]>&lt;!&ndash;>-->
+    <!--<link rel="stylesheet" href="static/v2/css/index.css?12d3d111">-->
+    <!--&lt;!&ndash;<![endif]&ndash;&gt;-->
+    <!--<script type="text/javascript" src="static/v2/js/html5.js"></script>-->
     <link rel="stylesheet" href="static/v2/css/index.css?12d3d111">
-    <!--<![endif]-->
-
-
     <script type="text/javascript" src="static/v2/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="static/v2/js/base.js?d1"></script>
     <script>
@@ -38,9 +51,9 @@
     </script>
 </head>
 <body>
-<div class="header">
+<header class="header">
         <img class="logo" src="static/v2/image/icon-logo.png" alt="">
-    <div class="nav">
+    <nav class="nav">
         <ul>
             <li class="active">首页</li>
             <li><a href="about.html">关于</a></li>
@@ -48,8 +61,20 @@
             <li><a href="join_us.html">加入我们</a></li>
         </ul>
         <span class="bor"></span>
-    </div>
-</div>
+    </nav>
+</header>
+<!--<div class="header">-->
+        <!--<img class="logo" src="static/v2/image/icon-logo.png" alt="">-->
+    <!--<div class="nav">-->
+        <!--<ul>-->
+            <!--<li class="active">首页</li>-->
+            <!--<li><a href="about.html">关于</a></li>-->
+            <!--<li><a href="news.html">新闻</a></li>-->
+            <!--<li><a href="join_us.html">加入我们</a></li>-->
+        <!--</ul>-->
+        <!--<span class="bor"></span>-->
+    <!--</div>-->
+<!--</div>-->
 <div class="banner">
     <img class="pic2-sm" src="static/v2/image/big2-sm2.png" alt="">
     <div class="pic2-sm-text">
