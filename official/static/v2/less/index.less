@@ -9,6 +9,7 @@
 //}
 
 .banner {
+  .pic1-sm{display:none;}
   .pic2-sm-text {
     display: none;
   }
@@ -101,19 +102,22 @@
 .media-sm({ html {
   font-size: 100px;
 } });
-.media-sm({ header {
+.media-sm({ .header {
   li {
     font-size: 0.35rem;
   }
 } });
 @media screen and(min-width: 567px) and(max-width: 640px) {
-  header li {
+  .header li {
     font-size: 0.2rem !important;
   }
 }
 
 .media-sm({ //
   .banner {
+    .pic1-sm{display:block;}
+    .pic1{display:none;}
+
     .pic2 {
       display: none;
     }
@@ -123,7 +127,7 @@
       z-index: 30;
       display: block;
       width: 40%;
-      top: 30%;
+      top: 36%;
       left: 50%;
       .transform(translateX(-50%));
     }
@@ -131,7 +135,7 @@
       display: block;
       position: absolute;
       z-index: 30;
-      top: 130%;
+      top: 120%;
       left: 50%;
       .transform(translateX(-50%));
       font-size: .28rem;
@@ -145,7 +149,7 @@
 .media-sm({ //
   .sm-layer3 {
     background-color: #fff;
-    height: 1.78rem+.5;
+    height: 1.8rem;
   } });
 
 .media-sm(

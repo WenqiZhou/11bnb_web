@@ -1,5 +1,6 @@
 @import "mixins";
 @import "mixins/media";
+
 @fs_p: 2.8rem;
 
 .clearfix {
@@ -42,3 +43,43 @@ html {
 .media-sm({ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 } });
+
+.keyframes("about", { 50% {
+  left: 25%
+} 100% {
+    left: 25%
+  } });
+
+.keyframes("join_us", { 50% {
+  left: 75%
+} 100% {
+    left: 75%
+  } });
+.keyframes("news", { 50% {
+  left: 50%
+} 100% {
+    left: 50%
+  } });
+.keyframes("index", { 50% {
+  left: 0%
+} 100% {
+    left: 0%
+  } });
+
+
+.bor.index {
+  .animation(index .6s);
+}
+
+.bor.join_us {
+  .animation(join_us .6s);
+}
+
+.bor.news {
+  .animation(news .6s);
+}
+
+.bor.about {
+  .animation(about .6s);
+}
+

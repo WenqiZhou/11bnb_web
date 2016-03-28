@@ -14,10 +14,13 @@
 
     <link rel="stylesheet" href="static/v2/css/reset.css">
     <link rel="stylesheet" href="static/v2/swp/swiper-3.3.1.min.css">
-    <link rel="stylesheet" href="static/v2/css/about.css?121">
+    <link rel="stylesheet" href="static/v2/css/about.css?1d21">
     <script type="text/javascript" src="static/v2/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="static/v2/swp/swiper-3.3.1.min.js"></script>
-    <script type="text/javascript" src="static/v2/js/base.js?1"></script>
+    <script type="text/javascript" src="static/v2/js/base.js?1d"></script>
+    <script src="static/v2/unslider/jquery.event.move.js"></script>
+    <script src="static/v2/unslider/jquery.event.swipe.js"></script>
+    <script src="static/v2/unslider/unslider.min.js"></script>
     <!–[if lt IE 9]>
     <script src="static/js/html5.min.js"></script>
     <![endif]–>
@@ -25,9 +28,9 @@
     </style>
 </head>
 <body>
-<header class="header">
+<div class="header header-about">
         <img class="logo" src="static/v2/image/icon-logo.png" alt="">
-    <nav>
+    <div class="nav">
         <ul>
             <li><a href="index.html">首页</a></li>
             <li class="active">关于</li>
@@ -40,8 +43,8 @@
             <!--<li><a href="javascript:void(0);">加入我们</a></li>-->
         </ul>
         <span class="bor"></span>
-    </nav>
-</header>
+    </div>
+</div>
 <div class="banner">
     <div class="swiper-container">
         <div class="swiper-wrapper">
@@ -170,9 +173,9 @@
     </div>
 
 </div>
-<footer>
+<div class="footer">
     <img src="static/v2/image/icon-logo2.png" alt="">
-</footer>
+</div>
 <script>
 
     $(document).ready(function () {
@@ -181,17 +184,22 @@
             getWidth('.imgBox',657/1440);
         }
         getWidth('.imgBox',657/1440);
-        var swiper = new Swiper('.swiper-container', {
-            pagination: '.swiper-pagination',
-            nextButton: '.next-icon',
-            prevButton: '.prev-icon',
-            slidesPerView: 1,
-            paginationClickable: true,
+        var ua = navigator.userAgent;
+        if(ua.indexOf("MSIE") > -1){
+            $('.banner .swiper-container').unslider();
+        }else{
+            var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
+                nextButton: '.next-icon',
+                prevButton: '.prev-icon',
+                slidesPerView: 1,
+                paginationClickable: true,
 //        spaceBetween: 30,
-            loop: true,
-            slidesOffsetAfter: 100,
-            autoplay: 3000,
-        });
+                loop: true,
+                slidesOffsetAfter: 100,
+                autoplay: 3000,
+            });
+        }
     });
 
 </script>
