@@ -173,11 +173,11 @@ header nav a:hover {
   }
 }
 .bor.about {
-  -webkit-animation: toabout 0.3s;
-  -moz-animation: toabout 0.3s;
-  -ms-animation: toabout 0.3s;
-  -o-animation: toabout 0.3s;
-  animation: toabout 0.3s;
+  -webkit-animation: toabout 1s;
+  -moz-animation: toabout 1s;
+  -ms-animation: toabout 1s;
+  -o-animation: toabout 1s;
+  animation: toabout 1s;
 }
 footer {
   display: none;
