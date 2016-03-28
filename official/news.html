@@ -12,11 +12,30 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport">
 
     <link rel="stylesheet" href="static/v2/css/reset.css">
-    <link rel="stylesheet" href="static/v2/swp/swiper-3.3.1.min.css">
-    <link rel="stylesheet" href="static/v2/css/news.css?v=11122dddede22111">
-    <script type="text/javascript" src="static/v2/vue/vue.js"></script>
-    <script type="text/javascript" src="static/v2/swp/swiper-3.3.1.min.js"></script>
-    <script type="text/javascript" src="static/v2/js/jquery-2.1.4.min.js"></script>
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="static/v2/css/news.i8.css?12d3d111">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="static/v2/css/news.css?12d3d111">
+    <!--<![endif]-->
+
+
+    <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+
+    <!--[if lt IE 10]>
+    <script type="text/javascript" src="static/v2/js/PIE.js"></script>
+    <script>
+        $(function () {
+            if (window.PIE) {
+                $('*').each(function () {
+                    PIE.attach(this);
+                });
+            }
+        });
+    </script>
+    <![endif]-->
+
     <script type="text/javascript" src="static/v2/js/base.js?d1"></script>
     <style>
     </style>
@@ -39,50 +58,50 @@
 <div class="mainbox intro ">
     <!--<div class="box">-->
 
-        <div class="item">
+        <div class="item n1">
             <div class="date">
                 <span>2016年</span>
-                <span>2月</span>
+                <span class="n2">2月</span>
             </div>
             <div class="text">依依短租上海公司成立，入驻世界广场</div>
         </div>
 
-        <div class="item">
+        <div class="item n2">
             <div class="date">
                 <span>2016年</span>
-                <span>1月</span>
+                <span class="n2">1月</span>
             </div>
             <div class="text">依依短租iOS版、安卓版APP同时上线</div>
         </div>
 
-        <div class="item">
+        <div class="item n3">
             <div class="date">
                 <span>2015年</span>
-                <span>10月</span>
+                <span class="n2">10月</span>
             </div>
             <div class="text">完成数千万天使轮融资</div>
         </div>
 
-        <div class="item">
+        <div class="item n4">
             <div class="date">
                 <span>2015年</span>
-                <span>9月</span>
+                <span class="n2">9月</span>
             </div>
             <div class="text">依依控股、依依短租正式成立，公司入驻银河SOHO</div>
         </div>
 
-        <div class="item">
+        <div class="item n5">
             <div class="date">
                 <span>2015年</span>
-                <span>7月</span>
+                <span class="n2">7月</span>
             </div>
             <div class="text">创始人汇聚北京，筹备创建依依短租</div>
         </div>
 
-        <div class="item">
+        <div class="item n6">
             <div class="date">
                 <span>2014年</span>
-                <span>11月</span>
+                <span class="n2">11月</span>
             </div>
             <div class="text">创始人在斯坦福相遇，一起体验短租民宿</div>
         </div>

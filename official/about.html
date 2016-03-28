@@ -13,23 +13,182 @@
           name="viewport">
 
     <link rel="stylesheet" href="static/v2/css/reset.css">
+
+
+    <!--[if IE]>
+    <link rel="stylesheet" href="static/v2/css/about.i8.css?12d3d111">
+    <![endif]-->
+    <!--[if !IE]><!-->
+    <link rel="stylesheet" href="static/v2/css/about.css?12d3d111">
+    <!--<![endif]-->
+
+
+    <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+
+    <!--<script src="static/v2/unslider/jquery.event.move.js"></script>-->
+    <!--<script src="static/v2/unslider/jquery.event.swipe.js"></script>-->
+    <!--<script src="static/v2/unslider/unslider.min.js"></script>-->
+
+
+    <!--[if IE]>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://unslider.com/unslider.js"></script>
+    <!--<link rel="stylesheet" href="http://www.bootcss.com/p/unslider/style.css">-->
+    <![endif]-->
+    <!--[if !IE]><!-->
     <link rel="stylesheet" href="static/v2/swp/swiper-3.3.1.min.css">
-    <link rel="stylesheet" href="static/v2/css/about.css?1d21">
-    <script type="text/javascript" src="static/v2/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="static/v2/swp/swiper-3.3.1.min.js"></script>
+    <!--<![endif]-->
+
     <script type="text/javascript" src="static/v2/js/base.js?1d"></script>
-    <script src="static/v2/unslider/jquery.event.move.js"></script>
-    <script src="static/v2/unslider/jquery.event.swipe.js"></script>
-    <script src="static/v2/unslider/unslider.min.js"></script>
-    <!–[if lt IE 9]>
-    <script src="static/js/html5.min.js"></script>
-    <![endif]–>
+
+
     <style>
+
+        .banner-unslider-test {
+            position: relative;
+            width: 100%;
+            overflow: auto;
+
+            font-size: 18px;
+            line-height: 24px;
+            text-align: center;
+
+            color: rgba(255, 255, 255, .6);
+            text-shadow: 0 0 1px rgba(0, 0, 0, .05), 0 1px 2px rgba(0, 0, 0, .3);
+
+            background: #5b4d3d;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+        }
+
+        .banner-unslider-test ul {
+            list-style: none;
+            width: 300%;
+        }
+
+        .banner-unslider-test ul li {
+            display: block;
+            float: left;
+            width: 33%;
+            min-height: 350px;
+
+            -o-background-size: 100% 100%;
+            -ms-background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+            -webkit-background-size: 100% 100%;
+            background-size: 100% 100%;
+
+            box-shadow: inset 0 -3px 6px rgba(0, 0, 0, .1);
+        }
+
+        .banner-unslider-test .inner {
+            padding: 160px 0 110px;
+        }
+
+        .banner-unslider-test h1, .banner-unslider-test h2 {
+            font-size: 40px;
+            line-height: 52px;
+
+            color: #fff;
+        }
+
+        .banner-unslider-test .btn {
+            display: inline-block;
+            margin: 25px 0 0;
+            padding: 9px 22px 7px;
+            clear: both;
+
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+
+            border: 2px solid rgba(255, 255, 255, .4);
+            border-radius: 5px;
+        }
+
+        .banner-unslider-test .btn:hover {
+            background: rgba(255, 255, 255, .05);
+        }
+
+        .banner-unslider-test .btn:active {
+            -webkit-filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, .5));
+            -moz-filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, .5));
+            -ms-filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, .5));
+            -o-filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, .5));
+            filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, .5));
+        }
+
+        .banner-unslider-test .btn, .banner-unslider-test .dot {
+            -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3));
+            -moz-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3));
+            -ms-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3));
+            -o-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3));
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3));
+        }
+
+        .banner-unslider-test .dots {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 20px;
+        }
+
+        .banner-unslider-test .dots li {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 4px;
+
+            text-indent: -999em;
+
+            border: 2px solid #fff;
+            border-radius: 6px;
+
+            cursor: pointer;
+            opacity: .4;
+
+            -webkit-transition: background .5s, opacity .5s;
+            -moz-transition: background .5s, opacity .5s;
+            transition: background .5s, opacity .5s;
+        }
+
+        .banner-unslider-test .dots li.active {
+            background: #fff;
+            opacity: 1;
+        }
+
+        .banner-unslider-test .arrows {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: #fff;
+        }
+
+        .banner-unslider-test .arrow {
+            display: inline;
+            padding-left: 10px;
+            cursor: pointer;
+        }
+
+        .banner-unslider-test {
+            position: relative;
+            overflow: auto;
+        }
+
+        .banner-unslider-test li {
+            list-style: none;
+        }
+
+        .banner-unslider-test ul li {
+            float: left;
+        }
     </style>
 </head>
 <body>
 <div class="header header-about">
-        <img class="logo" src="static/v2/image/icon-logo.png" alt="">
+    <img class="logo" src="static/v2/image/icon-logo.png" alt="">
     <div class="nav">
         <ul>
             <li><a href="index.html">首页</a></li>
@@ -45,7 +204,130 @@
         <span class="bor"></span>
     </div>
 </div>
-<div class="banner">
+
+
+<div class="banner banner-unslider-test">
+    <ul>
+        <li>
+            <div class="imgBox">
+                <div class="layer1"></div>
+                <img class="pic1" src="static/v2/image/ban-p21.png" alt="">
+            </div>
+            <div class="text">
+                <h2>“依依短租，全国领先的短租民宿预订平台”</h2>
+                <p>以分享快乐为基因，给你依依不舍的体验</p>
+            </div>
+        </li>
+        <li>
+            <div class="imgBox">
+                <div class="layer1"></div>
+                <img class="pic1" src="static/v2/image/ban-p22.png" alt="">
+            </div>
+            <div class="text">
+                <h2>“比酒店更妙趣更划算”</h2>
+                <p>民宿、公寓、别墅、客栈、家庭旅馆</p>
+            </div>
+        </li>
+        <li>
+            <div class="imgBox">
+                <div class="layer1"></div>
+                <img class="pic1" src="static/v2/image/ban-p23.png" alt="">
+            </div>
+            <div class="text">
+                <h2>“一屋一世界”</h2>
+                <p>有故事的房东和房子，秉承宾至如归的待客之道</p>
+            </div>
+        </li>
+        <li>
+            <div class="imgBox">
+                <div class="layer1"></div>
+                <img class="pic1" src="static/v2/image/ban-p24.png" alt="">
+            </div>
+            <div class="text">
+                <h2>“乐于分享和体验的房客”</h2>
+                <p>很潮的人，自信独立不守旧，追求快乐和品质生活</p>
+            </div>
+        </li>
+        <li>
+            <div class="imgBox">
+                <div class="layer1"></div>
+                <img class="pic1" src="static/v2/image/ban-p25.png" alt="">
+            </div>
+            <div class="text">
+                <h2>“四海有家的使命”</h2>
+                <p>用分享经济连接房东和房客，让全国老百姓200万亿不动产“动”起来</p>
+            </div>
+        </li>
+    </ul>
+
+
+    <!-- The HTML -->
+    <a href="#" class="unslider-arrow prev">Previous slide</a>
+    <a href="#" class="unslider-arrow next">Next slide</a>
+
+
+</div>
+
+
+<div class="banner banner-ot">
+
+
+    <div class="banner-unslider">
+        <ul>
+            <li>
+                <div class="imgBox">
+                    <div class="layer1"></div>
+                    <img class="pic1" src="static/v2/image/ban-p21.png" alt="">
+                </div>
+                <div class="text">
+                    <h2>“依依短租，全国领先的短租民宿预订平台”</h2>
+                    <p>以分享快乐为基因，给你依依不舍的体验</p>
+                </div>
+            </li>
+            <li>
+                <div class="imgBox">
+                    <div class="layer1"></div>
+                    <img class="pic1" src="static/v2/image/ban-p22.png" alt="">
+                </div>
+                <div class="text">
+                    <h2>“比酒店更妙趣更划算”</h2>
+                    <p>民宿、公寓、别墅、客栈、家庭旅馆</p>
+                </div>
+            </li>
+            <li>
+                <div class="imgBox">
+                    <div class="layer1"></div>
+                    <img class="pic1" src="static/v2/image/ban-p23.png" alt="">
+                </div>
+                <div class="text">
+                    <h2>“一屋一世界”</h2>
+                    <p>有故事的房东和房子，秉承宾至如归的待客之道</p>
+                </div>
+            </li>
+            <li>
+                <div class="imgBox">
+                    <div class="layer1"></div>
+                    <img class="pic1" src="static/v2/image/ban-p24.png" alt="">
+                </div>
+                <div class="text">
+                    <h2>“乐于分享和体验的房客”</h2>
+                    <p>很潮的人，自信独立不守旧，追求快乐和品质生活</p>
+                </div>
+            </li>
+            <li>
+                <div class="imgBox">
+                    <div class="layer1"></div>
+                    <img class="pic1" src="static/v2/image/ban-p25.png" alt="">
+                </div>
+                <div class="text">
+                    <h2>“四海有家的使命”</h2>
+                    <p>用分享经济连接房东和房客，让全国老百姓200万亿不动产“动”起来</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide f1">
@@ -117,7 +399,7 @@
     <div class="item">
         <img src="static/v2/image/p1.png" alt="">
         <h2>代建功</h2>
-        <h5>11bnb联合创始人和CEO</h5>
+        <h5 class="n1">11bnb联合创始人和CEO</h5>
         <h5>联合创始人和CEO</h5>
         <h5>有“家”情怀的温情总裁</h5>
         <p>代建功的激情来源于驾驭变化和挑战不确定性。
@@ -130,7 +412,7 @@
     <div class="item">
         <img src="static/v2/image/p2.png" alt="">
         <h2>张强</h2>
-        <h5>11bnb联合创始人和COO</h5>
+        <h5 class="n1">11bnb联合创始人和COO</h5>
         <h5>联合创始人和COO</h5>
         <h5>不断超越自我的高能学霸</h5>
         <p>在全球排名第一的斯坦福大学商学院，张强深深地被硅谷创业文化所吸引，毕业后他和两个同学创立了11bnb。<br>
@@ -142,7 +424,7 @@
     <div class="item">
         <img src="static/v2/image/p3.png" alt="">
         <h2>王冠</h2>
-        <h5>11bnb联合创始人和CTO</h5>
+        <h5 class="n1">11bnb联合创始人和CTO</h5>
         <h5>联合创始人和CTO</h5>
         <h5>塑造未来的计算机博士</h5>
         <p>
@@ -153,7 +435,7 @@
     <div class="item">
         <img src="static/v2/image/p4.png" alt="">
         <h2>王勇</h2>
-        <h5>11bnb合伙人和产品技术副总裁</h5>
+        <h5 class="n1">11bnb合伙人和产品技术副总裁</h5>
         <h5>合伙人和产品兼技术副总裁</h5>
         <h5>心怀天下的IT暖男</h5>
         <p>
@@ -164,7 +446,7 @@
     <div class="item">
         <img src="static/v2/image/p5.png" alt="">
         <h2>周文祺</h2>
-        <h5>11bnb合伙人和技术总监</h5>
+        <h5 class="n1">11bnb合伙人和技术总监</h5>
         <h5>合伙人和技术总监</h5>
         <h5>资深技术专家和项目经理</h5>
         <p>资深技术专家和项目经理。
@@ -180,14 +462,30 @@
 
     $(document).ready(function () {
         initnav();
-        window.onresize = function(){
-            getWidth('.imgBox',657/1440);
+        window.onresize = function () {
+            getWidth('.imgBox', 657 / 1440);
         }
-        getWidth('.imgBox',657/1440);
+        getWidth('.imgBox', 657 / 1440);
         var ua = navigator.userAgent;
-        if(ua.indexOf("MSIE") > -1){
-            $('.banner .swiper-container').unslider();
-        }else{
+        if (ua.indexOf("MSIE") > -1) {
+            $('.banner-unslider-test').unslider({
+                speed: 3000,               //  The speed to animate each slide (in milliseconds)
+                delay: 5000,              //  The delay between slide animations (in milliseconds)
+                complete: function () {
+                },  //  A function that gets called after every slide animation
+                keys: true,               //  Enable keyboard (left, right) arrow shortcuts
+                dots: true,               //  Display dot navigation
+                fluid: false,              //  Support responsive design. May break non-responsive designs
+                arrows: true,
+            });
+            $('.unslider-arrow').click(function () {
+                var fn = this.className.split(' ')[1];
+
+                //  Either do unslider.data('unslider').next() or .prev() depending on the className
+                unslider.data('unslider')[fn]();
+            });
+
+        } else {
             var swiper = new Swiper('.swiper-container', {
                 pagination: '.swiper-pagination',
                 nextButton: '.next-icon',
@@ -200,6 +498,8 @@
                 autoplay: 3000,
             });
         }
+
+
     });
 
 </script>

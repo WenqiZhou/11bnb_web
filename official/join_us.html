@@ -12,14 +12,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
 
     <link rel="stylesheet" href="static/v2/css/reset.css">
-    <link rel="stylesheet" href="static/v2/css/join_us.css?1d1d1111">
-    <script type="text/javascript" src="static/v2/js/jquery-2.1.4.min.js"></script>
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="static/v2/css/join_us.i8.css?12d3d111">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="static/v2/css/join_us.css?12d3d111">
+    <!--<![endif]-->
+
+
+    <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript" src="static/v2/js/base.js?d1"></script>
     <style>
     </style>
 </head>
 <body>
-<div class="header">
+<div class="header join_us">
         <img class="logo" src="static/v2/image/icon-logo2.png" alt="">
     <div class="nav">
         <ul>
@@ -38,14 +46,14 @@
     <p>我们勇往直前，向不确定的未来进发。我们大胆创新，勇于求变。我们承担使命，全身心投入到“四海有家”的使命之中。我们热情好客，让身边的每个人都感觉宾至如归。我们从最好的学习最好，不断进步。<br>
         请加入我们，成为依依伙伴，一起战斗，一起分享，互相启发。<br>
         让中国老百姓200万亿不动产“动”起来！</p>
-    <p>简历请发送至：xubo@11bnb.com</p>
+    <p style="text-align: right">简历请发送至：xubo@11bnb.com</p>
     <div class="job-box">
 
         <div class="job-bar">
             <ul>
                 <li>产品技术部</li>
                 <li>市场运营部</li>
-                <li>内容客服部</li>
+                <li class="last">内容客服部</li>
             </ul>
         </div>
         <div class="job-list">

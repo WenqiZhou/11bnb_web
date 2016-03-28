@@ -215,55 +215,36 @@ html {
   animation: about 0.6s;
 }
 .header {
+  z-index: 3;
   display: block;
-  position: relative;
+  position: absolute;
   width: 100%;
+  height: 90px;
 }
-@media screen and (max-width: 640px) {
-  .header {
-    height: 40px;
-  }
-}
-@media screen and (min-width: 641px) {
-  .header {
-    height: 70px;
-  }
-}
-@media screen and (min-width: 1025px) {
-  .header {
-    height: 70px;
-  }
+.header.join_us {
+  position: relative;
 }
 .header.header-about {
   position: absolute;
 }
 .header .logo {
+  float: left;
   height: 90%;
   max-height: 100%;
   width: auto;
-  position: absolute;
-  z-index: 5;
-  top: 50%;
-  left: 3%;
-  -webkit-transform: translateY(-50%);
-}
-@media screen and (max-width: 640px) {
-  .header .logo {
-    display: none;
-  }
+  margin-top: 5px;
+  margin-left: 20px;
 }
 .header .nav {
+  height: 100%;
+  line-height: 90px;
+  padding-top: 40px;
+  display: block;
   color: #fff;
-  font-size: 2rem;
-  position: absolute;
-  z-index: 5;
-  top: 50%;
+  font-size: 2em;
+  position: relative;
   right: 3%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  float: right;
 }
 .header .nav::after {
   display: table;
@@ -275,40 +256,18 @@ html {
   position: absolute;
   width: 25%;
   height: 2px;
+  z-index: 5;
   background-color: #fe393d;
   bottom: 0;
   left: 0;
-}
-@media screen and (max-width: 640px) {
-  .header .nav {
-    width: 100%;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.3);
-    top: 0;
-    right: 0;
-    -webkit-transform: translateY(0%);
-    -moz-transform: translateY(0%);
-    -o-transform: translateY(0%);
-    -ms-transform: translateY(0%);
-    transform: translateY(0%);
-  }
-  .header .nav li {
-    height: 45px !important;
-    line-height: 45px !important;
-  }
 }
 .header .nav li {
   text-align: center;
   position: relative;
   float: left;
-  height: 4.8rem;
-  line-height: 4.8rem;
-  width: 10rem;
-}
-@media screen and (max-width: 640px) {
-  .header .nav li {
-    width: 25%;
-  }
+  height: 50%;
+  line-height: 45px;
+  width: 100px;
 }
 .header .nav li.active {
   font-weight: bold;
@@ -320,60 +279,48 @@ html {
 .header .nav a:hover {
   color: #cacaca;
 }
-footer {
+.footer {
   display: none;
 }
-@media screen and (max-width: 640px) {
-  footer {
-    display: block;
-    padding: 3rem 0;
-  }
-  footer img {
-    width: 35%;
-    margin: auto auto ;
-  }
+.banner.banner-ot {
+  display: none;
 }
-.banner {
+.banner-unslider-test {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
-.banner .swiper-slide.f1 .text {
+.banner-unslider-test li {
+  position: relative;
+}
+.banner-unslider-test .swiper-slide.f1 .text {
   text-align: center;
 }
-.banner .text {
+.banner-unslider-test .text {
   color: #fff;
   text-align: center;
   position: absolute;
   z-index: 20;
   width: auto;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  /* IE 9 */
-  -moz-transform: translate(-50%, -50%);
-  /* Firefox */
-  -webkit-transform: translate(-50%, -50%);
-  /* Safari 和 Chrome */
-  -o-transform: translate(-50%, -50%);
-  /* Opera */
+  left: 20%;
 }
-.banner .text h2 {
+.banner-unslider-test .text h2 {
   font-weight: bold;
   font-size: 6rem;
   line-height: 110%;
 }
-.banner .text p {
+.banner-unslider-test .text p {
   font-size: 3rem;
   line-height: 180%;
 }
-.banner .imgBox {
+.banner-unslider-test .imgBox {
   height: auto;
   position: relative;
   background: rgba(0, 0, 0, 0);
 }
-.banner .imgBox .layer1 {
+.banner-unslider-test .imgBox .layer1 {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -399,138 +346,16 @@ footer {
 }
 .next-icon {
   right: 1rem;
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-.next-icon:hover {
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  transform: rotate(360deg);
 }
 .prev-icon {
   left: 1rem;
 }
-.prev-icon:hover {
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
 .swiper-pagination-bullet {
-  border-radius: 100%;
-  -o-border-radius: 100%;
-  -moz-border-radius: 100%;
-  -webkit-border-radius: 100%;
   border: solid 2px #fff;
 }
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
   border: none;
   background-color: #fff;
-}
-@media screen and (min-width: 641px) and (max-width: 1024px) {
-  .text {
-    width: 100%;
-    padding: 0.5rem 5% 1.5rem 5%;
-    color: #000;
-  }
-  .text h2 {
-    font-size: 4rem;
-  }
-  .text p {
-    font-size: 2.5rem;
-  }
-  .prev-icon,
-  .next-icon {
-    top: 50%;
-  }
-}
-@media screen and (max-width: 640px) {
-  .banner {
-    background-color: #fff;
-  }
-  .banner .next-icon,
-  .banner .prev-icon {
-    top: 70%;
-    -webkit-transform: scale(0.5) !important;
-    -moz-transform: scale(0.5) !important;
-    -o-transform: scale(0.5) !important;
-    -ms-transform: scale(0.5) !important;
-    transform: scale(0.5) !important;
-  }
-  .banner .next-icon {
-    background: url(../image/sm-ban-r.png) center no-repeat !important;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  .banner .prev-icon {
-    background: url(../image/sm-ban-l.png) center no-repeat !important;
-  }
-  .banner .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    background-color: #959595;
-  }
-  .banner .text {
-    position: relative;
-    text-align: left !important;
-    width: 100%;
-    padding: 1.5rem 13% 2.8rem 13%;
-    color: #3d3d3d;
-    transform: translate(0%, 0%);
-    -ms-transform: translate(0%, 0%);
-    /* IE 9 */
-    -moz-transform: translate(0%, 0%);
-    /* Firefox */
-    -webkit-transform: translate(0%, 0%);
-    /* Safari 和 Chrome */
-    -o-transform: translate(0%, 0%);
-    /* Opera */
-    left: 0;
-    top: 0;
-    text-overflow: ellipsis;
-  }
-  .banner .text h2 {
-    font-size: 2rem;
-  }
-  .banner .text p {
-    font-size: 1.5rem;
-  }
-  .intro .item img {
-    position: relative !important;
-    margin: 0.5rem auto;
-  }
-  .intro .item h2,
-  .intro .item h5,
-  .intro .item p {
-    margin-left: 0 !important;
-  }
-  .intro .item h2,
-  .intro .item h5 {
-    text-align: center;
-  }
-  .intro .item h2 {
-    line-height: 100%;
-  }
-  .intro .item h5 {
-    line-height: 150% !important;
-    font-size: 2rem !important;
-  }
-  .intro .item h5:not( :nth-of-type(1)) {
-    display: block !important;
-  }
-  .intro .item h5:nth-of-type(1) {
-    display: none !important;
-  }
-  .intro .item p {
-    font-size: 1.8rem !important;
-  }
 }
 .intro hr {
   background-color: #c9c9c9;
@@ -538,54 +363,30 @@ footer {
   width: 90%;
 }
 .intro h2 {
-  font-size: 3.6rem;
+  font-size: 26px;
   line-height: 400%;
 }
 .intro h5 {
-  font-size: 2.4rem;
+  font-size: 17px;
   line-height: 300%;
+  display: none;
+}
+.intro h5.n1 {
+  display: block;
 }
 .intro p {
   color: #555555;
-  font-size: 1.8rem;
+  font-size: 13px;
   line-height: 200%;
 }
 .intro > p {
+  margin: 60px auto;
   width: 90%;
-}
-@media screen and (max-width: 640px) {
-  .intro > p {
-    margin: 10px auto;
-  }
-}
-@media screen and (min-width: 641px) {
-  .intro > p {
-    margin: 40px auto;
-  }
-}
-@media screen and (min-width: 1025px) {
-  .intro > p {
-    margin: 60px auto;
-  }
 }
 .intro .item {
   position: relative;
+  margin: 120px auto;
   width: 90%;
-}
-@media screen and (max-width: 640px) {
-  .intro .item {
-    margin: 40px auto;
-  }
-}
-@media screen and (min-width: 641px) {
-  .intro .item {
-    margin: 80px auto;
-  }
-}
-@media screen and (min-width: 1025px) {
-  .intro .item {
-    margin: 120px auto;
-  }
 }
 .intro .item img {
   position: absolute;
@@ -603,9 +404,9 @@ footer {
   display: none;
 }
 .intro .item p {
-  font-size: 2.4rem;
+  font-size: 17px;
   line-height: 200%;
 }
-header nav .bor {
+.header .nav .bor {
   left: 25%;
 }
