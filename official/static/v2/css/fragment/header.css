@@ -291,6 +291,13 @@ html {
     -ms-transform: translateY(0%);
     transform: translateY(0%);
   }
+  .header .nav .bor {
+    -webkit-transform: scaleX(0.7);
+    -moz-transform: scaleX(0.7);
+    -o-transform: scaleX(0.7);
+    -ms-transform: scaleX(0.7);
+    transform: scaleX(0.7);
+  }
   .header .nav li {
     height: 45px !important;
     line-height: 45px !important;
