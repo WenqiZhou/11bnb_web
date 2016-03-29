@@ -27,14 +27,6 @@ gulp.task('webserver', function () {
         port: 3000,
         root: 'dest',
     });
-
-
-    // var server = http.createServer(function (req, res) {
-    //     var stream = fs.createReadStream("build");
-    //     stream.pipe(oppressor(req)).pipe(res);
-    // });
-    // server.listen(8000);
-
 });
 
 
@@ -45,9 +37,6 @@ gulp.task('less', function () {
         .pipe(gulp.dest('dest/css'));
 
 });
-
-
-
 
 
 // 压缩html
@@ -85,7 +74,6 @@ gulp.task('css', function () {
     // .pipe(notify({message: 'css task ok'}));
 
 });
-
 
 
 // 合并、压缩js文件
