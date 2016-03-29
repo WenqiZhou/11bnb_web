@@ -47,20 +47,8 @@ gulp.task('less', function () {
 });
 
 
-//gulp.task('bower', function () {
-//    gulp.src('bower_components/angular/*')
-//        .pipe(gulp.dest('dest/components/angular/')).pipe(gulp.dest('src/components/angular/'))
-//});
 
 
-// tpls
-// gulp.task('tpls', function () {
-//     return gulp.src('src/tpls/**/*.html')
-//         //.pipe(htmlmin({collapseWhitespace: true}))
-//         .pipe(gulp.dest('dest/tpls'))
-//     //.pipe(notify({message: 'html task ok'}));
-//
-// });
 
 // 压缩html
 gulp.task('html', function () {
@@ -68,17 +56,20 @@ gulp.task('html', function () {
         //.pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('dest'))
     //.pipe(notify({message: 'html task ok'}));
+
 });
 
 // 压缩图片
 gulp.task('img', function () {
     return gulp.src('src/images/*')
+
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngcrush()]
         }))
         .pipe(gulp.dest('dest/images/'))
+
     //.pipe(notify({message: 'img task ok'}));
 });
 
@@ -92,16 +83,9 @@ gulp.task('css', function () {
     //.pipe(minifycss())
     //.pipe(gulp.dest('dest/css'))
     // .pipe(notify({message: 'css task ok'}));
+
 });
 
-
-// 检查js
-//gulp.task('lint', function () {
-//    return gulp.src('src/js/*.js')
-//        .pipe(jshint())
-//        .pipe(jshint.reporter('default'))
-//        .pipe(notify({message: 'lint task ok'}));
-//});
 
 
 // 合并、压缩js文件
@@ -113,7 +97,6 @@ gulp.task('js', function () {
         .pipe(uglify())
         // .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('dest/js'));
-
 });
 
 
@@ -141,6 +124,7 @@ gulp.task('default', function () {
 
     // Watch image files
     gulp.watch('src/images/*', ['img']);
+
 
 });
 
