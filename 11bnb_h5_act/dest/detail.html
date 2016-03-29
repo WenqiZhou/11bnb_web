@@ -2,21 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, post-check=0, pre-check=0">
+    <meta http-equiv="Expires" content="0">
     <title>详情页面</title>
+    <script type="text/javascript" src="../bower_components/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/detail.css"/>
 </head>
 <body>
 <div class="container">
     <div class="topIntro">
         <img src="" alt=""/>
+
         <h2></h2>
         <small></small>
         <p></p>
     </div>
-    <h4><span class="leftLine"></span>标题<span class="rightLine"></span></h4>
+    <h4 class="det-title"><span class="leftLine"></span>标题<span class="rightLine"></span></h4>
+
     <div class="detailIntro">
         <div class="imgBox">
             <img src="" alt=""/>
-            <span class="posIndex"></span>
+            <span class="posIndex"><i></i></span>
         </div>
         <p></p>
     </div>
@@ -29,17 +36,36 @@
         <div class="mainApartment">
             <div class="imgBox">
                 <img src="" alt=""/>
+
                 <p></p>
                 <span class="price"></span>
             </div>
         </div>
     </div>
     <div class="recTheme">
-        <div class="imgBox">
-            <img src="" alt=""/>
-            <h5 class="title"></h5>
+        <div class="title">
+            <h4>推荐主题</h4>
+        </div>
+        <div class="banner">
+            <div class="imgBox">
+                <img src="" alt=""/>
+                <h5 class="title"></h5>
+            </div>
         </div>
     </div>
 </div>
+<script>
+    $(window).scroll(function () {
+        var scrollTop = $(this).scrollTop();
+        var scrollHeight = $(document).height();
+        var windowHeight = $(this).height();
+        if (scrollTop + windowHeight >= scrollHeight) {
+            console.log('333232');
+            $(this).append('<div class="footer"> <p>--End--</p></div>').slideDown('slow');
+        } else {
+            $(this).remove('.footer');
+        }
+    });
+</script>
 </body>
 </html>
