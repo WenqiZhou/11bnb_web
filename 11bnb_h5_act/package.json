@@ -13,6 +13,7 @@
     "http-server": "^0.9.0",
     "imagemin-pngcrush": "^4.1.0",
     "imagemin-pngquant": "^4.2.2",
+    "less": "^2.6.1",
     "oppressor": "0.0.1"
   },
   "dependencies": {

@@ -1,0 +1,23 @@
+{
+  "name": "11bnb_h5_act",
+  "description": "",
+  "main": "",
+  "authors": [
+    "tuobc <tuobaocheng@11bnb.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/11bnb/11bnb_web",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "1.9"
+  }
+}
