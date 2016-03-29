@@ -64,6 +64,18 @@ html {
   }
 }
 
+@hfsc: 50;
+.loop-hfs(@n) when (@n >= 240) {
+  @media screen and (min-width: (1px * @n - @hfsc + 1)) and (max-width: (1px * @n)) {
+    html {
+      font-size: (1px * @n / 750 * 100);
+    }
+  }
+  .loop-hfs(@n - @hfsc)
+}
+
+.loop-hfs(780);
+
 //common
 
 .clearfix {
@@ -136,13 +148,13 @@ html {
     .transform(translate(-50%, -50%));
 
   }
-  .theme-title{
-    color:#fff;
+  .theme-title {
+    color: #fff;
     font-size: .44rem;
     line-height: .56rem;
   }
-  .theme-subtitle{
-    color:#fff;
+  .theme-subtitle {
+    color: #fff;
     font-size: .32rem;
     line-height: .56rem;
   }

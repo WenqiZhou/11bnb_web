@@ -66,6 +66,61 @@ html {
     font-size: 18px;
   }
 }
+@media screen and (min-width: 731px) and (max-width: 780px) {
+  html {
+    font-size: 104px;
+  }
+}
+@media screen and (min-width: 681px) and (max-width: 730px) {
+  html {
+    font-size: 97.33333333px;
+  }
+}
+@media screen and (min-width: 631px) and (max-width: 680px) {
+  html {
+    font-size: 90.66666667px;
+  }
+}
+@media screen and (min-width: 581px) and (max-width: 630px) {
+  html {
+    font-size: 84px;
+  }
+}
+@media screen and (min-width: 531px) and (max-width: 580px) {
+  html {
+    font-size: 77.33333333px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 530px) {
+  html {
+    font-size: 70.66666667px;
+  }
+}
+@media screen and (min-width: 431px) and (max-width: 480px) {
+  html {
+    font-size: 64px;
+  }
+}
+@media screen and (min-width: 381px) and (max-width: 430px) {
+  html {
+    font-size: 57.33333333px;
+  }
+}
+@media screen and (min-width: 331px) and (max-width: 380px) {
+  html {
+    font-size: 50.66666667px;
+  }
+}
+@media screen and (min-width: 281px) and (max-width: 330px) {
+  html {
+    font-size: 44px;
+  }
+}
+@media screen and (min-width: 231px) and (max-width: 280px) {
+  html {
+    font-size: 37.33333333px;
+  }
+}
 .clearfix {
   zoom: 1;
 }
