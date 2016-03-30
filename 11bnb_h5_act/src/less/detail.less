@@ -1,10 +1,13 @@
 @import "mixins";
+body {
+  background-color: #f0f0f0;
+}
 
 p {
   font-size: .28rem;
   line-height: .48rem;
   color: #555;
-  padding: .32rem 0;
+  padding: .32rem .27rem;
 }
 
 .topIntro {
@@ -12,6 +15,7 @@ p {
   height: auto;
   background-color: #fff;
   color: #555555;
+  margin-bottom: .2rem;
   img {
     width: 100%;
     height: auto;
@@ -21,6 +25,7 @@ p {
     text-align: center;
     line-height: .56rem;
     font-weight: normal;
+    margin-top: .4rem;
   }
   small {
     display: table;
@@ -29,7 +34,7 @@ p {
     line-height: .48rem;
     background-color: #fe393d;
     padding: 0 .26rem;
-    margin: 0 auto;
+    margin: .2rem auto 0;
     color: #fff;
     .border-radius(.24rem);
   }
@@ -60,8 +65,10 @@ p {
 }
 
 .detailIntro {
-  width: 100%;
+  margin: 0 .15rem .2rem;
+  .border-radius(.03rem);
   height: auto;
+  background-color: #fff;
   .imgBox {
     position: relative;
     width: 100%;
@@ -83,6 +90,7 @@ p {
         width: .5rem;
         background: url(../images/11logo.png) center no-repeat;
         vertical-align: middle;
+        background-size: .4rem auto;
       }
       position: absolute;
       bottom: .2rem;
@@ -93,9 +101,11 @@ p {
 }
 
 .recApartment {
-  width: 100%;
+  margin: 0 .15rem .2rem;
+  .border-radius(.03rem);
   height: auto;
   background-color: #fff;
+  border-bottom: #e1e1e1 2px solid;
   .title {
     display: block;
     width: 90%;
@@ -111,6 +121,7 @@ p {
       margin-right: .1rem;
       .border-radius(.3rem);
       vertical-align: middle;
+      background-size: .4rem auto;
     }
     h4 {
       display: inline-block;
@@ -118,6 +129,7 @@ p {
       line-height: .4rem;
       font-weight: normal;
       color: #555;
+      vertical-align: middle;
     }
     a {
       display: block;
@@ -130,6 +142,7 @@ p {
         height: .3rem;
         width: .2rem;
         background: url(../images/moreIcon.png) center no-repeat;
+        background-size: .13rem auto;
       }
     }
   }
@@ -141,6 +154,9 @@ p {
       width: 48%;
       height: auto;
       float: left;
+      p{
+        padding: 0;
+      }
       .price {
         display: block;
         height: .44rem;
@@ -154,7 +170,8 @@ p {
 }
 
 .recTheme {
-  width: 100%;
+  margin: 0 .15rem .2rem;
+  .border-radius(.03rem);
   height: auto;
   background-color: #fff;
   padding: .3rem 0;
@@ -163,7 +180,7 @@ p {
     width: 90%;
     height: 1rem;
     line-height: 1rem;
-    border-bottom: #e1e1e1 1px solid;
+    border-bottom: #e1e1e1 2px solid;
     margin: 0 auto;
     h4 {
       display: inline-block;
@@ -178,28 +195,38 @@ p {
     height: auto;
     margin: 0 auto;
     padding: .25rem 0;
-    .imgBox {
-      position: relative;
+    .swiper-slide {
       height: 2rem;
       width: auto;
-      float: left;
-      img {
+      margin-right:.2rem;
+      .imgBox {
+        position: relative;
         height: 100%;
         width: auto;
-      }
-      .titleRec {
-        position: absolute;
-        bottom: .25rem;
-        left: .3rem;
-        z-index: 2;
-        color: #fff;
-        height: .4rem;
-        line-height: .4rem;
-        font-size: .28rem;
-        font-weight: normal;
+        img {
+          height: 100%;
+          width: auto;
+        }
+        .titleRec {
+          position: absolute;
+          bottom: .25rem;
+          left: .3rem;
+          z-index: 2;
+          color: #fff;
+          height: .4rem;
+          line-height: .4rem;
+          font-size: .28rem;
+          font-weight: normal;
+        }
       }
     }
+
   }
+}
+.footer {
+  width: 100%;
+  height: .5rem;
+  background: url(../images/footer.png) center no-repeat;
 }
 
 
