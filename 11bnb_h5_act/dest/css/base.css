@@ -166,10 +166,34 @@ html {
   margin-right: auto;
   margin-left: auto;
 }
+.header {
+  position: relative;
+  height: 0.8rem;
+  background-color: #edefed;
+  border-bottom: solid .02rem #d7dbdb;
+}
+.header .input {
+  text-align: center;
+  position: absolute;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 4.56rem;
+  border: solid .02rem #ced0d0;
+}
 .theme-item {
   position: relative;
   width: 95%;
   margin: .18rem auto;
+}
+.theme-item:nth-child(1) {
+  margin-top: .1rem;
 }
 .theme-item .theme-img {
   min-height: .3rem;
@@ -199,4 +223,38 @@ html {
   color: #fff;
   font-size: .32rem;
   line-height: .56rem;
+}
+.icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  background-image: url(sprite.png);
+  background-repeat: no-repeat;
+  background-size: 1.4rem;
+}
+.icon3 {
+  background-position: 0 -2.8rem;
+}
+.icon-fix {
+  background: none;
+  position: relative;
+  overflow: hidden;
+}
+.icon-fix:after {
+  content: '';
+  display: block;
+  width: 10000%;
+  height: 10000%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url(sprite.png);
+  background-repeat: no-repeat;
+  background-size: 140rem;
+  -webkit-transform-origin: 0 0;
+  -webkit-transform: scale(0.01);
+  transform-origin: 0 0;
+  transform: scale(0.01);
+}
+.icon3:after {
+  background-position: 0 -280rem;
 }
