@@ -187,22 +187,22 @@ html {
   width: 4.56rem;
   border: solid .02rem #ced0d0;
 }
-.theme-item {
+.ait_big_activity {
   position: relative;
   width: 95%;
   margin: .18rem auto;
 }
-.theme-item:nth-child(1) {
+.ait_big_activity:nth-child(1) {
   margin-top: .1rem;
 }
-.theme-item .theme-img {
+.ait_big_activity .theme-img {
   min-height: .3rem;
   border-radius: 0.1rem;
   -o-border-radius: 0.1rem;
   -moz-border-radius: 0.1rem;
   -webkit-border-radius: 0.1rem;
 }
-.theme-item .theme-titlebox {
+.ait_big_activity .theme-titlebox {
   position: absolute;
   display: block;
   text-align: center;
@@ -214,12 +214,12 @@ html {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-.theme-item .theme-title {
+.ait_big_activity .theme-title {
   color: #fff;
   font-size: .44rem;
   line-height: .56rem;
 }
-.theme-item .theme-subtitle {
+.ait_big_activity .theme-subtitle {
   color: #fff;
   font-size: .32rem;
   line-height: .56rem;

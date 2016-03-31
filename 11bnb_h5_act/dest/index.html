@@ -6,6 +6,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
 </head>
 <body>
-hello world!
+{%- macro imgUrlResize(url,size=1080) %}{{url}}_{{size}}{%- endmacro %}
+
+
+{%- macro li_theme_img(themeAttr) %}
+<div class="theme-item">
+    <img alt="{{imgUrlResize(theme.img_url,975)}}" class="theme-img">
+
+    <div class="theme-titlebox">
+        <div class="theme-title"></div>
+        <div class="theme-subtitle"></div>
+    </div>
+</div>
+{%- endmacro %}
+
+
+{%- macro li_theme_bigimg(themeList) %}
+{% for theme in themeList %}
+<div class="theme-item">
+    <img src="{{imgUrlResize(theme.image_url)}}" class="theme-img">
+
+    <div class="theme-titlebox">
+        <div class="theme-title">{{theme.title}}</div>
+        <div class="theme-subtitle">{{theme.sub_title}}</div>
+    </div>
+</div>
+{% endfor %}
+{%- endmacro %}
+
+<!-- AIT_TOP_TITLE     = 1; // 顶层标题
+    AIT_TOP_IMAGE     = 2; // 顶层图片
+    AIT_BIG_ACTIVITY  = 3; // 活动(大)
+    AIT_TITLE_double  = 4; // 标题(主副标题)
+    AIT_TITLE_single  = 5; // 标题(仅主标题)
+    AIT_IMAGE         = 6; // 图
+    AIT_TEXT          = 7; // 文
+    AIT_HOUSES        = 8; // 推荐房源
+    AIT_ACTIVITYS     = 9; // 推荐主题(活动) -->
+
+
+<!-- AIT_TOP_IMAGE     = 2; // 顶层图片 -->
+{%- macro ait_top_image(item) %}
+<div class="ait_top_image">
+    <img src="{{item.top_image.url}}_750" alt=""/>
+</div>
+{%- endmacro %}
+<!-- AIT_TITLE_double  = 4; // 标题(主副标题) -->
+{%- macro ait_title_double(item) %}
+<div class="ait_title_double">
+    <h2>{{item.title_double.title}}</h2>
+    <small>{{item.title_double.sub_title}}</small>
+</div>
+{%- endmacro %}
+<!-- AIT_TEXT          = 7; // 文 -->
+{%- macro ait_text(item) %}
+{% if item.text.show_flag %}
+<div class="ait_text showFlag">
+    <p>{{item.text.content}}</p>
+</div>
+{% else %}
+<div class="ait_text">
+    <p>{{item.text.content}}</p>
+    {% endif %}
+</div>
+{%- endmacro %}
+<!--     AIT_TITLE_single  = 5; // 标题(仅主标题) -->
+{%- macro ait_title_single(item) %}
+<div class="ait_title_single">
+    <h4 class="det-title"><span class="leftLine"></span>{{item.title_single.title}}<span class="rightLine"></span></h4>
+</div>
+{%- endmacro %}
+<!-- AIT_IMAGE         = 6; // 图 -->
+{%- macro ait_image(item) %}
+<div class="ait_image">
+    <img src="{{item.image.url}}_750" alt=""/>
+    {% if item.image.desc %}
+    <span class="posIndex"><i></i>{{item.image.desc}}</span>
+    {% endif %}
+</div>
+{%- endmacro %}
+
+
+<!--AIT_BigActivity big_activity  = 4;  // 活动(大)-->
+{%- macro type_big_activity(item) %}
+{% for act in item.activitys.activitys %}
+<div class="type_big_activity">
+    <img src="{{imgUrlResize(act.image_url)}}_1080" class="theme-img">
+
+    <div class="theme-titlebox">
+        <div class="theme-title">{{act.title}}</div>
+        <div class="theme-subtitle">{{act.sub_title}}</div>
+    </div>
+</div>
+{% endfor %}
+{%- endmacro %}
+
+
+<!-- AIT_HOUSES        = 8; // 推荐房源 -->
+{%- macro act_houses(item) %}
+<div class="act_houses">
+    <div class="title clearfix">
+        <div class="fl">
+            <span class="fav"></span>
+            <h4>{{item.houses.title}}</h4>
+        </div>
+        <a href="" class="mostLink fr">更多房屋 <span class="moreIcon"></span></a>
+    </div>
+    <div class="mainApartment clearfix">
+        {% for house in item.houses.houses %}
+        <div class="imgBox">
+            <img src="{{house.images[0].image_url}}_750" alt=""/>
+
+            <p>{{house.title}}</p>
+            <span class="price">&yen;{{house.price}}</span>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{%- endmacro %}
+
+<!-- AIT_ACTIVITYS     = 9; // 推荐主题(活动) -->
+{%- macro ait_activitys(item) %}
+<div class="ait_activitys">
+    <div class="title">
+        <h4>{{item.activitys.title}}</h4>
+    </div>
+    <div class="banner clearfix">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for activity in item.activitys.activitys %}
+                <div class="swiper-slide">
+                    <div class="imgBox">
+                        <img src="{{activity.image_url}}_750" alt=""/>
+                        <h5 class="titleRec">{{activity.title}}</h5>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{%- endmacro %}
+
+
 </body>
 </html>

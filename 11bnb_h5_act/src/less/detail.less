@@ -3,29 +3,25 @@ body {
   background-color: #f0f0f0;
 }
 
-p {
-  font-size: .28rem;
-  line-height: .48rem;
-  color: #555;
-  padding: .32rem .27rem;
-}
-
-.topIntro {
+.ait_top_image {
   width: 100%;
   height: auto;
-  background-color: #fff;
-  color: #555555;
-  margin-bottom: .2rem;
   img {
     width: 100%;
     height: auto;
   }
+}
+.ait_title_double{
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  padding-top: .2rem;
   h2 {
     font-size: .44rem;
     text-align: center;
     line-height: .56rem;
-    font-weight: normal;
-    margin-top: .4rem;
+    font-weight: normal !important;
+    color: #555;
   }
   small {
     display: table;
@@ -34,78 +30,91 @@ p {
     line-height: .48rem;
     background-color: #fe393d;
     padding: 0 .26rem;
-    margin: .2rem auto 0;
+    margin: .1rem auto 0;
     color: #fff;
     .border-radius(.24rem);
   }
 }
-
-.det-title {
+.ait_text {
   width: 100%;
-  height: 1rem;
-  line-height: 1rem;
-  text-align: center;
-  font-size: .44rem;
-  font-weight: normal;
-  color: #fe393d;
+  height: auto;
+  background-color: #fff;
+  margin-top: 10px;
+  border-bottom: #e1e1e1 1px solid;
+  p {
+    font-size: .28rem;
+    line-height: .48rem;
+    color: #555;
+    padding: .32rem .27rem;
+  }
+  &.showFlag {
+    margin-top: 0;
+  }
+}
+.ait_title_single {
+  .det-title {
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    font-size: .44rem;
+    color: #fe393d;
+    font-weight: normal;
+  }
   .leftLine, .rightLine {
-    width: 20%;
-    height: 40%;
+    width: 1.2rem;
+    height: .3rem;
     display: inline-block;
-    -webkit-background-size: 1rem auto;
-    background-size: 1rem auto;
+    -webkit-background-size: .3rem;
+    background-size: .3rem;
+    vertical-align: middle;
+    margin-top: -.1rem;
   }
 
   .leftLine {
-    background: url(../images/leftLine.png) center no-repeat;
+    background: url(/static/nh5/share/images/leftLine.png) center no-repeat;
   }
   .rightLine {
-    background: url(../images/rightLine.png) center no-repeat;
+    background: url(/static/nh5/share/images/rightLine.png) center no-repeat;
   }
 }
-
-.detailIntro {
-  margin: 0 .15rem .2rem;
+.ait_image {
+  margin: .2rem .15rem 0;
   .border-radius(.03rem);
   height: auto;
-  background-color: #fff;
-  .imgBox {
-    position: relative;
-    width: 100%;
-    height: auto;
-    background-color: #fff;
-    .posIndex {
-      display: block;
-      height: .6rem;
-      line-height: .48rem;
-      width: auto;
-      color: #fff;
-      font-size: .3rem;
-      background-color: #fe393d;
-      padding: 0 .32rem;
-      .border-radius(.3rem);
-      i {
-        display: inline-block;
-        height: 100%;
-        width: .5rem;
-        background: url(../images/11logo.png) center no-repeat;
-        vertical-align: middle;
-        background-size: .4rem auto;
-      }
-      position: absolute;
-      bottom: .2rem;
-      left: .3rem;
-      z-index: 2;
+  position: relative;
+  .posIndex {
+    display: block;
+    height: .6rem;
+    line-height: .48rem;
+    width: auto;
+    color: #fff;
+    font-size: .3rem;
+    background-color: #fe393d;
+    padding: 0 .32rem;
+    .border-radius(.3rem);
+    i {
+      display: inline-block;
+      height: 100%;
+      width: .5rem;
+      background: url(/static/nh5/share/images/11logo.png) center no-repeat;
+      vertical-align: middle;
+      background-size: .4rem;
+      -webkit-background-size: .4rem;
     }
+    position: absolute;
+    bottom: .2rem;
+    left: .3rem;
+    z-index: 2;
   }
 }
-
-.recApartment {
-  margin: 0 .15rem .2rem;
+.ait_houses{
+  margin: .2rem .15rem;
   .border-radius(.03rem);
   height: auto;
   background-color: #fff;
-  border-bottom: #e1e1e1 2px solid;
+  border-bottom: #e1e1e1 1px solid;
+  .border-radius(3px);
   .title {
     display: block;
     width: 90%;
@@ -117,17 +126,18 @@ p {
       display: inline-block;
       height: .6rem;
       width: .6rem;
-      background: url(../images/fav.png) center no-repeat #fe393d;
+      background: url(/static/nh5/share/images/fav.png) center no-repeat #fe393d;
       margin-right: .1rem;
       .border-radius(.3rem);
       vertical-align: middle;
-      background-size: .4rem auto;
+      background-size: .4rem;
+      -webkit-background-size: .4rem;
     }
     h4 {
       display: inline-block;
       font-size: .28rem;
       line-height: .4rem;
-      font-weight: normal;
+      font-weight: normal !important;
       color: #555;
       vertical-align: middle;
     }
@@ -141,8 +151,9 @@ p {
         vertical-align: text-bottom;
         height: .3rem;
         width: .2rem;
-        background: url(../images/moreIcon.png) center no-repeat;
-        background-size: .13rem auto;
+        background: url(/static/nh5/share/images/moreIcon.png) center no-repeat;
+        background-size: .13rem;
+        -webkit-background-size: .13rem;
       }
     }
   }
@@ -154,10 +165,28 @@ p {
       width: 48%;
       height: auto;
       float: left;
+      img {
+        width: 100%;
+        height: 2.05rem;
+        .border-radius(3px);
+      }
       p{
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-height: .4rem;
+        height: .8rem;
+        margin: .2rem 0;
         padding: 0;
       }
       .price {
+        i {
+          font-style: normal;
+          font-size: .28rem;
+          margin-right: .1rem;
+        }
         display: block;
         height: .44rem;
         line-height: .40rem;
@@ -166,11 +195,9 @@ p {
       }
     }
   }
-
 }
-
-.recTheme {
-  margin: 0 .15rem .2rem;
+.ait_activitys {
+  margin: .2rem .15rem;
   .border-radius(.03rem);
   height: auto;
   background-color: #fff;
@@ -186,7 +213,7 @@ p {
       display: inline-block;
       font-size: .28rem;
       line-height: .4rem;
-      font-weight: normal;
+      font-weight: normal !important;
       color: #555;
     }
   }
@@ -216,17 +243,18 @@ p {
           height: .4rem;
           line-height: .4rem;
           font-size: .28rem;
-          font-weight: normal;
+          font-weight: normal !important;
         }
       }
     }
 
   }
 }
+
 .footer {
   width: 100%;
   height: .5rem;
-  background: url(../images/footer.png) center no-repeat;
+  background: url(/static/nh5/share/images/footer.png) center no-repeat;
 }
 
 
