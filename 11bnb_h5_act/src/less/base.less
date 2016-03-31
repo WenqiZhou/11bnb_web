@@ -64,17 +64,17 @@ html {
   }
 }
 
-@hfsc: 50;
+@hfsc: 30;
 .loop-hfs(@n) when (@n >= 240) {
   @media screen and (min-width: (1px * @n - @hfsc + 1)) and (max-width: (1px * @n)) {
     html {
-      font-size: (1px * @n / 750 * 100);
+      font-size: round(1px * @n / 750 * 100);
     }
   }
   .loop-hfs(@n - @hfsc)
 }
 
-.loop-hfs(780);
+.loop-hfs(750);
 
 //common
 

@@ -36,10 +36,10 @@ body {
 .ait_title_double small {
   display: table;
   font-size: .24rem;
-  height: .48rem;
-  line-height: .48rem;
+  height: .53rem;
+  line-height: .53rem;
   background-color: #fe393d;
-  padding: 0 .26rem;
+  padding: 0 .3rem;
   margin: .1rem auto 0;
   color: #fff;
   border-radius: 0.24rem;
@@ -53,59 +53,67 @@ body {
   background-color: #fff;
   margin-top: 10px;
   border-bottom: #e1e1e1 1px solid;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 .ait_text p {
   font-size: .28rem;
-  line-height: .48rem;
+  line-height: .4rem;
   color: #555;
   padding: .32rem .27rem;
 }
 .ait_text.showFlag {
   margin-top: 0;
 }
+.ait_text.followSix {
+  width: auto;
+  margin-left: .15rem;
+  margin-right: .15rem;
+}
 .ait_title_single .det-title {
-  width: 100%;
-  height: 1rem;
-  line-height: 1rem;
+  margin: .32rem .15rem;
   text-align: center;
   font-size: .44rem;
   color: #fe393d;
+}
+.ait_title_single .det-title strong {
   font-weight: normal;
+  max-width: 40%;
+  margin: 0 .4rem;
+  display: inline-block;
+  vertical-align: middle;
 }
 .ait_title_single .leftLine,
 .ait_title_single .rightLine {
-  width: 1.2rem;
+  min-width: 20%;
   height: .3rem;
   display: inline-block;
-  -webkit-background-size: .3rem;
-  background-size: .3rem;
   vertical-align: middle;
-  margin-top: -0.1rem;
 }
 .ait_title_single .leftLine {
-  background: url(/static/nh5/share/images/leftLine.png) center no-repeat;
+  background: url(/static/nh5/share/images/leftLine.png) right center no-repeat;
 }
 .ait_title_single .rightLine {
-  background: url(/static/nh5/share/images/rightLine.png) center no-repeat;
+  background: url(/static/nh5/share/images/rightLine.png) left center no-repeat;
 }
 .ait_image {
   margin: .2rem .15rem 0;
-  border-radius: 0.03rem;
-  -o-border-radius: 0.03rem;
-  -moz-border-radius: 0.03rem;
-  -webkit-border-radius: 0.03rem;
   height: auto;
   position: relative;
 }
+.ait_image img {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
 .ait_image .posIndex {
   display: block;
-  height: .6rem;
-  line-height: .48rem;
+  height: .63rem;
+  line-height: .63rem;
   width: auto;
   color: #fff;
   font-size: .3rem;
   background-color: #fe393d;
-  padding: 0 .32rem;
+  padding: 0 .19rem;
   border-radius: 0.3rem;
   -o-border-radius: 0.3rem;
   -moz-border-radius: 0.3rem;
@@ -115,14 +123,15 @@ body {
   left: .3rem;
   z-index: 2;
 }
-.ait_image .posIndex i {
+.ait_image .posIndex img {
+  border-radius: 0;
+  -o-border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
   display: inline-block;
-  height: 100%;
-  width: .5rem;
-  background: url(/static/nh5/share/images/11logo.png) center no-repeat;
+  height: 80%;
+  width: auto;
   vertical-align: middle;
-  background-size: .4rem;
-  -webkit-background-size: .4rem;
 }
 .ait_houses {
   margin: .2rem .15rem;
@@ -176,19 +185,19 @@ body {
 }
 .ait_houses .title a .moreIcon {
   display: inline-block;
-  vertical-align: text-bottom;
-  height: .3rem;
-  width: .2rem;
-  background: url(/static/nh5/share/images/moreIcon.png) center no-repeat;
-  background-size: .13rem;
-  -webkit-background-size: .13rem;
+  vertical-align: middle;
+  height: .24rem;
+  width: auto;
+  margin-left: .1rem;
 }
 .ait_houses .mainApartment {
   width: 90%;
   margin: 0 auto;
+  padding-bottom: .27rem;
+  color: #555;
 }
 .ait_houses .mainApartment .imgBox {
-  margin: .27rem 1%;
+  margin: .27rem 1% 0;
   width: 48%;
   height: auto;
   float: left;
@@ -232,14 +241,13 @@ body {
   -webkit-border-radius: 0.03rem;
   height: auto;
   background-color: #fff;
-  padding: .3rem 0;
 }
 .ait_activitys .title {
   display: block;
   width: 90%;
   height: 1rem;
   line-height: 1rem;
-  border-bottom: #e1e1e1 2px solid;
+  border-bottom: #e1e1e1 1px solid;
   margin: 0 auto;
 }
 .ait_activitys .title h4 {
