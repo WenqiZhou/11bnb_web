@@ -458,6 +458,9 @@
 
         }
         var browser = getBrowserInfo() ;
+        if (browser instanceof Array) {
+            browser = browser[0];
+        }
         var verinfo = (browser+"").replace(/[^0-9.]/ig,"");
         function initimgsize() {
             if (browser.indexOf("msie") > -1 && parseInt(verinfo) <= 8) {

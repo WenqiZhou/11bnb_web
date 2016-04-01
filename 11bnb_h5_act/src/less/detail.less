@@ -3,14 +3,21 @@
 body {
   background-color: #f0f0f0;
 }
-
+.imgmiddle {
+  top: 50%;
+  .transform(translateY(-50%));
+  position: absolute;
+}
 .ait_top_image {
   width: 100%;
   height: 4.22rem;
   overflow: hidden;
+  position: relative;
+  background-color: #DADADA;
   img {
     width: 100%;
     height: auto;
+    .imgmiddle;
   }
 }
 
@@ -101,11 +108,16 @@ body {
   height: 4rem;
   position: relative;
   overflow: hidden;
+  background-color: #DADADA;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  &.before7 {
+
+  .bigImage {
+    .imgmiddle;
+  }
+  &.before7{
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     border-bottom-left-radius: 0;
