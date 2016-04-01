@@ -341,15 +341,14 @@ html {
   z-index: 200;
   top: 40%;
   cursor: pointer;
-  background: url(../image/ban-icon-r.png) center no-repeat;
 }
 .next-icon {
   right: 3%;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+  background: url(../image/ban-icon-r.png) center no-repeat;
 }
 .prev-icon {
   left: 3%;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  background: url(../image/ban-icon-lf.png) center no-repeat;
 }
 .swiper-pagination-bullet {
   border: solid 2px #fff;
