@@ -8,6 +8,16 @@ body {
   .transform(translateY(-50%));
   position: absolute;
 }
+.blackBack {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 .ait_top_image {
   width: 100%;
   height: 4.22rem;
@@ -270,26 +280,30 @@ body {
     padding: .25rem 0;
     .swiper-slide {
       height: 2rem;
-      width: auto;
+      width: 3rem;
       margin-right: .2rem;
       .imgBox {
         position: relative;
         height: 100%;
-        width: auto;
+        width: 3rem;
+        &:after {
+         .blackBack();
+        }
         img {
           height: 100%;
-          width: auto;
+          width: 3rem;
         }
         .titleRec {
           position: absolute;
-          bottom: .25rem;
-          left: .3rem;
+          bottom: .1rem;
+          left: .1rem;
           z-index: 2;
           color: #fff;
-          height: .4rem;
-          line-height: .4rem;
-          font-size: .28rem;
+          //height: .4rem;
+          line-height: .26rem;
+          font-size: .24rem;
           font-weight: normal !important;
+          width: 90%;
         }
       }
     }
@@ -304,6 +318,9 @@ body {
   margin: .18rem auto;
   overflow: hidden;
   .border-radius(3px);
+  &:after {
+    .blackBack();
+  }
   &:nth-child(1) {
     margin-top: .1rem;
   }
@@ -316,6 +333,7 @@ body {
     text-align: center;
     top: 50%;
     left: 50%;
+    z-index: 3;
     .transform(translate(-50%, -50%));
 
   }
@@ -334,7 +352,7 @@ body {
 
 .footer {
   width: 100%;
-  height: 1rem;
+  height: .3rem;
   padding: .2rem 0;
   img {
     display: none;
