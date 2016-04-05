@@ -200,3 +200,39 @@ html {
 .icon3:after {
   background-position: 0 -280rem;
 }
+
+.icon(@url,@imgWid,@imgHei,@proX,@proY,@hfs,@zoom) {
+
+  background-image: url(@url);
+
+  background-position: (1rem * @proX * @zoom / @hfs) (1rem * @proY * @zoom / @hfs);
+
+  background-size: (1rem * @imgWid * @zoom / @hfs);
+
+  background-repeat: no-repeat;
+
+}
+
+span {
+  display: block;
+  width: (47rem / @hfs);
+  height: (47rem / @hfs);
+  border: solid 1px #333;
+  //background-image: url("../images/icons.png");
+  //background-position: -0.85rem -0.148rem;
+  //background-size: 10rem;
+  //background-repeat: no-repeat;
+  //background-color: red;
+  //.border-radius();
+
+  .icon("../images/icons.png", 1000, 1000, -15, -15, @hfs, 1);
+
+}
+
+
+
+
+
+
+
+
