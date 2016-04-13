@@ -172,3 +172,13 @@ html {
 .icon3:after {
   background-position: 0 -280rem;
 }
+span {
+  display: block;
+  width: 0.94rem;
+  height: 0.94rem;
+  border: solid 1px #333;
+  background-image: url("../images/icons.png");
+  background-position: -0.3rem -0.3rem;
+  background-size: 20rem;
+  background-repeat: no-repeat;
+}
