@@ -23,64 +23,60 @@ header {
   //  margin: auto;
   //  display: table;
   //}
+  .title {
+    font-size: 44px;
+    line-height: 2;
+    color: #555;
+    margin-left: 15%;
+    margin-bottom: 80px;
+    .rightArrow {
+      display: inline-block;
+      height: 44px;
+      width: 80px;
+      background: url(../image/arrow-r.png) center no-repeat;
+      -webkit-background-size: 4.4rem;
+      background-size: 4.4rem;
+      vertical-align: middle;
+      margin-top: -10px;
+    }
+  }
   .item {
-    height: 92px;
+    height: 44px;
+    line-height: 2;
     margin: 20px auto;
     .clearfix;
     position: relative;
-    .date {
+    .star {
       margin-left: 18%;
-      float: left;
-      color: #fff;
-      text-align: center;
+      margin-top: 9px;
+      height: 20px;
+      width: 20px;
       display: block;
-      height: 92px;
-      width: 92px;
-      padding: 21px 0;
-      span {
-        display: block;
-        font-size: 12px;
-        &.n2 {
-          font-weight: bold;
-          font-size: 24px;
-
-        }
-      }
-
+      float: left;
+      background: url("../image/star.png") center no-repeat;
+      -webkit-background-size: 1.5rem;
+      background-size: 1.5rem;
+    }
+    span {
+      width: 120px;
+      text-align: justify;
+      display: block;
+      float: left;
+      margin-left: 28px;
+      font-size: 24px;
+      color: #fe393d;
     }
 
-    &.n1 .date {
-      background-color: #fe393d;
-    }
-    &.n2 .date {
-      background-color: #dd5053;
-    }
-    &.n3 .date {
-      background-color: #c26668;
-    }
-    &.n4 .date {
-      background-color: #aa7778;
-    }
-    &.n5 .date {
-      background-color: #9a8a8a;
-    }
-    &.n6 .date {
-      background-color: #959595;
-    }
     .text {
-      position: absolute;
-      z-index: 2;
-      line-height: 92px;
-      font-size: 17px;
+      float: left;
+      font-size: 24px;
+      margin-left: 5px;
       //line-height: 6.7rem;
-      padding-left: 100px;
-      left: 18%;
       //text-overflow: ellipsis;
       //overflow: hidden;
       //white-space: nowrap;
     }
   }
-
 }
 
 .header {

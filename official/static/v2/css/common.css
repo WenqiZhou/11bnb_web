@@ -15,7 +15,6 @@ html {
   margin-right: auto;
   width: 100%;
   max-width: 980px;
-  overflow-x: hidden;
 }
 .hp:hover {
   cursor: pointer;
@@ -25,7 +24,7 @@ html {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 }
-@-webkit-keyframes "about" {
+@-webkit-keyframes about {
   50% {
     left: 25%;
   }
@@ -33,7 +32,7 @@ html {
     left: 25%;
   }
 }
-@-moz-keyframes "about" {
+@-moz-keyframes about {
   50% {
     left: 25%;
   }
@@ -41,7 +40,7 @@ html {
     left: 25%;
   }
 }
-@-ms-keyframes "about" {
+@-ms-keyframes about {
   50% {
     left: 25%;
   }
@@ -49,7 +48,7 @@ html {
     left: 25%;
   }
 }
-@-o-keyframes "about" {
+@-o-keyframes about {
   50% {
     left: 25%;
   }
@@ -57,7 +56,7 @@ html {
     left: 25%;
   }
 }
-@keyframes "about" {
+@keyframes about {
   50% {
     left: 25%;
   }
@@ -65,7 +64,7 @@ html {
     left: 25%;
   }
 }
-@-webkit-keyframes "join_us" {
+@-webkit-keyframes join_us {
   50% {
     left: 75%;
   }
@@ -73,7 +72,7 @@ html {
     left: 75%;
   }
 }
-@-moz-keyframes "join_us" {
+@-moz-keyframes join_us {
   50% {
     left: 75%;
   }
@@ -81,7 +80,7 @@ html {
     left: 75%;
   }
 }
-@-ms-keyframes "join_us" {
+@-ms-keyframes join_us {
   50% {
     left: 75%;
   }
@@ -89,7 +88,7 @@ html {
     left: 75%;
   }
 }
-@-o-keyframes "join_us" {
+@-o-keyframes join_us {
   50% {
     left: 75%;
   }
@@ -97,7 +96,7 @@ html {
     left: 75%;
   }
 }
-@keyframes "join_us" {
+@keyframes join_us {
   50% {
     left: 75%;
   }
@@ -105,7 +104,7 @@ html {
     left: 75%;
   }
 }
-@-webkit-keyframes "news" {
+@-webkit-keyframes news {
   50% {
     left: 50%;
   }
@@ -113,7 +112,7 @@ html {
     left: 50%;
   }
 }
-@-moz-keyframes "news" {
+@-moz-keyframes news {
   50% {
     left: 50%;
   }
@@ -121,7 +120,7 @@ html {
     left: 50%;
   }
 }
-@-ms-keyframes "news" {
+@-ms-keyframes news {
   50% {
     left: 50%;
   }
@@ -129,7 +128,7 @@ html {
     left: 50%;
   }
 }
-@-o-keyframes "news" {
+@-o-keyframes news {
   50% {
     left: 50%;
   }
@@ -137,7 +136,7 @@ html {
     left: 50%;
   }
 }
-@keyframes "news" {
+@keyframes news {
   50% {
     left: 50%;
   }
@@ -145,7 +144,7 @@ html {
     left: 50%;
   }
 }
-@-webkit-keyframes "index" {
+@-webkit-keyframes index {
   50% {
     left: 0%;
   }
@@ -153,7 +152,7 @@ html {
     left: 0%;
   }
 }
-@-moz-keyframes "index" {
+@-moz-keyframes index {
   50% {
     left: 0%;
   }
@@ -161,7 +160,7 @@ html {
     left: 0%;
   }
 }
-@-ms-keyframes "index" {
+@-ms-keyframes index {
   50% {
     left: 0%;
   }
@@ -169,7 +168,7 @@ html {
     left: 0%;
   }
 }
-@-o-keyframes "index" {
+@-o-keyframes index {
   50% {
     left: 0%;
   }
@@ -177,7 +176,7 @@ html {
     left: 0%;
   }
 }
-@keyframes "index" {
+@keyframes index {
   50% {
     left: 0%;
   }

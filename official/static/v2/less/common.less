@@ -1,5 +1,5 @@
 @import "mixins";
-@import "mixins/media";
+@import "mixin/media";
 
 @fs_p: 2.8rem;
 
@@ -31,7 +31,6 @@ html {
   margin-right: auto;
   width: 100%;
   max-width: 980px;
-  overflow-x: hidden;
 }
 
 .hp {
@@ -44,23 +43,23 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 } });
 
-.keyframes("about", { 50% {
+.keyframes(about, { 50% {
   left: 25%
 } 100% {
     left: 25%
   } });
 
-.keyframes("join_us", { 50% {
+.keyframes(join_us, { 50% {
   left: 75%
 } 100% {
     left: 75%
   } });
-.keyframes("news", { 50% {
+.keyframes(news, { 50% {
   left: 50%
 } 100% {
     left: 50%
   } });
-.keyframes("index", { 50% {
+.keyframes(index, { 50% {
   left: 0%
 } 100% {
     left: 0%
