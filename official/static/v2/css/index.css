@@ -16,7 +16,6 @@ html {
   margin-right: auto;
   width: 100%;
   max-width: 980px;
-  overflow-x: hidden;
 }
 .hp:hover {
   cursor: pointer;
@@ -328,6 +327,11 @@ html {
   color: #cacaca;
 }
 .banner {
+  height: 100%;
+  width: 100%;
+  background: url("../image/big.png") center no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
   position: relative;
 }
 .banner .pic1-sm {
@@ -336,38 +340,59 @@ html {
 .banner .pic2-sm-text {
   display: none;
 }
+.banner .middleImg {
+  max-height: 90%;
+  overflow: hidden;
+  width: 100%;
+}
 .banner .layer1 {
   position: absolute;
   z-index: 1;
   top: 0;
   width: 100%;
-  height: 80%;
+  height: 75%;
   background-color: rgba(0, 0, 0, 0.2);
 }
 .banner .layer2 {
   position: absolute;
   z-index: 1;
-  bottom: 0;
+  bottom: 5%;
   width: 100%;
   height: 20%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-bottom: 12px;
 }
 .banner .pic2 {
-  left: 15%;
+  left: 50%;
   height: 50%;
   width: auto;
   position: absolute;
   z-index: 5;
-  top: 47%;
-  -webkit-transform: translateY(-50%);
+  top: 27%;
+  max-width: 318px;
+  max-height: 242px;
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -o-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
 }
 .banner .pic2-sm {
   display: none;
 }
+.banner .copyright {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 14px;
+  color: #cacaca;
+  font-size: 14px;
+  text-align: center;
+}
 .intro {
   position: relative;
-  padding: 6.9rem 0;
-  background-color: #f8f8f8;
+  color: #ffffff;
+  margin: 25px auto;
 }
 .intro ul {
   width: 100%;
@@ -382,7 +407,7 @@ html {
   position: absolute;
   left: 40%;
   margin-left: -1.3rem;
-  height: 100%;
+  height: 38px;
   width: auto;
   -webkit-transform: translateX(-100%);
   -moz-transform: translateX(-100%);
@@ -396,7 +421,7 @@ html {
 }
 .intro h3 {
   font-size: 2.4rem;
-  line-height: 2;
+  line-height: 3.6rem;
 }
 .intro p {
   font-size: 1.8rem;
@@ -423,6 +448,9 @@ html {
   }
 }
 @media screen and (max-width: 640px) {
+  .banner {
+    background: url("../image/pic-sm.png") center no-repeat;
+  }
   .banner .pic1-sm {
     display: block;
   }
@@ -437,42 +465,34 @@ html {
     z-index: 30;
     display: block;
     width: 40%;
-    top: 36%;
+    top: 22%;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-  }
-  .banner .pic2-sm-text {
-    display: block;
-    position: absolute;
-    z-index: 30;
-    top: 120%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    font-size: .28rem;
-    text-align: center;
-    color: #3d3d3d;
   }
 }
 @media screen and (max-width: 640px) {
-  .sm-layer3 {
-    background-color: #fff;
-    height: 1.8rem;
+  .layer1 {
+    height: 61% !important;
+  }
+  .layer2 {
+    height: 35% !important;
+    bottom: 4% !important;
+  }
+  .copyright {
+    bottom: 8px !important;
   }
 }
 @media screen and (max-width: 640px) {
   .intro {
     padding: 0rem 0;
+    margin: 0 auto;
   }
   .intro li {
-    margin: .36rem auto;
+    margin: .3rem auto;
     width: 50%;
   }
   .intro li img,
@@ -500,7 +520,7 @@ html {
     transform: translateX(0%);
     left: 0;
     margin: auto;
-    height: 1.2rem;
+    height: .4rem;
   }
 }
 .header {

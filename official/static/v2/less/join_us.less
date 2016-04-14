@@ -10,6 +10,33 @@
 }
 
 .intro {
+  .title {
+    font-size: 4.4rem;
+    line-height: 2;
+    color: #555;
+    width: 90%;
+    margin: 0 auto;
+    .rightArrow {
+      display: inline-block;
+      height: 4.4rem;
+      width: 8rem;
+      background: url(../image/arrow-r.png) center no-repeat;
+      -webkit-background-size: 4.4rem;
+      background-size: 4.4rem;
+      vertical-align: middle;
+      margin-top: -10px;
+    }
+  }
+  .targetBox {
+    margin: 40px auto;
+    text-align: center;
+    width: 58%;
+    p {
+      color: #fe393d;
+      font-size: 2.8rem;
+      line-height: 2rem;
+    }
+  }
   hr {
     background-color: #c9c9c9;
     margin: auto;
@@ -23,15 +50,8 @@
   }
 
   > p {
-    margin: 15px auto;
     width: 90%;
-    &:nth-child(1) {
-      padding-bottom: 15px;
-      border-bottom: solid 1px #c9c9c9;
-    }
-    &:nth-child(2) {
-      text-align: right;
-    }
+    margin: 0 auto;
   }
 }
 
@@ -144,5 +164,12 @@
 @media screen and(max-width: 640px) {
   .footer {
     display: block;
+  }
+  .targetBox {
+    width: 90% !important;
+    margin: 20px auto;
+    .target {
+      font-size: 2rem !important;
+    }
   }
 }
