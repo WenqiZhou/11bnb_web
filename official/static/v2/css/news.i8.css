@@ -16,7 +16,6 @@ html {
   margin-right: auto;
   width: 100%;
   max-width: 980px;
-  overflow-x: hidden;
 }
 .hp:hover {
   cursor: pointer;
@@ -26,7 +25,7 @@ html {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 }
-@-webkit-keyframes "about" {
+@-webkit-keyframes about {
   50% {
     left: 25%;
   }
@@ -34,7 +33,7 @@ html {
     left: 25%;
   }
 }
-@-moz-keyframes "about" {
+@-moz-keyframes about {
   50% {
     left: 25%;
   }
@@ -42,7 +41,7 @@ html {
     left: 25%;
   }
 }
-@-ms-keyframes "about" {
+@-ms-keyframes about {
   50% {
     left: 25%;
   }
@@ -50,7 +49,7 @@ html {
     left: 25%;
   }
 }
-@-o-keyframes "about" {
+@-o-keyframes about {
   50% {
     left: 25%;
   }
@@ -58,7 +57,7 @@ html {
     left: 25%;
   }
 }
-@keyframes "about" {
+@keyframes about {
   50% {
     left: 25%;
   }
@@ -66,7 +65,7 @@ html {
     left: 25%;
   }
 }
-@-webkit-keyframes "join_us" {
+@-webkit-keyframes join_us {
   50% {
     left: 75%;
   }
@@ -74,7 +73,7 @@ html {
     left: 75%;
   }
 }
-@-moz-keyframes "join_us" {
+@-moz-keyframes join_us {
   50% {
     left: 75%;
   }
@@ -82,7 +81,7 @@ html {
     left: 75%;
   }
 }
-@-ms-keyframes "join_us" {
+@-ms-keyframes join_us {
   50% {
     left: 75%;
   }
@@ -90,7 +89,7 @@ html {
     left: 75%;
   }
 }
-@-o-keyframes "join_us" {
+@-o-keyframes join_us {
   50% {
     left: 75%;
   }
@@ -98,7 +97,7 @@ html {
     left: 75%;
   }
 }
-@keyframes "join_us" {
+@keyframes join_us {
   50% {
     left: 75%;
   }
@@ -106,7 +105,7 @@ html {
     left: 75%;
   }
 }
-@-webkit-keyframes "news" {
+@-webkit-keyframes news {
   50% {
     left: 50%;
   }
@@ -114,7 +113,7 @@ html {
     left: 50%;
   }
 }
-@-moz-keyframes "news" {
+@-moz-keyframes news {
   50% {
     left: 50%;
   }
@@ -122,7 +121,7 @@ html {
     left: 50%;
   }
 }
-@-ms-keyframes "news" {
+@-ms-keyframes news {
   50% {
     left: 50%;
   }
@@ -130,7 +129,7 @@ html {
     left: 50%;
   }
 }
-@-o-keyframes "news" {
+@-o-keyframes news {
   50% {
     left: 50%;
   }
@@ -138,7 +137,7 @@ html {
     left: 50%;
   }
 }
-@keyframes "news" {
+@keyframes news {
   50% {
     left: 50%;
   }
@@ -146,7 +145,7 @@ html {
     left: 50%;
   }
 }
-@-webkit-keyframes "index" {
+@-webkit-keyframes index {
   50% {
     left: 0%;
   }
@@ -154,7 +153,7 @@ html {
     left: 0%;
   }
 }
-@-moz-keyframes "index" {
+@-moz-keyframes index {
   50% {
     left: 0%;
   }
@@ -162,7 +161,7 @@ html {
     left: 0%;
   }
 }
-@-ms-keyframes "index" {
+@-ms-keyframes index {
   50% {
     left: 0%;
   }
@@ -170,7 +169,7 @@ html {
     left: 0%;
   }
 }
-@-o-keyframes "index" {
+@-o-keyframes index {
   50% {
     left: 0%;
   }
@@ -178,7 +177,7 @@ html {
     left: 0%;
   }
 }
-@keyframes "index" {
+@keyframes index {
   50% {
     left: 0%;
   }
@@ -295,8 +294,26 @@ header {
   background-color: #fff;
   padding: 30px 0;
 }
+.intro .title {
+  font-size: 44px;
+  line-height: 2;
+  color: #555;
+  margin-left: 15%;
+  margin-bottom: 80px;
+}
+.intro .title .rightArrow {
+  display: inline-block;
+  height: 44px;
+  width: 80px;
+  background: url(../image/arrow-r.png) center no-repeat;
+  -webkit-background-size: 4.4rem;
+  background-size: 4.4rem;
+  vertical-align: middle;
+  margin-top: -10px;
+}
 .intro .item {
-  height: 92px;
+  height: 44px;
+  line-height: 2;
   margin: 20px auto;
   position: relative;
 }
@@ -305,49 +322,30 @@ header {
   clear: both;
   content: "";
 }
-.intro .item .date {
+.intro .item .star {
   margin-left: 18%;
+  margin-top: 9px;
+  height: 20px;
+  width: 20px;
+  display: block;
   float: left;
-  color: #fff;
-  text-align: center;
-  display: block;
-  height: 92px;
-  width: 92px;
-  padding: 21px 0;
+  background: url("../image/star.png") center no-repeat;
+  -webkit-background-size: 1.5rem;
+  background-size: 1.5rem;
 }
-.intro .item .date span {
+.intro .item span {
+  width: 120px;
+  text-align: justify;
   display: block;
-  font-size: 12px;
-}
-.intro .item .date span.n2 {
-  font-weight: bold;
+  float: left;
+  margin-left: 28px;
   font-size: 24px;
-}
-.intro .item.n1 .date {
-  background-color: #fe393d;
-}
-.intro .item.n2 .date {
-  background-color: #dd5053;
-}
-.intro .item.n3 .date {
-  background-color: #c26668;
-}
-.intro .item.n4 .date {
-  background-color: #aa7778;
-}
-.intro .item.n5 .date {
-  background-color: #9a8a8a;
-}
-.intro .item.n6 .date {
-  background-color: #959595;
+  color: #fe393d;
 }
 .intro .item .text {
-  position: absolute;
-  z-index: 2;
-  line-height: 92px;
-  font-size: 17px;
-  padding-left: 100px;
-  left: 18%;
+  float: left;
+  font-size: 24px;
+  margin-left: 5px;
 }
 .header .nav {
   color: #555555;

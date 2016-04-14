@@ -16,43 +16,27 @@ var connect = require('gulp-connect');
 var less = require('gulp-less');
 var path = require('path');
 
-
-var http = require('http');
-var fs = require('fs');
-var oppressor = require('oppressor');
-
-
 gulp.task('webserver', function () {
     connect.server({
         port: 3000,
         root: 'dest',
     });
-
-
-    // var server = http.createServer(function (req, res) {
-    //     var stream = fs.createReadStream("build");
-    //     stream.pipe(oppressor(req)).pipe(res);
-    // });
-    // server.listen(8000);
-
 });
 
 
 gulp.task('less', function () {
     gulp.src('src/less/*.less')
         .pipe(less())
+        .pipe(gulp.dest('src/css'))
         .pipe(minifycss())
         .pipe(gulp.dest('dest/css'));
 
 });
 
 
-
-
-
 // 压缩html
 gulp.task('html', function () {
-    return gulp.src('src/*.html')
+    return gulp.src(['src/**.html','src/views/*'])
         //.pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('dest'))
     //.pipe(notify({message: 'html task ok'}));
@@ -61,8 +45,7 @@ gulp.task('html', function () {
 
 // 压缩图片
 gulp.task('img', function () {
-    return gulp.src('src/images/*')
-
+    return gulp.src('src/images/**')
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
@@ -85,7 +68,6 @@ gulp.task('css', function () {
     // .pipe(notify({message: 'css task ok'}));
 
 });
-
 
 
 // 合并、压缩js文件

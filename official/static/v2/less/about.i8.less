@@ -71,7 +71,6 @@
   top: 40%;
   cursor: pointer;
   //&:hover {
-    background: url(../image/ban-icon-r.png) center no-repeat;
   //}
 }
 
@@ -93,14 +92,14 @@
   right: 3%;
   //filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   //&:hover {
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+  background: url(../image/ban-icon-r.png) center no-repeat;
   //}
 }
 
 .prev-icon {
   left: 3%;
   //&:hover {
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  background: url(../image/ban-icon-lf.png) center no-repeat;
   //}
 }
 
@@ -147,13 +146,46 @@
     width: 90%;
   }
 
+  .aboutBox {
+    width: 90%;
+    margin: 40px auto;
+    .aboutItem {
+      margin: 0 auto;
+    }
+  }
+  .title {
+    font-size: 44px;
+    line-height: 2;
+    color: #555;
+    .rightArrow {
+      display: inline-block;
+      height: 44px;
+      width: 80px;
+      background: url(../image/arrow-r.png) center no-repeat;
+      -webkit-background-size: 4.4rem;
+      background-size: 4.4rem;
+      vertical-align: middle;
+      margin-top: -10px;
+    }
+  }
+
   .item {
     position: relative;
     margin: 120px auto;
     width: 90%;
-    img {
+    .headerImgBox-sm {
+      display: none;
+    }
+    .headerImgBox {
+      display: block;
       position: absolute;
       width: 16%;
+      h2 {
+        text-align: center;
+        line-height: 36px;
+        margin: 0 auto 20px !important;
+        color:#3d3d3d;
+      }
     }
     h2, h5, p {
       margin-left: 25%;
