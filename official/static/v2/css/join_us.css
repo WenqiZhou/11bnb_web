@@ -368,7 +368,7 @@ html {
 .intro .targetBox p {
   color: #fe393d;
   font-size: 2.8rem;
-  line-height: 2rem;
+  line-height: 1.5;
 }
 .intro hr {
   background-color: #c9c9c9;

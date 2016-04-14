@@ -459,6 +459,9 @@ html {
   }
 }
 @media screen and (max-width: 640px) {
+  .intro {
+    padding-bottom: 300px!important;
+  }
   .intro .title {
     margin-bottom: 0 !important;
     margin-left: 5% !important;
