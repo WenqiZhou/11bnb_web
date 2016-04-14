@@ -284,6 +284,7 @@ html {
   position: relative;
 }
 .banner .middleImg {
+  display: block;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -313,64 +314,74 @@ html {
   z-index: 1;
   top: 0;
   width: 100%;
-  height: 80%;
+  height: 75%;
   background-color: #000;
 }
 .banner .layer2 {
   filter: alpha(opacity=30);
   position: absolute;
   z-index: 1;
-  bottom: 0;
+  bottom: 5%;
   width: 100%;
   height: 20%;
   background-color: #000;
 }
 .banner .pic2 {
-  left: 15%;
-  height: 50%;
-  width: auto;
+  left: 50%;
+  width: 318px;
+  height: 242px;
   position: absolute;
   z-index: 5;
   top: 23%;
-  -webkit-transform: translateY(-50%);
+  margin-left: -109px;
 }
 .banner .pic2-sm {
   display: none;
 }
+.banner .copyright {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 14px;
+  color: #cacaca;
+  font-size: 14px;
+  text-align: center;
+}
 .intro {
   position: relative;
-  padding: 82px 5%;
-  width: 100%;
-  background-color: #f8f8f8;
+  color: #ffffff;
+  margin: 25px auto;
 }
 .intro ul {
   width: 100%;
 }
 .intro li {
-  margin: 12px 0;
+  margin: 1rem 0;
   position: relative;
   float: left;
   width: 25%;
 }
 .intro img {
-  float: left;
-  display: block;
-  height: 100%;
+  position: absolute;
+  left: 40%;
+  margin-left: -50px;
+  height: 38px;
   width: auto;
-  vertical-align: text-bottom;
 }
 .intro h3,
 .intro p {
-  margin-top: 10px;
-  min-width: 50%;
-  float: left;
-  margin-left: 10px;
+  margin-left: 40%;
 }
 .intro h3 {
-  font-size: 17px;
-  line-height: 2;
+  font-size: 24px;
+  line-height: 36px;
 }
 .intro p {
-  font-size: 13px;
+  font-size: 18px;
   line-height: 2;
+}
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .intro li {
+    width: 50%;
+  }
 }

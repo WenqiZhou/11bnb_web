@@ -451,40 +451,41 @@
     <img src="static/v2/image/icon-logo2.png" alt="">
 </div>
 <script>
+    function getBrowserInfo() {
+        var agent = navigator.userAgent.toLowerCase();
 
+        var regStr_ie = /msie [\d.]+/gi;
+        var regStr_ff = /firefox\/[\d.]+/gi;
+        var regStr_chrome = /chrome\/[\d.]+/gi;
+        var regStr_saf = /safari\/[\d.]+/gi;
+        //IE
+        if (agent.indexOf("msie") > 0) {
+            return agent.match(regStr_ie);
+        }
+
+        //firefox
+        if (agent.indexOf("firefox") > 0) {
+            return agent.match(regStr_ff);
+        }
+
+        //Chrome
+        if (agent.indexOf("chrome") > 0) {
+            return agent.match(regStr_chrome);
+        }
+
+        //Safari
+        if (agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0) {
+            return agent.match(regStr_saf);
+        }
+        return "can't find browser!!";
+    }
     $(document).ready(function () {
 
 
         initnav();
-        function getBrowserInfo() {
-            var agent = navigator.userAgent.toLowerCase();
 
-            var regStr_ie = /msie [\d.]+;/gi;
-            var regStr_ff = /firefox\/[\d.]+/gi
-            var regStr_chrome = /chrome\/[\d.]+/gi;
-            var regStr_saf = /safari\/[\d.]+/gi;
-            //IE
-            if (agent.indexOf("msie") > 0) {
-                return agent.match(regStr_ie);
-            }
-
-            //firefox
-            if (agent.indexOf("firefox") > 0) {
-                return agent.match(regStr_ff);
-            }
-
-            //Chrome
-            if (agent.indexOf("chrome") > 0) {
-                return agent.match(regStr_chrome);
-            }
-
-            //Safari
-            if (agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0) {
-                return agent.match(regStr_saf);
-            }
-
-        }
         var browser = getBrowserInfo() ;
+        console.log(browser);
         if (browser instanceof Array) {
             browser = browser[0];
         }
