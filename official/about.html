@@ -527,7 +527,10 @@
                 loop: true,
                 slidesOffsetAfter: 100,
                 autoplay: 5000,
-                speed: 1000
+                speed: 1000,
+                onSlideChangeEnd: function (swiper) {
+                    $('.swiper-wrapper').css("transition-duration","0ms");
+                }
             });
         }
 
