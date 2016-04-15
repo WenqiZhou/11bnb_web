@@ -449,10 +449,10 @@ html {
     color: #000;
   }
   .text h2 {
-    font-size: 4rem;
+    font-size: 300% !important;
   }
   .text p {
-    font-size: 2.5rem;
+    font-size: 150% !important;
   }
   .prev-icon,
   .next-icon {
@@ -629,12 +629,12 @@ html {
 }
 @media screen and (max-width: 640px) {
   .intro .item {
-    margin: 40px auto;
+    margin: 20px auto;
   }
 }
 @media screen and (min-width: 641px) {
   .intro .item {
-    margin: 60px auto;
+    margin: 40px auto;
   }
 }
 @media screen and (min-width: 1025px) {
