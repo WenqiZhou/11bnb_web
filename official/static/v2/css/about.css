@@ -629,12 +629,12 @@ html {
 }
 @media screen and (max-width: 640px) {
   .intro .item {
-    margin: 40px auto;
+    margin: 20px auto;
   }
 }
 @media screen and (min-width: 641px) {
   .intro .item {
-    margin: 60px auto;
+    margin: 40px auto;
   }
 }
 @media screen and (min-width: 1025px) {

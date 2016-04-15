@@ -348,10 +348,10 @@ html {
 }
 .banner .layer1 {
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   top: 0;
   width: 100%;
-  height: 75%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
 }
 .banner .layer2 {
@@ -477,19 +477,19 @@ html {
 }
 @media screen and (max-width: 640px) {
   .layer1 {
-    height: 66% !important;
+    height: 100% !important;
   }
   .layer2 {
     height: 30% !important;
     bottom: 4% !important;
   }
   .copyright {
-    bottom: 8px !important;
+    bottom: 0 !important;
   }
 }
 @media screen and (max-width: 640px) {
   .intro {
-    padding: 0rem 0;
+    padding: 0 0;
     margin: 0 auto;
   }
   .intro li {
