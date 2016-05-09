@@ -28,7 +28,9 @@
     height: 242px;
     margin-left: -109px;
   }
-  .pic1-sm{display:none;}
+  .pic1-sm {
+    display: none;
+  }
   .pic2-sm-text {
     display: none;
   }
@@ -64,14 +66,19 @@
   .pic2-sm {
     display: none;
   }
-  .copyright {
+  .footer {
     width: 100%;
     position: absolute;
     left: 0;
-    bottom: 14px;
-    color: #cacaca;
-    font-size: 14px;
-    text-align: center;
+    bottom: 0;
+    z-index: 10;
+    background-color: #191919;
+    .copyright {
+      line-height: 2;
+      color: #cacaca;
+      font-size: 16px;
+      text-align: center;
+    }
   }
 
 }

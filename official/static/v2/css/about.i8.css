@@ -438,6 +438,16 @@ html {
   font-size: 17px;
   line-height: 200%;
 }
+.footer1 {
+  width: 100%;
+  background-color: #191919;
+}
+.footer1 .copyright {
+  line-height: 2;
+  color: #cacaca;
+  font-size: 16px;
+  text-align: center;
+}
 .header .nav .bor {
   left: 25%;
 }

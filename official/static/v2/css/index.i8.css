@@ -338,13 +338,18 @@ html {
 .banner .pic2-sm {
   display: none;
 }
-.banner .copyright {
+.banner .footer {
   width: 100%;
   position: absolute;
   left: 0;
-  bottom: 14px;
+  bottom: 0;
+  z-index: 10;
+  background-color: #191919;
+}
+.banner .footer .copyright {
+  line-height: 2;
   color: #cacaca;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
 }
 .intro {

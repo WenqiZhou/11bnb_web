@@ -369,7 +369,7 @@ html {
   width: auto;
   position: absolute;
   z-index: 5;
-  top: 27%;
+  top: 23%;
   max-width: 318px;
   max-height: 242px;
   -webkit-transform: translate(-50%);
@@ -381,13 +381,18 @@ html {
 .banner .pic2-sm {
   display: none;
 }
-.banner .copyright {
+.banner .footer {
   width: 100%;
   position: absolute;
   left: 0;
-  bottom: 14px;
+  bottom: 0;
+  z-index: 10;
+  background-color: #191919;
+}
+.banner .footer .copyright {
+  line-height: 2;
   color: #cacaca;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
 }
 .intro {
@@ -440,7 +445,7 @@ html {
 }
 @media screen and (max-width: 640px) {
   .header li {
-    font-size: 0.35rem;
+    font-size: 0.25rem;
   }
 }
 @media screen and (min-width: 567px) and (max-width: 640px) {
@@ -466,7 +471,7 @@ html {
     z-index: 30;
     display: block;
     width: 40%;
-    top: 22%;
+    top: 14%;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
@@ -501,6 +506,7 @@ html {
     height: auto;
   }
   .copyright {
+    font-size: 10px !important;
     bottom: 0 !important;
   }
 }
@@ -525,10 +531,10 @@ html {
     margin-left: 20%;
   }
   .intro li h3 {
-    font-size: 0.28rem;
+    font-size: 0.3rem;
   }
   .intro li p {
-    font-size: 0.28rem;
+    font-size: 0.24rem;
   }
   .intro li img {
     position: absolute;

@@ -343,7 +343,7 @@ html {
   position: absolute;
 }
 @media screen and (max-width: 640px) {
-  .header .nav {
+  .header {
     background-color: transparent;
   }
 }
@@ -398,7 +398,6 @@ html {
   margin-top: -10px;
 }
 .intro .item {
-  height: 4rem;
   line-height: 4rem;
 }
 .intro .item::after {
@@ -431,27 +430,26 @@ html {
   font-size: 2.4rem;
 }
 @media screen and (max-width: 640px) {
-  .intro .item {
+  .intro {
     line-height: 2rem !important;
     margin: 10px auto;
     width: 98%;
     height: auto;
   }
-  .intro .item::after {
+  .intro::after {
     display: table;
     clear: both;
     content: "";
   }
-  .intro .item .star {
+  .intro .star {
     margin-left: 0 !important;
-    margin-top: 0 !important;
+    margin-top: 9px !important;
   }
-  .intro .item .time {
-    width: 100px;
-    margin-left: 5px;
-    text-align: justify;
+  .intro .time {
+    width: 100px!important;
+    margin-left: 5px!important;
   }
-  .intro .item .text {
+  .intro .text {
     margin-left: 10px;
     padding-left: 0;
     color: #555555;
@@ -469,7 +467,7 @@ html {
 }
 @media screen and (max-width: 640px) {
   .intro {
-    padding-bottom: 300px!important;
+    padding-bottom: 300px !important;
   }
   .intro .title {
     margin-bottom: 0 !important;
@@ -487,4 +485,19 @@ html {
 }
 .footer {
   display: none;
+}
+.footer1 {
+  width: 100%;
+  background-color: #191919;
+}
+.footer1 .copyright {
+  line-height: 2;
+  color: #cacaca;
+  font-size: 16px;
+  text-align: center;
+}
+@media screen and (max-width: 640px) {
+  .copyright {
+    font-size: 10px !important;
+  }
 }

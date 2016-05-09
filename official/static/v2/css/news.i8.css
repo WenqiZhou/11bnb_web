@@ -312,7 +312,6 @@ header {
   margin-top: -10px;
 }
 .intro .item {
-  height: 44px;
   line-height: 2;
   margin: 20px auto;
   position: relative;
@@ -358,4 +357,14 @@ header {
 }
 .footer {
   display: none;
+}
+.footer1 {
+  width: 100%;
+  background-color: #191919;
+}
+.footer1 .copyright {
+  line-height: 2;
+  color: #cacaca;
+  font-size: 16px;
+  text-align: center;
 }
