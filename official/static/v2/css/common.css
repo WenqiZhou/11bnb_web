@@ -1,3 +1,33 @@
+@media screen and (max-width: 640px) {
+  .hide-sm {
+    display: none;
+  }
+}
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .hide-md {
+    display: none;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .hide-lg {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  .show-sm {
+    display: block;
+  }
+}
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .show-md {
+    display: block;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .show-lg {
+    display: block;
+  }
+}
 .clearfix::after {
   display: table;
   clear: both;
@@ -211,4 +241,9 @@ html {
   -ms-animation: about 0.6s;
   -o-animation: about 0.6s;
   animation: about 0.6s;
+}
+@media screen and (max-width: 640px) {
+  .path {
+    display: none;
+  }
 }

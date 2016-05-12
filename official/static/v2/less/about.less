@@ -105,8 +105,7 @@
     top: 50%;
   } });
 
-.media-sm({
-.banner {
+.media-sm({ .banner {
   background-color: #fff;
   .next-icon, .prev-icon {
     top: 70%;
@@ -143,7 +142,7 @@
 } .intro {
     .item {
       .headerImgBox {
-        display: none!important;
+        display: none !important;
       }
       .headerImgBox-sm {
         display: block !important;
@@ -207,12 +206,12 @@
   > p {
     //margin: 6rem auto;
 
-    .margin(10px auto, 20px auto, 40px auto);
+    .media(margin, 10px auto, 20px auto, 40px auto);
     width: 90%;
   }
   .aboutBox {
     width: 90%;
-    .margin(10px auto, 20px auto, 40px auto);
+    .media(margin, 10px auto, 20px auto, 40px auto);
     .aboutItem {
       margin: 0 auto;
     }
@@ -234,7 +233,7 @@
   }
   .item {
     position: relative;
-    .margin(20px auto, 40px auto, 80px auto);
+    .media(margin, 20px auto, 40px auto, 80px auto);
     width: 90%;
     .headerImgBox-sm {
       display: none;
@@ -247,7 +246,7 @@
         text-align: center;
         line-height: 3.6rem;
         margin-bottom: 20px;
-        color:#3d3d3d;
+        color: #3d3d3d;
       }
     }
     h5, p {
@@ -294,13 +293,63 @@
     text-align: center;
   }
 }
-.media-sm({
-  .copyright {
-    font-size: 10px !important;
+
+.media-sm({ .copyright {
+  font-size: 10px !important;
+} .footer {
+    display: block;
+  } });
+
+.info-address {
+  img {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .footer {
+  h1 {
+    line-height: 50px;
+    border-bottom: solid 2px #fe393d;
+    margin: 20px 0;
+    font-size: 32px;
+  }
+  small {
+    font-size: 22px;
+    margin: 10px 0;
     display: block;
   }
+  div {
+    font-size: 26px;
+    margin: 10px 0 30px 0;
+  }
+  .aboutBox {
+    color: #555;
+  }
+}
 
-});
+.media-sm({ .info-address {
+  img {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1 {
+    line-height: 50px;
+    border-bottom: solid 2px #fe393d;
+    margin: 20px 0;
+    font-size: 13px;
+  }
+  small {
+    font-size: 8px;
+    margin: 10px 0;
+    display: block;
+  }
+  div {
+    font-size: 10px;
+    margin: 10px 0 30px 0;
+  }
+  .aboutBox {
+    color: #555;
+  }
+} });
