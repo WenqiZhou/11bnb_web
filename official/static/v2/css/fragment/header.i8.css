@@ -247,6 +247,19 @@ html {
     display: none;
   }
 }
+a .title {
+  display: inline-block;
+}
+a .title::after {
+  position: relative;
+  content: '';
+  display: block;
+  height: 4px;
+  background-color: #1e439a;
+  margin-right: 96px;
+  margin-bottom: 16px;
+  margin-top: -3px;
+}
 .header {
   z-index: 103;
   display: block;

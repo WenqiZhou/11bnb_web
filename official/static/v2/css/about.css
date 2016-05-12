@@ -248,6 +248,19 @@ html {
     display: none;
   }
 }
+a .title {
+  display: inline-block;
+}
+a .title::after {
+  position: relative;
+  content: '';
+  display: block;
+  height: 4px;
+  background-color: #1e439a;
+  margin-right: 96px;
+  margin-bottom: 16px;
+  margin-top: -3px;
+}
 .header {
   display: block;
   position: relative;
@@ -738,15 +751,15 @@ html {
   line-height: 50px;
   border-bottom: solid 2px #fe393d;
   margin: 20px 0;
-  font-size: 32px;
+  font-size: 30px;
 }
 .info-address small {
-  font-size: 22px;
+  font-size: 20px;
   margin: 10px 0;
   display: block;
 }
 .info-address div {
-  font-size: 26px;
+  font-size: 22px;
   margin: 10px 0 30px 0;
 }
 .info-address .aboutBox {
