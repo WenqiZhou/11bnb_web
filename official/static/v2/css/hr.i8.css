@@ -251,15 +251,26 @@ html {
 a .title {
   display: inline-block;
 }
-a .title::after {
+.bottomline {
   position: relative;
   content: '';
   display: block;
-  height: 4px;
+  height: 2px;
   background-color: #1e439a;
-  margin-right: 96px;
+  margin-right: 8rem;
   margin-bottom: 16px;
-  margin-top: -3px;
+  margin-top: -10px;
+}
+.footer1 {
+  width: 100%;
+  background-color: #191919;
+}
+.footer1 .copyright {
+  padding: 10px 0;
+  line-height: 1.5;
+  color: #cacaca;
+  font-size: 12px;
+  text-align: center;
 }
 .header {
   z-index: 103;
@@ -474,16 +485,6 @@ a .title::after {
 }
 .header .nav .bor {
   left: 75%;
-}
-.footer1 {
-  width: 100%;
-  background-color: #191919;
-}
-.footer1 .copyright {
-  line-height: 2;
-  color: #cacaca;
-  font-size: 16px;
-  text-align: center;
 }
 .culture {
   width: 90%;
