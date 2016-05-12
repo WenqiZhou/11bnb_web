@@ -65,7 +65,7 @@ html {
     left: 25%;
   }
 }
-@-webkit-keyframes join_us {
+@-webkit-keyframes hr {
   50% {
     left: 75%;
   }
@@ -73,7 +73,7 @@ html {
     left: 75%;
   }
 }
-@-moz-keyframes join_us {
+@-moz-keyframes hr {
   50% {
     left: 75%;
   }
@@ -81,7 +81,7 @@ html {
     left: 75%;
   }
 }
-@-ms-keyframes join_us {
+@-ms-keyframes hr {
   50% {
     left: 75%;
   }
@@ -89,7 +89,7 @@ html {
     left: 75%;
   }
 }
-@-o-keyframes join_us {
+@-o-keyframes hr {
   50% {
     left: 75%;
   }
@@ -97,7 +97,7 @@ html {
     left: 75%;
   }
 }
-@keyframes join_us {
+@keyframes hr {
   50% {
     left: 75%;
   }
@@ -192,12 +192,12 @@ html {
   -o-animation: index 0.6s;
   animation: index 0.6s;
 }
-.bor.join_us {
-  -webkit-animation: join_us 0.6s;
-  -moz-animation: join_us 0.6s;
-  -ms-animation: join_us 0.6s;
-  -o-animation: join_us 0.6s;
-  animation: join_us 0.6s;
+.bor.hr {
+  -webkit-animation: hr 0.6s;
+  -moz-animation: hr 0.6s;
+  -ms-animation: hr 0.6s;
+  -o-animation: hr 0.6s;
+  animation: hr 0.6s;
 }
 .bor.news {
   -webkit-animation: news 0.6s;
@@ -357,11 +357,25 @@ html {
 .banner .layer2 {
   position: absolute;
   z-index: 1;
-  bottom: 5%;
   width: 100%;
-  min-height: 20%;
   background-color: rgba(0, 0, 0, 0.5);
   padding-bottom: 12px;
+  bottom: 5%;
+}
+@media screen and (max-height: 1240px) {
+  .banner .layer2 {
+    bottom: 5%;
+  }
+}
+@media screen and (max-height: 1000px) {
+  .banner .layer2 {
+    bottom: 9%;
+  }
+}
+@media screen and (max-height: 900px) {
+  .banner .layer2 {
+    bottom: 10%;
+  }
 }
 .banner .pic2 {
   left: 50%;

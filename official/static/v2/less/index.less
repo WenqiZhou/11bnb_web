@@ -39,11 +39,22 @@
   .layer2 {
     position: absolute;
     z-index: 1;
-    bottom: 5%;
     width: 100%;
-    min-height: 20%;
+    //min-height: 20%;
     background-color: rgba(0, 0, 0, 0.5);
     padding-bottom: 12px;
+    bottom: 5%;
+    @media screen and (max-height: 1240px) {
+      bottom: 5%;
+    }
+    @media screen and (max-height: 1000px) {
+      bottom: 9%;
+    }
+    @media screen and (max-height: 900px) {
+      bottom: 10%;
+    }
+
+
   }
 
   .pic2 {
