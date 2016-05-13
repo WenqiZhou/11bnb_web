@@ -249,6 +249,7 @@ html {
 }
 a .title {
   display: inline-block;
+  color: #1e439a!important;
 }
 .bottomline {
   position: relative;
