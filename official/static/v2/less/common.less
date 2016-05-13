@@ -1,30 +1,54 @@
 @import "mixins";
 @import "mixin/media";
 
-@fs_p: 2.8rem;
+@fs_p: .28rem;
+
+
+
+//common
+.clearfix:before, .clearfix:after {
+  content: '';
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+  overflow: hidden;
+}
 
 .clearfix {
-  &::after {
-    display: table;
-    clear: both;
-    content: "";
-  }
+  zoom: 1;
 }
 
-body {
-  background-color: #f0f0f0;
-  overflow-x: hidden;
+.clear {
+  clear: both;
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
 }
 
-html {
-  font-size: 45%;
+.hide {
+  display: none;
 }
 
-@media (max-width: 767px) {
-  html {
-    //font-size: 30%;
-  }
+.block {
+  display: block;
 }
+
+.fl, .fr {
+  display: inline;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
 
 .mainbox {
   margin-left: auto;
@@ -95,15 +119,16 @@ a .title {
   display: block;
   height: 2px;
   background-color: #1e439a;
-  margin-right: 8rem;
+  margin-right: .8rem;
   margin-bottom: 16px;
   margin-top: -10px;
 }
 
-
 .footer1 {
+  position: absolute;
   width: 100%;
   background-color: #191919;
+  bottom: 0;
   .copyright {
     padding: 10px 0;
     line-height: 1.5;

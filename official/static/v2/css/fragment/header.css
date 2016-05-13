@@ -28,17 +28,41 @@
     display: block;
   }
 }
-.clearfix::after {
+.clearfix:before,
+.clearfix:after {
+  content: '';
   display: table;
+}
+.clearfix:after {
   clear: both;
-  content: "";
+  overflow: hidden;
 }
-body {
-  background-color: #f0f0f0;
-  overflow-x: hidden;
+.clearfix {
+  zoom: 1;
 }
-html {
-  font-size: 45%;
+.clear {
+  clear: both;
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+.hide {
+  display: none;
+}
+.block {
+  display: block;
+}
+.fl,
+.fr {
+  display: inline;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
 }
 .mainbox {
   margin-left: auto;
@@ -256,13 +280,15 @@ a .title {
   display: block;
   height: 2px;
   background-color: #1e439a;
-  margin-right: 8rem;
+  margin-right: .8rem;
   margin-bottom: 16px;
   margin-top: -10px;
 }
 .footer1 {
+  position: absolute;
   width: 100%;
   background-color: #191919;
+  bottom: 0;
 }
 .footer1 .copyright {
   padding: 10px 0;
@@ -273,22 +299,22 @@ a .title {
 }
 .header {
   display: block;
-  position: relative;
+  position: absolute;
   width: 100%;
 }
 @media screen and (max-width: 640px) {
   .header {
-    height: 40px;
+    height: 0.85rem;
   }
 }
 @media screen and (min-width: 641px) {
   .header {
-    height: 70px;
+    height: 0.7rem;
   }
 }
 @media screen and (min-width: 1025px) {
   .header {
-    height: 70px;
+    height: 0.7rem;
   }
 }
 .header.header-about {
@@ -310,8 +336,9 @@ a .title {
   }
 }
 .header .nav {
+  zoom: 1;
   color: #fff;
-  font-size: 2rem;
+  font-size: .14rem;
   position: absolute;
   z-index: 5;
   top: 50%;
@@ -321,11 +348,6 @@ a .title {
   -o-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-}
-.header .nav::after {
-  display: table;
-  clear: both;
-  content: "";
 }
 .header .nav .bor {
   display: block;
@@ -365,9 +387,9 @@ a .title {
   text-align: center;
   position: relative;
   float: left;
-  height: 4.8rem;
-  line-height: 4.8rem;
-  width: 10rem;
+  height: .58rem;
+  line-height: .58rem;
+  width: 1.2rem;
 }
 @media screen and (max-width: 640px) {
   .header .nav li {

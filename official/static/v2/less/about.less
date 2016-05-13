@@ -22,11 +22,11 @@
     text-align: center;
     h2 {
       font-weight: bold;
-      font-size: 6rem;
+      font-size: .34rem;
       line-height: 110%;
     }
     p {
-      font-size: 3rem;
+      font-size: .21rem;
       line-height: 180%;
     }
     position: absolute;
@@ -54,8 +54,8 @@
 
 .next-icon, .prev-icon {
   display: block;
-  height: 62px;
-  width: 34px;
+  height: .74rem;
+  width: .74rem;
   background: url(../image/ban-icon-l.png) center no-repeat;
   position: absolute;
   z-index: 2;
@@ -67,7 +67,7 @@
 }
 
 .next-icon {
-  right: 1rem;
+  right: .1rem;
   .transform(rotate(180deg));
   &:hover {
     .transform(rotate(360deg));
@@ -75,7 +75,7 @@
 }
 
 .prev-icon {
-  left: 1rem;
+  left: .1rem;
   &:hover {
     .transform(rotate(180deg));
   }
@@ -93,7 +93,7 @@
 
 .media-md({ .text {
   width: 100%;
-  padding: 0.5rem 5% 1.5rem 5%;
+  padding: 0.5rem 5% .15rem 5%;
   color: #000;
   h2 {
     font-size: 300% !important;
@@ -126,17 +126,17 @@
     position: relative;
     text-align: left !important;
     width: 100%;
-    padding: 1.5rem 13% 2.8rem 13%;
+    padding: .15rem 13% .28rem 13%;
     color: #3d3d3d;
     .transform_translate(0%, 0%);
     left: 0;
     top: 0;
     text-overflow: ellipsis;
     h2 {
-      font-size: 2rem;
+      font-size: .2rem;
     }
     p {
-      font-size: 1.5rem;
+      font-size: .15rem;
     }
   }
 } .intro {
@@ -150,9 +150,9 @@
         margin: 0.5rem auto 0;
         width: 25% !important;
         h2 {
-          line-height: 2.8rem !important;
-          font-size: 2.8rem;
-          margin: 1rem auto 0;
+          line-height: .28rem !important;
+          font-size: .28rem;
+          margin: .1rem auto 0;
 
         }
       }
@@ -166,8 +166,8 @@
         line-height: 100%;
       }
       h5 {
-        font-size: 2.8rem;
-        line-height: 2.8rem !important;
+        font-size: .28rem;
+        line-height: .28rem !important;
         &:not(:nth-of-type(1)) {
           display: block !important;
         }
@@ -189,51 +189,51 @@
   }
 
   h2 {
-    font-size: 3.6rem;
+    font-size: .26rem;
     line-height: 400%;
   }
   h5 {
-    font-size: 2.4rem;
+    font-size: .24rem;
     line-height: 300%;
   }
 
   p {
     color: #555555;
-    font-size: 2.4rem;
+    font-size: .18rem;
     line-height: 200%;
   }
 
   > p {
-    //margin: 6rem auto;
+    //margin: .6rem auto;
 
-    .media(margin, 10px auto, 20px auto, 40px auto);
+    .media(margin, .1rem auto, .2rem auto, .4rem auto);
     width: 90%;
   }
   .aboutBox {
     width: 90%;
-    .media(margin, 10px auto, 20px auto, 40px auto);
+    .media(margin, .1rem auto, .2rem auto, .4rem auto);
     .aboutItem {
       margin: 0 auto;
     }
   }
   .title {
-    font-size: 4.4rem;
+    font-size: .3rem;
     line-height: 2;
     color: #555;
     .rightArrow {
       display: inline-block;
-      height: 4.4rem;
-      width: 8rem;
+      height: .3rem;
+      width: .8rem;
       background: url(../image/arrow-r.png) center no-repeat;
-      -webkit-background-size: 4.4rem;
-      background-size: 4.4rem;
+      -webkit-background-size: .44rem;
+      background-size: .44rem;
       vertical-align: middle;
-      margin-top: -10px;
+      margin-top: -.1rem;
     }
   }
   .item {
     position: relative;
-    .media(margin, 20px auto, 40px auto, 80px auto);
+    .media(margin, .2rem auto, .4rem auto, .8rem auto);
     width: 90%;
     .headerImgBox-sm {
       display: none;
@@ -244,8 +244,7 @@
       width: 16%;
       h2 {
         text-align: center;
-        line-height: 3.6rem;
-        margin-bottom: 20px;
+        line-height: .72rem;
         color: #3d3d3d;
       }
     }
@@ -262,7 +261,7 @@
     }
 
     p {
-      font-size: 2.4rem;
+      font-size: .18rem;
       line-height: 200%;
     }
 
@@ -284,7 +283,7 @@
 }
 
 .media-sm({ .copyright {
-  font-size: 10px !important;
+  font-size: .1rem !important;
 } .footer {
     display: block;
   } });
@@ -297,19 +296,25 @@
   }
 
   h1 {
-    line-height: 50px;
+    line-height: .5rem;
     border-bottom: solid 2px #fe393d;
-    margin: 20px 0;
-    font-size: 30px;
+    margin: .2rem 0;
+    font-size: .3rem;
   }
   small {
-    font-size: 20px;
-    margin: 10px 0;
+    font-size: .2rem;
+    margin: .1rem 0;
     display: block;
   }
   div {
-    font-size: 20px;
-    margin: 10px 0 30px 0;
+    font-size: .2rem;
+    margin: .1rem 0 .3rem 0;
+    span {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: .1rem;
+      }
+    }
   }
   .aboutBox {
     color: #555;
@@ -324,19 +329,19 @@
   }
 
   h1 {
-    line-height: 50px;
+    line-height: .5rem;
     border-bottom: solid 2px #fe393d;
-    margin: 20px 0;
-    font-size: 13px;
+    margin: .2rem 0;
+    font-size: .13rem;
   }
   small {
-    font-size: 8px;
-    margin: 10px 0;
+    font-size: .08rem;
+    margin: .1rem 0;
     display: block;
   }
   div {
-    font-size: 10px;
-    margin: 10px 0 30px 0;
+    font-size: .1rem;
+    margin: .1rem 0 .3rem 0;
   }
   .aboutBox {
     color: #555;

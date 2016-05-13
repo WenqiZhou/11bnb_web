@@ -29,17 +29,41 @@
     display: block;
   }
 }
-.clearfix::after {
+.clearfix:before,
+.clearfix:after {
+  content: '';
   display: table;
+}
+.clearfix:after {
   clear: both;
-  content: "";
+  overflow: hidden;
 }
-body {
-  background-color: #f0f0f0;
-  overflow-x: hidden;
+.clearfix {
+  zoom: 1;
 }
-html {
-  font-size: 45%;
+.clear {
+  clear: both;
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+.hide {
+  display: none;
+}
+.block {
+  display: block;
+}
+.fl,
+.fr {
+  display: inline;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
 }
 .mainbox {
   margin-left: auto;
@@ -257,13 +281,15 @@ a .title {
   display: block;
   height: 2px;
   background-color: #1e439a;
-  margin-right: 8rem;
+  margin-right: .8rem;
   margin-bottom: 16px;
   margin-top: -10px;
 }
 .footer1 {
+  position: absolute;
   width: 100%;
   background-color: #191919;
+  bottom: 0;
 }
 .footer1 .copyright {
   padding: 10px 0;
@@ -274,22 +300,22 @@ a .title {
 }
 .header {
   display: block;
-  position: relative;
+  position: absolute;
   width: 100%;
 }
 @media screen and (max-width: 640px) {
   .header {
-    height: 40px;
+    height: 0.85rem;
   }
 }
 @media screen and (min-width: 641px) {
   .header {
-    height: 70px;
+    height: 0.7rem;
   }
 }
 @media screen and (min-width: 1025px) {
   .header {
-    height: 70px;
+    height: 0.7rem;
   }
 }
 .header.header-about {
@@ -311,8 +337,9 @@ a .title {
   }
 }
 .header .nav {
+  zoom: 1;
   color: #fff;
-  font-size: 2rem;
+  font-size: .14rem;
   position: absolute;
   z-index: 5;
   top: 50%;
@@ -322,11 +349,6 @@ a .title {
   -o-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-}
-.header .nav::after {
-  display: table;
-  clear: both;
-  content: "";
 }
 .header .nav .bor {
   display: block;
@@ -366,9 +388,9 @@ a .title {
   text-align: center;
   position: relative;
   float: left;
-  height: 4.8rem;
-  line-height: 4.8rem;
-  width: 10rem;
+  height: .58rem;
+  line-height: .58rem;
+  width: 1.2rem;
 }
 @media screen and (max-width: 640px) {
   .header .nav li {
@@ -391,11 +413,11 @@ a .title {
 @media screen and (max-width: 640px) {
   .footer {
     display: block;
-    padding: 3rem 0;
+    padding: .3rem 0;
   }
   .footer img {
     width: 35%;
-    margin: auto auto ;
+    margin: auto auto;
   }
 }
 .banner-unslider-test {
@@ -429,11 +451,11 @@ a .title {
 }
 .banner .text h2 {
   font-weight: bold;
-  font-size: 6rem;
+  font-size: .34rem;
   line-height: 110%;
 }
 .banner .text p {
-  font-size: 3rem;
+  font-size: .21rem;
   line-height: 180%;
 }
 .banner .imgBox {
@@ -453,8 +475,8 @@ a .title {
 .next-icon,
 .prev-icon {
   display: block;
-  height: 62px;
-  width: 34px;
+  height: .74rem;
+  width: .74rem;
   background: url(../image/ban-icon-l.png) center no-repeat;
   position: absolute;
   z-index: 2;
@@ -466,7 +488,7 @@ a .title {
   background: url(../image/ban-icon-r.png) center no-repeat;
 }
 .next-icon {
-  right: 1rem;
+  right: .1rem;
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -o-transform: rotate(180deg);
@@ -481,7 +503,7 @@ a .title {
   transform: rotate(360deg);
 }
 .prev-icon {
-  left: 1rem;
+  left: .1rem;
 }
 .prev-icon:hover {
   -webkit-transform: rotate(180deg);
@@ -504,7 +526,7 @@ a .title {
 @media screen and (min-width: 641px) and (max-width: 1024px) {
   .text {
     width: 100%;
-    padding: 0.5rem 5% 1.5rem 5%;
+    padding: 0.5rem 5% .15rem 5%;
     color: #000;
   }
   .text h2 {
@@ -549,7 +571,7 @@ a .title {
     position: relative;
     text-align: left !important;
     width: 100%;
-    padding: 1.5rem 13% 2.8rem 13%;
+    padding: .15rem 13% .28rem 13%;
     color: #3d3d3d;
     transform: translate(0%, 0%);
     -ms-transform: translate(0%, 0%);
@@ -565,10 +587,10 @@ a .title {
     text-overflow: ellipsis;
   }
   .banner .text h2 {
-    font-size: 2rem;
+    font-size: .2rem;
   }
   .banner .text p {
-    font-size: 1.5rem;
+    font-size: .15rem;
   }
   .intro .item .headerImgBox {
     display: none !important;
@@ -580,9 +602,9 @@ a .title {
     width: 25% !important;
   }
   .intro .item .headerImgBox-sm h2 {
-    line-height: 2.8rem !important;
-    font-size: 2.8rem;
-    margin: 1rem auto 0;
+    line-height: .28rem !important;
+    font-size: .28rem;
+    margin: .1rem auto 0;
   }
   .intro .item h2,
   .intro .item h5,
@@ -597,8 +619,8 @@ a .title {
     line-height: 100%;
   }
   .intro .item h5 {
-    font-size: 2.8rem;
-    line-height: 2.8rem !important;
+    font-size: .28rem;
+    line-height: .28rem !important;
   }
   .intro .item h5:not( :nth-of-type(1)) {
     display: block !important;
@@ -607,7 +629,7 @@ a .title {
     display: none !important;
   }
   .intro .item p {
-    font-size: 1.8rem !important;
+    font-size: -0.72rem !important;
   }
 }
 .intro hr {
@@ -616,16 +638,16 @@ a .title {
   width: 90%;
 }
 .intro h2 {
-  font-size: 3.6rem;
+  font-size: .26rem;
   line-height: 400%;
 }
 .intro h5 {
-  font-size: 2.4rem;
+  font-size: .24rem;
   line-height: 300%;
 }
 .intro p {
   color: #555555;
-  font-size: 2.4rem;
+  font-size: .18rem;
   line-height: 200%;
 }
 .intro > p {
@@ -633,17 +655,17 @@ a .title {
 }
 @media screen and (max-width: 640px) {
   .intro > p {
-    margin: 10px auto;
+    margin: 0.1rem auto;
   }
 }
 @media screen and (min-width: 641px) {
   .intro > p {
-    margin: 20px auto;
+    margin: 0.2rem auto;
   }
 }
 @media screen and (min-width: 1025px) {
   .intro > p {
-    margin: 40px auto;
+    margin: 0.4rem auto;
   }
 }
 .intro .aboutBox {
@@ -651,36 +673,36 @@ a .title {
 }
 @media screen and (max-width: 640px) {
   .intro .aboutBox {
-    margin: 10px auto;
+    margin: 0.1rem auto;
   }
 }
 @media screen and (min-width: 641px) {
   .intro .aboutBox {
-    margin: 20px auto;
+    margin: 0.2rem auto;
   }
 }
 @media screen and (min-width: 1025px) {
   .intro .aboutBox {
-    margin: 40px auto;
+    margin: 0.4rem auto;
   }
 }
 .intro .aboutBox .aboutItem {
   margin: 0 auto;
 }
 .intro .title {
-  font-size: 4.4rem;
+  font-size: .3rem;
   line-height: 2;
   color: #555;
 }
 .intro .title .rightArrow {
   display: inline-block;
-  height: 4.4rem;
-  width: 8rem;
+  height: .3rem;
+  width: .8rem;
   background: url(../image/arrow-r.png) center no-repeat;
-  -webkit-background-size: 4.4rem;
-  background-size: 4.4rem;
+  -webkit-background-size: .44rem;
+  background-size: .44rem;
   vertical-align: middle;
-  margin-top: -10px;
+  margin-top: -0.1rem;
 }
 .intro .item {
   position: relative;
@@ -688,17 +710,17 @@ a .title {
 }
 @media screen and (max-width: 640px) {
   .intro .item {
-    margin: 20px auto;
+    margin: 0.2rem auto;
   }
 }
 @media screen and (min-width: 641px) {
   .intro .item {
-    margin: 40px auto;
+    margin: 0.4rem auto;
   }
 }
 @media screen and (min-width: 1025px) {
   .intro .item {
-    margin: 80px auto;
+    margin: 0.8rem auto;
   }
 }
 .intro .item .headerImgBox-sm {
@@ -711,8 +733,7 @@ a .title {
 }
 .intro .item .headerImgBox h2 {
   text-align: center;
-  line-height: 3.6rem;
-  margin-bottom: 20px;
+  line-height: .72rem;
   color: #3d3d3d;
 }
 .intro .item h5,
@@ -726,7 +747,7 @@ a .title {
   display: none;
 }
 .intro .item p {
-  font-size: 2.4rem;
+  font-size: .18rem;
   line-height: 200%;
 }
 .header .nav .bor {
@@ -737,7 +758,7 @@ a .title {
 }
 @media screen and (max-width: 640px) {
   .copyright {
-    font-size: 10px !important;
+    font-size: .1rem !important;
   }
   .footer {
     display: block;
@@ -749,19 +770,25 @@ a .title {
   margin-right: auto;
 }
 .info-address h1 {
-  line-height: 50px;
+  line-height: .5rem;
   border-bottom: solid 2px #fe393d;
-  margin: 20px 0;
-  font-size: 30px;
+  margin: .2rem 0;
+  font-size: .3rem;
 }
 .info-address small {
-  font-size: 20px;
-  margin: 10px 0;
+  font-size: .2rem;
+  margin: .1rem 0;
   display: block;
 }
 .info-address div {
-  font-size: 20px;
-  margin: 10px 0 30px 0;
+  font-size: .2rem;
+  margin: .1rem 0 .3rem 0;
+}
+.info-address div span {
+  display: inline-block;
+}
+.info-address div span:not(:last-child) {
+  margin-right: .1rem;
 }
 .info-address .aboutBox {
   color: #555;
@@ -773,19 +800,19 @@ a .title {
     margin-right: auto;
   }
   .info-address h1 {
-    line-height: 50px;
+    line-height: .5rem;
     border-bottom: solid 2px #fe393d;
-    margin: 20px 0;
-    font-size: 13px;
+    margin: .2rem 0;
+    font-size: .13rem;
   }
   .info-address small {
-    font-size: 8px;
-    margin: 10px 0;
+    font-size: .08rem;
+    margin: .1rem 0;
     display: block;
   }
   .info-address div {
-    font-size: 10px;
-    margin: 10px 0 30px 0;
+    font-size: .1rem;
+    margin: .1rem 0 .3rem 0;
   }
   .info-address .aboutBox {
     color: #555;

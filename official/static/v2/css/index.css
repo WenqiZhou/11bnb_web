@@ -29,17 +29,41 @@
     display: block;
   }
 }
-.clearfix::after {
+.clearfix:before,
+.clearfix:after {
+  content: '';
   display: table;
+}
+.clearfix:after {
   clear: both;
-  content: "";
+  overflow: hidden;
 }
-body {
-  background-color: #f0f0f0;
-  overflow-x: hidden;
+.clearfix {
+  zoom: 1;
 }
-html {
-  font-size: 45%;
+.clear {
+  clear: both;
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+.hide {
+  display: none;
+}
+.block {
+  display: block;
+}
+.fl,
+.fr {
+  display: inline;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
 }
 .mainbox {
   margin-left: auto;
@@ -257,13 +281,15 @@ a .title {
   display: block;
   height: 2px;
   background-color: #1e439a;
-  margin-right: 8rem;
+  margin-right: .8rem;
   margin-bottom: 16px;
   margin-top: -10px;
 }
 .footer1 {
+  position: absolute;
   width: 100%;
   background-color: #191919;
+  bottom: 0;
 }
 .footer1 .copyright {
   padding: 10px 0;
@@ -274,22 +300,22 @@ a .title {
 }
 .header {
   display: block;
-  position: relative;
+  position: absolute;
   width: 100%;
 }
 @media screen and (max-width: 640px) {
   .header {
-    height: 40px;
+    height: 0.85rem;
   }
 }
 @media screen and (min-width: 641px) {
   .header {
-    height: 70px;
+    height: 0.7rem;
   }
 }
 @media screen and (min-width: 1025px) {
   .header {
-    height: 70px;
+    height: 0.7rem;
   }
 }
 .header.header-about {
@@ -311,8 +337,9 @@ a .title {
   }
 }
 .header .nav {
+  zoom: 1;
   color: #fff;
-  font-size: 2rem;
+  font-size: .14rem;
   position: absolute;
   z-index: 5;
   top: 50%;
@@ -322,11 +349,6 @@ a .title {
   -o-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-}
-.header .nav::after {
-  display: table;
-  clear: both;
-  content: "";
 }
 .header .nav .bor {
   display: block;
@@ -366,9 +388,9 @@ a .title {
   text-align: center;
   position: relative;
   float: left;
-  height: 4.8rem;
-  line-height: 4.8rem;
-  width: 10rem;
+  height: .58rem;
+  line-height: .58rem;
+  width: 1.2rem;
 }
 @media screen and (max-width: 640px) {
   .header .nav li {
@@ -385,13 +407,16 @@ a .title {
 .header .nav a:hover {
   color: #cacaca;
 }
+body {
+  height: 100%;
+}
 .banner {
+  position: fixed;
   height: 100%;
   width: 100%;
   background: url("../image/big.png") center no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
-  position: relative;
 }
 .banner .pic1-sm {
   display: none;
@@ -418,23 +443,12 @@ a .title {
   z-index: 1;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  padding-bottom: 12px;
-  bottom: 5%;
-}
-@media screen and (max-height: 1240px) {
-  .banner .layer2 {
-    bottom: 5%;
-  }
-}
-@media screen and (max-height: 1000px) {
-  .banner .layer2 {
-    bottom: 9%;
-  }
-}
-@media screen and (max-height: 900px) {
-  .banner .layer2 {
-    bottom: 10%;
-  }
+  top: 0;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 .banner .pic2 {
   left: 50%;
@@ -478,7 +492,7 @@ a .title {
   width: 100%;
 }
 .intro li {
-  margin: 1rem 0;
+  margin: .1rem 0;
   position: relative;
   float: left;
   width: 25%;
@@ -486,7 +500,7 @@ a .title {
 .intro img {
   position: absolute;
   left: 40%;
-  margin-left: -1.3rem;
+  margin-left: -0.13rem;
   height: 38px;
   width: auto;
   -webkit-transform: translateX(-100%);
@@ -500,11 +514,11 @@ a .title {
   margin-left: 40%;
 }
 .intro h3 {
-  font-size: 2.4rem;
-  line-height: 3.6rem;
+  font-size: .18rem;
+  line-height: .36rem;
 }
 .intro p {
-  font-size: 1.8rem;
+  font-size: .13rem;
   line-height: 2;
 }
 @media screen and (min-width: 641px) and (max-width: 1024px) {
@@ -513,18 +527,8 @@ a .title {
   }
 }
 @media screen and (max-width: 640px) {
-  html {
-    font-size: 100px;
-  }
-}
-@media screen and (max-width: 640px) {
   .header li {
     font-size: 0.25rem;
-  }
-}
-@media screen and (min-width: 567px) and (max-width: 640px) {
-  .header li {
-    font-size: 0.2rem !important;
   }
 }
 @media screen and (max-width: 640px) {
@@ -576,7 +580,12 @@ a .title {
   }
   .layer2 {
     min-height: 30% !important;
-    bottom: 4% !important;
+    top: 0;
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
     height: auto;
   }
   .copyright {

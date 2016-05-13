@@ -1,15 +1,13 @@
 @import "../mixins";
 @import "../common";
-
-.footer{
-  display:none;
-  .media-sm({
-  display:block;
-  padding:3rem 0;
-  img{
-    width:35%;
-    margin:auto auto ;
-
+.footer {
+  display: none;
+  @media screen and(max-width: @media_sm_max) {
+    display: block;
+    padding: .3rem 0;
+    img {
+      width: 35%;
+      margin: auto auto;
+    }
   }
-  });
 }

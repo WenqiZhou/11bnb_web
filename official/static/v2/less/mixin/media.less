@@ -1,9 +1,10 @@
 @media_sm_max: 640px;
 @media_md_min: 641px;
+@media_md_max: 1024px;
 @media_lg_min: 1025px;
 
 .media-sm(@frames) {
-  @media screen and(max-width: 640px) {
+  @media screen and(max-width: @media_sm_max) {
     @frames();
   }
 }

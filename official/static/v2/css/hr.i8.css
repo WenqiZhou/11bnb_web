@@ -29,17 +29,41 @@
     display: block;
   }
 }
-.clearfix::after {
+.clearfix:before,
+.clearfix:after {
+  content: '';
   display: table;
+}
+.clearfix:after {
   clear: both;
-  content: "";
+  overflow: hidden;
 }
-body {
-  background-color: #f0f0f0;
-  overflow-x: hidden;
+.clearfix {
+  zoom: 1;
 }
-html {
-  font-size: 45%;
+.clear {
+  clear: both;
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+.hide {
+  display: none;
+}
+.block {
+  display: block;
+}
+.fl,
+.fr {
+  display: inline;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
 }
 .mainbox {
   margin-left: auto;
@@ -257,13 +281,15 @@ a .title {
   display: block;
   height: 2px;
   background-color: #1e439a;
-  margin-right: 8rem;
+  margin-right: .8rem;
   margin-bottom: 16px;
   margin-top: -10px;
 }
 .footer1 {
+  position: absolute;
   width: 100%;
   background-color: #191919;
+  bottom: 0;
 }
 .footer1 .copyright {
   padding: 10px 0;
@@ -297,16 +323,12 @@ a .title {
   height: 70%;
   padding-top: 10px;
   display: block;
+  zoom: 1;
   color: #fff;
   font-size: 2em;
   position: relative;
   right: 3%;
   float: right;
-}
-.header .nav::after {
-  display: table;
-  clear: both;
-  content: "";
 }
 .header .nav .bor {
   display: block;
@@ -356,8 +378,8 @@ a .title {
   height: 44px;
   width: 80px;
   background: url(../image/arrow-r.png) center no-repeat;
-  -webkit-background-size: 4.4rem;
-  background-size: 4.4rem;
+  -webkit-background-size: .44rem;
+  background-size: .44rem;
   vertical-align: middle;
   margin-top: -10px;
 }
@@ -417,13 +439,9 @@ a .title {
 .job-box .job-bar ul {
   height: 46px;
   padding: 10px 0;
+  zoom: 1;
   display: block;
   border-bottom: solid 2px #ddd;
-}
-.job-box .job-bar ul::after {
-  display: table;
-  clear: both;
-  content: "";
 }
 .job-box .job-bar li {
   line-height: 24px;
@@ -501,7 +519,7 @@ a .title {
   background-size: auto 100%;
 }
 .culture .title {
-  font-size: 4.4rem;
+  font-size: .44rem;
   line-height: 1.5;
   color: #555;
   width: 90%;
@@ -509,11 +527,11 @@ a .title {
 }
 .culture .title .rightArrow {
   display: inline-block;
-  height: 4.4rem;
-  width: 8rem;
+  height: .44rem;
+  width: .8rem;
   background: url(../image/arrow-r.png) center no-repeat;
-  -webkit-background-size: 4.4rem;
-  background-size: 4.4rem;
+  -webkit-background-size: .44rem;
+  background-size: .44rem;
   vertical-align: middle;
   margin-top: -10px;
 }
