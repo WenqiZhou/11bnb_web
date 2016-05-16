@@ -420,22 +420,7 @@ a .title {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   padding-bottom: 12px;
-  bottom: 5%;
-}
-@media screen and (max-height: 1240px) {
-  .banner .layer2 {
-    bottom: 5%;
-  }
-}
-@media screen and (max-height: 1000px) {
-  .banner .layer2 {
-    bottom: 9%;
-  }
-}
-@media screen and (max-height: 900px) {
-  .banner .layer2 {
-    bottom: 10%;
-  }
+  bottom: 100%;
 }
 .banner .pic2 {
   left: 50%;
@@ -561,7 +546,6 @@ a .title {
   }
   .layer2 {
     min-height: 30% !important;
-    bottom: 4% !important;
     height: auto !important;
   }
   .copyright {
@@ -577,7 +561,6 @@ a .title {
   }
   .layer2 {
     min-height: 30% !important;
-    bottom: 4% !important;
     height: auto;
   }
   .copyright {
