@@ -273,6 +273,24 @@ a .title {
   font-size: 12px;
   text-align: center;
 }
+.top {
+  display: block;
+}
+@media screen and (max-width: 640px) {
+  .top {
+    height: 60px;
+  }
+}
+@media screen and (min-width: 641px) {
+  .top {
+    height: 160px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .top {
+    height: 160px;
+  }
+}
 .header {
   display: block;
   position: relative;
@@ -401,7 +419,41 @@ a .title {
 }
 .top {
   display: block;
-  height: 100%;
+}
+@media screen and (max-width: 640px) {
+  .top {
+    height: 60px;
+  }
+}
+@media screen and (min-width: 641px) {
+  .top {
+    height: 160px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .top {
+    height: 160px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .copyright {
+    font-size: 10px !important;
+  }
+  .footer {
+    display: block;
+  }
+  .culture {
+    background: url("../image/culture-small.jpg") 0 2px #ffffff no-repeat;
+    -webkit-background-size: auto 100%;
+    background-size: auto 100%;
+  }
+  .targetBox {
+    width: 90% !important;
+    margin: 20px auto 0 !important;
+  }
+  .targetBox .target {
+    font-size: 2rem !important;
+  }
 }
 .intro .targetBox {
   margin: 40px auto;
@@ -580,7 +632,7 @@ a .title {
   -moz-box-shadow: 0 3px 3px #d4d4d4;
   box-shadow: 0 3px 3px #d4d4d4;
   background: url("../image/culture.jpg") 0 2px #ffffff no-repeat;
-  -webkit-background-size: auto 100% ;
+  -webkit-background-size: auto 100%;
   background-size: auto 100%;
 }
 .culture .title {
@@ -605,22 +657,40 @@ a .title {
   margin: 0 auto;
 }
 @media screen and (max-width: 640px) {
-  .copyright {
-    font-size: 10px !important;
-  }
-  .footer {
-    display: block;
-  }
   .culture {
-    background: url("../image/culture-small.jpg") 0 2px #ffffff no-repeat;
-    -webkit-background-size: auto 100% ;
+    width: 90%;
+    margin: 40px auto 0;
+    padding: 50px 0;
+    box-shadow: 0 3px 3px #d4d4d4;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 3px 3px #d4d4d4;
+    -moz-box-shadow: 0 3px 3px #d4d4d4;
+    background: url("../image/culture.jpg") 0 2px #ffffff no-repeat;
+    -webkit-background-size: auto 100%;
     background-size: auto 100%;
   }
-  .targetBox {
-    width: 90% !important;
-    margin: 20px auto 0!important;
+  .culture .title {
+    font-size: 22px;
+    line-height: 1.5;
+    color: #555;
+    width: 90%;
+    margin: 0 auto;
   }
-  .targetBox .target {
-    font-size: 2rem !important;
+  .culture .title .rightArrow {
+    display: inline-block;
+    height: 22px;
+    width: 8rem;
+    background: url(../image/arrow-r.png) center no-repeat;
+    -webkit-background-size: 22px;
+    background-size: 22px;
+    vertical-align: middle;
+    margin-top: -5px;
+  }
+  .culture p {
+    font-size: 12px;
+    width: 90%;
+    margin: 0 auto;
   }
 }

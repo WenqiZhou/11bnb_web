@@ -273,6 +273,24 @@ a .title {
   font-size: 12px;
   text-align: center;
 }
+.top {
+  display: block;
+}
+@media screen and (max-width: 640px) {
+  .top {
+    height: 60px;
+  }
+}
+@media screen and (min-width: 641px) {
+  .top {
+    height: 160px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .top {
+    height: 160px;
+  }
+}
 .header {
   z-index: 103;
   display: block;

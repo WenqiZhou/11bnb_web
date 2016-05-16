@@ -273,6 +273,24 @@ a .title {
   font-size: 12px;
   text-align: center;
 }
+.top {
+  display: block;
+}
+@media screen and (max-width: 640px) {
+  .top {
+    height: 60px;
+  }
+}
+@media screen and (min-width: 641px) {
+  .top {
+    height: 160px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .top {
+    height: 160px;
+  }
+}
 .header {
   display: block;
   position: relative;
@@ -729,6 +747,127 @@ a .title {
 .intro .item p {
   font-size: 2.4rem;
   line-height: 200%;
+}
+@media screen and (max-width: 640px) {
+  .intro hr {
+    background-color: #c9c9c9;
+    margin: auto;
+    width: 90%;
+  }
+  .intro h2 {
+    font-size: 3.6rem;
+    line-height: 400%;
+  }
+  .intro h5 {
+    font-size: 2.4rem;
+    line-height: 300%;
+  }
+  .intro p {
+    color: #555555;
+    font-size: 2.4rem;
+    line-height: 200%;
+  }
+  .intro > p {
+    width: 90%;
+  }
+  .intro .aboutBox {
+    width: 90%;
+  }
+  .intro .aboutBox .aboutItem {
+    margin: 0 auto;
+  }
+  .intro .title {
+    font-size: 22px;
+    line-height: 2;
+    color: #555;
+  }
+  .intro .title .rightArrow {
+    display: inline-block;
+    height: 22px;
+    width: 8rem;
+    background: url(../image/arrow-r.png) center no-repeat;
+    -webkit-background-size: 22px;
+    background-size: 22px;
+    vertical-align: middle;
+    margin-top: -5px;
+  }
+  .intro .item {
+    position: relative;
+    width: 90%;
+  }
+  .intro .item .headerImgBox-sm {
+    display: none;
+  }
+  .intro .item .headerImgBox {
+    display: block;
+    position: absolute;
+    width: 16%;
+  }
+  .intro .item .headerImgBox h2 {
+    text-align: center;
+    line-height: 3.6rem;
+    margin-bottom: 20px;
+    color: #3d3d3d;
+  }
+  .intro .item h5,
+  .intro .item p {
+    margin-left: 25%;
+  }
+  .intro .item h5:nth-of-type(1) {
+    display: block;
+  }
+  .intro .item h5:not( :nth-of-type(1)) {
+    display: none;
+  }
+  .intro .item p {
+    font-size: 2.4rem;
+    line-height: 200%;
+  }
+}
+@media screen and (max-width: 640px) and screen and (max-width: 640px) {
+  .intro > p {
+    margin: 10px auto;
+  }
+}
+@media screen and (max-width: 640px) and screen and (min-width: 641px) {
+  .intro > p {
+    margin: 20px auto;
+  }
+}
+@media screen and (max-width: 640px) and screen and (min-width: 1025px) {
+  .intro > p {
+    margin: 40px auto;
+  }
+}
+@media screen and (max-width: 640px) and screen and (max-width: 640px) {
+  .intro .aboutBox {
+    margin: 10px auto;
+  }
+}
+@media screen and (max-width: 640px) and screen and (min-width: 641px) {
+  .intro .aboutBox {
+    margin: 20px auto;
+  }
+}
+@media screen and (max-width: 640px) and screen and (min-width: 1025px) {
+  .intro .aboutBox {
+    margin: 40px auto;
+  }
+}
+@media screen and (max-width: 640px) and screen and (max-width: 640px) {
+  .intro .item {
+    margin: 20px auto;
+  }
+}
+@media screen and (max-width: 640px) and screen and (min-width: 641px) {
+  .intro .item {
+    margin: 40px auto;
+  }
+}
+@media screen and (max-width: 640px) and screen and (min-width: 1025px) {
+  .intro .item {
+    margin: 80px auto;
+  }
 }
 .header .nav .bor {
   left: 25%;
