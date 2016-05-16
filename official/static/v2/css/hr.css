@@ -510,6 +510,11 @@ a .title {
     padding: 2rem 0 !important;
   }
   .job-box ul {
+    /* 设置弹性布局 */
+    /* android 2.1-3.0, ios 3.2-4.3 */
+    /* Chrome 21+ */
+    /* WP IE 10 */
+    /* android 4.4 */
     -webkit-flex-flow: row nowrap !important;
     flex-flow: row nowrap !important;
     -webkit-justify-content: center !important;
@@ -532,6 +537,11 @@ a .title {
   }
   .job-box ul li {
     float: none !important;
+    /* 子元素自动占据剩余的空间 */
+    /* android 2.1-3.0, ios 3.2-4.3 */
+    /* Chrome 21+ */
+    /* WP IE 10 */
+    /* android 4.4 */
     /* 子元素自动占据剩余的空间 */
     -webkit-box-flex: 1 !important;
     /* android 2.1-3.0, ios 3.2-4.3 */

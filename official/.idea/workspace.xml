@@ -28,18 +28,38 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.214285" vertical-offset="2140" max-vertical-offset="4009">
-              <caret line="138" column="26" selection-start-line="138" selection-start-column="20" selection-end-line="138" selection-end-column="26" />
+            <state vertical-scroll-proportion="-14.5" vertical-offset="2140" max-vertical-offset="4009">
+              <caret line="134" column="17" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.less" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/v2/less/index.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.19020501" vertical-offset="4347" max-vertical-offset="5225">
-              <caret line="220" column="17" selection-start-line="220" selection-start-column="17" selection-end-line="220" selection-end-column="17" />
+            <state vertical-scroll-proportion="-13.714286" vertical-offset="4347" max-vertical-offset="5225">
+              <caret line="249" column="9" selection-start-line="249" selection-start-column="9" selection-end-line="249" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="news.less" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/v2/less/news.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.19623972" vertical-offset="1125" max-vertical-offset="2641">
+              <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="media.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/v2/less/mixin/media.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.392858" vertical-offset="870" max-vertical-offset="1843">
+              <caret line="67" column="9" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -70,12 +90,10 @@
         <option value="$PROJECT_DIR$/about-team.html" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/static/v2/less/fragment/header.less" />
-        <option value="$PROJECT_DIR$/static/v2/less/mixin/media.less" />
         <option value="$PROJECT_DIR$/about.html" />
         <option value="$PROJECT_DIR$/static/v2/less/about.i8.less" />
         <option value="$PROJECT_DIR$/static/v2/less/hr.i8.less" />
         <option value="$PROJECT_DIR$/static/v2/less/news.i8.less" />
-        <option value="$PROJECT_DIR$/static/v2/less/news.less" />
         <option value="$PROJECT_DIR$/management_team.html" />
         <option value="$PROJECT_DIR$/introduction.html" />
         <option value="$PROJECT_DIR$/news.html" />
@@ -86,6 +104,8 @@
         <option value="$PROJECT_DIR$/hr.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/static/v2/less/index.less" />
+        <option value="$PROJECT_DIR$/static/v2/less/mixin/media.less" />
+        <option value="$PROJECT_DIR$/static/v2/less/news.less" />
       </list>
     </option>
   </component>
@@ -521,12 +541,12 @@
       <workItem from="1459228109213" duration="1082000" />
       <workItem from="1463026101105" duration="10799000" />
       <workItem from="1463129450914" duration="1545000" />
-      <workItem from="1463362638698" duration="413000" />
+      <workItem from="1463362638698" duration="2529000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140921000" />
+    <option name="totallyTimeSpent" value="143037000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
@@ -770,14 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/v2/less/mixin/media.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.892857" vertical-offset="0" max-vertical-offset="1292">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/v2/css/about.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="13549" max-vertical-offset="15181">
@@ -803,13 +815,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1022" max-vertical-offset="1900">
           <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/v2/less/news.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1649" max-vertical-offset="2527">
-          <caret line="107" column="7" selection-start-line="107" selection-start-column="7" selection-end-line="107" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -920,16 +926,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.214285" vertical-offset="2140" max-vertical-offset="4009">
-          <caret line="138" column="26" selection-start-line="138" selection-start-column="20" selection-end-line="138" selection-end-column="26" />
+        <state vertical-scroll-proportion="-14.5" vertical-offset="2140" max-vertical-offset="4009">
+          <caret line="134" column="17" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/v2/less/index.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.19020501" vertical-offset="4347" max-vertical-offset="5225">
-          <caret line="220" column="17" selection-start-line="220" selection-start-column="17" selection-end-line="220" selection-end-column="17" />
+        <state vertical-scroll-proportion="-13.714286" vertical-offset="4347" max-vertical-offset="5225">
+          <caret line="249" column="9" selection-start-line="249" selection-start-column="9" selection-end-line="249" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/v2/less/mixin/media.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.392858" vertical-offset="870" max-vertical-offset="1843">
+          <caret line="67" column="9" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/v2/less/news.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19623972" vertical-offset="1125" max-vertical-offset="2641">
+          <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
           <folding />
         </state>
       </provider>
