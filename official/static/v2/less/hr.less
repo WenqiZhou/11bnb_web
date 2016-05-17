@@ -1,43 +1,6 @@
 @charset "UTF-8";
-<<<<<<< HEAD
 @import "base";
 
-=======
-@import "mixins";
-@import "common";
-@import "fragment/header";
-@import "fragment/footer";
-
-.top {
-  display: block;
-  //height: 160px;
-  .media(height, 60px, 160px, 160px)
-}
-
-@media screen and(max-width: 640px) {
-  .copyright {
-    font-size: 10px !important;
-  }
-
-  .footer {
-    display: block;
-  }
-
-  .culture {
-    background: url("../image/culture-small.jpg") 0 2px #fff no-repeat;
-    -webkit-background-size: auto 100%;
-    background-size: auto 100%;
-  }
-
-  .targetBox {
-    width: 90% !important;
-    margin: 20px auto 0 !important;
-    .target {
-      font-size: 2rem !important;
-    }
-  }
-}
->>>>>>> master
 
 .intro {
 
@@ -193,7 +156,6 @@
   display: none;
 }
 
-<<<<<<< HEAD
 @media screen and(max-width: @media_sm_max) {
   .copyright {
     font-size: 10px !important;
@@ -209,81 +171,6 @@
     margin: 20px auto 0 !important;
     .target {
       font-size: .2rem !important;
-=======
-.culture {
-  width: 90%;
-  margin: 40px auto 0;
-  padding: 50px 0;
-  box-shadow: 0 3px 3px #d4d4d4;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: 0 3px 3px #d4d4d4;
-  -moz-box-shadow: 0 3px 3px #d4d4d4;
-  box-shadow: 0 3px 3px #d4d4d4;
-  background: url("../image/culture.jpg") 0 2px #fff no-repeat;
-  -webkit-background-size: auto 100%;
-  background-size: auto 100%;
-  .title {
-    font-size: 4.4rem;
-    line-height: 1.5;
-    color: #555;
-    width: 90%;
-    margin: 0 auto;
-    .rightArrow {
-      display: inline-block;
-      height: 4.4rem;
-      width: 8rem;
-      background: url(../image/arrow-r.png) center no-repeat;
-      -webkit-background-size: 4.4rem;
-      background-size: 4.4rem;
-      vertical-align: middle;
-      margin-top: -10px;
-    }
-  }
-  p {
-    width: 90%;
-    margin: 0 auto;
-  }
-}
-
-@media screen and(max-width: @media_sm_max) {
-
-  .culture {
-    width: 90%;
-    margin: 40px auto 0;
-    padding: 50px 0;
-    box-shadow: 0 3px 3px #d4d4d4;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-box-shadow: 0 3px 3px #d4d4d4;
-    -moz-box-shadow: 0 3px 3px #d4d4d4;
-    background: url("../image/culture.jpg") 0 2px #fff no-repeat;
-    -webkit-background-size: auto 100%;
-    background-size: auto 100%;
-    .title {
-      font-size: 22px;
-      line-height: 1.5;
-      color: #555;
-      width: 90%;
-      margin: 0 auto;
-      .rightArrow {
-        display: inline-block;
-        height: 22px;
-        width: 8rem;
-        background: url(../image/arrow-r.png) center no-repeat;
-        -webkit-background-size: 22px;
-        background-size: 22px;
-        vertical-align: middle;
-        margin-top: -5px;
-      }
-    }
-    p {
-      font-size: 12px;
-      width: 90%;
-      margin: 0 auto;
->>>>>>> master
     }
   }
 }
