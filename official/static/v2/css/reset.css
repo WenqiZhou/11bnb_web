@@ -1,3 +1,33 @@
+@media screen and (max-width: 640px) {
+  .hide-sm {
+    display: none;
+  }
+}
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .hide-md {
+    display: none;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .hide-lg {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  .show-sm {
+    display: block;
+  }
+}
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .show-md {
+    display: block;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .show-lg {
+    display: block;
+  }
+}
 * {
   font-family: 'PingFang SC', 'STHeiti', 'microsoft yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
@@ -6,17 +36,125 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  /*-moz-user-select: none;*/
-  /*-webkit-user-select: none;*/
-  /*-ms-user-select: none;*/
 }
 html {
-  font-size: 62.5%;
+  font-size: 100px;
+}
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 50px;
+  }
+}
+@media screen and (min-width: 366px) and (max-width: 375px) {
+  html {
+    font-size: 50px;
+  }
+}
+@media screen and (min-width: 356px) and (max-width: 365px) {
+  html {
+    font-size: 49px;
+  }
+}
+@media screen and (min-width: 346px) and (max-width: 355px) {
+  html {
+    font-size: 47px;
+  }
+}
+@media screen and (min-width: 336px) and (max-width: 345px) {
+  html {
+    font-size: 46px;
+  }
+}
+@media screen and (min-width: 326px) and (max-width: 335px) {
+  html {
+    font-size: 45px;
+  }
+}
+@media screen and (min-width: 316px) and (max-width: 325px) {
+  html {
+    font-size: 43px;
+  }
+}
+@media screen and (min-width: 306px) and (max-width: 315px) {
+  html {
+    font-size: 42px;
+  }
+}
+@media screen and (min-width: 296px) and (max-width: 305px) {
+  html {
+    font-size: 41px;
+  }
+}
+@media screen and (min-width: 286px) and (max-width: 295px) {
+  html {
+    font-size: 39px;
+  }
+}
+@media screen and (min-width: 276px) and (max-width: 285px) {
+  html {
+    font-size: 38px;
+  }
+}
+@media screen and (min-width: 266px) and (max-width: 275px) {
+  html {
+    font-size: 37px;
+  }
+}
+@media screen and (min-width: 256px) and (max-width: 265px) {
+  html {
+    font-size: 35px;
+  }
+}
+@media screen and (min-width: 246px) and (max-width: 255px) {
+  html {
+    font-size: 34px;
+  }
+}
+@media screen and (min-width: 236px) and (max-width: 245px) {
+  html {
+    font-size: 33px;
+  }
+}
+@media screen and (min-width: 226px) and (max-width: 235px) {
+  html {
+    font-size: 31px;
+  }
+}
+@media screen and (min-width: 216px) and (max-width: 225px) {
+  html {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 320px) {
+  body {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 413px) {
+  body {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 414px) and (max-width: 639px) {
+  body {
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 640px) {
+  body {
+    font-size: 18px;
+  }
 }
 body,
 html {
   width: 100%;
+  overflow-x: hidden;
+}
+html {
   height: 100%;
+}
+body {
+  min-height: 100%;
 }
 a:link,
 a:visited,
@@ -41,42 +179,14 @@ ul {
   list-style-type: none;
   list-style-image: none;
 }
-/* 清除浮动 */
-.clearfix:before,
-.clearfix:after {
-  content: '';
-  display: table;
+body {
+  background-color: #f0f0f0;
+  overflow-x: hidden;
+  position: relative;
+  padding-bottom: .74rem;
 }
-.clearfix:after {
-  clear: both;
-  overflow: hidden;
-}
-.clearfix {
-  zoom: 1;
-}
-.clear {
-  clear: both;
-  display: block;
-  font-size: 0;
-  height: 0;
-  line-height: 0;
-  overflow: hidden;
-}
-/* 设置显示和隐藏，通常用来与 js 配合 */
-.hide {
-  display: none;
-}
-.block {
-  display: block;
-}
-/* 设置浮动，减少浮动带来的 bug */
-.fl,
-.fr {
-  display: inline;
-}
-.fl {
-  float: left;
-}
-.fr {
-  float: right;
+@media screen and (max-width: 640px) {
+  body {
+    padding-bottom: 1.48rem;
+  }
 }

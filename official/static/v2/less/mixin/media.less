@@ -1,21 +1,22 @@
 @media_sm_max: 640px;
 @media_md_min: 641px;
+@media_md_max: 1024px;
 @media_lg_min: 1025px;
 
 .media-sm(@frames) {
-  @media screen and(max-width: 640px) {
+  @media screen and(max-width: @media_sm_max) {
     @frames();
   }
 }
 
 .media-md(@frames) {
-  @media screen and(min-width: 641px) and(max-width: 1024px) {
+  @media screen and(min-width: @media_md_min) and(max-width: @media_md_max) {
     @frames();
   }
 }
 
 .media-lg(@frames) {
-  @media screen and(min-width: 1025px) {
+  @media screen and(min-width: @media_lg_min) {
     @frames();
   }
 }
@@ -26,69 +27,38 @@
   }
 }
 
-//font
-
-.font-size(@sm,@md,@lg) {
+.media(@attr,@sm,@md,@lg) {
   @media screen and(max-width: @media_sm_max) {
-    font-size: @sm;
+    @{attr}: @sm;
   }
   @media screen and(min-width: @media_md_min) {
-    font-size: @md;
+    @{attr}: @md;
   }
   @media screen and(min-width: @media_lg_min) {
-    font-size: @lg;
+    @{attr}: @lg;
   }
 }
 
-//size
-
-.width(@sm,@md,@lg) {
-  @media screen and(max-width: @media_sm_max) {
-    width: @sm;
-  }
-  @media screen and(min-width: @media_md_min) {
-    width: @md;
-  }
-  @media screen and(min-width: @media_lg_min) {
-    width: @lg;
-  }
+.hide-sm {
+  .media-sm({ display: none; });
 }
 
-.height(@sm,@md,@lg) {
-  @media screen and(max-width: @media_sm_max) {
-    height: @sm;
-  }
-  @media screen and(min-width: @media_md_min) {
-    height: @md;
-  }
-  @media screen and(min-width: @media_lg_min) {
-    height: @lg;
-  }
+.hide-md {
+  .media-md({ display: none; });
 }
 
-.margin(@sm,@md,@lg) {
-  @media screen and(max-width: @media_sm_max) {
-    margin: @sm;
-  }
-  @media screen and(min-width: @media_md_min) {
-    margin: @md;
-  }
-  @media screen and(min-width: @media_lg_min) {
-    margin: @lg;
-  }
+.hide-lg {
+  .media-lg({ display: none; });
 }
 
-.padding(@sm,@md,@lg) {
-  @media screen and(max-width: @media_sm_max) {
-    padding: @sm;
-  }
-  @media screen and(min-width: @media_md_min) {
-    padding: @md;
-  }
-  @media screen and(min-width: @media_lg_min) {
-    padding: @lg;
-  }
+.show-sm {
+  .media-sm({ display: block; });
 }
 
+.show-md {
+  .media-md({ display: block; });
+}
 
-
+.show-lg {
+  .media-lg({ display: block; });
+}
