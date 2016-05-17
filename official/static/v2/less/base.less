@@ -1,0 +1,112 @@
+@import "mixins";
+@import "common";
+@import "fragment/header";
+@import "fragment/footer";
+
+//reset
+* {
+  font-family: 'PingFang SC', 'STHeiti', 'microsoft yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@hfs: 100px;
+
+html {
+  font-size: @hfs;
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: (@hfs / 2);
+  }
+}
+
+@hfsc: 10;
+.loop-hfs(@n) when (@n >= 220) {
+  @media screen and (min-width: (1px * @n - @hfsc + 1)) and (max-width: (1px * @n)) {
+    html {
+      font-size: round(@hfs / 2 * @n / 375);
+    }
+  }
+  .loop-hfs(@n - @hfsc)
+}
+
+.loop-hfs(375);
+
+@media screen and (max-width: 320px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 413px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 414px) and (max-width: 639px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+body, html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+
+}
+
+a:link, a:visited, a:active {
+  color: inherit;
+  outline: 0;
+  text-decoration: none
+}
+
+a:hover {
+  text-decoration: none
+}
+
+img {
+  width: 100%;
+  clear: both;
+  display: block;
+  border: 0;
+  vertical-align: top;
+  -ms-interpolation-mode: bicubic;
+}
+
+ol, ul {
+  list-style-type: none;
+  list-style-image: none;
+}
+
+//app
+body {
+  background-color: #f0f0f0;
+  overflow-x: hidden;
+  position: relative;
+  padding-bottom: .74rem;
+  @media screen and(max-width: @media_sm_max) {
+    padding-bottom: (.74rem * 2);
+  }
+}
