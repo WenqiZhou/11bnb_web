@@ -57,6 +57,13 @@
   -moz-box-shadow: @arguments;
   -webkit-box-shadow: @arguments;
 }
+.box_shadow(@vs) {
+  box-shadow: @vs;
+  -o-box-shadow: @vs;
+  -mo-box-shadow: @vs;
+  -moz-box-shadow: @vs;
+  -webkit-box-shadow: @vs;
+}
 
 //keyframes
 .keyframes (@name, @frames) {

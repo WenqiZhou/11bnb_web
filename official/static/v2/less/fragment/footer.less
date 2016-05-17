@@ -1,5 +1,6 @@
 @import "../mixins";
 @import "../common";
+
 .footer {
   display: none;
   @media screen and(max-width: @media_sm_max) {
@@ -11,3 +12,7 @@
     }
   }
 }
+
+.media-sm({ .copyright {
+  font-size: .16rem !important;
+} });

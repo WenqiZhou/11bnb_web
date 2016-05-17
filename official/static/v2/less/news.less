@@ -1,40 +1,14 @@
 @charset "UTF-8";
-@import "mixins";
-@import "common";
-@import "fragment/header";
-@import "fragment/footer";
+@import "base";
 
-.top {
-  display: block;
-  .media(height, 1.6rem, 1.6rem, 1.6rem)
-}
+
 
 .intro {
-  width: 95%;
-  .border_radius(6px);
-  .box_shadow(4px, 4px, 8px, #d4d4d4);
-  margin-bottom: 10px;
-  background-color: #fff;
-  padding: 30px 0;
-  .title {
-    font-size: .3rem;
-    line-height: 2;
-    color: #555;
-    margin: auto 1.2rem;
-    .rightArrow {
-      display: inline-block;
-      height: .3rem;
-      width: .8rem;
-      background: url(../image/arrow-r.png) center no-repeat;
-      -webkit-background-size: .44rem;
-      background-size: .44rem;
-      vertical-align: middle;
-      margin-top: -10px;
-    }
-  }
+
   .item {
+    font-size: .18rem;
+    margin: 0 .3rem;
     line-height: .4rem;
-    margin: auto 1.4rem;
     .flex-box();
     .star {
       margin-top: .09rem;
@@ -53,7 +27,6 @@
       text-align: justify;
       display: block;
       float: left;
-      font-size: .18rem;
       color: #fe393d;
       .flex();
     }
@@ -61,17 +34,14 @@
     .text {
       margin-left: .4rem;
       float: left;
-      font-size: .18rem;
       .flex(1);
     }
   }
 
   @media screen and(max-width: @media_sm_max) {
-    .title {
-      margin-left: .36rem;
-    }
 
     .item {
+      font-size: .24rem;
 
       margin: 10px auto;
       width: 98%;

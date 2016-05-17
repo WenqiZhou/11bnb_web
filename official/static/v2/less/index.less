@@ -1,8 +1,5 @@
 @charset "UTF-8";
-@import "mixins";
-@import "common";
-@import "fragment/header";
-
+@import "base";
 body {
   height: 100%;
 }
@@ -79,7 +76,7 @@ body {
 
 }
 
-.intro {
+.intromsg {
   position: relative;
   color: #ffffff;
   margin: 25px auto;
@@ -127,6 +124,7 @@ body {
 
 .media-sm({ .banner {
   background: url("../image/pic-sm.png") center no-repeat;
+  background-size: 100% 100%;
   .pic1-sm {
     display: block;
   }
@@ -182,7 +180,7 @@ body {
   }
 }
 
-.media-sm({ .intro {
+.media-sm({ .intromsg {
   padding: 0 0;
   margin: 0 auto;
   li {
@@ -216,3 +214,7 @@ body {
 .header {
   position: absolute;
 }
+.footer{
+  display: block;
+}
+

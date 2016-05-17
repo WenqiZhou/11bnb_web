@@ -1,4 +1,7 @@
 @import "mixins";
+@import "common";
+@import "fragment/header";
+@import "fragment/footer";
 
 //reset
 * {
@@ -27,7 +30,7 @@ html {
 .loop-hfs(@n) when (@n >= 220) {
   @media screen and (min-width: (1px * @n - @hfsc + 1)) and (max-width: (1px * @n)) {
     html {
-      font-size: round(@hfs / 1 * @n / 375);
+      font-size: round(@hfs / 2 * @n / 375);
     }
   }
   .loop-hfs(@n - @hfsc)

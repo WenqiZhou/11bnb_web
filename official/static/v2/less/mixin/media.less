@@ -10,13 +10,13 @@
 }
 
 .media-md(@frames) {
-  @media screen and(min-width: 641px) and(max-width: 1024px) {
+  @media screen and(min-width: @media_md_min) and(max-width: @media_md_max) {
     @frames();
   }
 }
 
 .media-lg(@frames) {
-  @media screen and(min-width: 1025px) {
+  @media screen and(min-width: @media_lg_min) {
     @frames();
   }
 }

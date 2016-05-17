@@ -1,8 +1,5 @@
 @charset "UTF-8";
-@import "mixins";
-@import "common";
-@import "fragment/header";
-@import "fragment/footer";
+@import "base";
 
 .banner-unslider-test {
   display: none;
@@ -133,10 +130,10 @@
     top: 0;
     text-overflow: ellipsis;
     h2 {
-      font-size: .2rem;
+      font-size: .36rem;
     }
     p {
-      font-size: .15rem;
+      font-size: .28rem;
     }
   }
 } .intro {
@@ -167,16 +164,11 @@
       }
       h5 {
         font-size: .28rem;
-        line-height: .28rem !important;
-        &:not(:nth-of-type(1)) {
-          display: block !important;
-        }
-        &:nth-of-type(1) {
-          display: none !important;
-        }
+        line-height: 1.2;
+
       }
       p {
-        font-size: @fs_p - 1 !important;
+        font-size: .28rem !important;
       }
     }
   } });
@@ -193,55 +185,21 @@
     line-height: 400%;
   }
   h5 {
-    font-size: .24rem;
-    line-height: 300%;
+    font-size: .22rem;
+    line-height: 1.2;
   }
 
-  p {
-    color: #555555;
-    font-size: .18rem;
-    line-height: 200%;
-  }
 
-  > p {
-    //margin: .6rem auto;
-
-    .media(margin, .1rem auto, .2rem auto, .4rem auto);
-    width: 90%;
-  }
-  .aboutBox {
-    width: 90%;
-    .media(margin, .1rem auto, .2rem auto, .4rem auto);
-    .aboutItem {
-      margin: 0 auto;
-    }
-  }
-  .title {
-    font-size: .3rem;
-    line-height: 2;
-    color: #555;
-    .rightArrow {
-      display: inline-block;
-      height: .3rem;
-      width: .8rem;
-      background: url(../image/arrow-r.png) center no-repeat;
-      -webkit-background-size: .44rem;
-      background-size: .44rem;
-      vertical-align: middle;
-      margin-top: -.1rem;
-    }
-  }
   .item {
     position: relative;
     .media(margin, .2rem auto, .4rem auto, .8rem auto);
-    width: 90%;
     .headerImgBox-sm {
       display: none;
     }
     .headerImgBox {
       display: block;
       position: absolute;
-      width: 16%;
+      width: 22%;
       h2 {
         text-align: center;
         line-height: .72rem;
@@ -252,17 +210,11 @@
       margin-left: 25%;
     }
     h5 {
-      &:nth-of-type(1) {
-        display: block;
-      }
-      &:not(:nth-of-type(1)) {
-        display: none;
-      }
     }
 
     p {
       font-size: .18rem;
-      line-height: 200%;
+      line-height: 1.5;
     }
 
   }
@@ -283,7 +235,7 @@
 }
 
 .media-sm({ .copyright {
-  font-size: .1rem !important;
+  font-size: .16rem !important;
 } .footer {
     display: block;
   } });
