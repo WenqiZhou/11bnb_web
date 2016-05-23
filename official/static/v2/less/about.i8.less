@@ -1,15 +1,16 @@
 @charset "UTF-8";
-@import "common";
-@import "fragment/header.i8";
-@import "fragment/footer.i8";
+@import "base.i8";
 
 .banner.banner-ot {
   display: none;
 }
-
+.top {
+  display: block;
+  height: 160px;
+}
 .banner-unslider-test {
 
-  .dots{
+  .dots {
     z-index: 300;
   }
 
@@ -124,88 +125,35 @@
     line-height: 400%;
   }
   h5 {
-    font-size: 17px;
-    line-height: 300%;
-
-    display: none;
-    &.n1 {
-      display: block;
-    }
-  }
-
-  p {
-    color: #555555;
-    font-size: 13px;
-    line-height: 200%;
-  }
-
-  > p {
-    //margin: .6rem auto;
-
-    margin: 60px auto;
-    width: 90%;
-  }
-
-  .aboutBox {
-    width: 90%;
-    margin: 40px auto;
-    .aboutItem {
-      margin: 0 auto;
-    }
-  }
-  .title {
-    font-size: 44px;
-    line-height: 2;
-    color: #555;
-    .rightArrow {
-      display: inline-block;
-      height: 44px;
-      width: 80px;
-      background: url(../image/arrow-r.png) center no-repeat;
-      -webkit-background-size: .44rem;
-      background-size: .44rem;
-      vertical-align: middle;
-      margin-top: -10px;
-    }
+    font-size: 22px;
+    line-height: 1.2;
   }
 
   .item {
     position: relative;
-    margin: 120px auto;
-    width: 90%;
+    margin: 80px auto;
     .headerImgBox-sm {
       display: none;
     }
     .headerImgBox {
       display: block;
       position: absolute;
-      width: 16%;
+      width: 22%;
       h2 {
         text-align: center;
-        line-height: 36px;
-        margin: 0 auto 20px !important;
-        color:#3d3d3d;
+        line-height: 72px;
+        color: #3d3d3d;
       }
     }
-    h2, h5, p {
+    h5, p {
       margin-left: 25%;
     }
-
-    h2 {
-    }
-
     h5 {
-      &:nth-of-type(1) {
-        display: block;
-      }
-      &:not(:nth-of-type(1)) {
-        display: none;
-      }
     }
 
     p {
-      font-size: 17px;
-      line-height: 200%;
+      font-size: 18px;
+      line-height: 1.5;
     }
 
   }
@@ -221,3 +169,13 @@
 
 }
 
+.headerImgBox-sm {
+  display: none;
+}
+
+.headerImgBox {
+  display: block;
+  position: absolute;
+  width: 22%;
+
+}

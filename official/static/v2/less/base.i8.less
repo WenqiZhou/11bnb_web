@@ -1,0 +1,177 @@
+@import "mixins";
+
+//reset
+* {
+  font-family: 'PingFang SC', 'STHeiti', 'microsoft yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+
+}
+
+a:link, a:visited, a:active {
+  color: inherit;
+  outline: 0;
+  text-decoration: none
+}
+
+a:hover {
+  text-decoration: none
+}
+
+img {
+  width: 100%;
+  clear: both;
+  display: block;
+  border: 0;
+  vertical-align: top;
+  -ms-interpolation-mode: bicubic;
+}
+
+ol, ul {
+  list-style-type: none;
+  list-style-image: none;
+}
+
+//app
+body {
+  background-color: #f0f0f0;
+  overflow-x: hidden;
+  position: relative;
+  padding-bottom: .74rem;
+
+}
+
+@import "common";
+@import "fragment/header.i8";
+@import "fragment/footer.i8";
+
+.intro {
+  .bigpic {
+    margin: 100px auto;
+  }
+}
+
+.intro {
+  padding: 80px 65px;
+  .border_radius(6px);
+  .box_shadow(4px 4px 8px #d4d4d4);
+  margin-bottom: 10px;
+  background-color: #fff;
+  h5 {
+    display: block;
+  }
+  &.culture {
+    background: url("../image/culture.jpg") 0 2px #fff no-repeat;
+    -webkit-background-size: auto 100%;
+    background-size: auto 100%;
+  }
+  &.notptop {
+    padding-top: 0;
+  }
+  &.notp {
+    padding: 0;
+  }
+  .title1 {
+    margin: 0 0 35px 0;
+    position: relative;
+    width: auto;
+    display: inline-block;
+    font-size: 44px;
+    color: #555;
+    .rightArrow {
+      position: absolute;
+      left: 100%;
+      top: 0;
+      display: block;
+      height: 50px;
+      width: 80px;
+      background: url(../image/arrow-r.png) center no-repeat;
+      -webkit-background-size: 60px;
+      background-size: 60px;
+      vertical-align: middle;
+    }
+    &.link {
+      color: #1e439a !important;
+      border-bottom: solid 1px #1e439a;
+    }
+  }
+  .bigpic {
+    margin: 170px auto 140px auto;
+    width: 80%;
+  }
+  p {
+    color: #555555;
+    font-size: 24px;
+    line-height: 44px;
+    .bigpic {
+      margin: 35px auto 80px auto;
+      width: 100%;
+    }
+  }
+
+}
+
+.ewm {
+  max-width: 1000px !important;
+  width: 300px !important;
+}
+
+.info-address {
+  img {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1 {
+    line-height: 50px;
+    border-bottom: solid 2px #fe393d;
+    margin: 20px 0;
+    font-size: 30px;
+  }
+  small {
+    font-size: 20px;
+    margin: 10px 0;
+    display: block;
+  }
+  div {
+    font-size: 20px;
+    margin: 10px 0 30px 0;
+    span {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+  .aboutBox {
+    color: #555;
+  }
+}
+
+.mainbox {
+  width: 980px;
+}
+
+h5.hide-sm, h5.show-sm {
+  display: none \9;
+}
+
+h5.show-md, h5.show-lg {
+  display: block \9;
+}

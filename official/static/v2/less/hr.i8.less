@@ -1,7 +1,5 @@
 @charset "UTF-8";
-@import "common";
-@import "fragment/header.i8";
-@import "fragment/footer.i8";
+@import "base.i8";
 
 .top {
   display: block;
@@ -10,23 +8,41 @@
 
 .intro {
 
-  .title {
-    font-size: 44px;
-    line-height: 2;
-    color: #555;
-    width: 90%;
-    margin: 0 auto;
-    .rightArrow {
-      display: inline-block;
-      height: 44px;
-      width: 80px;
-      background: url(../image/arrow-r.png) center no-repeat;
-      -webkit-background-size: .44rem;
-      background-size: .44rem;
-      vertical-align: middle;
-      margin-top: -10px;
+  .targetBox {
+    font-weight: bold;
+    margin: 40px auto;
+    text-align: center;
+    width: 70%;
+    p {
+      color: #fe393d;
+      font-size: 28px;
+      line-height: 1.5;
     }
   }
+  &.culture {
+    background: url("../image/culture.jpg") #fff no-repeat;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+    background-position: left bottom;
+  }
+  //  position: relative;
+  //  .title {
+  //    font-size: 44px;
+  //    line-height: 2;
+  //    color: #555;
+  //    width: 90%;
+  //    margin: 0 auto;
+  //    .rightArrow {
+  //      display: inline-block;
+  //      height: 44px;
+  //      width: 80px;
+  //      background: url(../image/arrow-r.png) center no-repeat;
+  //      -webkit-background-size: .44rem;
+  //      background-size: .44rem;
+  //      vertical-align: middle;
+  //      margin-top: -10px;
+  //    }
+  //  }
   .targetBox {
     margin: 40px auto;
     text-align: center;
@@ -37,29 +53,29 @@
       line-height: 28px;
     }
   }
-  hr {
-    background-color: #c9c9c9;
-    margin: auto;
-    width: 90%;
-  }
-
-  p {
-    color: #555555;
-    font-size: 14px;
-    line-height: 200%;
-  }
-
-  > p {
-    margin: 15px auto;
-    width: 90%;
-    &.n1 {
-      padding-bottom: 15px;
-      border-bottom: solid 1px #c9c9c9;
-    }
-    &.n2 {
-      text-align: right;
-    }
-  }
+  //  hr {
+  //    background-color: #c9c9c9;
+  //    margin: auto;
+  //    width: 90%;
+  //  }
+  //
+  //  p {
+  //    color: #555555;
+  //    font-size: 14px;
+  //    line-height: 200%;
+  //  }
+  //
+  //  > p {
+  //    margin: 15px auto;
+  //    width: 90%;
+  //    &.n1 {
+  //      padding-bottom: 15px;
+  //      border-bottom: solid 1px #c9c9c9;
+  //    }
+  //    &.n2 {
+  //      text-align: right;
+  //    }
+  //  }
 }
 
 .job-box {
@@ -116,20 +132,20 @@
 
     }
     h2 {
-      font-size: 21px;
+      font-size: 30px;
       line-height: 220%;
       display: inline-block;
       border-bottom: solid 4px #fe393d;
     }
     dt {
       font-weight: bold;
-      font-size: 13px;
+      font-size: 18px;
       line-height: 180%;
       margin-top: 22px;
     }
 
     dd {
-      font-size: 13px;
+      font-size: 18px;
       line-height: 180%;
       color: #555555;
     }
@@ -158,39 +174,40 @@
   }
 }
 
-.culture {
-  width: 90%;
-  margin: 40px auto 0;
-  padding: 50px 0;
-  box-shadow: 0 3px 3px #d4d4d4;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: 0 3px 3px #d4d4d4;
-  -moz-box-shadow: 0 3px 3px #d4d4d4;
-  box-shadow: 0 3px 3px #d4d4d4;
-  background: url("../image/culture.jpg") 0 2px #fff  no-repeat;
-  -webkit-background-size: auto 100% ;
-  background-size: auto 100%;
-  .title {
-    font-size: .44rem;
-    line-height: 1.5;
-    color: #555;
-    width: 90%;
-    margin: 0 auto;
-    .rightArrow {
-      display: inline-block;
-      height: .44rem;
-      width: .8rem;
-      background: url(../image/arrow-r.png) center no-repeat;
-      -webkit-background-size: .44rem;
-      background-size: .44rem;
-      vertical-align: middle;
-      margin-top: -10px;
-    }
-  }
-  p {
-    width: 90%;
-    margin: 0 auto;
-  }
-}
+//
+//.culture {
+//  width: 90%;
+//  margin: 40px auto 0;
+//  padding: 50px 0;
+//  box-shadow: 0 3px 3px #d4d4d4;
+//  -webkit-border-radius: 3px;
+//  -moz-border-radius: 3px;
+//  border-radius: 3px;
+//  -webkit-box-shadow: 0 3px 3px #d4d4d4;
+//  -moz-box-shadow: 0 3px 3px #d4d4d4;
+//  box-shadow: 0 3px 3px #d4d4d4;
+//  background: url("../image/culture.jpg") 0 2px #fff  no-repeat;
+//  -webkit-background-size: auto 100% ;
+//  background-size: auto 100%;
+//  .title {
+//    font-size: .44rem;
+//    line-height: 1.5;
+//    color: #555;
+//    width: 90%;
+//    margin: 0 auto;
+//    .rightArrow {
+//      display: inline-block;
+//      height: .44rem;
+//      width: .8rem;
+//      background: url(../image/arrow-r.png) center no-repeat;
+//      -webkit-background-size: .44rem;
+//      background-size: .44rem;
+//      vertical-align: middle;
+//      margin-top: -10px;
+//    }
+//  }
+//  p {
+//    width: 90%;
+//    margin: 0 auto;
+//  }
+//}
