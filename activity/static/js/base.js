@@ -4,13 +4,12 @@
 
 //百度统计
 var _hmt = _hmt || [];
-(function () {
+(function() {
     var hm = document.createElement("script");
-    hm.src = "//hm.baidu.com/hm.js?ba4bfbfa549e4b97b31d472281fe3377";
+    hm.src = "//hm.baidu.com/hm.js?11921e476fa56e6f99a0336883188096";
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(hm, s);
 })();
-
 //微信分享
 (function ($) {
     var URL_GET_SIGNATURE = "/app/genWXSignature";
