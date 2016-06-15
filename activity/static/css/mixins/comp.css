@@ -1,0 +1,48 @@
+.box-sizing-borderbox {
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.user-select-none {
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before {
+  content: '';
+  display: table;
+}
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+  overflow: hidden;
+}
+.clear {
+  clear: both;
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+.hide {
+  display: none;
+}
+.block {
+  display: block;
+}
+.fl,
+.fr {
+  display: inline;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
