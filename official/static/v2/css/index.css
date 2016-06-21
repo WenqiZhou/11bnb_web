@@ -768,6 +768,10 @@ body {
 .banner .pic2 .qr {
   width: 50%;
   margin: .4rem auto;
+  border: #fff 10px solid;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 .banner .pic2 .pic_text {
   line-height: 1.5;

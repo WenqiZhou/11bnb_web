@@ -642,7 +642,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: fixed;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://dev.11bnb.com:16890/static/official/static/v2/image/big.png', sizingMethod='scale');
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.11bnb.com/static/v2/image/big.png', sizingMethod='scale');
 }
 .banner .pic1-sm {
   display: none;
@@ -691,7 +691,8 @@ body {
 }
 .banner .pic2 .qr {
   width: 50%;
-  margin: 40px auto;
+  margin: 30px auto;
+  border: #fff 10px solid;
 }
 .banner .pic2 .pic_text {
   line-height: 1.5;
