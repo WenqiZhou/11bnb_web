@@ -1,0 +1,243 @@
+@charset "UTF-8";
+@import "../../less/actbase";
+
+.box {
+  position: relative;
+
+}
+
+.center-msg {
+  text-align: center;
+}
+
+.ft-b1 {
+  color: #060606;
+  font-size: .48rem;
+  line-height: .6rem;
+}
+
+.ft-c-r {
+  color: #fe393d;
+}
+
+.ggk {
+  background-color: #fe393d;
+  position: relative;
+  padding-bottom: 1px;
+  .box {
+
+    .bc {
+    }
+    .logo, .s, .s-l1, .s-l2, .s-r1, .s-r2 {
+      position: absolute;
+    }
+    .logo {
+      top: .2rem;
+      left: .28rem;
+      width: 1.15rem;
+    }
+
+    .s-l1 {
+      top: .62rem;
+      left: .99rem;
+      width: 1.46rem;
+    }
+    .s-l2 {
+      top: 1.94rem;
+      left: .94rem;
+      width: 1.19rem;
+    }
+    .s-r1 {
+      top: .23rem;
+      right: 1.05rem;
+      width: 1.35rem;
+    }
+    .s-r2 {
+      top: 1.9rem;
+      right: .7rem;
+      width: 1.1rem;
+    }
+    .s-l1-2 {
+      top: .2rem;
+      left: 1.65rem;
+      width: .9rem;
+    }
+    .s-l2-2 {
+      top: 1.5rem;
+      left: .66rem;
+      width: .8rem;
+    }
+    .s-r1-2 {
+      top: .2rem;
+      right: 1.03rem;
+      width: 1.11rem;
+    }
+    .s-r2-2 {
+      top: 1.43rem;
+      right: .37rem;
+      width: .93rem;
+    }
+    .head {
+      position: absolute;
+      width: 1.88rem;
+      height: 1.88rem;
+      top: 8%;
+      left: 50%;
+      .transform(translateX(-50%));
+      .border-radius();
+    }
+    p {
+      left: 50%;
+      .transform(translateX(-50%));
+      width: 95%;
+      position: absolute;
+      top: 60%;
+      text-align: center;
+      .ft-b1;
+      .nickname {
+        .ft-c-r;
+      }
+    }
+  }
+
+  .panel {
+    position: relative;
+    .border-radius(2px);
+    padding: .4rem 0;
+    margin: .39rem .3rem;
+    .panel-header, .panel-content, .panel-footer {
+      position: relative;
+      margin: auto .6rem;
+    }
+    .panel-header {
+      font-weight: bold;
+      height: .4rem;
+      line-height: .4rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .panel-content {
+    }
+    .panel-footer {
+      img {
+        width: 2.56rem;
+        margin: auto;
+      }
+    }
+
+    .decorate {
+      position: relative;
+
+      &.decorate-l::before, &.decorate-r::after {
+        position: absolute;
+        right: 100%;
+        display: inline-block;
+        content: '';
+        width: 10rem;
+        height: 1px;
+        background-color: #666666;
+        top: .2rem;
+      }
+      &.decorate-l::after, &.decorate-r::before {
+        content: "";
+        .background-image("../images/s-logo.png", 21, 28, 0, 0, 21, 29, 1);
+        margin: 0 .15rem;
+        position: relative;
+        //        top: 1px;
+      }
+      &.decorate-l {
+        margin-right: .15rem;
+        &::before {
+          right: 100%;
+        }
+        &::after {
+        }
+      }
+      &.decorate-r {
+        margin-left: .15rem;
+        &::before {
+        }
+        &::after {
+          display: inline-block;
+          left: 100%;
+        }
+      }
+    }
+  }
+
+  .panel-white {
+    background-color: #ffecec;
+  }
+
+  .input {
+    overflow: hidden;
+    margin: .36rem auto;
+    width: 100%;
+    height: .78rem;
+    border: solid 1px #bfbfbf;
+    .border-radius(3px);
+    .flex-box();
+    input {
+      font-size: .26rem;
+      padding-left: .23rem;
+      background-color: rgba(0, 0, 0, 0);
+      .flex(1);
+      height: 100%;
+    }
+    span {
+      font-size: .26rem;
+      margin-top: .22rem;
+      height: .34rem;
+      text-align: center;
+      width: 1.8rem;
+      .text-inline();
+      .flex();
+      line-height: .34rem;
+      color: #fe393d;
+      border-left: solid 1px #bfbfbf;
+      &.disabled {
+        color: #ccc;
+      }
+    }
+  }
+
+  .msg {
+    text-align: center;
+    font-size: .3rem;
+    color: #353535;
+    margin: .45rem auto .3rem auto;
+  }
+  .bigmsg {
+    font-size: .5rem;
+    color: #ff5459;
+    text-align: center;
+    margin: .36rem auto .36rem auto;
+  }
+}
+
+ul {
+  position: relative;
+  margin: .4rem auto;
+  li {
+    margin: .2rem 0 .2rem .35rem;
+    position: relative;
+    font-size: .24rem;
+    color: #333333;
+    span.index {
+      display: block;
+      position: absolute;
+      margin-right: 3px;
+      right: 100%;
+      top: 0;
+      background-color: #fe393d;
+      color: #fff;
+      font-size: .22rem;
+      text-align: center;
+      width: .3rem;
+      height: .3rem;
+      .border-radius();
+      line-height: .3rem;
+    }
+  }
+}
