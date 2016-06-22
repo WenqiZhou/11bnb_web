@@ -24,7 +24,7 @@ function getName(luck) {
 function checkLuck(luck) {
     if (luck && typeof (luck - 0) == 'number') {
         return luck;
-    }   
+    }
     return 90;
 }
 //活动规则
@@ -92,7 +92,7 @@ var HeaderClass = React.createClass({
                 <img className="logo" src="/static/nh5/act/100002/images/logo.png" alt=""/>
             {headhtml}
                 <p>
-                    {this.props.shareUser && this.props.shareUser.real_name ? this.props.shareUser.real_name : '小蘑菇'}今天刮出幸运值堪比
+                    {this.props.shareUser && this.props.shareUser.real_name ? this.props.shareUser.real_name : '小蘑菇'}刮出幸运值堪比
                     <span className="nickname">{getName(l)}</span>
                     ,
                     喊你来一起刮！
