@@ -71,12 +71,11 @@ var HeaderClass = React.createClass({
         };
     },
     render: function () {
-        console.debug("HeaderClass user", this.props.user);
         var dfi = this.state.dfi;
         var headhtml = null;
-        if (this.props.user && this.props.user.head_url) {
+        if (this.props.shareUser && this.props.shareUser.head_url) {
             headhtml = (
-                <img className="head" src={this.props.user.head_url + "_337"} alt=""/>
+                <img className="head" src={this.props.shareUser.head_url + "_337"} alt=""/>
             );
         } else {
             headhtml = (
@@ -93,7 +92,7 @@ var HeaderClass = React.createClass({
                 <img className="logo" src="/static/nh5/act/100002/images/logo.png" alt=""/>
             {headhtml}
                 <p>
-                    {this.props.shareUser && this.props.shareUser.real_name ? this.props.shareUser.real_name : '小蘑菇'}今天刮出幸运值堪比
+                    {this.props.shareUser && this.props.shareUser.real_name ? this.props.shareUser.real_name : '小蘑菇'}刮出幸运值堪比
                     <span className="nickname">{getName(l)}</span>
                     ,
                     喊你来一起刮！
