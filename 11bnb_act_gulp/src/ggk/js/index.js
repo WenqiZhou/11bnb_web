@@ -24,7 +24,7 @@ function getName(luck) {
 function checkLuck(luck) {
     if (luck && typeof (luck - 0) == 'number') {
         return luck;
-    }
+    }   
     return 90;
 }
 //活动规则
@@ -71,12 +71,11 @@ var HeaderClass = React.createClass({
         };
     },
     render: function () {
-        console.debug("HeaderClass user", this.props.user);
         var dfi = this.state.dfi;
         var headhtml = null;
-        if (this.props.user && this.props.user.head_url) {
+        if (this.props.shareUser && this.props.shareUser.head_url) {
             headhtml = (
-                <img className="head" src={this.props.user.head_url + "_337"} alt=""/>
+                <img className="head" src={this.props.shareUser.head_url + "_337"} alt=""/>
             );
         } else {
             headhtml = (
