@@ -1,0 +1,13 @@
+@media_sm_max: 640px;
+@media_md_min: 641px;
+@media_lg_min: 1025px;
+
+.background-image(@url,@iw,@ih,@px,@py,@sw,@sh,@n) {
+  display: inline-block;
+  width: (1rem * @sw * @n / 100);
+  height: (1rem * @sh * @n / 100);
+  background-repeat: no-repeat;
+  background-image: url(@url);
+  background-size: (1rem * @iw * @n / 100) (1rem *  @ih * @n / 100);
+  background-position: (1rem *  @px * @n / 100) ( 1rem * @py * @n / 100);
+}

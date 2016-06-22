@@ -1,0 +1,110 @@
+@charset "UTF-8";
+@import "../mixins/mixins";
+
+* {
+  font-family: 'PingFang SC', 'STHeiti', 'microsoft yahei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  .border-radius(0px);
+}
+
+body, html {
+  .user-select-none;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+a:link, a:visited, a:active {
+  color: inherit;
+  outline: 0;
+  text-decoration: none
+}
+
+a:hover {
+  text-decoration: none
+}
+
+img {
+  width: 100%;
+  clear: both;
+  display: block;
+  border: 0;
+  vertical-align: top;
+  -ms-interpolation-mode: bicubic
+}
+
+ol, ul {
+  list-style-type: none;
+  list-style-image: none;
+}
+
+@hfs: 100px;
+
+html {
+  font-size: @hfs;
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: (@hfs / 2);
+  }
+}
+
+@hfsc: 10;
+.loop-hfs(@n) when (@n >= 220) {
+  @media screen and (min-width: (1px * @n - @hfsc + 1)) and (max-width: (1px * @n)) {
+    html {
+      font-size: round(@hfs / 2 * @n / 375);
+    }
+  }
+  .loop-hfs(@n - @hfsc)
+}
+
+//.loop-hfs(375);
+.loop-hfs(414);
+
+body {
+  padding: 0 !important;
+}
+
+@media screen and (max-width: 320px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 413px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 414px) and (max-width: 639px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+input, select, textarea {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  box-shadow: none;
+  -o-box-shadow: none;
+  -mo-box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -webkit-appearance: none;
+  &:active, &:focus {
+    border: none;
+    outline: none;
+  }
+}
