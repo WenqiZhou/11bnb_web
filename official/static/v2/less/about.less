@@ -137,6 +137,7 @@
     }
   }
 } .intro {
+    overflow: hidden;
     .item {
       .headerImgBox {
         display: none !important;
@@ -216,6 +217,7 @@
     p {
       font-size: .18rem;
       line-height: 1.5;
+      margin-top: .15rem;
     }
 
   }
@@ -255,7 +257,7 @@
     font-size: .3rem;
   }
   small {
-    font-size: .2rem;
+    font-size: .2rem!important;
     margin: .1rem 0;
     display: block;
   }
@@ -273,8 +275,10 @@
 }
 
 .media-sm({ .info-address {
-  img {
-    width: 80%;
+  .bigpic {
+    width: 100% !important;
+    .transform(scale(150%))!important;
+    margin-top: .4rem !important;
     margin-left: auto;
     margin-right: auto;
   }
