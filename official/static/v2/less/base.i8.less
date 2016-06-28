@@ -11,6 +11,20 @@
   box-sizing: border-box;
 }
 
+.clearfix:before, .clearfix:after {
+  content: '';
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+  overflow: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
 body, html {
   width: 100%;
   overflow-x: hidden;
