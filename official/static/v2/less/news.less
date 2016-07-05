@@ -128,7 +128,6 @@
           line-height: .34rem;
           font-size: .18rem;
           font-weight: 200;
-          text-align: justify;
         }
       }
 
@@ -179,9 +178,10 @@
       }
     }
   }
-
   @media screen and(max-width: @media_sm_max) {
-
+    &.detailHtml {
+      padding: .3rem .55rem !important;
+    }
     .item {
       font-size: .24rem;
 
@@ -216,18 +216,25 @@
       }
       &.news {
         .news_title {
-          font-size: .34rem !important;
+          margin-top: -4px !important;
+          line-height: .5rem!important;
+          font-size: .4rem !important;
         }
         .about,.content,.tip,.detail {
           font-weight: normal!important;
         }
         .about {
-          font-size: .2rem!important;
-        }
-        .detail,.tip,.content {
-          line-height: .4rem !important;
+          margin-top: .1rem!important;
           font-size: .26rem!important;
         }
+        .tip {
+          font-size: .28rem!important;
+        }
+        .detail,.content {
+          line-height: .4rem !important;
+          font-size: .32rem!important;
+        }
+
       }
     }
     .page {
