@@ -4,3 +4,4 @@
 /official/.idea
 /11bnb_act_gulp/node_modules
 /11bnb_act_gulp/.idea
+/**/*.db
