@@ -1,10 +1,13 @@
 @charset "UTF-8";
 @import "base";
 
-
-
 .intro {
-
+  a {
+    display: block;
+  }
+  &.detailHtml{
+    padding: .3rem .65rem!important;
+  }
   .item {
     font-size: .18rem;
     margin: 0 .3rem;
@@ -21,9 +24,9 @@
       background-size: .15rem;
       .flex();
     }
-    span {
-      margin-left: .4rem;
-      width: 1rem;
+    .time {
+      margin: 0 .1rem 0 .4rem;
+      width: 1.5rem;
       text-align: justify;
       display: block;
       float: left;
@@ -32,9 +35,148 @@
     }
 
     .text {
-      margin-left: .4rem;
       float: left;
       .flex(1);
+    }
+    &.news {
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      padding: .35rem 0;
+      color: #555;
+      border-bottom: #9d9d9d 1px dashed;
+      &.noBorder {
+        border: none;
+      }
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        &:hover {
+          color: #ff5459;
+        }
+      }
+      .date_time {
+        height: auto;
+        width: 1.1rem;
+        border-top: #ff5459 2px solid;
+        .flex();
+        .title {
+          display: block;
+          margin: .25rem auto;
+          line-height: .4rem;
+          font-size: .4rem;
+          text-align: center;
+          font-weight: 300;
+        }
+        .month {
+          line-height: .24rem;
+          text-align: center;
+          font-size: .24rem;
+          font-weight: 300;
+        }
+      }
+      .news_detail {
+        margin-left: .45rem;
+        .flex(1);
+        &.noMargin {
+          margin-left: 0;
+        }
+        .news_title {
+          margin-top: -8px;
+          line-height: .4rem;
+          font-size: .3rem;
+          font-weight: 300;
+        }
+        .about {
+          margin: 0 auto .16rem;
+          line-height: .3rem;
+          color: #9d9d9d;
+          font-size: .16rem;
+          font-weight: 300;
+          .create_time {
+            margin-left: .2rem;
+          }
+        }
+        .imgBox {
+          width: 100%;
+          height: auto;
+          margin: .65rem auto .32rem;
+          .content_img {
+            height: 3.4rem;
+            margin: 0 auto;
+            width: auto;
+          }
+          .tip {
+            line-height: 2;
+            text-align: center;
+            font-size: .18rem;
+          }
+        }
+        .detail {
+          line-height: .34rem;
+          font-size: .18rem;
+          font-weight: 200;
+          text-align: justify;
+        }
+        .content {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          line-height: .34rem;
+          font-size: .18rem;
+          font-weight: 200;
+          text-align: justify;
+        }
+      }
+
+    }
+  }
+  .moreNews {
+    margin: .5rem auto;
+    height: .4rem;
+    line-height: .4rem;
+    font-size: .24rem;
+    color: #fe393d;
+    text-align: center;
+    i {
+      display: inline-block;
+      margin-top: -5px;
+      margin-left: 5px;
+      vertical-align: middle;
+      height: .2rem;
+      width: .2rem;
+      background: url(../image/arrow-more.png) center no-repeat;
+      -webkit-background-size: .19rem .19rem;
+      background-size: .19rem .19rem;
+    }
+  }
+  .page {
+    width: 100%;
+    margin: .35rem auto;
+    font-size: .14rem;
+    text-align: center;
+    .page_item {
+      display: inline-block;
+      padding: 0 5px;
+      margin-right: .13rem;
+      background-color: #f0f0f0;
+      color: #fe393d;
+      text-align: center;
+      cursor: pointer;
+      &.page_top, &.page_down {
+        width: auto;
+        padding: 0 5px;
+      }
+      &:hover {
+        color: #030000;
+      }
+      &.active {
+        background-color: #fe393d;
+        color: #fff;
+      }
     }
   }
 
@@ -54,7 +196,7 @@
         .flex();
       }
       span {
-        width: 1.5rem!important;
+        width: 1.5rem !important;
       }
       .time {
         line-height: 2;
@@ -71,6 +213,29 @@
         color: #555555;
         font-size: .24rem;
         .flex(1);
+      }
+      &.news {
+        .news_title {
+          font-size: .34rem !important;
+        }
+        .about,.content,.tip,.detail {
+          font-weight: normal!important;
+        }
+        .about {
+          font-size: .2rem!important;
+        }
+        .detail,.tip,.content {
+          line-height: .4rem !important;
+          font-size: .26rem!important;
+        }
+      }
+    }
+    .page {
+      font-size: .2rem!important;
+    }
+    .moreNews {
+      i {
+        margin-top: 0 !important;
       }
     }
 
