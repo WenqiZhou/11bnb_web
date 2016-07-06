@@ -5,3 +5,5 @@
 /11bnb_act_gulp/node_modules
 /11bnb_act_gulp/.idea
 /official/static/node_modules
+/**/*.db
+node_modules
