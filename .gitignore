@@ -6,4 +6,5 @@
 /11bnb_act_gulp/.idea
 /official/static/node_modules
 /**/npm-debug.log
+/**/*.db
 node_modules
