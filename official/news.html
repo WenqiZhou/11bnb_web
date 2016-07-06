@@ -11,10 +11,10 @@
     <meta name="description" content="以分享和快乐为基因的短租预订平台，给你依依不舍的民宿体验。依依短租致力发挥分享经济的最大价值，搭建一个安全、便捷、妙趣的短租平台，让住宿成为新的社交体验"/>
     <meta name="keywords" content="日租,短租,周租,住宿,酒店式公寓,短租公寓,单身公寓,青年旅社,学生租房">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport">
-    <!--[if lte IE 8]>
+    <!--[if lte IE 9]>
     <link rel="stylesheet" href="static/v2/css/news.i8.css?12saaaddd3d111">
     <![endif]-->
-    <!--[if gt IE 8]><!-->
+    <!--[if gt IE 9]><!-->
     <link rel="stylesheet" href="static/v2/css/news.css?12ddasd3d111">
     <!--<![endif]-->
 
@@ -278,10 +278,10 @@
         </div>
     </div>
     <!-- 新闻块end-->
-    <!--<a href="newslist.html" class="moreNews">-->
-        <!--查看更多新闻动态-->
-        <!--<i></i>-->
-    <!--</a>-->
+    <a href="newslist.html" class="moreNews" style="display: none;">
+        查看更多新闻动态
+        <i></i>
+    </a>
     <div class="hide-sm" style="
     height: 300px;
 "></div>
@@ -296,6 +296,15 @@
     </p>
 </div>
 <script>
+    window.onload = function () {
+        var news = document.getElementsByClassName('news'),
+                more = document.getElementsByClassName('moreNews')[0];
+        if(news.length > 6) {
+            more.style.display = 'block';
+        }else {
+            more.style.display = 'none';
+        }
+    };
     $(document).ready(function () {
         initnav();
     });
