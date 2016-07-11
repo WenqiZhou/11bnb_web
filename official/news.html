@@ -250,7 +250,7 @@
             <!-- 简介end-->
         </div>
     </div>
-    <div class="item news noBorder clearfix">
+    <div class="item news clearfix">
         <!-- 日期-->
         <div class="date_time">
             <strong class="title">5日</strong>
@@ -293,12 +293,35 @@
     </p>
 </div>
 <script>
+function setNoborder (item) {
+    addClass(item,'noBorder');
+}
+function hasClass(obj, cls) {
+  return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+}
+
+function addClass(obj, cls) {
+   if (!this.hasClass(obj, cls)) obj.className += " " + cls;
+}
+
+function removeClass(obj, cls) {
+   if (hasClass(obj, cls)) {
+       var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+       obj.className = obj.className.replace(reg, ' ');
+   }
+}
     window.onload = function () {
         var news = document.getElementsByClassName('news'),
                 more = document.getElementsByClassName('moreNews')[0];
         if(news.length > 6) {
+          setNoborder(news[5]);
+          var hidenews = [].slice.call(news,6);
+          for(var i=0;i<hidenews.length;i++) {
+            hidenews[i].style.display = 'none';
+          }
             more.style.display = 'block';
         }else {
+          setNoborder(news[news.length-1]);
             more.style.display = 'none';
         }
     };
