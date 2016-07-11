@@ -31,7 +31,7 @@ gulp.task('imgmin', ()=> {
             console.error('imgmin error!', err.message);
             this.emit('end');
         })
-        .pipe(gulp.dest('v2/image/'))
+        .pipe(gulp.dest('../newsdetail/'))
 });
 gulp.task('default', ['less','imgmin'], () => {
     gulp.watch('v2/less/**/*.less', ['less']);
