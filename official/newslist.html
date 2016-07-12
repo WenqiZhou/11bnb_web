@@ -57,6 +57,33 @@
     <div class="item news clearfix" style="display: none;">
         <!-- 日期-->
         <div class="date_time">
+            <strong class="title">11日</strong>
+
+            <p class="month">July</p>
+        </div>
+        <!-- 日期end-->
+        <div class="news_detail">
+            <h2 class="news_title">
+                <!-- 链接到新闻详情（同样也是新闻的标题）-->
+                <a href="newsdetail/10000012.html">50余武汉民宿房东为受困市民打开家门</a>
+                <!-- 链接end-->
+            </h2>
+            <!-- 来源 日期-->
+            <p class="about">
+                <span class="from">扬子晚报</span>
+                <span class="create_time">2016-7-11</span>
+            </p>
+            <!-- 来源 日期end-->
+            <!-- 新闻简介 可以用第一个段落代替-->
+            <p class="content">
+                近来南方多日持续强降雨，导致武汉市多处渍水让市民无法正常生活，依依短租平台上的50多位武汉民宿房东自发地将平台上的房源免费向受灾市民开放，组成了“武汉救灾0元民宿”。
+            </p>
+            <!-- 简介end-->
+        </div>
+    </div>
+    <div class="item news clearfix" style="display: none;">
+        <!-- 日期-->
+        <div class="date_time">
             <strong class="title">24日</strong>
 
             <p class="month">Jun</p>
@@ -70,7 +97,7 @@
             </h2>
             <!-- 来源 日期-->
             <p class="about">
-                <span class="from">今日头条</span>
+                <span class="from">网易</span>
                 <span class="create_time">2016-6-24</span>
             </p>
             <!-- 来源 日期end-->
@@ -97,7 +124,7 @@
             </h2>
             <!-- 来源 日期-->
             <p class="about">
-                <span class="from">今日头条</span>
+                <span class="from">千龙网</span>
                 <span class="create_time">2016-6-3</span>
             </p>
             <!-- 来源 日期end-->
@@ -124,7 +151,7 @@
             </h2>
             <!-- 来源 日期-->
             <p class="about">
-                <span class="from">今日头条</span>
+                <span class="from">腾讯房产</span>
                 <span class="create_time">2016-6-2</span>
             </p>
             <!-- 来源 日期end-->
@@ -152,7 +179,7 @@
             </h2>
             <!-- 来源 日期-->
             <p class="about">
-                <span class="from">今日头条</span>
+                <span class="from">国家旅游地理</span>
                 <span class="create_time">2016-5-26</span>
             </p>
             <!-- 来源 日期end-->
@@ -179,7 +206,7 @@
             </h2>
             <!-- 来源 日期-->
             <p class="about">
-                <span class="from">今日头条</span>
+                <span class="from">搜狐</span>
                 <span class="create_time">2016-5-18</span>
             </p>
             <!-- 来源 日期end-->
@@ -206,7 +233,7 @@
             </h2>
             <!-- 来源 日期-->
             <p class="about">
-                <span class="from">今日头条</span>
+                <span class="from">和讯网</span>
                 <span class="create_time">2016-5-5</span>
             </p>
             <!-- 来源 日期end-->
@@ -397,10 +424,10 @@
                 }
             }
             $('.item.news').filter(function (index) {
-                return (index >= (x - 1) * 5 && x < x * 5);
+                return (index >= (x - 1) * 5 && index < x * 5);
             }).show();
             $('.item.news').filter(function (index) {
-                return !(index >= (x - 1) * 5 && x < x * 5);
+                return !(index >= (x - 1) * 5 && index < x * 5);
             }).hide();
         })
         page.pageClick(function (n) {
