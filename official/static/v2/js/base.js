@@ -10,7 +10,7 @@ function initnav() {
         var index = $(this).parent().index();
         var url = $(this).attr("url");
         $(".bor").animate({
-            "left": ($(this).parent().index() ) * 25 + "%"
+            "left": ($(this).parent().index() ) * 20 + "%"
         }, 300, "", function () {
             navtimer();
             location.href = url;
@@ -25,7 +25,7 @@ function initnav() {
         } else {
 
             $(".bor").animate({
-                "left": (index ) * 25 + "%"
+                "left": (index ) * 20 + "%"
             }, 300, "", function () {
                 location.href = url;
             });
