@@ -109,7 +109,7 @@
 
 }
 
-.loginBox {
+.loginBox,.payBox  {
   width: 68%;
   height: auto;
   margin: 100px auto;
@@ -123,6 +123,26 @@
     line-height: 40px;
     text-align: center;
   }
+  .tip {
+    text-align: center;
+  }
+  i {
+    width:70px;
+    height: 70px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    &.aliPay {
+      background: url(../image/alipay.png) center no-repeat;
+      -webkit-background-size: 70px 70px;
+      background-size: 70px 70px;
+    }
+    &.wxPay {
+      background: url(../image/wxicon.png) center no-repeat;
+      -webkit-background-size: 70px 70px;
+      background-size: 70px 70px;
+    }
+  }
   .controlGroup {
     width: 80%;
     margin: 0 auto;
@@ -132,6 +152,16 @@
       width: 18%;
       line-height: 40px;
       vertical-align: middle;
+      &.validCodePng {
+        width: 25%;
+        background-color: #ffff00;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: arial, sans-serif;
+        text-align: center;
+        letter-spacing: 8px;
+        cursor: pointer;
+      }
     }
     input {
       display: inline-block;
@@ -140,14 +170,19 @@
       padding-left: 10px;
       vertical-align: middle;
       outline: none;
-      width: 70%;
+      width: 30%;
       border: #959595 1px solid;
       .border_radius(3px);
+      &[type="radio"] {
+        width: 20px;
+        height: 20px;
+        border: none;
+      }
       &:focus {
         border: #fe393d 1px solid;
       }
     }
-    .loginBtn,.cancelBtn {
+    .loginBtn,.cancelBtn,.payBtn {
       display: inline-block;
       vertical-align: middle;
       height: 40px;
@@ -159,7 +194,7 @@
       text-align: center;
       color: #fff;
     }
-    .loginBtn {
+    .loginBtn,.payBtn {
       background-color: #fe393d;
     }
     .cancelBtn {

@@ -100,6 +100,11 @@
             <span>手机号码：</span>
             <input id="phone" type="tel" placeholder="请输入手机号码"/>
         </label>
+        <label style="margin-top: 30px;display: block;">
+            <span>识别码：</span>
+            <input id="validCode" class="validCode" type="text" placeholder="请输入左侧验证码"/>
+            <span id="validCodePng" class="validCodePng"></span>
+        </label>
     </div>
     <div class="controlGroup" style="margin-top: 300px;">
         <span></span>
@@ -107,11 +112,47 @@
         <a href="javascript:void(0)" class="cancelBtn">取消</a>
     </div>
 </div>
+<div class="payBox" style="display: none;">
+    <h1>请选择支付方式</h1>
+    <p class="tip">该文章需要100积分，目前积分为 <Strong>0   </Strong><span style="color: #fe393d;">请充值后购买</span></p>
+    <div class="controlGroup">
+        <label style="margin-top: 30px;display: block;">
+            <span>充值方式：</span>
+        </label>
+        <label style="margin-top: 30px;display: inline-block;vertical-align: middle;width:30%">
+            支付宝：
+            <input type="radio" name="pay" checked />
+            <i class="aliPay"></i>
+        </label>
+        <label style="margin-top: 30px;display: inline-block;vertical-align: middle;width:30%">
+            微信：
+            <input type="radio" name="pay" />
+            <i class="wxPay"></i>
+        </label>
+    </div>
+    <div class="controlGroup" style="margin-top: 30px;">
+        <span></span>
+        <a href="javascript:void(0)" class="payBtn">支付</a>
+    </div>
+</div>
 <script>
     $(document).ready(function () {
         initnav();
         var guideBox = $('.guideBox');
         var loginBox = $('.loginBox');
+        var payBox = $('.payBox');
+        $('#validCodePng').text(randomString(6)).click(function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+            var _this = $(this);
+            _this.text('').text(randomString(6));
+        });
+        $('#validCode').on('input propertychange',function(){
+            var _this = $(this);
+            if(_this.val().length >= 6) {
+                _this.blur();
+            }
+        });
         $('.buy').click(function (e) {
             e.stopPropagation();
             e.preventDefault();
@@ -129,19 +170,37 @@
                     alert('请输入手机号码后尝试')
                 }else if(!validPhone(phone)) {
                     alert('请输入正确的手机号码')
+                }else if($('#validCode').val().toLocaleUpperCase() !==$('#validCodePng').text().toLocaleUpperCase()){
+                    alert('识别码错误')
                 }else {
-                    alert('登录成功，页面即将跳转')
+                    loginBox.hide();
+                    payBox.show();
                 }
-            })
+            });
+            $('.payBtn').click(function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                alert('ICP证书正在申请中')
+            });
             $('.cancelBtn').click(function () {
                 loginBox.hide();
                 guideBox.show();
             })
         })
     });
-    function validPhone (container) {
+    function validPhone (container) {//验证手机号码
         var value = container.val();
         return (value.length == 11 && /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(value))
+    }
+    function randomString(len) {
+        len = len || 32;
+        var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';    /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
+        var maxPos = $chars.length;
+        var pwd = '';
+        for (var i = 0; i < len; i++) {
+            pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+        }
+        return pwd;
     }
 </script>
 </body>
