@@ -1,0 +1,204 @@
+@charset "UTF-8";
+@import "base";
+
+.header {
+  .nav {
+    color: #555555;
+    position: absolute;
+    .media-sm({ background-color: transparent; });
+    a {
+      &:hover {
+        color: #959595;
+      }
+    }
+    .bor {
+      left: 40%
+    }
+  }
+}
+
+.guideBox {
+  width: 68%;
+  height: auto;
+  margin: 1rem auto;
+  background-color: #fff;
+  .border_radius(5px);
+  border-bottom: #d4d4d4 2px solid;
+  color: #555;
+  h1 {
+    padding: .85rem 0;
+    line-height: .4rem;
+    text-align: center;
+  }
+  .guideItem {
+    width: 80%;
+    height: auto;
+    margin: .1rem auto;
+    .border_radius(5px);
+    &:hover {
+      background-color: #f0f0f0;
+    }
+    .imgBox {
+      width: 100%;
+      padding: 0 1.05rem;
+      height: auto;
+      margin: 0 auto;
+      i {
+        display: inline-block;
+        vertical-align: middle;
+        width: 15%;
+        height: 1.02rem;
+        margin: auto;
+        &.guide {
+          background: url(../image/guide.png) center no-repeat;
+          -webkit-background-size: 100% auto;
+          background-size: 100% auto;
+        }
+        &.train {
+          background: url(../image/train.png) center no-repeat;
+          -webkit-background-size: 100% auto;
+          background-size: 100% auto;
+        }
+        &.search {
+          background: url(../image/search.png) center no-repeat;
+          -webkit-background-size: 100% auto;
+          background-size: 100% auto;
+        }
+        &.people {
+          background: url(../image/people.png) center no-repeat;
+          -webkit-background-size: 100% auto;
+          background-size: 100% auto;
+        }
+      }
+      .guideDetail {
+        display: inline-block;
+        vertical-align: middle;
+        width: 80%;
+        h2 {
+          margin: .36rem auto;
+          line-height: .36rem;
+          font-size: .36rem;
+          text-align: center;
+        }
+        p {
+          margin: .36rem auto;
+          line-height: .28rem;
+          font-size: .28rem;
+          text-align: center;
+        }
+      }
+    }
+    .guideTip {
+      margin: 0 auto;
+      padding: .3rem 0 .1rem;
+      line-height: .16rem;
+      font-size: .16rem;
+      text-align: center;
+      a {
+        margin-left: .48rem;
+        color: #fe393d;
+      }
+    }
+  }
+  .line {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    height: 1px;
+    background-color: #d7d7d7;
+  }
+
+}
+
+.loginBox,.payBox {
+  width: 68%;
+  height: auto;
+  margin: 1rem auto;
+  padding: .3rem 0;
+  background-color: #fff;
+  .border_radius(5px);
+  border-bottom: #d4d4d4 2px solid;
+  color: #555;
+  h1 {
+    padding: .85rem 0;
+    line-height: .4rem;
+    text-align: center;
+  }
+  .tip {
+    text-align: center;
+  }
+  i {
+    width:40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    &.aliPay {
+      background: url(../image/alipay.png) center no-repeat;
+      -webkit-background-size: 40px 40px;
+      background-size: 40px 40px;
+    }
+    &.wxPay {
+      background: url(../image/wxicon.png) center no-repeat;
+      -webkit-background-size: 40px 40px;
+      background-size: 40px 40px;
+    }
+  }
+  .controlGroup {
+    width: 80%;
+    margin: 0 auto;
+    span {
+      display: inline-block;
+      height: .4rem;
+      width: 18%;
+      line-height: .4rem;
+      vertical-align: middle;
+      &.validCodePng {
+        width: 25%;
+        background-color: #0000cc;
+        font-size: .3rem;
+        font-weight: bold;
+        color: #ffff00;
+        font-family: arial, sans-serif;
+        letter-spacing: 8px;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+    input {
+      display: inline-block;
+      height: .4rem;
+      line-height: .4rem;
+      padding-left: .1rem;
+      vertical-align: middle;
+      outline: none;
+      width: 30%;
+      border: #959595 1px solid;
+      &[type="radio"] {
+        width: 20px;
+      }
+      .border_radius(3px);
+      &:focus {
+        border: #fe393d 2px solid;
+      }
+    }
+    .loginBtn,.cancelBtn,.payBtn {
+      display: inline-block;
+      vertical-align: middle;
+      height: .4rem;
+      line-height: .4rem;
+      margin: .1rem .1rem .1rem 0;
+      font-size: .2rem;
+      width: 20%;
+      .border_radius(3px);
+      text-align: center;
+      color: #fff;
+    }
+    .loginBtn,.payBtn {
+      background-color: #fe393d;
+    }
+    .cancelBtn {
+      background-color: #cccccc;
+    }
+  }
+}
