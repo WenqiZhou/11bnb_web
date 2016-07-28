@@ -101,9 +101,10 @@
             <input id="phone" type="tel" placeholder="请输入手机号码"/>
         </label>
     </div>
-    <div class="controlGroup">
+    <div class="controlGroup" style="margin-top: 300px;">
         <span></span>
         <a href="javascript:void(0)" class="loginBtn">登录</a>
+        <a href="javascript:void(0)" class="cancelBtn">取消</a>
     </div>
 </div>
 <script>
@@ -132,11 +133,15 @@
                     alert('登录成功，页面即将跳转')
                 }
             })
+            $('.cancelBtn').click(function () {
+                loginBox.hide();
+                guideBox.show();
+            })
         })
     });
     function validPhone (container) {
         var value = container.val();
-        return (value.length == 11 || /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(value))
+        return (value.length == 11 && /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(value))
     }
 </script>
 </body>
