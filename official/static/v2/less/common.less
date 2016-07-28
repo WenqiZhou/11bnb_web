@@ -65,29 +65,38 @@
 } });
 
 .keyframes(about, { 50% {
-  left: 25%
+  left: 20%
 } 100% {
-    left: 25%
+    left: 20%
+  } });
+.keyframes(guide, { 50% {
+  left: 40%
+} 100% {
+    left: 40%
   } });
 
 .keyframes(hr, { 50% {
-  left: 75%
+  left: 80%
 } 100% {
-    left: 75%
+    left: 80%
   } });
 .keyframes(news, { 50% {
-  left: 50%
+  left: 60%
 } 100% {
-    left: 50%
+    left: 60%
   } });
 .keyframes(index, { 50% {
-  left: 0%
+  left: 0
 } 100% {
-    left: 0%
+    left: 0
   } });
 
 .bor.index {
   .animation(index .6s);
+}
+
+.bor.guide {
+  .animation(guide .6s);
 }
 
 .bor.hr {
@@ -138,7 +147,7 @@
     padding: 0;
   }
   .title1 {
-    margin:0 0 .35rem 0;
+    margin: 0 0 .35rem 0;
     position: relative;
     width: auto;
     display: inline-block;
@@ -227,9 +236,6 @@
     }
   }
 }
-
-
-
 
 .top {
   display: block;
