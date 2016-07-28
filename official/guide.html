@@ -12,7 +12,7 @@
     <meta name="keywords" content="日租,短租,周租,住宿,酒店式公寓,短租公寓,单身公寓,青年旅社,学生租房">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 
-    <script type="text/javascript" src="static/v2/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="static/v2/js/jquery-1.12.3.min.js"></script>
 
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="static/v2/css/guide.i8.css?12d3d111">
@@ -39,26 +39,105 @@
     <h1>订房指南</h1>
     <div class="guideItem">
         <div class="imgBox">
-            <img src="static/v2/image/guide.png" alt="" class="guideImg"/>
+            <i class="guide"></i>
             <div class="guideDetail">
                 <h2>找房源</h2>
                 <p>首选房东直租&nbsp;警惕黑中介</p>
             </div>
-            <p class="guideTip">
-                <span>此项目购买后才可查看</span>
-                <a href="#">立即购买</a>
-            </p>
         </div>
-
+        <p class="guideTip">
+            <span>此项目购买后才可查看</span>
+            <a href="#" class="buy">立即购买</a>
+        </p>
+    </div>
+    <span class="line"></span>
+    <div class="guideItem">
+        <div class="imgBox">
+            <i class="train"></i>
+            <div class="guideDetail">
+                <h2>考虑因素</h2>
+                <p>价格合理 离公司近 交通便利</p>
+            </div>
+        </div>
+        <p class="guideTip">
+            <span>此项目购买后才可查看</span>
+            <a href="#" class="buy">立即购买</a>
+        </p>
+    </div>
+    <span class="line"></span>
+    <div class="guideItem">
+        <div class="imgBox">
+            <i class="search"></i>
+            <div class="guideDetail">
+                <h2>实地看房</h2>
+                <p>房子细节 安全指数</p>
+            </div>
+        </div>
+        <p class="guideTip">
+            <span>此项目购买后才可查看</span>
+            <a href="#" class="buy">立即购买</a>
+        </p>
+    </div>
+    <span class="line"></span>
+    <div class="guideItem">
+        <div class="imgBox">
+            <i class="people"></i>
+            <div class="guideDetail">
+                <h2>合租室友</h2>
+                <p>生活习惯 性格作息</p>
+            </div>
+        </div>
+        <p class="guideTip">
+            <span>此项目购买后才可查看</span>
+            <a href="#" class="buy">立即购买</a>
+        </p>
+    </div>
+</div>
+<div class="loginBox" style="display: none;">
+    <h1>登录</h1>
+    <div class="controlGroup">
+        <label>
+            <span>手机号码：</span>
+            <input id="phone" type="tel" placeholder="请输入手机号码"/>
+        </label>
+    </div>
+    <div class="controlGroup">
+        <span></span>
+        <a href="javascript:void(0)" class="loginBtn">登录</a>
     </div>
 </div>
 <script>
     $(document).ready(function () {
         initnav();
-        if (!isWeiXin()) {
-            $(".pic2-sm-text > div:eq(0)").text("扫描二维码");
-        }
+        var guideBox = $('.guideBox');
+        var loginBox = $('.loginBox');
+        $('.buy').click(function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+            guideBox.hide();
+            loginBox.show();
+            var phone = $('#phone');
+            phone.on('input propertychange',function(){
+                var _this = $(this);
+                if(phone.val().length >= 11) {
+                    _this.blur();
+                }
+            });
+            $('.loginBtn').click(function(){
+                if(!phone.val()) {
+                    alert('请输入手机号码后尝试')
+                }else if(!validPhone(phone)) {
+                    alert('请输入正确的手机号码')
+                }else {
+                    alert('登录成功，页面即将跳转')
+                }
+            })
+        })
     });
+    function validPhone (container) {
+        var value = container.val();
+        return (value.length == 11 || /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(value))
+    }
 </script>
 </body>
 </html>
