@@ -117,6 +117,11 @@
     <p class="tip">该文章需要100积分，目前积分为 <Strong>0   </Strong><span style="color: #fe393d;">请充值后购买</span></p>
     <div class="controlGroup">
         <label style="margin-top: 30px;display: block;">
+            支付金额：
+            <input type="text" name="amount" />
+            元（1元购买50积分，2元购买100积分）
+        </label>
+        <label style="margin-top: 30px;display: block;">
             <span>充值方式：</span>
         </label>
         <label style="margin-top: 30px;display: inline-block;vertical-align: middle;width:30%">
@@ -177,11 +182,11 @@
                     payBox.show();
                 }
             });
-            $('.payBtn').click(function (e) {
-                e.stopPropagation();
-                e.preventDefault();
-                alert('ICP证书正在申请中')
-            });
+//            $('.payBtn').click(function (e) {
+//                e.stopPropagation();
+//                e.preventDefault();
+//                alert('ICP证书正在申请中')
+//            });
             $('.cancelBtn').click(function () {
                 loginBox.hide();
                 guideBox.show();
