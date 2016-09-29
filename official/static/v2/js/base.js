@@ -25,7 +25,7 @@ function initnav() {
         } else {
 
             $(".bor").animate({
-                "left": (index ) * 20 + "%"
+                "left": (index ) * 25 + "%"
             }, 300, "", function () {
                 location.href = url;
             });
