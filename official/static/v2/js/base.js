@@ -10,9 +10,9 @@ function initnav() {
         var index = $(this).parent().index();
         var url = $(this).attr("url");
         $(".bor").animate({
-            "left": ($(this).parent().index() ) * 20 + "%"
+            "left": ($(this).parent().index() ) * 25 + "%"
         }, 300, "", function () {
-            navtimer();
+            //navtimer();
             location.href = url;
         });
         if (ua.indexOf('Safari') > -1 && !(ua.indexOf('Chrome') > -1)) {

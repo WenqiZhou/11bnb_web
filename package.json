@@ -1,0 +1,28 @@
+{
+  "name": "11bnb_web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/11bnb/11bnb_web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/11bnb/11bnb_web/issues"
+  },
+  "homepage": "https://github.com/11bnb/11bnb_web#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0"
+  },
+  "devDependencies": {
+    "gulp-less": "^3.1.0",
+    "gulp-plumber": "^1.1.0"
+  }
+}
