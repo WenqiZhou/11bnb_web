@@ -1,0 +1,116 @@
+示例
+登陆－－》获取uin和token－－》获取订单列表
+
+登陆－－》获取uin和token
+(function () {
+    reqwest({
+        url: '/api/user/signup', method: "post", type: 'json',
+        headers: {
+            'User-Uin': 100000
+        },
+        data: JSON.stringify({
+            phone: '13501231224',
+            verify_code: '6382',
+        })
+    }).then((resp)=> {
+        console.log(resp);
+    }).fail((err)=> {
+        console.log(err);
+    }).always(()=> {
+    });
+})()
+
+
+返回
+{
+    "access_token": "\\x01\\x01C\\xa6\\xf1TX\\x13\"\\x10X\\x13\"\\x10JLkV3ZQd4yPbDCi7\\x19\\xb98\\x03F\\xcd\\xfe6\\x81\\x07O:\\xa7\\x97)\\x85",
+    "ret": 0,
+    "uin": 1135014228,
+    "token": "TzQXVzuPK7YqjT5g1J5PJ8HxszGxwI1U67Cp1B1zEfrD3HRfUg==",
+    "refresh_token": "\\x01\\x01C\\xa6\\xf1TX\\x13\"\\x10X\\x13\"\\x102G7eRqZ8VarXxu93<\\x90\\xe0\\xd2\\xf6I\\xce\\x01\\x90$P\\x11&DSS"
+}
+
+
+
+获取订单列表
+(function () {
+    reqwest({
+        url: '/api/booking/bookinglist/1135014228', method: "get", type: 'json',
+        headers: {
+            'User-Uin': 1135014228,
+            'Client-Token': "TzQXVzuPK7YqjT5g1J5PJ8HxszGxwI1U67Cp1B1zEfrD3HRfUg==",
+
+        },
+        data: JSON.stringify({
+            'user_uin': 1135014228,
+            'user_type': 1,
+        })
+    }).then((resp)=> {
+        console.log(resp);
+    }).fail((err)=> {
+        console.log(err);
+    }).always(()=> {
+    });
+
+
+})()
+
+返回
+{
+    "booking_info": [{
+        "status": 8,
+        "guest_num": 1,
+        "update_time": 1458874610,
+        "total_price": 100,
+        "house_id": 4874848990841782708,
+        "landlord_rent": 90,
+        "display_total": 100,
+        "tenant_uin": 1682829168,
+        "booking_id": 1002933791,
+        "create_time": 1458874301,
+        "entering_date": 1458889200,
+        "service_charge": 10,
+        "landlord": {"hx_id": "1598786415", "uin": 1135014228},
+        "landlord_uin": 1135014228,
+        "house_info": {
+            "score_0": 5.0,
+            "rating": 5.0,
+            "score_2": 5.0,
+            "score_3": 5.0,
+            "score_4": 5.0,
+            "score_5": 5.0,
+            "score_6": 5.0,
+            "score_1": 5.0,
+            "uin": 1135014228,
+            "leaving_time": 43200,
+            "like_count": "104",
+            "images": [{"image_url": "http://s3.cn-north-1.amazonaws.com.cn/11bnbimgs/dae0a960-f233-11e5-8ad2-024c5ea8dc61.h"}, {"image_url": "http://s3.cn-north-1.amazonaws.com.cn/11bnbimgs/e2d32602-f233-11e5-9860-02355002f52f.h"}, {"image_url": "http://s3.cn-north-1.amazonaws.com.cn/11bnbimgs/196dc906-f234-11e5-a5b2-02355002f52f.h"}],
+            "cp": 1,
+            "city": "\u5317\u4eac\u5e02",
+            "stock_num": 1,
+            "title": "\u8c6a\u534e\u603b\u7edf\u5957\u623f",
+            "map_img_url": "http://s3.cn-north-1.amazonaws.com.cn/11bnbimgs/caaa8be2-f233-11e5-bc12-024c5ea8dc61.m",
+            "enter_time": 54000,
+            "score": 5.0,
+            "location": {"latitude": 39927666, "longitude": 116440174},
+            "baidu_city": "\u5317\u4eac",
+            "price": 100,
+            "room_num": 1,
+            "address": "\u94f6\u6cb3Soho(A\u5ea7)",
+            "house_type": 2,
+            "score_7": 5.0,
+            "ready_status": 2,
+            "house_id": 4874848990841782708,
+            "baidu_district": "\u4e1c\u57ce\u533a"
+        },
+        "leaving_date": 1458964800,
+        "cash_fee": 100,
+        "cancel_deadline": 1458975600,
+        "tenant": {
+            "head_url": "http://s3.cn-north-1.amazonaws.com.cn/11bnbimgs/fa6728b6-3083-11e6-8a09-024c5ea8dc61.u",
+            "real_name": "\u62d3\u5305\u8bda",
+            "hx_id": "833808286",
+            "uin": 1682829168
+        }
+    }], "ret": 0
+}
