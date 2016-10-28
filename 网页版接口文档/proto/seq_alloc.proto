@@ -1,0 +1,36 @@
+syntax = 'proto3';
+
+package Proto;
+
+import "header.proto";
+
+service RPCSeqAlloc{
+	rpc GetCurSeq (GetCurSeqReq) returns (GetCurSeqRsp) {}
+	rpc GetNewSeq (GetNewSeqReq) returns (GetNewSeqRsp) {}
+}
+
+message GetCurSeqReq{
+    Header header = 500;   // 统一包头
+	uint32 uin = 1;        // 用户id 
+}
+
+message GetCurSeqRsp{
+    Header header = 500;   // 统一包头
+	int32 ret = 1;         // 返回码
+    string err = 2;        // 错误信息
+    uint32 uin = 3;        // 用户id
+    uint64 cur_seq = 4;    // 用户当前的序列号
+}
+
+message GetNewSeqReq{
+    Header header = 500;   // 统一包头
+	uint32 uin = 1;     // 用户id
+}
+
+message GetNewSeqRsp{
+    Header header = 500;   // 统一包头
+	int32 ret = 1;         // 返回码
+    string err = 2;        // 错误信息
+    uint32 uin = 3;        // 用户id
+    uint64 new_seq = 4;    // 用户最新的序列号
+}

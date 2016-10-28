@@ -1,0 +1,119 @@
+syntax = 'proto3';
+
+package Proto;
+
+import "header.proto";
+import "base.proto";
+
+service RpcCoupon {
+    rpc Echo (EchoReq) returns (EchoRsp) {}
+
+    // POST 生成优惠券
+    // http://dev.11bnb.com:10086/api/coupon/create
+    // {
+    //  "coupon": {
+    //      "type": 1,
+    //      "discount": 0.2,
+    //      "max_cash": 100,
+    //      "days":   : 10
+    //    }
+    // }
+    rpc CreateCoupon(CreateCouponReq) returns (CreateCouponRsp) {}
+    // POST 兑换优惠券
+    // http://dev.11bnb.com:10086/api/coupon/exchange
+    // {
+    //  "phone": "18682012655",
+    //  "uin":100004,
+    //  "coupon_id": "AXB4Z0",
+    // }
+    rpc ExchangeCoupon(ExchangeCouponReq) returns (ExchangeCouponRsp) {}
+
+    // GET 拉取优惠券列表
+    // http://dev.11bnb.com:10086/api/coupon/list/<int:uin>?l=AXB4Z0
+    //
+    rpc GetUserCoupons(GetUserCouponsReq) returns (GetUserCouponsRsp) {}
+
+    // POST 生成优惠券组合，优惠券组合是设定好的
+    rpc CreateCouponBundle(CreateCouponBundleReq) returns (CreateCouponBundleRsp) {}
+}
+
+message CouponInfo {
+    enum CouponType {
+        NoneType    = 0;
+        DiscountType= 1; // 折扣优惠
+        CashType    = 2; // 现金优惠
+        ThresholdType = 3; // 每n元减免m元优惠
+    }
+    CouponType type = 1; // 优惠券类型
+    string coupon_id= 2; // 优惠券编号
+    uint32 discount = 3; // 折扣，值的范围（0～100）使用时除以100
+    uint32 max_cash = 4; // 折扣优惠时，优惠金额最大值，单位是分
+    uint32 cash     = 5; // 满减优惠，单位是分
+    uint32 min_price= 6; // 满减优惠时需要的满足最小价格，单位是分
+    uint32 start_date=7; // 开始时间，日期 eg. 20160101
+    uint32 end_date = 8; // 过期时间，日期 eg. 20160101
+    uint32 days     = 9; // 有效天数
+    uint32 uin      = 10;// 用户UIN
+    string phone    = 11;// 用户手机号
+    uint32 is_used  = 12;// 是否被使用过 0 未使用 1 已使用 2 支付时暂时锁定，超时后继续可用
+    uint32 use_time = 13;// 使用时间
+    uint64 booking_id= 14;// 使用优惠的订单号
+    string activity = 15; //活动名称
+    uint32 base_amount = 16; // 每n元免m元的n
+    uint32 discount_amount = 17; // 每n元免m元的m
+}
+
+message CreateCouponReq {
+    Header header       = 500;  // 统一包头
+    CouponInfo coupon   = 1;    // 优惠券信息
+}
+
+message CreateCouponRsp {
+    Header header       = 500;  // 统一包头
+    int32  ret          = 1;    // 错误码
+    string err          = 2;    // 错误信息
+    CouponInfo coupon   = 3;    // 优惠券信息
+}
+
+message ExchangeCouponReq {
+    Header header   = 500;  // 统一包头
+    string phone    = 1;    // 获取优惠券的手机号
+    uint32 uin      = 2;    // 获取优惠券的uin
+    string coupon_id= 3;    // 优惠券编号
+}
+
+message ExchangeCouponRsp {
+    Header header       = 500;  // 统一包头
+    int32  ret          = 1;    // 错误码
+    string err          = 2;    // 错误信息
+    CouponInfo coupon   = 3;    // 优惠券信息
+}
+
+message GetUserCouponsReq {
+    Header header   = 500;  // 统一包头
+    uint32 uin      = 1;    // 获取优惠券的uin
+    string last_id  = 2;    // 翻页使用，第一次不用带，需要翻页时回带给后端
+    uint32 num      = 3;    // 个数
+}
+
+message GetUserCouponsRsp {
+    Header header   = 500;  // 统一包头
+    int32  ret      = 1;    // 错误码
+    string err      = 2;    // 错误信息
+    uint32 uin      = 3;    // 获取优惠券的uin
+    string last_id  = 4;    // 翻页使用，第一次不用带，需要翻页时回带给后端
+    repeated CouponInfo coupons = 5; // 获取用户优惠券列表
+}
+
+message CreateCouponBundleReq {
+    Header header       = 500;  // 统一包头
+    string phone        = 1;    // 获取优惠券的手机号
+    string activity     = 2;    // 活动名称
+}
+
+message CreateCouponBundleRsp {
+    Header header       = 500;  // 统一包头
+    int32  ret          = 1;    // 错误码
+    string err          = 2;    // 错误信息
+    repeated CouponInfo bundle   = 3;    // 优惠券列表
+}

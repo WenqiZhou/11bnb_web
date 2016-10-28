@@ -1,0 +1,228 @@
+syntax = 'proto3';
+
+package Proto;
+
+import "header.proto";
+import "house.proto";
+import "base.proto";
+
+service RpcSearch {
+    rpc Echo (EchoReq) returns (EchoRsp) {}
+
+    // 搜索房源
+    // route: /api/house/search                          method: GET
+    //   ?lo=116440759&la=39927784&r=3000&...
+    //    n, l -> num, last_id                            用于翻页
+    //    kw -> keyword                                   关键字
+    //    (lo, la) -> location, r -> radius               附近
+    //    c -> city                                       城市
+    //    sd, ed -> start_date, end_date                  起止日期
+    //    lp -> living_people                             入住人数
+    //    ht -> house_type                                房屋类型
+    //    pi, pa -> price_min, price_max                  价格范围
+    //    fs -> facilities                                便利设施
+    //    bn, rn, tn -> bed_num, room_num, toilet_num     床房厕数量
+    //    p -> position                                   预设位置
+    //    ai -> activity_id                               活动ID
+    //    sf -> search_flag                               搜索flag
+    //    ob -> order_by                                  排序规则
+    //    st -> stype                                     源类型
+    rpc SearchHouse (HouseSearchReq)  returns (HouseSearchRsp) {}
+
+    // 获取相似房源
+    // route: /api/house/<int:house_id>/similar    method: GET
+    //   ?n=10&l=429543974340343
+    //    n, l -> num, last_id
+    rpc SimilarHouse (SimilarHouseReq) returns (HouseListRsp) {}
+
+    // 由house ids 搜索房源
+    // route("/api/house/search/id", methods=["POST"])
+    rpc SearchHouseId (SearchHouseIdReq)  returns (HouseListRsp) {}
+}
+
+message HouseSearchReq {
+    Header header = 500; //统一包头
+
+    uint32 num = 2;                 // 一次查询的数目 (建议20个以内)
+    string last_id = 3;             // 上一页返回的id (用于翻到下一页,查首页不填)
+
+    string keyword = 11;            // 关键字 (目前处理为地址)
+
+    // 附近的房
+    Location location = 12;         // GPS
+    uint32 radius = 13;             // 半径(单位米,<=5000)
+
+    string city = 14;               // 城市
+
+    // 入住日期
+    uint32 start_date = 15;         // 开始日期 (如: 20151116)
+    uint32 end_date = 16;           // 结束日期
+
+    uint32 living_people = 17;      // 入住人数
+
+    uint32 house_type = 18;         // 房屋类型 (0x1:整套房子, 0x2:独立房间, 0x4:合住房间)
+
+    // 价格范围
+    uint32 price_min = 19;          // 最小价格 (人民币分)
+    uint32 price_max = 20;          // 最大价格 (人民币分)
+
+    uint64 facilities = 21;         // 便利设施 (按位使用)
+
+    uint32 bed_num = 22;            // 床位数量 (1000000 表示限定 bed_num=0)
+    uint32 room_num = 23;           // 卧室数量
+    uint32 toilet_num = 24;         // 厕所数量
+
+    // 例如: 地铁线路,1号线,五棵松
+    string position = 25;           // 预设位置 (词间用,分隔)
+
+    uint32 activity_id = 26;        // (首页)活动ID
+
+    uint32 search_flag = 31;        // 1: 启用kw的预搜索, 2: 强制搜索(保证一个城市)
+
+    // 标准排序:
+    //   默认 -> BD积分降序 + 相关性
+    //   活动 -> 配置顺序
+    uint32 order_by = 32;           // 0,不填: 标准排序, 1: 价格升序, 2: 价格降序
+    string district = 33;           // 按行政区搜索房源
+
+    uint32 stype = 34;              // 0: 只要标准房源, 1: 标准房源 + OTA房源
+
+    // 0: APP搜索(默认)
+    // 1: 抢单
+    // 2: OP
+    uint32 from_scene = 35;         // 来源场景 (主要影响点击率的计算)
+
+    // 求租参数
+    uint32 search_from = 100;       // 搜索来源 0：默认来自于客户端，1:ios，2:android 3:web 4:求租
+    uint32 expect_price = 101;      // 期望价格 单位为分
+    string remark = 102;            // 备注
+}
+
+message KeywordPreRet {
+    string keyword = 1; // 关键字
+    string city = 2;    // 城市
+    uint32 num = 3;     // 数量 (可能不准确)
+    string desc = 4;    // 描述 (如:目的地)
+}
+
+enum ActivityItemType {
+    AIT_START         = 0;
+    AIT_TOP_TITLE     = 1; // 顶层标题
+    AIT_TOP_IMAGE     = 2; // 顶层图片
+    AIT_BIG_ACTIVITY  = 3; // 活动(大)
+    AIT_TITLE_DOUBLE  = 4; // 标题(主副标题)
+    AIT_TITLE_SINGLE  = 5; // 标题(仅主标题)
+    AIT_IMAGE         = 6; // 图
+    AIT_TEXT          = 7; // 文
+    AIT_HOUSES        = 8; // 推荐房源
+    AIT_ACTIVITYS     = 9; // 推荐主题(活动)
+}
+
+message AIT_TopTitle {
+    string title      = 1; // 主标题
+}
+
+message AIT_TopImage {
+    string url = 1; // 图片地址
+}
+
+message AIT_BigActivity {
+    string title        = 1; // 主标题
+    string sub_title    = 2; // 副标题
+    string image_url    = 3; // 图片地址
+    uint32 activity_id  = 4; // 活动ID
+    uint32 pre_render   = 5; // 预渲染类型 (1: 顶层标题类型, 2: 顶层图片类型, 4: 老版本活动)
+    uint32 uin          = 6; // 其他房东
+    uint64 house_id     = 7; // 其他房东的某个房 (一般不用)
+}
+
+message AIT_TitleDouble {
+    string title      = 1; // 主标题
+    string sub_title  = 2; // 副标题
+}
+
+message AIT_TitleSingle {
+    string title      = 1; // 主标题
+}
+
+message AIT_Image {
+    string url  = 1; // 图片地址
+    string desc = 2; // 图片描述 (可能为空)
+    uint32 flag = 3; // 图片标记 (1: 隐藏左下角浮标)
+}
+
+message AIT_Text {
+    string content    = 1; // 文本内容
+    uint32 font_size  = 2; // 字体大小
+    // 1: 向上合并(和上面的项之间无间隔)
+    uint32 show_flag  = 3; // 展示标记
+}
+
+message AIT_houses {
+    string title               = 1; // 主标题(推荐房源)
+    repeated HouseInfo houses  = 2; // 房源们
+    string search_info         = 3; // (更多时)搜索字段 (可能为空)
+}
+
+message AIT_activity {
+    string title                        = 1; // 主标题(推荐主题)
+    repeated AIT_BigActivity activitys  = 2; // 活动们
+}
+
+message ActivityItemNode {
+    ActivityItemType type         = 1;  // 项的类型
+    AIT_TopTitle top_title        = 2;  // 顶层标题
+    AIT_TopImage top_image        = 3;  // 顶层图片
+    AIT_BigActivity big_activity  = 4;  // 活动(大)
+    AIT_TitleDouble title_double  = 5;  // 标题(主副标题)
+    AIT_TitleSingle title_single  = 6;  // 标题(仅主标题)
+    AIT_Image image               = 7;  // 图
+    AIT_Text text                 = 8;  // 文
+    AIT_houses houses             = 9;  // 推荐房源
+    AIT_activity activitys        = 10; // 推荐主题(活动)
+}
+
+message HouseSearchRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;                       // 返回码
+    string err = 2;                      // 错误信息
+    repeated HouseInfo houses = 3;       // 房屋信息列表
+    string last_id = 4;                  // 翻页用 (如果存在下一页,则会填充该值)
+
+    // 如果前端搜索时 search_flag = 1, 且只携带了 keyword 则会启用kw的预搜索
+    // 后端会预搜索kw,如果该kw能匹配多个城市,则会返回下面的结构而无房屋列表
+    repeated KeywordPreRet kws = 5;      // kw的预搜索结果集
+
+    // 当搜索活动的时候,前端不知道这个活动是什么城市,无法渲染预设位置
+    // 这里特别针对活动返回一个城市(若无,则不需要渲染预设位置)
+    // (注:可能在其他场合也返回该字段)
+    string curr_city = 6;                // 当前城市
+
+    // 用于新版本搜索(保证结果在一个城市)
+    // 预搜索返回时,用户如果直接点击搜索按钮而不去选择城市,则采用该城市
+    // 强制搜索时,后端会返回该字段用于为接下来的二度搜索或者翻页保持一致性
+    string default_city = 7;             // 默认城市
+
+    // 用于新版本活动 (活动是由多个项构成的)
+    repeated ActivityItemNode ains = 8;  // 活动页面(项节点集)
+    ShareInfo activity_share = 9;        // 活动分享
+
+    // 0x1: 只能使用推荐排序
+    uint32 unsupport = 10;               // 不支持的功能(按位使用)
+
+    string search_trace_id = 11;         // 用于Trace搜索结果的ID(前段多个场景回带)
+}
+
+message SimilarHouseReq {
+    Header header = 500; //统一包头
+
+    uint64 house_id = 1;    // 房屋id
+    uint32 num = 2;         // 一次查询的数目 (建议20个以内)
+    string last_id = 3;     // 上一页返回的id (用于翻到下一页,查首页不填)
+}
+
+message SearchHouseIdReq {
+    Header header = 500;
+    repeated uint64 house_id = 1;
+}

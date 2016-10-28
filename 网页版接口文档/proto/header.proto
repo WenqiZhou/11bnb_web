@@ -1,0 +1,43 @@
+syntax = 'proto3';
+
+package Proto;
+
+message Header {
+    uint32 command          = 1;   // 命令字
+    uint32 user_uin         = 2;   // (触发请求的)用户的uin (用户未登录时填100000)
+    string token            = 3;   // 用户登录后获得的token
+    // "来源.大版本号.中版本号.小版本号"
+    //   来源: iOS -> 1, Android -> 2, Web -> 3
+    string client_version   = 4;   // 客户端版本号(点分十进制,格式类似IPv4地址)
+    uint32 client_uversion  = 5;   // 客户端版本号(uint版本,客户端可不填,服务端自动生成)
+    uint32 message_type     = 6;   // (表示包体的)消息类型 (参见MessageType)
+
+    int32 ret               = 11;  // 一级错误码
+    string err              = 12;  // 一级错误信息
+
+    string req_name         = 21;  // 接口调用者(员工)英文名(方便定位问题)
+    string req_from         = 22;  // 请求来源
+    uint32 req_time         = 23;  // 触发请求的时间(unix时间戳)
+    string client_ip        = 24;  // 客户端IP地址(+端口号)
+    string access_ip        = 25;  // 接入层IP地址(+端口号)
+    string uni_id           = 26;  // 接入层生成的全局唯一ID
+    string uni_cid          = 27;  // 客户端生成的全局唯一ID(服务器全局透传,方便Debug)
+    string ud_id            = 28;  // 服务器为每个设备生成的全局唯一ID
+    string context          = 31;  // 上下文(回带部分,终端调用者使用)
+}
+
+// -------- Proto Header <--> HTTP Header --------
+// user_uin              <-->         User-Uin
+// token                 <-->         Client-Token
+// client_version        <-->         Client-Version
+// client_uversion       <-->         Client-UVersion
+// message_type          <-->         Message-Type
+// ret                   <-->         Ret (请求时不填)
+// err                   <-->         Err (请求时不填)
+// req_name              <-->         Req-Name
+// req_from              <-->         Req-From
+// req_time              <-->         Req-Time
+// uni_id                <-->         Uni-ID (请求时不填)
+// uni_cid               <-->         Uni-CID
+// ud_id                 <-->         Ud-ID
+// context               <-->         Context

@@ -1,0 +1,653 @@
+syntax = 'proto3';
+
+package Proto;
+
+import "header.proto";
+import "house.proto";
+import "user.proto";
+import "coupon.proto";
+import "base.proto";
+import "search.proto";
+
+service RpcBooking {
+    rpc Echo (EchoReq) returns (EchoRsp) {}
+
+    // 提交订单
+    // booking.route("/api/booking/request", methods=["POST"])
+    // http://dev.11bnb.com:10086/api/booking/request
+    // {
+    //  "house_id":429501024667358, 
+    //  "tenant_uin":100004, 
+    //  "entering_date":1446712190, 
+    //  "leaving_date":1446812190, 
+    //  "message_info": "哎呦，不错哟"
+    //  "search_trace_id": "0d583f06-419f-11e6-8d99-022edde0e3ee"
+    // }
+    rpc BookingInfoAdd (BookingInfoAddReq) returns (BookingInfoAddRsp) {}
+
+    // 获取订单信息
+    // booking.route("/api/booking/bookid/<int:booking_id>", methods=["GET"])
+    // http://dev.11bnb.com:10086/api/booking/bookid/100143?nc=0
+    // nc : need_clear 清空数据
+    // h : house_id 对于抢单的请求带上对应的house_id 可以带出完整的数据
+    rpc BookingInfoGet (BookingInfoGetReq) returns (BookingInfoGetRsp) {}
+
+    // 更新订单信息
+    // booking.route("/api/booking/update", methods=["POST"])
+    // http://dev.11bnb.com:10086/api/booking/update
+    rpc BookingInfoUpdate (BookingInfoUpdateReq) returns (BookingInfoUpdateRsp) {}
+
+    // 更新订单优惠券信息
+    // booking.route("/api/booking/update_coupon", methods=["POST"])
+    // http://dev.11bnb.com:10086/api/booking/update_coupon
+    rpc BookingInfoCouponUpdate (BookingInfoCouponUpdateReq) returns (BookingInfoCouponUpdateRsp) {}
+
+    // 获取用户订单列表
+    // booking.route("/api/booking/bookinglist/<int:uin>", methods=["GET"])
+    // http://dev.11bnb.com:10086/api/booking/bookinglist/100004?t=0&n=5
+    // t : user_type (tenant:2, landlord:1)
+    // n : request_num
+    // l : last_create_time
+    // s : req_status
+    // bt: booking_type (all:0,  进行中:1,  已结束:2,  未评论:3,  待确认:4,  未支付:5,  已支付:6)
+    // lt: last_booking_type
+    // h : house_id
+    // b : booking_id (房客端收到房东抢单的列表时带上该字段)
+    rpc GetUserBookingInfos (GetUserBookingInfosReq) returns (GetUserBookingInfosRsp) {}
+
+    // 获取用户计数列表 返回每种类型的计数 前端根据每个计数类型做求和
+    // @booking.route("/api/booking/bookingcount/<int:uin>", methods=["GET"])
+    // http://dev.11bnb.com:10086/api/booking/bookingcount/100101?t=1&ct=7
+    // t : user_type (tenant:2, landlord:1)
+    // ct: count_types 按位表示 0x01:等待房东确认 0x02:等待房客支付 0x04:等待评论
+    rpc GetUserBookingCount (GetUserBookingCountReq) returns (GetUserBookingCountRsp) {}
+
+	// 根据一些uin获取最新订单信息
+    // booking.route("/api/booking/lastest", methods=["POST"])
+    rpc GetLastBookingByUins (GetLastBookingByUinsReq) returns (GetLastBookingByUinsRsp) {}
+
+    // 求租 请求协议复用搜索接口协议
+    // booking.route("/api/booking/wanted", methods=["POST"])
+    // http://dev.11bnb.com:10086/api/booking/wanted
+    rpc WantedBooking(HouseSearchReq) returns (WantedBookingRsp) {}
+
+    // 前端拉取小喇叭信息的接口协议
+    // booking.route("/api/booking/trumpet", method=["POST"])
+    // http://dev.11bnb.com:10086/api/booking/trumpet
+    rpc LittleTrumpetInfoGet (LittleTrumpetInfoGetReq) returns (LittleTrumpetInfoGetRsp)  {}
+
+    rpc LandlordDepositTreatment (LandlordDepositTreatmentReq) returns (LandlordDepositTreatmentRsp)  {}
+
+    rpc TenantDepositTreatment (TenantDepositTreatmentReq) returns (TenantDepositTreatmentRsp)  {}
+
+    // 更新+添加保险人信息
+    // booking.route("/api/booking/insurance_personal_info_request", methods=["POST"])
+    rpc UpdateInsurancePersonalInfo (InsurancePersonalInfoReq) returns (InsurancePersonalInfoList) {}
+
+    // 拉取所有保险人信息
+    // booking.route("/api/booking/insurance_personal_info_list", methods=["GET"])
+    rpc GetInsurancePersonalInfoList (InsurancePersonalInfoReq) returns (InsurancePersonalInfoList) {}
+
+    // 房东自己添加保险人
+    // booking.route("/api/booking/insurance_add_by_landlord", methods=["POST"])
+    rpc InsuranceAddByLandlord (InsuranceAddByLandlordReq) returns (InsuranceAddByLandlordRsp) {}
+
+    // 经纪人绑定相关Booking id
+    // route: /api/booking/agent_booking                 method: GET
+    rpc AgentBooking(AgentBookingReq) returns (AgentBookingRsp) {}
+
+    // 经纪人绑定相关Booking id 的列表
+    // route: /api/booking/agent_booking_list               method: POST
+    rpc AgentBookingList(AgentBookingListReq) returns (AgentBookingListRsp) {}
+}
+
+enum BookingStatus {
+    START_STATUS                            = 0;    //开始状态 非流程状态 接口调用者不用关注
+    SUBMITED_AND_WAITING_FOR_CONFIRMATION   = 1;    //租客已经提交，等待房东确认
+    CONFIRMED_AND_WAITING_FOR_PAYMENT       = 2;    //房东已经确认，等待租客支付
+    TENANT_CONFIRM_TO_PAY                   = 3;    //租客确认支付，等待支付成功
+    PAYED_SUCCESS                           = 4;    //租客已经支付，等待入住
+    CANCEL_BOOKING                          = 5;    //租客取消订单
+    LOANLORD_REJECT                         = 6;    //房东拒绝订单
+    LOANLORD_REJECT_AFTER_CONFIRMED         = 7;    //房东确认后再拒绝订单
+    UNSUBSCRIBE_BOOKING                     = 8;    //租客退订，退款到租客，等待支付补偿到房东
+    UNSUBSCRIBE_SUCCESS                     = 9;    //租客退订，并且已经支付补偿到房东
+    BOOKING_SUCCESS                         = 10;   //已经向房东支付租金，等待租客评论入住满意度
+    LOANLORD_UNSUBSCRIBE                    = 11;   //租客已经支付租金后，房东退订，理论上不允许，先保留这个状态
+    BOOKING_STATUS_ERROR                    = 12;   //状态更新错误导致的
+    FROZEN_BOOKING                          = 13;   //冻结订单不再处理
+    BOOKING_PAYMENT_TIME_OUT                = 14;   //房东确认订单，房客超时未支付
+    ALIPAY_REFUND_ING                       = 15;   //支付宝退款中，钱还没退，退的逻辑整到op里去
+    CONFIRMATION_TIME_OUT                   = 16;   //房东确认超时（24小时，暂定）
+    WANT_BOOKING                            = 17;   //求租
+    CANCEL_WANT_BOOKING                     = 18;   //取消求租
+    WANTED_BOOKING                          = 19;   //*******废弃*******抢租
+    TENANT_CANCEL_ONE_WANTED_BOOKING        = 20;   //*******废弃*******房客取消一个抢租的单
+    LANDLORD_CANCEL_ONE_WANTED_BOOKING      = 21;   //*******废弃*******房东取消一个抢租的单
+    PAY_ONE_WANTED_BOOKING                  = 22;   //*******废弃*******支付抢租的单子
+    RESOLVED_BOOKING                        = 23;   //解决的单子（冻结的单子被解决了）
+    BOOKING_OVERDUE                         = 24;   //订单过期
+    ISSUE_TICKET_PASSED                     = 25;   //纠纷状态
+    SLAVE_WANT_BOOKING                      = 26;   //求租生成的子订单的初始状态，防止与父求租单状态相同
+    FAKE_STATUS_FOR_LANDLORD_OUTER_INSURANCE = 27; // 房东给别的平台房客加保险时用的假订单状态
+    TOO_FAST_CANCEL_WANT_BOOKING            = 28;  // 房客取消求租太快，房东抢单之后的错误状态
+
+    END_STATUS                              = 100;   //结束状态，非流程状态，仅用于校验订单状态的正确性 接口调用者不用关注
+}
+
+// 入住人信息
+message GuestInfo {
+    uint64 entry_id     = 1;    //编号
+    string tenant_name  = 2;    //入住人姓名
+    string tenant_id    = 3;    //入住人身份证号
+    uint32 status       = 4;    //入住人信息状态
+}
+
+// 微信支付，提交订单之后，返回给前端的信息，用于前端发起支付动作
+message WeChatPayInfo {
+    string appid        = 1;    //调用接口提交的公众账号ID
+    string partnerid    = 2;    //调用接口提交的商户号
+    string prepayid     = 3;    //微信生成的预支付回话标识，用于后续接口调用中使用，该值有效期为2小时
+    string packagestr   = 4;    //暂填写固定值Sign=WXPay
+    string noncestr     = 5;    //微信返回的随机字符串
+    string timestamp    = 6;    //时间戳
+    string sign         = 7;    //签名
+}
+
+message WeChatJSAPIPayInfo {
+    int32 ret = 1;          // 返回码
+    string err = 2;         // 错误信息
+    string appId = 3;       // app id
+    string timeStamp = 4;   // 时间戳
+    string nonceStr = 5;    // 随机字符串
+    string package = 6;     // 里面有预支付id
+    string paySign = 7;     // 签名
+    string signType = 8;    // 签名算法类型
+}
+
+// 订单需要通知到谁
+enum BookingBelong {
+    DEFAULT_BOOKING_BELONG      = 0;
+    BOOKING_BELONG_TO_LANDLORD  = 0x01;
+    BOOKING_BELONG_TO_TENANT    = 0x02;
+    BOOKING_BELONG_TO_SERVER    = 0x04;
+    BOOKING_BELONG_TO_NOBODY    = 0x80;
+}
+
+enum DisplayType {
+    DefaultType = 0;
+    TenantType = 1;
+    LandlordType = 2;
+}
+
+
+// 订单信息
+message BookingInfo {
+    uint64  booking_id  = 1;    //订单号
+    uint64  house_id    = 2;    //房屋ID
+    uint32  landlord_uin= 3;    //房东ID
+    uint32  tenant_uin  = 4;    //租客ID
+    BookingStatus status= 5;    //订单状态
+    uint32  create_time = 6;    //订单生成时间
+    uint32  update_time = 7;    //订单更新时间
+    uint32  comment_status = 8; //订单的评论状态 (0x1:租客已评论, 0x2:房东已评论)
+    BookingBelong  booking_belong = 9; //订单需要通知到谁
+    uint32  cancel_deadline = 10; //可以退订的最后时间戳
+    uint32  stype = 11;         // 房屋源类型 (0: 默认, 1: OTA)
+    // 当 stype=1 时,
+    //   需要填充该字段 (为了保持接口的一致性 house_id 也需要填充)
+    //   当 BD 成功完成了 OTA -> 11bnb 的转换时 house_id 需要改写
+    uint64  ohouse_id = 12;     // OTA的房屋ID
+
+    uint32  guest_num  = 20;   //入住人数
+    repeated GuestInfo guest_infos = 21; //入住人信息
+    uint32  entering_date= 22;  //入住日期
+    uint32  leaving_date = 23;  //退房日期
+    uint32  instance_num = 24;  //套数
+
+    // 各种金额
+    uint32  total_price     = 30;   //房客支付的租金
+    uint32  landlord_rent   = 31;   //向房东支付的租金，或者退订后的补偿金
+    uint32  service_charge  = 32;   //服务费
+    uint32  refund_policy   = 33;   //退订后退回给租客的租金
+    uint32  landlord_charge = 34;   //退订后给房东的补偿
+    uint32  cash_fee        = 35;   //用户真正支付的现金（不包含代金券和立减支付等）
+    uint32  discount        = 36;   //折扣
+    uint32  coupon_cash     = 37;   //优惠券的优惠金额
+    uint32  deposit_fee     = 38;   //房客支付的押金
+    uint32  cleaning_charge = 39;   //清洁费
+    uint32  display_total   = 200;  // 展示用的总价
+    uint32  insurance_fee   = 201;  // 保险费用
+    uint32  want_delay_fee   = 202;  // 是否需要有抢单超时优惠  1-->有
+    uint32  landlord_agent_refund_paid = 203; // 是否给房东上线付费  1->已付费
+    uint32  tenant_agent_refund_paid = 204; // 是否给房客上线付费  1->已付费
+    uint32  refund_pay_time = 205;          // 上线奖励到账时间
+
+    // 微信支付，客户支付之后，微信返回给后台的支付确认信息
+    // 发起退款时也会用到这些信息
+    // 此信息对前段透明，不要返回
+    // 商户订单号和商户退款单号，统一用订单号booking_id表示
+    string  transaction_id  = 40;   //微信订单号
+    string  refund_id       = 41;   //退款单号
+    string  device_info     = 42;   //微信支付分配的终端设备号
+    string  trade_type      = 43;   //JSAPI、NATIVE、APP
+    string  bank_type       = 44;   //银行类型，采用字符串类型的银行标识
+    string  fee_type        = 45;   //货币类型，符合ISO4217标准的三位字母代码，默认人民币：CNY
+    PayType pay_type        = 46;   //支付类型
+
+    uint32  comment_score = 50; //用户评分
+    string  comment_info  = 51; //用户评论内容
+
+    HouseInfo house_info = 60; //房屋信息
+    UserInfo landlord    = 61; //房东信息
+    UserInfo tenant      = 62; //租客信息
+    CouponInfo coupon    = 63; //优惠券信息
+    repeated CouponInfo coupon_list = 64; //可用优惠券列表
+    repeated CouponInfo applied_coupon_list = 65; // 可被使用的优惠券列表
+    repeated string coupon_id_list = 66; // 被使用的优惠券id列表
+
+    uint32 lottery_used = 90;  // 是否使用了抽奖 1: 使用了，2: 未使用
+
+    uint32 request_type = 100; //请求类型 0:默认订单请求 1:求租
+    HouseSearchReq hsq  = 101; //搜索参数
+    uint32 notice_num   = 102; //通知人数
+    uint32 reply_num    = 103; //应答人数
+    uint32 want_price   = 104; //单价格
+
+
+    uint32 chat_block      = 112; // 是否关闭订单中聊天   1->关闭
+    uint32 landlord_agent_refund    = 113; // 给房东上线的提成
+    uint32 tenant_agent_refund      = 114; // 给房客上线的提成
+    uint32 landlord_invite_by       = 115; // 房东上线uin
+    uint32 tenant_invite_by         = 116; // 房客上线uin
+    DisplayType display_type        = 117; // 上线邀请的类型,只有经纪人列表有用
+
+    uint32 origin_platform          = 118; // 1: 表示h5, 2或空来自app
+    string origin_site              = 119;
+}
+
+//提交订单请求
+message BookingInfoAddReq {
+    Header header = 500; //统一包头
+
+    uint64 house_id     = 1;    // 房屋ID 必填字段
+    uint32 tenant_uin   = 2;    // 租客ID 必填字段
+    string message_info = 3;    // 给房东发的消息选填字段
+    uint32 check_price  = 4;    // 受否是用于检查价格
+    uint32 instance_num = 5;    // 套数
+    uint32 stype = 6;           // 房屋源类型 (0: 默认, 1: OTA)
+    string search_trace_id = 7; // 搜索返回的用于Trace的ID(前端回带)
+
+    uint32 guest_num    = 20;   // 入住人数必填字段
+    repeated GuestInfo guest_infos = 21; //入住人信息 选填字段
+    uint32 entering_date= 22;   // 入住日期必填字段
+    uint32 leaving_date = 23;   // 退房日期必填字段
+    string coupon_id    = 24;   // 优惠券编号
+    repeated string coupon_id_list = 25;   // 优惠券编号列表
+    repeated CouponInfo applied_coupon_list = 26; // 可被使用的优惠券列表
+
+    uint32 lottery_used     = 30; // 是否使用了抽奖
+    uint32 origin_platform  = 31; // 1: 表示h5, 2或空来自app
+    string origin_site      = 32;
+}
+
+//提交订单应答
+message BookingInfoAddRsp {
+    Header header = 500; //统一包头
+
+    int32   ret         = 1;    //返回码
+    string  err         = 2;    //错误信息
+    uint64  booking_id  = 3;    //订单号
+    BookingInfo booking_info = 4;//订单详情
+}
+
+//浏览订单请求
+message BookingInfoGetReq {
+    Header header = 500; //统一包头
+
+    uint64  booking_id  = 1;    //订单号 必填字段
+    uint32  need_clear  = 2;    //是否需要清空小红点
+    uint64  house_id    = 3;    //房源ID
+}
+
+//浏览订单应答
+message BookingInfoGetRsp {
+    Header header = 500; //统一包头
+
+    int32   ret         = 1;    //返回码
+    string  err         = 2;    //错误信息
+    BookingInfo booking_info = 3; //订单详细信息
+    repeated BookingInfo booking_list = 4; //求租订单列表
+    repeated HouseInfo house_list = 5; //推荐房源　
+}
+
+enum CouponUpdateMethod {
+    SET_COUPON = 0;         // 默认设置优惠券
+    RESET_COUPON = 1;       // 重置订单里面的优惠券
+    GET_COUPON_LIST = 2;    // 获取可用的优惠券列表
+}
+
+// 更新订单优惠券请求
+message BookingInfoCouponUpdateReq {
+    Header header = 500; //统一包头
+
+    uint64  booking_id  = 1;        //订单号 必填字段
+    string  coupon_id   = 2;        //优惠券号
+    CouponUpdateMethod  method = 3;  //取消或者拉列表 1: 取消  2: 拉列表
+    repeated string coupon_id_list = 4;
+}
+
+// 更新订单优惠券应答
+message BookingInfoCouponUpdateRsp {
+    Header header = 500; //统一包头
+
+    int32   ret         = 1;        //返回码
+    string  err         = 2;        //错误信息
+    BookingInfo booking_info = 3;   //订单详情
+}
+
+
+enum PayType {
+    DefaultPayType  = 0; //默认是微信支付
+    WeChatPayType   = 1; //微信支付
+    AliPayType      = 2; //支付宝支付
+    ApplePayType    = 3; //苹果支付
+    UnionPayType    = 4; //银联支付
+    WeChatJSAPIPayType = 5; //微信公众号支付
+}
+//修改订单请求
+message BookingInfoUpdateReq {
+    Header header = 500; //统一包头
+
+    uint64  booking_id  = 1;    //订单号 必填字段
+    uint32  user_uin    = 2;    //用户ID 必填字段
+    BookingStatus from_status = 3;  //当前订单状态 选填字段
+    BookingStatus to_status   = 4;  //目的订单状态 必填字段
+
+    uint64  house_id    = 5; // 抢单房源ID
+    uint32  want_price  = 6; // 抢单价格
+
+    uint32 stype        = 7; // 房屋源类型 (0: 默认, 1: OTA)
+
+    // 以下功能暂时没有用到，客户端只支持修改订单状态，不支持修改订单其他信息
+    uint32  guest_num  = 20;   //入住人数 
+    repeated GuestInfo guest_infos = 21; //入住人信息
+    uint32  entering_date   = 22;   //入住日期
+    uint32  leaving_date    = 23;   //退房日期
+    string  coupon_id       = 24;   //优惠券ID
+    repeated string coupon_id_list = 25; // 最终使用的优惠券列表
+    
+    // 支付过程中可能需要填到的信息
+    PayType pay_type        = 40;  //支付类型
+    
+    // 微信支付的请求包体
+    string payment_body    = 41;   //商品或支付单简要描述 发起支付必填
+    string payment_detail  = 42;   //商品名称明细列表 发起支付必填 
+    string spbill_create_ip= 43;   //APP和网页支付提交用户端ip，Native支付填调用微信支付API的机器IP 发起支付必填
+    string openid = 44;
+
+    // 微信支付返回的订单ID 用于退订
+    string  transaction_id  = 50;   //微信订单号 改字段是微信反馈支付结果后拿到的微信订单号 后端存储后用语退订时退款 前端不用关注
+
+    // 各渠道返回的支付信息
+    string trade_info = 60;
+
+    // 操作人
+    string op_id = 70;
+}
+
+//修改订单应答
+message BookingInfoUpdateRsp {
+    Header header = 500; //统一包头
+
+    int32   ret         = 1;    //返回码
+    string  err         = 2;    //错误信息
+    uint64  booking_id  = 3;    //订单号
+    BookingInfo booking_info = 4; //订单详细信息
+
+    WeChatPayInfo wechat_pay_info   = 10; // 前段发起支付成功后，会回带这些信息，用于前端支付
+    string  mobile_securitypay_pay  = 11; // 支付宝移动支付参数
+    WeChatJSAPIPayInfo wechat_jsapi_pay_info = 12;
+    uint32  refund_policy  = 20;//退款金额
+    uint32  unrefund_policy= 21;//不可退款金额
+
+    repeated string coupon_id_list = 25; // 最终使用的优惠券列表
+}
+
+enum UserType {
+    DEFAULT_USER_TYPE = 0;
+    LANDLORD          = 1; //房东
+    TENANT            = 2; //租客
+}
+
+enum RequestBookingInfoType {
+    BOOKING_INFO_ALL_TYPE       = 0; // 所有类型
+    BOOKING_INFO_CONTINUE_TYPE  = 1; // 进行中的 入住结束之前的
+    BOOKING_INFO_OVER_TYPE      = 2; // 已结束 评论完成
+    BOOKING_INFO_COMMENT_TYPE   = 3; // 待评论列表
+    BOOKING_INFO_WAITING_FOR_CONFORMATION= 4; // 待确认
+    BOOKING_INFO_WAITING_FOR_PAYMENT     = 5; // 待支付
+    BOOKING_INFO_WAITING_FOR_CHECK_IN    = 6; // 已支付待入住
+    BOOKING_INFO_FOR_LANDLORD_CONTINUE   = 7; // 房东端进行中(待确认 待支付 抢单)
+    BOOKING_INFO_FOR_TENANT_CONTINUE     = 8; // 房客端进行中(未评论置顶)
+    BOOKING_INFO_TENANT_WANTED_LIST      = 9; // 房客求租列表
+    BOOKING_INFO_TENANT_RECEIVE_LIST     = 10;// 房客收到抢单
+    BOOKING_INFO_LANDLORD_WANTED_LIST    = 11;// 房东收到求租请求
+    BOOKING_INFO_LANDLORD_CONFIRM_LIST   = 12;// *******废弃*******房东应答列表
+    BOOKING_INFO_LANDLORD_CONTINUE       = 13;// *******废弃*******房东端进行中(待确认 待支付 不包含抢单)
+    BOOKING_INFO_TENANT_CONTINUE         = 14;// *******废弃*******房客端进行中(含抢单所有入住结束之前的)
+}
+
+//获取用户历史订单请求
+message GetUserBookingInfosReq {
+    Header header = 500; //统一包头
+
+    uint32  user_uin            = 1; //用户ID 必填字段
+    UserType user_type          = 2; //用户类型 必填字段
+    BookingStatus req_status    = 3; //需要拉取的订单的状态 不填拉取全部 填好之后拉取指定状态的数据
+    uint32 request_num          = 4; //请求个数 读取个数
+    uint32 last_create_time     = 5; //用于翻页，上次拉取订单列表时用户拿到的时间，第一次拉取可不带
+    RequestBookingInfoType booking_type     = 6; // 请求订单的类型，全部订单，进行中的订单，已经结束的订单
+    RequestBookingInfoType last_booking_type= 7; // 用于某些特殊的置顶类型的请求翻页 标示上次请求最后一个数据所属类型,第一次不用带
+    uint64 house_id = 8; // 筛选某房东名下某一房源的订单
+    uint64 booking_id = 9; // 筛选房客受到的抢单
+}
+
+//获取用户历史订单应答
+message GetUserBookingInfosRsp {
+    Header header = 500; //统一包头
+
+    int32  ret              = 1; //返回码
+    string err              = 2; //错误信息
+    uint32 last_create_time = 3; //最后一个订单的时间，用于翻页，前端下次拉取之前，把这个值回带
+    RequestBookingInfoType last_booking_type= 4; //用于某些特殊的置顶类型的请求翻页 标示上次请求最后一个数据所在位置(0:置顶，1:其他)
+    repeated BookingInfo booking_info = 5; //订单信息
+}
+
+// 未读消息计数类型
+enum UnReadBookingCountType {
+    DEFAULT_COUNT_TYPE  = 0;
+    NEED_TO_CONFIRM     = 0x01; //等待房东确认
+    NEED_TO_PAY         = 0x02; //等待房客支付
+    NEED_TO_COMMENT     = 0x04; //等待评论
+    NEED_TO_WANT        = 0x08; //等待抢单
+    NEED_TO_PAY_WANT    = 0x10; //抢单后等待支付
+}
+
+message UnReadCountInfo {
+    UnReadBookingCountType  type    = 1;
+    uint32                  count   = 2;
+}
+
+//获取用户历史订单请求
+message GetUserBookingCountReq {
+    Header header = 500; //统一包头
+
+    uint32  user_uin    = 1; //用户ID 必填字段
+    UserType user_type  = 2; //用户类型 必填字段
+    uint64  count_types = 3; //计数类型按位与
+}
+
+//获取用户历史订单应答
+message GetUserBookingCountRsp {
+    Header header = 500; //统一包头
+
+    int32   ret         = 1; //返回码
+    string  err         = 2; //错误信息
+    uint32  user_uin    = 3; //用户ID 必填字段
+    UserType user_type  = 4; //用户类型 必填字段
+    repeated UnReadCountInfo rsp_counts = 5;
+    uint32  all_count   = 6; //总数
+}
+
+message GetLastBookingByUinsReq {
+    Header header = 500; //统一包头
+
+    uint32 uin = 1;             // 发话人uin
+    UserType user_type  = 2;    // 用户类型 必填字段
+    repeated uint32 uins = 3;   // 听话人uin
+    repeated uint32 ouins = 4;  // 听话人uin(OTA)
+}
+
+message ChatUser {
+    uint32 uin = 1; // 用户UIN
+    string info= 2; // 展示内容
+    string hx_id = 3; // 环信ID
+}
+
+message GetLastBookingByUinsRsp {
+    Header header = 500; //统一包头
+
+    int32   ret         = 1;                // 返回码
+    string  err         = 2;                // 错误信息
+    repeated BookingInfo booking_info = 3;  // 订单信息
+    repeated uint32 unexist_uins = 4;       // 不存在订单UIN列表
+    repeated uint32 unexist_ouins = 6;      // 不存在订单UIN列表(OTA)
+    repeated ChatUser sys_users = 5;        // 系统消息
+}
+
+message WantedBookingRsp {
+    Header  header  = 500; //统一包头
+
+    int32   ret         = 1; // 返回码
+    string  err         = 2; // 错误信息
+    uint64  booking_id  = 3; //订单号
+    BookingInfo booking_info = 4;//订单详情
+}
+
+message LittleTrumpetInfoGetReq {
+    Header  header      = 500;              //统一包头
+
+//    int32   uin         = 1;                // 发起人uin
+    int32   req_num     = 1;                // 请求信息数目
+    int32   notice_landlord_sum = 2;        // 房东的抢单的竞争者总数
+}
+
+message LittleTrumpetInfoGetRsp {
+    Header  header      = 500;              // 统一包头
+
+    int32   ret                         = 1;    // 错误码
+    string  err                         = 2;    // 错误信息
+    int32   rsp_count                   = 3;    // 回复数量
+    int32   next_req_time               = 4;    // 下次请求时间
+    int32   next_req_num                = 5;    // 下次请求数目
+    repeated TrumpetInfo trumpet_infos  = 6;    // 小喇叭信息
+    int32   notice_landlord_sum         = 7;    // 房东的抢单的竞争者总数
+}
+
+message TrumpetInfo {
+    int32   want_booking_accept_time    = 1;    // 抢单时间戳
+    string  landlord_name               = 2;    // 房主名字
+    string  show_info                   = 3;    // 显示信息
+}
+
+message LandlordDepositTreatmentReq {
+    Header  header      = 500;  //统一包头
+    uint64  booking_id  = 1;    //订单号
+    int32   operation   = 2;    //是否全退
+}
+message LandlordDepositTreatmentRsp {
+    Header  header      = 500;  //统一包头
+    int32   ret         = 1;    // 返回码
+    string  err         = 2;    // 错误信息
+}
+
+message TenantDepositTreatmentReq {
+    Header  header      = 500;  //统一包头
+    uint64  booking_id  = 1;    //订单号
+    int32   agree       = 2;    //是否全退
+}
+message TenantDepositTreatmentRsp {
+    Header  header      = 500;  //统一包头
+    int32   ret         = 1;    // 返回码
+    string  err         = 2;    // 错误信息
+}
+
+message InsurancePersonalInfoList {
+    Header      header                  = 500;  //统一包头
+    int32       ret                     = 1;    // 返回码
+    string      err                     = 2;    // 错误信息
+    repeated    GuestInfo guest_infos   = 3;  // 被保险人信息列表
+}
+
+message InsurancePersonalInfoReq {
+    Header  header          = 500;  //统一包头
+    uint32  uin             = 1;    // 用户uin
+    GuestInfo guest_info    = 2;    // 被保险人信息
+    UserType  user_type     = 3;    // 区分请求
+}
+
+message InsuranceAddByLandlordReq {
+    Header      header          = 500;      // 统一包头
+    uint32      uin             = 1;        // 用户uin
+    uint32      entering_date   = 2;        // 入住时间
+    uint32      leaving_date    = 3;        // 离开时间
+    repeated GuestInfo   guest_infos  = 4;  // 被保险人信息
+}
+
+message InsuranceAddByLandlordRsp {
+    Header      header      = 500;          // 统一包头
+    int32       ret         = 1;            // 返回码
+    string      err         = 2;            // 错误信息
+    uint32      booking_id  = 3;            // 订单号
+    uint32      entering_date   = 4;        // 入住时间
+    uint32      leaving_date    = 5;        // 离开时间
+    uint32      true_price      = 6;        // 实际支付价格
+    uint32      people          = 7;        // 入住人数
+}
+
+message AgentBookingReq{
+    Header header = 500;    // 统一包头
+
+    uint32 uin = 1;         // uin
+    uint64 booking_id = 2;  // 需要绑定的订单号
+}
+
+message AgentBookingRsp{
+    Header header = 500;    // 统一包头
+
+    int32 ret = 1;          // 返回码
+    string err = 2;         // 错误信息
+    uint32 agent_refund = 3; // 总奖励金额
+    uint32 booking_bind_num = 4; // 总绑定订单数
+}
+
+message AgentBookingListReq{
+    Header header = 500;    // 统一包头
+
+    uint32 uin              = 1;    // uin
+    string last_key_seen    = 2;    // 翻页用标识
+    uint32  request_num     = 3;    // 请求数目
+}
+
+message AgentBookingListRsp{
+    Header header = 500;    // 统一包头
+
+    int32 ret = 1;                  // 返回码
+    string err = 2;                 // 错误信息
+    string last_key_seen = 3;       // 翻页用标识
+    repeated BookingInfo booking_infos = 4;  // 经纪人绑定的订单
+    uint32 expect_bonus = 5; // 总奖励金额
+    uint32 booking_bind_num = 6; // 总绑定订单数
+    uint32 commission_received = 7; // 已经到账
+}

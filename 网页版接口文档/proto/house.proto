@@ -1,0 +1,649 @@
+syntax = 'proto3';
+
+package Proto;
+
+import "header.proto";
+import "base.proto";
+import "const.proto";
+import "comment.proto";
+
+service RpcHouse {
+    rpc Echo (EchoReq) returns (EchoRsp) {}
+
+    // 新增房源
+    // route: /api/house/post                       method: POST
+    // 必需字段: uin
+    rpc AddHouse           (HouseInfo)            returns (HouseSetRsp) {}
+
+    // 更新房源
+    // route: /api/house/update                     method: POST
+    // 必需字段: uin house_id
+    rpc UpdateHouse        (HouseInfo)            returns (HouseSetRsp) {}
+
+    // 获取房源
+    // route: /api/house/<int:house_id>/info        method: GET
+    //   ?st=1
+    //    st -> stype
+    //    stid -> search_trace_id
+    rpc GetHouse           (HouseGetReq)          returns (HouseGetRsp) {}
+
+    // 获取某房东的房源列表
+    // route: /api/house/landlord/<int:uin>         method: GET
+    //   ?n=10&l=429543974340343
+    //    n, l -> num, last_id
+    rpc GetHouseOfLandlord (LandlordHouseListReq) returns (HouseListRsp) {}
+
+    // 搜索房源 (老版本已废弃, 请参考search.proto)
+    //rpc SearchHouse        (HouseSearchReq)       returns (HouseListRsp) {}
+
+    // 获取全部房源列表 (已废弃)
+    // route: /api/house/houselist                  method: GET
+    //   ?n=10&l=429543974340343
+    //   n, l , m -> num, last_id, month
+    rpc GetHouseList       (HouseListReq)         returns (HouseListRsp) {}
+
+    // 收藏房屋
+    // route: api/house/collection                  method: POST
+    // 必需字段: uin house_id
+    rpc SetHouseCollection (SetHouseCollectionReq)  returns (SetHouseCollectionRsp) {}
+
+    // 获取收藏列表
+    // route: /api/house/collectionlist/<int:uin>   method: GET
+    //   ?n=10&l=429543974340343
+    //   n, l -> num, last_id
+    rpc GetHouseCollection (GetHouseCollectionReq)  returns (GetHouseCollectionRsp) {}
+
+    // 分享房源
+    // route: /api/house/share  method: POST
+    rpc GetShareHouse (GetShareHouseReq)            returns (GetShareHouseRsp) {}
+
+    // 获取下载链接(支持下载安装后进入某页面)
+    // route: /api/house/dlurl                      method: POST
+    rpc GetDownloadUrl (GetDownloadUrlReq)          returns (GetDownloadUrlRsp) {}
+
+    // 获取用户搜索历史
+    // route: /api/house/<int:uin>/searchHistoryList, methods: GET
+    //   n, l -> num, last_id
+    rpc GetSearchHistory (GetSearchHistoryReq)      returns (GetSearchHistoryRsp) {}
+
+    // 赞
+    // route: api/house/like                        method: POST
+    // 必需字段: uin house_id
+    rpc LikeHouse (LikeHouseReq)                    returns (LikeHouseRsp) {}
+
+    // 打开抽奖
+    // route: api/house/<int:house_id>/openlottery  method: GET
+    // 必需字段: house_id
+    rpc OpenLottery (OpenLotteryReq)                returns (OpenLotteryRsp) {}
+
+    rpc GetOuterHouse(GetOuterHouseReq)             returns (GetOuterHouseRsp) {}
+
+    rpc GetOuterHouseList (GetOuterHouseListReq)    returns (GetOuterHouseListRsp) {}
+}
+
+// -------- 便利设施列表 --------
+//                0x1  无线网络
+//                0x2  电视
+//                0x4  淋浴
+//                0x8  空调
+//               0x10  暖气
+//               0x20  被单更换
+//               0x40  洗衣机
+//               0x80  拖鞋
+//              0x100  沐浴露/洗发液
+//              0x200  牙具香皂
+//              0x400  有线网络
+//              0x800  车位
+//             0x1000  电梯
+//             0x2000  厨房
+//             0x4000  吹风机
+//             0x8000  欢迎家庭/携带孩子入住
+//            0x10000  允许吸烟
+//            0x20000  适合举办活动
+//            0x40000  允许携带宠物
+//            0x80000  无障碍设施
+//           0x100000  有养宠物
+
+//JSON映射表
+//{"允许吸烟":65536,"牙具香皂":512,"拖鞋":128,"厨房":8192,"无障碍设施":524288,"洗衣机":64,"有养宠物":1048576,"沐浴露/洗发液":256,"空调":8,"有线网络":1024,"允许携带宠物":262144,"电梯":4096,"暖气":16,"吹风机":16384,"淋浴":4,"适合举办活动":131072,"欢迎家庭/携带孩子入住":32768,"电视":2,"无线网络":1,"车位":2048,"被单更换":32}
+
+message LandlordBaseInfo {
+    uint32 uin = 1;                 // 用户id
+    string first_name = 2;          // 名
+    string last_name = 3;           // 姓
+    string real_name = 4;           // 全名
+    string head_url = 5;            // 头像
+    string hx_id = 6;               // 环信id
+    uint32 created_at = 7;          // 创建时间
+    string about = 8;               // 描述
+    uint32 landlord_type = 9;       // 房东类型 (1:个人房东)
+    uint32 new_verified_id = 10;    // 身份证认证 (1:已认证, 2:认证中, 4:认证失败)
+    uint32 landlord_verified = 11;  // 按位操作 依依认证房东0x01
+    uint32 zm_score = 12;           // 芝麻信用分
+    bool is_landlord = 13;          // 是否是房东
+    uint32 stype = 14;              // 用户类型 (0: 默认, 1: OTA)
+    string bigcode400 = 15;            // 400电话
+    uint32 extension = 16;             // 400电话分机号
+}
+
+// 额外费用
+message ExtraCharges {
+    uint32  week_discount       = 1; // 周折扣 使用时除以100
+    uint32  month_discount      = 2; // 月折扣 使用时除以100
+    uint32  strength            = 3; // 规定人数
+    uint32  extra_person_charge = 4; // 额外人员收费金额
+    uint32  cleaning_charge     = 5; // 清洁费
+}
+
+// 退订信息
+message UnSubscribeInfo {
+    uint32  charge_days = 1; // 退订时扣款的天数
+    uint32  refund_rate = 2; // 退订时退还资金的比例 使用时除以100
+}
+
+message HouseInfo {
+    Header header = 500; //统一包头
+
+    //1~10 key,index级数据
+    uint64 house_id = 1;    // 房屋id
+    uint32 uin = 2;         // 房东uin
+    uint32 stype = 4;       // 房屋源类型 (0: 默认, 1: OTA)
+
+    // 注意：该字段在新增和修改的时候无效
+    LandlordBaseInfo landlord = 3; //房东信息
+
+    //11~40 关键数据
+    string base_type = 11;         // 基本类型 (公寓、独立屋、别墅...)
+    uint32 house_type = 12;        // 房屋类型 (0x1:整套房子, 0x2:独立房间, 0x4:合住房间)
+    string room_layout = 13;       // 房间布局
+    string city = 14;              // 房屋所在城市
+    uint32 max_living_people = 15; // 房客数量限制
+    uint32 bed_num = 16;           // 床位数量
+    uint32 room_num = 17;          // 卧室数量
+    uint32 toilet_num = 18;        // 厕所数量
+    float area = 19;               // 房屋面积
+    uint32 guarantee = 20;         // 保证金 (人民币分)
+    uint32 photo_type = 21;        // 拍摄类型 (1:实拍)
+    uint32 house_verified = 22;    // 房屋验真 (1:已验真)
+    uint32 balcony_num = 23;        // 阳台数量
+    uint32 kitchen_num = 24;        // 厨房数量
+    uint32 living_room_num = 25;    // 客厅数量
+    uint32 house_certified = 26;    // 房源认证 (1:已认证)
+    uint32 house_boutique = 27;     // 精品房源 (1:精品)
+    float  room_area = 28;          // 房间面积
+    uint32 deposit_fee = 29;        // 押金（人民币分）
+    BigHouseType big_house_type = 30; // 公寓、别墅等
+
+    //41~70 重要数据
+    string title = 41;              // 房屋名
+    string house_description = 42;  // 房屋描述
+    uint32 price = 43;              // 房屋价格 (人民币分)
+    string address = 44;            // 房屋地址
+    Location location = 45;         // GPS
+    bool is_photo_taken = 46;       // 是否有照片
+    bool is_verified = 47;          // 是否认证
+    bool is_liveWithLandlord = 48;  // 是否和房东一起住
+    repeated Image images = 49;     // 房屋的图片
+    repeated HouseRoom rooms = 50;  // 各种房间
+    uint32 minimum_days = 51;       // 最小入住天数
+
+    //  0x1:房源未填好,  0x2:房源已发布,  0x4:房源未发布,  0x8:房源被删除
+    // 0x10:房源待审核, 0x20:房源被禁止, 0x40:房源不可见
+    // 用户设置 房源已发布 后台处理为 房源待审核
+    // 房源已发布 / 房源待审核 / 房源被禁止 对 发布者展示均为 房源已发布
+    // 房源未发布 / 房源不可见 对 发布者展示均为 房源未发布
+    uint32 ready_status = 52;
+
+    ExtraCharges extra_charge = 53; // 房屋额外费用
+    enum CancellationPolicies {
+        CP_None = 0;
+        CP_Flexible = 1;
+        CP_Moderate = 2;
+        CP_Strict   = 3;
+    }
+    CancellationPolicies cp = 54;   // 退订策略
+    string story_url = 55;          // 房东故事
+    string location_url = 56;       // 地图展示(注意:无该字段时前端自行获取) 作废
+    string map_img_url = 57;        // 地图展示(注意:无该字段时前端自行获取)
+    uint32 stock_num = 58;          // 库存数量
+    string houseurl = 59;           // 房屋来源的对应url，用base64加密过
+    string ownerurl = 60;           // 对应房屋户主url，用base64加密过
+    uint32 story_flag = 61;         // 1: 存在新版本的房东故事
+
+    enum ProfessionalPhoto {
+        NO_PHOTO = 0;               // 没有专业照片，也没有申请，初始状态
+        ASK_FOR = 1;                // 房主申请拍摄专业照片
+        COMPLETE = 2;               // 完成专业照片的拍摄
+        CANCEL = 3;                 // 房主取消专业照片的拍摄
+    }
+    ProfessionalPhoto prof_photo = 62;  // 专业摄影字段
+    uint32 weekend_price = 63;      // 房屋周末价格 (人民币分)
+
+    //71~100 其他数据
+    string more_desc = 71;          // 更多描述
+    uint64 facilities = 72;         // 便利设施 (按位使用)
+    uint32 created_at = 73;         // 房源发布时间 (该字段由系统自动填写)
+    uint32 enter_time = 74;         // 入住时间 (填100000表示灵活)
+    uint32 leaving_time = 77;       // 退房时间 (填100000表示灵活)
+    float rating = 78;              // 评价几星级
+    uint32 updated_at = 81;         // 更新时间 (该字段由系统自动填写)
+    uint32 distance = 82;           // 和您的距离 (该字段在搜索附近的房时由系统自动填写)
+    string desc_house = 83;         // 详情-房源 (您的房源有何独特之处)
+    string desc_permission = 84;    // 详情-房客使用权限 (房客可以使用什么便利设施)
+    string desc_interaction = 85;   // 详情-与房客的互动 (您与房客多长时间交流一次)
+    string desc_street = 86;        // 街区-概述 (您喜欢您所在街区的哪些方面)
+    string desc_travel = 87;        // 街区-出行 (公共交通是否便利)
+    string desc_other = 88;         // 额外细节-其他注意事项 (还有其他细节想要分享吗)
+    string desc_rule = 89;          // 额外细节-房屋守则 (您希望房客有什么样的言行举止)
+    string desc_check_in = 90;      // 入住流程
+    repeated HouseBed beds = 91;    // 各种床
+    string wifi_account = 92;       // wifi 帐号
+    string wifi_password = 93;      // wifi 密码
+    string service_phone = 94;      // 客服电话
+
+    //101~130 评论评价 (系列字段均由系统自动填写)
+    float score = 100;  // 房屋评分
+    uint32 comment_num = 101;             // 总评论数
+    repeated CommentInfo comments = 102;  // 评论信息列表(只返回最新的10条)
+    float score_0 = 103;                  // 总体评分
+    float score_1 = 104;                  // 准确性
+    float score_2 = 105;                  // 整洁程度
+    float score_3 = 106;                  // 入住帮助
+    float score_4 = 107;                  // 沟通
+    float score_5 = 108;                  // 位置
+    float score_6 = 109;                  // 性价比
+    float score_7 = 110;                  //
+
+    string baidu_city = 200;        // 百度抓取的城市
+    string baidu_district = 201;    // 百度抓取的行政区
+
+    uint32 min_distant_accept_days  = 210;  // 可以接受的最近的入住申请 1:不接受当日预订, 2:不接受次日预订,依次类推
+    uint32 max_distant_accept_months= 211;  // 可以接受的最远的入住申请
+    uint32 before_enter_ban_days    = 212;  // 入住前屏蔽天数
+    uint32 after_leave_ban_days     = 213;  // 入住后屏蔽天数
+    uint32 max_booking_days         = 214;  // 最长入住天数
+    uint32 min_booking_days         = 215;  // 最短入住天数
+
+    // 统计信息 当月/年统计信息
+    uint64 browser_m    = 230;  // 月浏览次数
+    uint64 apply_m      = 231;  // 月申请次数
+    uint64 booking_m    = 232;  // 月订单数量
+
+    uint64 browser_y    = 240;  // 年浏览次数
+    uint64 apply_y      = 241;  // 年申请次数
+    uint64 booking_y    = 242;  // 年订单数量
+
+    // 点赞
+    uint32 is_liked     = 250;  // 是否被(请求者)赞过
+    string like_count   = 251;  // 点赞的总数
+
+    // 收藏
+    uint32 is_collected = 260;  // 是否被(请求者)收藏过
+    string collect_count= 261;  // 被收藏的总数
+
+    // 一元民宿
+    uint32 show_price = 270;    // 如何展示价格，0，正常展示，1，显示问号抽奖，2，抽奖命中未使用，显示1元
+    uint32 hit = 271;           // 抽奖是否命中 show_price＝1时，才有用
+    uint32 is_day_one_lottery_house = 272; // 是否为抽奖房
+
+    // 搬房源才用的字段，其他逻辑不必关心
+    bool relive         = 160;
+    string doer         = 161;
+    repeated string is_need_op = 162;
+    string bing_oper    = 163;
+
+    // 300 ~ 500 禁用
+
+    // 由于 protobuf 3 将默认值(bool:false, int:0, string:"", list:[])视为不存在
+    // 在设置某字段为默认值时(主要为清除该字段),需要设置下面的字段
+    repeated string default_attrs = 511;    // 需要清理的字段名(写入时使用)
+}
+
+message HouseSetRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;        // 返回码
+    string err = 2;       // 错误信息
+    uint32 uin = 3;       // 房东uin
+    uint64 house_id = 4;  // 房屋id
+}
+
+message HouseGetReq {
+    Header header = 500; //统一包头
+
+    uint64 house_id = 1;         // 房屋id
+    uint32 stype = 2;            // 房屋源类型 (0: 默认, 1: OTA)
+    string search_trace_id = 3;  // 搜索返回的用于Trace的ID(前端回带)
+}
+
+message HouseListReq {
+    Header header = 500; //统一包头
+
+    uint32 num = 1;      // 一次查询的数目 (建议20个以内)
+    string last_id = 2;  // 上一页返回的id (用于翻到下一页,查首页不填)
+}
+
+message HouseGetRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;                    // 返回码
+    string err = 2;                   // 错误信息
+    HouseInfo house = 3;              // 房屋信息
+
+    repeated HouseInfo similars = 4;  // 相似房源(如果有则返回,最多3条)
+    string similars_last_id = 5;      // 相似房源的翻页id(若存在表示还有更多)
+}
+
+message HouseListRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;                  // 返回码
+    string err = 2;                 // 错误信息
+    repeated HouseInfo houses = 3;  // 房屋信息列表
+    string last_id = 4;             // 翻页用 (如果存在下一页,则会填充该值)
+}
+
+message LandlordHouseListReq {
+    Header header = 500; //统一包头
+
+    uint32 uin = 1;        // 房东uin
+    uint32 num = 2;        // 一次查询的数目 (建议20个以内)
+    string last_id = 3;    // 上一页返回的id (用于翻到下一页,查首页不填)
+    int32 month = 4;      // 查询房屋收入信息的月份
+}
+
+message SetHouseCollectionReq {
+    Header header   = 500; //统一包头
+
+    uint32 uin      = 1;
+    uint64 house_id = 2;
+
+    enum OperateType {
+        START   = 0;
+        ADD     = 1;
+        DEL     = 2;
+        UPDATE  = 3;
+    }
+    OperateType optype = 3;
+}
+
+message SetHouseCollectionRsp {
+    Header header = 500; //统一包头
+
+    int32  ret = 1;
+    string err = 2;
+    uint32 uin = 3;
+    uint32 time= 4;
+    uint64 house_id = 5;
+}
+
+message GetHouseCollectionReq {
+    Header header  = 500; //统一包头
+
+    uint32 uin     = 1;
+    uint32 type    = 2;
+    uint32 num     = 3;
+    string last_id = 4;
+}
+
+message GetHouseCollectionRsp {
+    Header header = 500; //统一包头
+
+    int32  ret = 1;
+    string err = 2;
+    uint32 uin = 3;
+    string last_id = 4;
+    repeated HouseInfo houses = 5;
+}
+
+message GetShareHouseReq {
+    Header header = 500; //统一包头
+
+    uint64 house_id = 1;  // 房屋id
+    string share_to = 2;  // 分享渠道
+}
+
+message GetShareHouseRsp {
+    Header header = 500;        // 统一包头
+
+    int32 ret = 1;              // 返回码
+    string err = 2;             // 错误信息
+
+    string url = 3;             // 邀请url
+    string title = 4;           // 邀请的title
+    string content = 5;         // 邀请的content
+    string thumbImage = 6;      // 邀请图片
+    uint64 house_id = 7;        // 房屋id
+}
+
+message GetDownloadUrlReq {
+    Header header = 500; //统一包头
+
+    string redirect = 1;  // 跳转App的地址
+    string share_to = 2;  // 分享渠道
+    string req_from = 3;  // iOS, Android
+}
+
+message GetDownloadUrlRsp {
+    Header header = 500;        // 统一包头
+
+    int32 ret = 1;              // 返回码
+    string err = 2;             // 错误信息
+
+    string url = 3;             // 下载url
+}
+
+message SearchHistoryItem {
+    string seq = 1;
+    uint32 time_sec = 2;
+    uint32 uin = 3;
+    string req_from = 4;
+    string keyword = 5;
+    int32 activity_id = 6;
+    string position = 7;
+    string json = 8;
+    string city = 9;
+}
+
+message GetSearchHistoryReq {
+    Header header = 500; //统一包头
+
+    uint32 uin = 1;
+    uint32 num = 2;      // 一次查询的数目 (建议20个以内)
+    uint32 last_id = 3;  // 上一页返回的id (用于翻到下一页,查首页不填)
+}
+
+message GetSearchHistoryRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;              // 返回码
+    string err = 2;             // 错误信息
+    repeated SearchHistoryItem history = 3;
+    uint32 last_id = 4;
+}
+
+message LikeHouseReq {
+    Header header   = 500; //统一包头
+
+    uint32 uin      = 1;
+    uint64 house_id = 2;
+
+    enum OperateType {
+        START   = 0;
+        ADD     = 1;
+        DEL     = 2;
+        UPDATE  = 3;
+    }
+    OperateType optype = 3;
+}
+
+message LikeHouseRsp {
+    Header header = 500; //统一包头
+
+    int32  ret = 1;
+    string err = 2;
+    uint32 uin = 3;
+    uint32 time= 4;
+    uint64 house_id = 5;
+    string like_count = 6;
+}
+
+message OpenLotteryReq {
+    Header header = 500; //统一包头
+    uint64 house_id = 1;
+}
+
+message OpenLotteryRsp {
+    Header header = 500; //统一包头
+    int32  ret = 1;
+    string err = 2;
+}
+
+message GetOuterHouseReq {
+    Header header = 500;    // 统一包头
+
+    uint64 house_id = 1;    // 房屋id
+}
+
+message GetOuterHouseRsp {
+    Header header = 500;    // 统一包头
+
+    int32 ret = 1;          // 返回码
+    string err = 2;         // 错误信息
+    OutHouseInfo house = 3; // 房屋信息
+}
+
+//房源编号
+//房源标题
+//归属城市
+//归属行政区
+//归属商圈
+//详细地址
+//坐标经度
+//坐标纬度
+//日租价
+//包月价
+//缩略图URL
+//摘要图URL
+//房间面积
+//房型摘要
+//出租方式
+//适住人数
+//关注人数
+//评论数
+//评分
+//操作标志
+
+message OutHouseInfo {
+    Header header = 500;                //统一包头
+
+    uint64 house_id = 1;                // 房源编号
+    string title = 2;                   // 房源标题
+    string city = 3;                    // 归属城市
+    string baidu_city = 4;              // 百度抓取的城市
+    string baidu_district = 5;          // 百度抓取的行政区
+    Location location = 6;              // GPS
+    uint32 price = 7;                   // 房屋价格 (人民币分)
+    string address = 8;                 // 房屋地址
+    float area = 9;                     // 房屋面积
+    string house_description = 10;      // 房屋描述
+    uint32 max_living_people = 11;      // 房客数量限制
+    uint32 is_collected = 12;  // 是否被(请求者)收藏过
+    string collect_count= 13;  // 被收藏的总数
+    // 评论评价 (系列字段均由系统自动填写)
+    float score = 14;                   // 房屋评分
+    uint32 comment_num = 15;            // 总评论数
+    repeated CommentInfo comments = 16; // 评论信息列表(只返回最新的10条)
+    float score_0 = 17;                 // 总体评分
+    float score_1 = 18;                 // 准确性
+    float score_2 = 19;                 // 整洁程度
+    float score_3 = 20;                 // 入住帮助
+    float score_4 = 21;                 // 沟通
+    float score_5 = 22;                 // 位置
+    float score_6 = 23;                 // 性价比
+    uint32 uin = 24;                    // 房东uin
+    // 注意：该字段在新增和修改的时候无效
+    LandlordBaseInfo landlord = 25;     //房东信息
+
+    // 51~100 关键数据
+    string base_type = 51;              // 基本类型 (公寓、独立屋、别墅...)
+    uint32 house_type = 52;             // 房屋类型 (0x1:整套房子, 0x2:独立房间, 0x4:合住房间)
+    string room_layout = 53;            // 房间布局
+    uint32 bed_num = 54;                // 床位数量
+    uint32 room_num = 55;               // 卧室数量
+    uint32 toilet_num = 56;             // 厕所数量
+    uint32 guarantee = 57;              // 保证金 (人民币分)
+    uint32 photo_type = 58;             // 拍摄类型 (1:实拍)
+    uint32 house_verified = 59;         // 房屋验真 (1:已验真)
+    uint32 kitchen_num = 60;            // 厨房数量
+    uint32 living_room_num = 61;        // 客厅数量
+    float  room_area = 62;              // 房间面积
+    uint32 deposit_fee = 63;            // 押金（人民币分）
+    BigHouseType big_house_type = 64;   // 公寓、别墅等
+
+    // 101~150 重要数据
+    bool is_photo_taken = 101;          // 是否有照片
+    bool is_liveWithLandlord = 102;     // 是否和房东一起住
+    repeated Image images = 103;        // 房屋的图片
+    repeated HouseRoom rooms = 104;     // 各种房间
+    uint32 minimum_days = 105;          // 最小入住天数
+
+    ExtraCharges extra_charge = 106;    // 房屋额外费用
+    enum CancellationPolicies {
+        CP_None = 0;
+        CP_Flexible = 1;
+        CP_Moderate = 2;
+        CP_Strict   = 3;
+    }
+    CancellationPolicies cp = 107;      // 退订策略
+    string location_url = 108;          // 地图展示(注意:无该字段时前端自行获取) 作废
+    string map_img_url = 109;           // 地图展示(注意:无该字段时前端自行获取)
+    uint32 stock_num = 110;             // 库存数量
+    string houseurl = 111;              // 房屋来源的对应url，用base64加密过
+    string ownerurl = 112;              // 对应房屋户主url，用base64加密过
+    uint32 story_flag = 113;            // 1: 存在新版本的房东故事
+
+    enum ProfessionalPhoto {
+        NO_PHOTO = 0;                   // 没有专业照片，也没有申请，初始状态
+        ASK_FOR = 1;                    // 房主申请拍摄专业照片
+        COMPLETE = 2;                   // 完成专业照片的拍摄
+        CANCEL = 3;                     // 房主取消专业照片的拍摄
+    }
+    ProfessionalPhoto prof_photo = 114; // 专业摄影字段
+    uint32 weekend_price = 115;         // 房屋周末价格 (人民币分)
+    uint64 facilities = 116;            // 便利设施 (按位使用)
+    uint32 created_at = 117;            // 房源发布时间 (该字段由系统自动填写)
+    uint32 enter_time = 118;            // 入住时间 (填100000表示灵活)
+    uint32 leaving_time = 119;          // 退房时间 (填100000表示灵活)
+    float rating = 120;                 // 评价几星级
+    uint32 updated_at = 121;            // 更新时间 (该字段由系统自动填写)
+    uint32 distance = 122;              // 和您的距离 (该字段在搜索附近的房时由系统自动填写)
+    string desc_house = 123;            // 详情-房源 (您的房源有何独特之处)
+    string desc_permission = 124;       // 详情-房客使用权限 (房客可以使用什么便利设施)
+    string desc_interaction = 125;      // 详情-与房客的互动 (您与房客多长时间交流一次)
+    string desc_street = 126;           // 街区-概述 (您喜欢您所在街区的哪些方面)
+    string desc_travel = 127;           // 街区-出行 (公共交通是否便利)
+    string desc_other = 128;            // 额外细节-其他注意事项 (还有其他细节想要分享吗)
+    string desc_rule = 129;             // 额外细节-房屋守则 (您希望房客有什么样的言行举止)
+    string desc_check_in = 130;         // 入住流程
+    repeated HouseBed beds = 131;       // 各种床
+    string wifi_account = 132;          // wifi 帐号
+    string wifi_password = 133;         // wifi 密码
+    string service_phone = 134;         // 客服电话
+    uint32 max_booking_days = 135;      // 最长入住天数
+    uint32 min_booking_days = 136;      // 最短入住天数
+}
+
+
+message GetOuterHouseListReq {
+    Header header = 500;    //统一包头
+}
+
+message GetOuterHouseListRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;                      // 返回码
+    string err = 2;                     // 错误信息
+    repeated OutHouseInfo houses = 3;   // 房屋信息列表
+    int32 count = 4;
+}

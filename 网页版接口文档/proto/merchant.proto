@@ -1,0 +1,138 @@
+syntax = 'proto3';
+
+package Proto;
+
+import "booking.proto";
+
+service RpcMerchant {
+
+    // 消费者支付给我们
+    // route: /app/merchant/pay  methods: POST
+    rpc PayToUs (PayToUsReq) returns (PayToUsRsp) {}
+
+    // 我们支付给商户
+    // route: /app/merchant/payToMerchant  methods: POST
+    rpc PayToMerchant (PayToMerchantReq) returns (PayToMerchantRsp) {}
+
+    // 商户修改商户名
+    // route: /app/merchant/changeName methods: POST
+    rpc ChangeName (ChangeNameReq) returns (ChangeNameRsp) {}
+
+    // 获取某个商量交易流水
+    // route: /app/merchant/detail/<int:transaction_id>  methods: GET
+    rpc GetTranHistory (GetTranHistoryReq) returns (GetTranHistoryRsp) {}
+
+    // 获取某个商户的某天的所有交易流水
+    // route: /app/merchant/detail/list  methods: GET
+    rpc GetTranHistoryList (GetTranHistoryListReq) returns (GetTranHistoryListRsp) {}
+
+    rpc PayToUsWater    (PayToUsWaterReq) returns (PayToUsWaterRsp) {}
+}
+
+message PayToUsReq {
+    uint32 uin              = 1;
+    string payment_body     = 2;
+    uint32 cash_fee         = 3;
+    string openid           = 4;
+    string merchant_name    = 5;
+    string sign             = 6;
+}
+
+message PayToUsRsp {
+    int32   ret                 = 1;    // 返回码
+    string  err                 = 2;    // 错误信息
+    uint64  transaction_id      = 3;    // 交易号
+    WeChatJSAPIPayInfo wechat_jsapi_pay_info = 4;
+}
+
+message PayToMerchantReq {
+    uint32 uin              = 1;
+    string merchant_name    = 2;
+    string amount           = 3; // 总金额
+    string openid           = 4;
+}
+
+message PayToMerchantRsp {
+    int32   ret             = 1;    // 返回码
+    string  err             = 2;    // 错误信息
+}
+
+message TranDetail {
+    uint64 transaction_id   = 1;
+    uint32 uin              = 2;
+    uint32 cash             = 3;
+    string merchant_name    = 4;
+    uint32 status           = 5; // status=1, consumer支付给11bnb; status=2, 11bnb支付给merchant成功; status=3, 11bnb支付给merchant失败
+    uint32 create_time      = 6;
+    uint32 update_time      = 7;
+    uint32 cash_off         = 8; // 优惠的金额
+    uint32 red_packet       = 9; // 奖励给商户的金额
+    string openid           = 10; // 支付给商户要用到
+    string is_subscribe     = 11;
+    uint32 first_subscribe  = 12;
+    uint32 phone            = 13;
+}
+
+message GetTranHistoryReq {
+    uint64 transaction_id   = 1;    // 交易号
+    uint32 uin              = 2;
+}
+
+message GetTranHistoryRsp {
+    int32   ret             = 1;    // 返回码
+    string  err             = 2;    // 错误信息
+
+    uint64 transaction_id   = 3;
+    uint32 uin              = 4;
+    uint32 cash             = 5;
+    string merchant_name    = 6;
+    uint32 status           = 7;
+    uint32 create_time      = 8;
+    uint32 update_time      = 9;
+}
+
+message GetTranHistoryListReq {
+    uint32 uin              = 1;
+    uint32 which_day        = 2;
+    uint32 num              = 3; // 一次查询的数目 (建议20个以内)
+    string last_id          = 4; // 上一页返回的id (用于翻到下一页,查首页不填)
+}
+
+message GetTranHistoryListRsp {
+    int32   ret                     = 1; // 返回码
+    string  err                     = 2; // 错误信息
+
+    repeated TranDetail tran_list   = 3;
+    string last_id                  = 4; // 上一页返回的id (用于翻到下一页,查首页不填)
+    uint32 day_income               = 5; // 每日收益
+    uint32 day_off                  = 6; // 每日补贴
+    uint32 red_packet               = 7; // 红包
+}
+
+message PayToUsWaterReq {
+    uint64 transaction_id   = 1;
+    uint32 uin              = 2;
+    uint32 cash             = 3;
+    string merchant_name    = 4;
+    uint32 status           = 5; // status=1, consumer支付给11bnb; status=2, 11bnb支付给merchant成功; status=3, 11bnb支付给merchant失败
+    uint32 create_time      = 6;
+    uint32 update_time      = 7;
+    uint32 cash_off         = 8; // 优惠的金额
+    string openid           = 9; // 支付给商户要用到
+    string is_subscribe     = 10;
+}
+
+message PayToUsWaterRsp {
+    int32   ret                     = 1; // 返回码
+    string  err                     = 2; // 错误信息
+}
+
+message ChangeNameReq {
+    uint32 uin                      = 1;
+    string merchant_name            = 2;
+}
+
+message ChangeNameRsp {
+    int32   ret                     = 1;
+    string  err                     = 2;
+}

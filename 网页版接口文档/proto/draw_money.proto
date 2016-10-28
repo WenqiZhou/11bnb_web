@@ -1,0 +1,113 @@
+syntax = 'proto3';
+
+package Proto;
+
+import "header.proto";
+import "user.proto";
+import "booking.proto";
+import "base.proto";
+
+service RpcDrawMoney {
+    rpc Echo (EchoReq) returns (EchoRsp) {}
+
+    // 发起提款请求 
+    // @api.route("/api/draw/req", methods=["POST"])
+    rpc DrawMoney      (DrawMoneyReq)        returns (DrawMoneyRsp) {}
+
+    // 客户审核用户提款请求
+    // @api.route("/api/draw/pay", methods=["POST"])
+    rpc DrawMoneyToUser(DrawMoneyToUserReq)  returns (DrawMoneyToUserRsp) {}
+
+    // 获取用户提款记录
+    // @api.route("/api/draw/history/<int:uin>", methods=["GET"])
+    rpc DrawMoneyHistory(DrawMoneyHistoryReq) returns (DrawMoneyHistoryRsp) {}
+
+    // 读取审核提款列表
+    // @api.route("/api/draw/list", methods=["GET"])
+    rpc DrawMoneyList  (DrawMoneyListReq)    returns (DrawMoneyListRsp) {}
+}
+
+message DrawMoneyInfo {
+    uint32 uin          = 1; // 提款人uin
+    string name         = 2; // 提款人姓名
+    string id           = 3; // 提款人身份证号
+    string bankcard     = 4; // 提款人银行卡号
+    uint32 fee          = 5; // 提款金额
+    string fee_type     = 6; // 货币类型 默认人民币：CNY
+    uint32 status       = 7; // 状态 1:未支付 2:已支付 3:取消
+    uint32 draw_time    = 8; // 提款申请时间
+    uint64 drawing_id   = 9; // 申请单号
+    uint32 operate_time = 10;// 支付时间
+    uint32 operate_uin  = 11;// 操作人uin
+    string operate_name = 12;// 操作人姓名
+    string wx_openid    = 13;// 微信openid 用于微信转账
+    string alipay_account = 14; // 支付宝账号
+    string alipay_name  = 15;// 支付宝姓名
+    uint32 pay_type     = 16;// 支付类型 1 微信 2 支付宝
+    BookingInfo booking_info = 50; // 该次付款的订单信息
+}
+
+message DrawMoneyReq {
+    Header header   = 500;  // 统一包头
+    uint32 uin      = 1;    // 提款人uin
+    string bankcard = 2;    // 提款人银行卡号
+    uint32 fee      = 3;    // 提款金额
+    string fee_type = 4;    // 货币类型 默认人民币：CNY
+    uint32 feature_income_del = 5; // 需要减去的未来收入
+    uint64 booking_id = 6;  // 订单编号
+}
+
+message DrawMoneyRsp {
+    Header header   = 500;  // 统一包头
+    int32  ret      = 1;    // 返回码
+    string err      = 2;    // 错误信息
+    UserInfo user_earning = 3;
+    DrawMoneyInfo draw_money = 4;
+}
+
+message DrawMoneyToUserReq {
+    Header header       = 500;  // 统一包头
+    uint32 operate_uin  = 1;    // 操作人uin
+    string operate_name = 2;    // 操作人姓名
+    uint64 drawing_id   = 3;    // 申请ID
+    uint32 status       = 4;    // 目的状态
+}
+
+message DrawMoneyToUserRsp {
+    Header header           = 500;  // 统一包头
+    int32  ret              = 1;    // 返回码
+    string err              = 2;    // 错误信息
+    DrawMoneyInfo draw_info = 3;
+}
+
+message DrawMoneyHistoryReq {
+    Header header   = 500;  // 统一包头
+    uint32 uin      = 1;    // 用户id
+    uint32 num      = 2;    // 一次查询的数目 (建议20个以内)
+    uint32 last_time= 3;    // 上一页返回的id (用于翻到下一页,查首页不填)
+}
+
+message DrawMoneyHistoryRsp {
+    Header header   = 500;  // 统一包头
+    int32  ret      = 1;    // 返回码
+    string err      = 2;    // 错误信息
+    repeated DrawMoneyInfo draw_infos = 3;  // 
+    uint32 last_time = 4;   // 翻页用 (如果存在下一页,则会填充该值)
+}
+
+message DrawMoneyListReq {
+    Header header   = 500;  // 统一包头
+    uint32 num      = 1;    // 一次查询的数目 (建议20个以内)
+    uint64 last_id  = 2;    // 翻页用 首页不用填 
+    uint32 status   = 3;    // 需要筛选的状态 0:all, 1:申请, 2:已支付, 3:拒绝, 4:用户没有绑定付款信息
+    uint32 pay_type = 4;    // 支付类型
+}
+
+message DrawMoneyListRsp {
+    Header header   = 500;  // 统一包头
+    int32  ret      = 1;    // 返回码
+    string err      = 2;    // 错误信息
+    repeated DrawMoneyInfo draw_infos = 3;// 
+    uint64 last_id  = 4;    //
+}
+

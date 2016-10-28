@@ -1,0 +1,147 @@
+syntax = 'proto3';
+
+package Proto;
+
+import "base.proto";
+import "house.proto";
+
+// -------- 便利设施列表(额外) --------
+//                0x1  冰箱
+//                0x2  饮水机
+//                0x4  对讲系统
+//                0x8  电脑
+//               0x10  浴缸
+//               0x20  24小时热水
+//               0x40  毛巾浴巾
+//               0x80  保安
+//              0x100  欢迎小孩
+//              0x200  欢迎老人
+//              0x400  早餐
+//              0x800  机场/火车站接送
+//             0x1000  行李寄存
+//             0x2000  导游
+
+message HouseSource {
+    // 1~10 key/index 级数据
+    string std_id = 1;            //格式化的ID (如: /www.mayi.com/room/100473600)
+    string org_id = 2;            //来源的原ID (如: 100473600)
+
+    // 11~40 关键数据
+    // mayi:
+    //   民居 公寓 独栋别墅 客栈 阁楼 四合院 海边小屋 林间小屋 豪宅 城堡 树屋 船舱 房车 冰屋
+    // muniao:
+    //   普通民宅（民宿、民居）客栈 旅馆/宾馆 公寓 独栋别墅 四合院/宅院 农家院 其他
+    //airbnb:
+    //   公寓 独立屋 住宿加早餐 阁楼 联排别墅 分契式公寓 小平房 小木屋 别墅 城堡 宿舍 树屋 船 飞机 露营车/房车
+    //   圆顶小屋 灯塔 蒙古包 圆锥形帐篷 洞穴 岛屿 牧人小屋 土房 小屋 火车 帐篷 其它
+    string base_type = 11;           // 基本类型 (公寓、独立屋、别墅...)
+    // mayi: 0x1
+    uint32 house_type = 12;          // 房屋类型 (0x1:整套房子, 0x2:独立房间, 0x4:合住房间)
+    string room_layout = 13;         // 房间布局 (未使用)
+    string city = 14;                // 房屋所在城市 (需要格式化: 北京市 -> 北京)
+    uint32 max_living_people = 15;   // 房客数量限制
+    uint32 bed_num = 16;             // 床位数量
+    uint32 room_num = 17;            // 卧室数量
+    uint32 toilet_num = 18;          // 厕所数量
+    float area = 19;                 // 房屋面积 (整套房子的面积)
+    uint32 guarantee = 20;           // 保证金 (人民币分) (未使用)
+    uint32 photo_type = 21;          // 拍摄类型 (1:实拍)
+    uint32 house_verified = 22;      // 房屋验真 (1:已验真)
+    uint32 balcony_num = 23;         // 阳台数量
+    uint32 kitchen_num = 24;         // 厨房数量
+    uint32 living_room_num = 25;     // 客厅数量
+    uint32 house_certified = 26;     // 房源认证 (1:已认证)
+    uint32 house_boutique = 27;      // 精品房源 (1:精品)
+    float  room_area = 28;           // 房间面积 (单间房间的面积)
+    uint32 deposit_fee = 29;         // 押金（人民币分）
+
+    //41~70 重要数据
+    string title = 41;               // 房屋名
+    string house_description = 42;   // 房屋描述
+    uint32 price = 43;               // 房屋价格 (人民币分)
+    string address = 44;             // 房屋地址
+    Location location = 45;          // GPS
+    bool is_photo_taken = 46;        // 是否有照片 (未使用)
+    bool is_verified = 47;           // 是否认证
+    bool is_liveWithLandlord = 48;   // 是否和房东一起住
+    repeated Image images = 49;      // 房屋的图片
+    repeated HouseRoom rooms = 50;   // 各种房间
+    uint32 minimum_days = 51;        // 最小入住天数
+    ExtraCharges extra_charge = 53;  // 房屋额外费用
+    enum CancellationPolicies {
+        CP_None     = 0;
+        CP_Flexible = 1;
+        CP_Moderate = 2;
+        CP_Strict   = 3;
+    }
+    CancellationPolicies cp = 54;    // 退订策略
+    string location_url = 56;        // 地图展示(注意:无该字段时前端自行获取) 作废
+    string map_img_url = 57;         // 地图展示(注意:无该字段时前端自行获取)
+    uint32 stock_num = 58;           // 库存数量
+    string houseurl = 59;            // 房屋来源的对应url,用base64加密过
+    string ownerurl = 60;            // 对应房屋户主url,用base64加密过
+
+    //71~100 其他数据 
+    string more_desc = 71;           // 更多描述 (未使用)
+    uint64 facilities = 72;          // 便利设施 (按位使用)
+    uint32 created_at = 73;          // 房源发布时间 (该字段由系统自动填写)
+    uint32 enter_time = 74;          // 入住时间 (填100000表示灵活)
+    uint32 leaving_time = 77;        // 退房时间 (填100000表示灵活)
+    float rating = 78;               // 评价几星级
+    uint32 updated_at = 81;          // 更新时间 (该字段由系统自动填写)
+    uint32 distance = 82;            // 和您的距离 (该字段在搜索附近的房时由系统自动填写)
+    string desc_house = 83;          // 详情-房源 (您的房源有何独特之处)
+    string desc_permission = 84;     // 详情-房客使用权限 (房客可以使用什么便利设施)
+    string desc_interaction = 85;    // 详情-与房客的互动 (您与房客多长时间交流一次)
+
+    string desc_street = 86;         // 街区-概述 (您喜欢您所在街区的哪些方面)
+    string desc_travel = 87;         // 街区-出行 (公共交通是否便利)
+    string desc_other = 88;          // 额外细节-其他注意事项 (还有其他细节想要分享吗)
+    string desc_rule = 89;           // 额外细节-房屋守则 (您希望房客有什么样的言行举止)    
+    string desc_check_in = 90;       // 入住流程
+    repeated HouseBed beds = 91;     // 各种床
+    string wifi_account = 92;        // wifi 帐号
+    string wifi_password = 93;       // wifi 密码
+
+    float score_0 = 103;             // 总体评分
+    float score_1 = 104;             // 准确性
+    float score_2 = 105;             // 整洁程度
+    float score_3 = 106;             // 入住帮助
+    float score_4 = 107;             // 沟通
+    float score_5 = 108;             // 位置
+    float score_6 = 109;             // 性价比
+    float score_7 = 110;             //
+
+    string baidu_city = 200;         // 百度抓取的城市
+    string baidu_district = 201;     // 百度抓取的行政区
+
+    uint32 min_distant_accept_days   = 210;  // 可以接受的最近的入住申请 1:不接受当日预订, 2:不接受次日预订,依次类推
+    uint32 max_distant_accept_months = 211;  // 可以接受的最远的入住申请
+    uint32 before_enter_ban_days     = 212;  // 入住前屏蔽天数
+    uint32 after_leave_ban_days      = 213;  // 入住后屏蔽天数
+    uint32 max_booking_days          = 214;  // 最长入住天数
+    uint32 min_booking_days          = 215;  // 最短入住天数
+
+    string std_landlord_id = 300;            // 格式化的房东ID (如: /www.mayi.com/99793700)
+    uint32 basement_type = 301;              // 1: 地下室, 2: 半地下室 ok
+    uint32 toilet_private_num = 302;         // 独立卫生间数量  ok
+    uint32 toilet_public_num = 303;          // 公共卫生间数量     ok
+    uint32 cooking_support = 304;            // 能否做饭 (1: 能, 2: 不能) ok
+    uint32 cooking_price = 305;              // 做饭价格 (分/天)
+    uint32 cooking_seasoning = 306;          // 烹饪调料 (1: 有)
+    uint32 sheets_change = 307;              // 被单更换 (1: 每客一换, 2: 每日一换) ok
+    uint64 facilities_ex = 308;              // 额外便利设施 (按位使用)
+    string location_desc = 309;              // 房东对自己房子位置的描述，有别于正式的地址描述
+    uint32 good_house = 310;                 // 认证是否优秀房源，（ 房源品质优良，值得信赖，推荐入住）
+    string pick_up_service = 311;            // 机场/火车站接送
+    string luggage_storage = 312;            // 行李寄存
+    string tour_guide = 313;                 // 导游服务
+    string available_time = 314;             // 接待时间
+    uint32 foreigner = 315;                  // 外宾接待 (1: 接待)
+    uint32 additional_bed = 316;             // 能否加床
+    uint32 cleaning_fee = 317;               // 清洁费 (人民币分)
+    uint32 pre_pay_rate = 318;               // 预付比例 (*10000, 即 10000 -> 100%)
+    uint32 invoice = 319;                    // 是否提供发票
+
+    string landlord_name = 400;              // 房东的ID名字
+}

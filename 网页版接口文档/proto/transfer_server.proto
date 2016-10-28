@@ -1,0 +1,11 @@
+syntax = 'proto3';
+package Proto;
+
+message ConnHeader {
+    int32 ret               = 1;   // 一级错误码
+    string err              = 2;   // 一级错误信息
+    uint32 command          = 3;   // 命令字
+    uint32 req_time         = 11;  // 触发请求的时间(unix时间戳)
+    string uni_cid          = 12;  // 客户端生成的全局唯一ID(服务器全局透传,方便Debug)
+    string context          = 13;  // 上下文(回带部分,终端调用者使用)
+}

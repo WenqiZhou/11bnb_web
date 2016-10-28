@@ -1,0 +1,110 @@
+syntax = 'proto3';
+
+package Proto;
+
+import "header.proto";
+import "base.proto";
+
+service RpcStatistics {
+    rpc Echo (EchoReq) returns (EchoRsp) {}
+
+    rpc GetMonthIncome              (GetMonthIncomeReq)             returns (GetMonthIncomeRsp) {}
+    rpc GetYearIncome               (GetYearIncomeReq)              returns (GetYearIncomeRsp) {}
+    rpc GetIncomes                  (GetIncomesReq)                 returns (GetIncomesRsp) {}
+    rpc GetHouseBrowser             (GetHouseBrowserReq)            returns (GetHouseBrowserRsp) {}
+    rpc GetHouseBrowserByMonth      (GetHouseBrowserByMonthReq)     returns (GetHouseBrowserByMonthRsp) {}
+}
+
+message GetMonthIncomeReq {
+    Header header = 500; //统一包头
+
+    uint32 uin = 1;     // 用户唯一标识
+    uint32 year = 2;    // 年
+    uint32 month = 3;   // 月
+}
+
+message GetMonthIncomeRsp {
+    Header header = 500;//统一包头
+
+    int32  ret = 1;     // 错误码
+    string err = 2;     // 错误信息
+    uint64 income = 3;  // 月未来收入
+    uint64 earning = 4; // 已得收入
+    uint64 total_income = 5; // 当月总收入
+    uint64 tenant_num = 6; // 当月房客人数
+}
+
+message GetYearIncomeReq {
+    Header header = 500; //统一包头
+
+    uint32 uin = 1;     // 用户唯一标识
+    uint32 year = 2;    // 年
+}
+
+message GetYearIncomeRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;      // 错误码
+    string err = 2;     // 错误信息
+    uint64 income = 3;  // 年未来收入
+    uint64 earning = 4; // 已得收入
+}
+
+message GetIncomesReq {
+    Header header = 500; //统一包头
+
+    uint32 uin = 1;             // 用户唯一标识
+}
+
+message GetIncomesRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;          // 错误码
+    string err = 2;         // 错误信息
+
+    uint64 income_m = 10;    // 当月未来收入
+    uint64 earning_m = 11;   // 当月已得收入
+    uint64 tenant_num_m = 12;// 
+    uint64 income_y = 20;    // 当年未来收入
+    uint64 earning_y = 21;   // 当年已得收入
+    uint64 tenant_num_y = 22;// 
+}
+
+message GetHouseBrowserReq {
+    Header header = 500; //统一包头
+
+    uint64 house_id = 1;    // 房屋id
+}
+
+message GetHouseBrowserRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;          // 错误码
+    string err = 2;         // 错误信息
+
+    uint64 house_id = 3;    // 房屋id
+    uint64 browser_m = 4;   // 浏览次数
+    uint64 apply_m = 5;     // 申请次数
+    uint64 booking_m = 6;   // 订单数量
+    uint64 browser_y = 7;   // 浏览次数
+    uint64 apply_y = 8;     // 申请次数
+    uint64 booking_y = 9;   // 订单数量
+}
+
+message GetHouseBrowserByMonthReq {
+    Header header = 500; //统一包头
+
+    uint64 house_id = 1;    // 房屋id
+    uint32 month = 2;       // 请求月份
+}
+
+message GetHouseBrowserByMonthRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;          // 错误码
+    string err = 2;         // 错误信息
+
+    uint64 browser_m = 3;   // 浏览次数
+    uint64 apply_m = 4;     // 申请次数
+    uint64 booking_m = 5;   // 订单数量
+}

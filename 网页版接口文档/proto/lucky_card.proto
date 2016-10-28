@@ -1,0 +1,71 @@
+syntax = 'proto3';
+
+package Proto;
+
+import "header.proto";
+import "base.proto";
+
+
+service RpcLuckyCard {
+    rpc Echo (EchoReq) returns (EchoRsp) {}
+
+    // get      /api/lucky_card/fetch_card/<int:uin>
+    // 拉取抽奖卡信息
+    rpc FetchCard(FetchCardReq) returns (FetchCardRsp) {}
+    // get      /api/lucky_card/open_card/<int:uin>/<card_id>
+    // 开卡
+    rpc OpenCard(OpenCardReq) returns (OpenCardRsp) {}
+    // get      /api/lucky_card/h5_get_card/<int:giver_uin>/<signature>
+    // h5领取邀请
+    rpc H5GetCard(H5GetCardReq) returns (H5GetCardRsp) {}
+}
+
+message FetchCardReq {
+    Header header = 500; // 统一包头
+    uint32 uin = 1;      // 用户uin
+}
+
+message FetchCardRsp {
+    Header header = 500; //统一包头
+
+    int32  ret          = 1;    // 返回码
+    string err          = 2;    // 错误信息
+    uint32 num_cards_left = 3;  // 还有几个卡
+    string content      = 4;    // 你超过了xxx
+    repeated LuckyCard card_list = 5;   // 抽奖卡列表
+}
+
+message LuckyCard {
+    uint32 hit          = 1;    // 是否中奖 0: 未中奖 1: 满百券 2: 5000代金 3: 1元基金
+    string card_id      = 2;    // 卡id
+}
+
+message OpenCardReq {
+    Header header = 500; // 统一包头
+    uint32 uin = 1;      // 用户uin
+    string card_id = 2;  // 卡id
+}
+
+message OpenCardRsp {
+    Header header = 500; //统一包头
+
+    int32  ret          = 1;    // 返回码
+    string err          = 2;    // 错误信息
+    string title        = 3;    // title
+    string content      = 4;    // content
+    string thumbImage   = 5;    // 邀请图片
+    string url          = 6;    // url
+}
+
+message H5GetCardReq {
+    Header header = 500; // 统一包头
+    uint32 giver_uin = 1; // 分享人uin
+    string signature = 2; // 签名
+}
+
+message H5GetCardRsp {
+    Header header       = 500; // 统一包头
+    int32  ret          = 1;    // 返回码
+    string err          = 2;    // 错误信息
+    int32  luck         = 3;    // 被邀请人幸运值
+}

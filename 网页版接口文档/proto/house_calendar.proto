@@ -1,0 +1,131 @@
+syntax = 'proto3';
+
+package Proto;
+
+import "header.proto";
+import "base.proto";
+
+service RpcHouseCalendar {
+    rpc Echo (EchoReq) returns (EchoRsp) {}
+
+    // 设置日历信息
+    // api.route("/api/set_calendars", methods=["POST"])
+    // http://dev.11bnb.com:10086/api/set_calendars/
+    rpc SetHouseCalendar (SetHouseCalendarReq) returns (SetHouseCalendarRsp) {}
+
+    // 获取日历信息
+    // api.route("/api/get_calendars/<int:house_id>", methods=["GET"])
+    // http://dev.11bnb.com:28888/api/get_calendars/429707183097725?s=1&e=1000000
+    // s: start_date 
+    // e: end_date
+    rpc GetHouseCalendar (GetHouseCalendarReq) returns (GetHouseCalendarRsp) {}
+
+    // 通过日历筛选
+    rpc CheckHouseCalendar (CheckHouseCalendarReq) returns (CheckHouseCalendarRsp) {}
+}
+
+enum HouseCalendarStatus {
+    CALENDAR_START  = 0; // start status
+    ROOM_VACANT     = 1; // 今日有房
+    ROOM_BOOKING    = 2; // 预订中，被锁定
+    ROOM_BOOKED     = 3; // 被预定
+    ROOM_BLOCK      = 4; // 屏蔽，不出租
+    ROOM_PAYED      = 5; // 已经支付给用户
+}
+
+message HouseCalendar {
+    uint32 date     = 1; // 日期 时间戳必填
+    uint32 price    = 2; // 价格 选填
+    HouseCalendarStatus status   = 3; // 状态 房子被设定的状态 选填
+    uint32 time     = 4; // 状态更新时间 不用填 后台补充
+    float  discount = 5; // 实际 折扣 不用填 后台调用时使用
+    uint32 payed_fee= 6; // 用户实际支付金额 payed_fee = price * discount
+    uint64 booking_id=7; // 订单号
+    enum BlockType {
+        DefaultBlock    = 0;
+        BookedBlock     = 1; // 房源被预订
+        PreparedaysBlock= 2; // 预备天数
+        ComingDaysBlock = 3; // 不接受最近一天或者两天的预订
+        MinDaysBlock    = 4; // 最短入住天数
+    }
+    BlockType block_type= 8;
+
+    //uint32 stock_num    = 20; // 日库存
+    //uint32 booked_num   = 21; // 被预订量
+    string unbooked_num = 22; // 剩余的库存量
+}
+
+//设置日历请求
+message SetHouseCalendarReq {
+    Header header = 500; //统一包头
+
+    uint32 uin      = 1; // 用户账号 必填
+    uint64 house_id = 2; // 房屋ID 必填
+
+    // 以下支持单房连续多日期 如果日期存在冲突以后填的为准
+    uint32 start_date=11; // 开始日期
+    uint32 end_date = 12; // 结束日期
+    uint32 price    = 13; // 价格 选填
+    float  discount = 14; // 折扣 选填
+    HouseCalendarStatus status = 15; // 状态 房子被设定的状态 选填
+    uint32 payed_fee    = 16; // 用户实际支付金额
+    uint64 booking_id   = 17; // 订单号
+    uint32 request_from = 18; // 请求来源 0:来自于客户端 1:来自于订单内部处理 客户端不用关注
+    uint32 rm_booking   = 19; // 订单号操作类型 0:添加，1:删除 2:删除订单列表 客户端不用关注
+    uint32 instance_num = 20; // 实例数量 
+
+    // 以下支持单房分散多日期 如果日期存在冲突以后填的为准
+    repeated HouseCalendar house_calendars = 21; // 
+}
+
+//设置日历应答
+message SetHouseCalendarRsp {
+    Header header = 500; //统一包头
+
+    int32   ret = 1; //返回码
+    string  err = 2; //错误信息
+    uint32  uin = 3; //用户账号
+    uint64  house_id = 4; // 房屋ID
+}
+
+//获得日历请求
+message GetHouseCalendarReq {
+    Header header = 500; //统一包头
+
+    uint64 house_id   = 2; //房屋ID
+    uint32 start_date = 3; //开始日期
+    uint32 end_date   = 4; //结束日期
+    uint32 stype      = 5; //房屋源类型 (0: 默认, 1: OTA)
+}
+
+//获得日历应答
+message GetHouseCalendarRsp {
+    Header header = 500; //统一包头
+
+    int32   ret = 1; //返回码
+    string  err = 2; //错误信息
+    uint64  house_id   = 3; //房屋ID
+    repeated HouseCalendar house_calendars = 4;
+    uint32 stype      = 5; //房屋源类型 (0: 默认, 1: OTA)
+}
+
+//通过日历筛选房屋请求
+message CheckHouseCalendarReq {
+    Header header = 500; //统一包头
+
+    uint32 uin          = 1; //用户账号
+    repeated uint64 house_ids = 2; //房屋ID列表
+    uint32 start_date   = 3; //开始日期
+    uint32 end_date     = 4; //结束日期
+    uint32 request_num  = 5; //筛选个数
+}
+
+//通过日历筛选房屋应答
+message CheckHouseCalendarRsp {
+    Header header = 500; //统一包头
+
+    int32   ret = 1; //返回码
+    string  err = 2; //错误信息
+    repeated uint64 house_ids = 3; //房屋ID列表
+}
+

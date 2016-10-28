@@ -1,0 +1,114 @@
+syntax = 'proto3';
+
+package Proto;
+
+enum MessageType {
+    MSG_TYPE_START      = 0; // unused
+    MSG_TYPE_JSON       = 1; //  1 JSON      (默认)
+    //      Magic + JSON + CRC32 by AES
+    //        Magic is "~1Ba" (4字节)
+    //        CRC32 is CRC32(Magic + JSON) (4字节)
+    //        AES is AES(Magic + JSON + CRC32)
+    //        CRC32(4字节) is x86 native little-endian
+    MSG_TYPE_JSON_AES   = 2; //  2 JSON(AES)
+}
+
+message Empty {}
+
+message EchoReq {
+    string str = 1;
+}
+message EchoRsp {
+    string str = 1;
+}
+
+message Location {
+    int32 longitude = 1; // 经度 (这是 *1000000 后的值)
+    int32 latitude = 2;  // 纬度 (这是 *1000000 后的值)
+}
+
+message Image {
+    string image_name = 1; // 图片名称
+    string image_url = 2;  // 图片地址
+}
+
+message HouseBed {
+    //  1: 双人床 (已废弃)
+    //  2: 单人床 (已废弃)
+    //  3: 沙发
+    //  4: 单人床(宽0.9米左右)
+    //  5: 单人床(宽1.2米左右)
+    //  6: 双人床(宽1.5米左右)
+    //  7: 双人床(宽1.8米左右)
+    //  8: 双层床
+    //  9: 充气床
+    // 10: 圆床
+    // 11: 双人床(宽2.0米左右)
+    // 12: 双人沙发
+    // 13: 儿童床
+    // 14: 婴儿床
+    // 15: 榻榻米
+    // 16: 炕床
+    uint32 bed_type = 1; // 床的类型
+    uint32 bed_num = 2;  // 床的数量
+}
+
+message HouseRoom {
+    repeated HouseBed bed = 1; // 房间内的各种床
+    uint32 room_type = 2;      // 房间的类型 (1: 卧室, 2: 客厅, 3: 卫生间, 4: 厨房)
+}
+
+
+message PushContent {
+    enum PushType {
+        TYPE_NONE   = 0;
+        TYPE_HOUSE  = 1; // 房子
+        TYPE_BOOKING= 2; // 订单
+        TYPE_COUNT  = 3; // 计数
+        TYPE_DRAW   = 4; // 提款
+        TYPE_USER   = 5; // 用户(个人信息)
+        TYPE_HOUSEPUBLIC = 6; // 发布房源
+        TYPE_BOOKINGCOMMENT = 7; //评论
+        TYPE_WANTBOOKING = 8; // 求租
+        TYPE_LUCKYCARD = 9; // 抽奖卡
+        TYPE_ACTIVITY_OLD = 10; // 老活动专题
+        TYPE_ACTIVITY_NEW = 11; // 新活动专题
+    }
+    PushType push_type  = 1; // push类型
+    enum UserType {
+        USER_NONE= 0;
+        LANDLORD = 1;
+        TENANT   = 2;
+    }
+    UserType to_user_type   = 2; // 用户类型
+    string   app_message    = 3; // 推送内容
+    uint32   tenant_count   = 4; // 租客计数
+    uint32   landlord_count = 5; // 房东计数
+    uint32   to_uin         = 6; // 用户UIN
+
+    uint64   house_id   = 10; // 房屋IDnt_count
+
+    uint64   booking_id = 20; // 订单ID
+    uint32   booking_status = 21; // 推送数据的状态
+    uint32   other_uin  = 22; // 订单的一个UIN
+    uint32   booking_belong  = 23;
+
+    uint64   count_type = 30; // 计数类型
+    uint32   count_value= 31; // 计数值
+
+    uint64   drawing_id = 40; // 提款帐号
+
+    string   title = 50; // 活动title
+    uint64   activity_id = 51; // 活动id
+    uint32   stype = 52;
+    uint64   want_id = 53;
+}
+
+
+message ShareInfo {
+    string url    = 1;
+    string title  = 2;
+    string desc   = 3;
+    string img    = 4;
+}
+

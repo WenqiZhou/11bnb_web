@@ -1,0 +1,96 @@
+syntax = 'proto3';
+
+package Proto;
+
+import "header.proto";
+
+service RpcConnect {
+    // 获取用于后续通讯的加密Key
+    // route: /api/connect        method: POST
+    rpc NewEncryptedConnect (NewEncryptedConnectReq) returns (NewEncryptedConnectRsp);
+
+    // 获取App的Config
+    // route: /api/config         method: POST
+    rpc GetAppConfig (GetAppConfigReq) returns (GetAppConfigRsp);
+
+    // 发送App的log
+    rpc SendAppLog (SendAppLogReq) returns (SendAppLogRsp);
+}
+
+message NewEncryptedConnectReq {
+    Header header = 500; //统一包头
+
+    uint32 message_type = 1; // (表示后续通讯的)消息类型 (参见MessageType)
+}
+
+message NewEncryptedConnectRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;          // 返回码
+    string err = 2;         // 错误信息
+    string key = 3;         // 后续加密用的key
+    string iv = 4;          // 后续加密用的iv(初始化向量)
+}
+
+message GetAppConfigReq {
+    Header header = 500; //统一包头
+    string key = 1; //后续使用的key
+}
+
+message AppConfigForLogging {
+    uint32 loglevel = 1;        // 日志记录等级 (1:FATAL, 2:ERROR, 3:WARN, 4:INFO, 5:DEBUG)
+    uint32 send_loglevel = 2;   // 日志发送等级 (同上)
+    uint32 send_file_limit = 3; // 日志发送文件字节数限制
+    uint32 send_pre_sec = 4;    // 每多少秒发送一次
+    uint32 send_when_crash = 5; // 1: 崩溃时发送, 2: 崩溃时不发送
+}
+
+message GetAppConfigRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;                      // 返回码
+    string err = 2;                     // 错误信息
+    AppConfigForLogging logconfig = 3;  // 日志配置
+    string country_code_url = 4;        // 国家区号url
+    string city_list_url = 5;           // 热门城市url
+    ImgConfig img_config = 6;           // 图片url配置
+    string templates_url = 7;           // 所有模板url
+    string search_p_url = 8;            // 搜索p预设位置url前缀(使用的时候加上"城市名.js")
+    uint32 search_auto_pre_off = 9;     // 为1时关闭搜索的自动预查询
+    uint32 search_num_for_map = 10;     // 地图搜索时一页展示的数目
+    uint32 search_num_for_comm = 11;    // 日常搜索时一页展示的数目
+    string modify_phone_copy = 12;      // 修改手机号文案
+    int32 adv_show = 13;                // 广告展示码 1:不展示 2:展示一次 3:永久展示
+    int32 guide_show = 14;              // 引导页展示码 1:不展示 2:展示一次 3:永久展示
+    uint32 insurance_fee_for_landlord = 15;        // 房东端保险费（ /人·天 ）
+    uint32 insurance_fee_for_tenant = 16;          // 房客端保险费（ /人·天 ）
+    string hustle_url = 17;             // 抢单图链接
+    string publish_demand_url = 18;     // 求租图链接
+    uint32 invite_refund_fee = 19;                 // 邀请返利
+    string agent_refund_fee = 20;                  // 经纪人订单返利比率
+}
+
+message ImgConfig {
+    repeated string adv = 1;            // 广告图片列表
+    repeated string flash_screen = 2;   // 闪屏图片列表
+    repeated string guide = 3;          // 引导图片列表
+}
+
+message SendAppLogReq {
+    Header header = 500; //统一包头
+
+    string os_version = 1;   // 系统版本 (如: Android的"4.2.2")
+    string dev_type = 2;     // 设备类型 (如: "iPhone 5S")
+    uint32 loglevel = 3;     // 日志等级 (1:FATAL, 2:ERROR, 3:WARN, 4:INFO, 5:DEBUG)
+    uint32 send_reason = 4;  // 1: 崩溃时发送, 2: 日常发送
+    string title = 5;        // 标题
+    string desc = 6;         // 描述
+}
+
+message SendAppLogRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;       // 返回码
+    string err = 2;      // 错误信息
+}
+

@@ -1,0 +1,77 @@
+syntax = 'proto3';
+
+package Proto;
+
+import "header.proto";
+
+service RpcCount {
+    rpc SetCount(SetCountReq) returns (SetCountRsp) {}
+    rpc GetCount(GetCountReq) returns (GetCountRsp) {}
+}
+
+enum CountType {
+    NoneCountType           = 0;
+    NeedToConfirm           = 0x01; // 房东待确认
+    NeedToPay               = 0x02; // 房客待支付
+    NeedLandlordToComment   = 0x04; // 房东待评论
+    NeedTenantToComment     = 0x08; // 房客待评论
+    LandlordUnReadMessage   = 0x10; // 房东未读消息数
+    TenantUnReadMessage     = 0x20; // 房客未读消息数
+}
+
+enum UserType {
+    DefaultUserType = 0;
+    Landlord        = 1;
+    Tenant          = 2;
+}
+
+enum OperateType {
+    NoneOperateType = 0;
+    Add = 1;
+    Del = 2;
+    Clear = 3;
+}
+
+message CountInfo {
+    OperateType op_type     = 1;
+    CountType   count_type  = 2;
+    uint32      count       = 3;
+    uint32      uin         = 4;
+}
+
+message SetCountReq {
+    Header header           = 500;  // 统一包头
+    uint32 operate_uin      = 1;    // 发送方uin
+    uint32 to_uin           = 2;    // 接收方uin
+    UserType to_user_type   = 3;    // 接收方用户类型
+    repeated CountInfo counts = 4;  // 各个类型的计数操作
+}
+
+message SetCountRsp {
+    Header header       = 500;  // 统一包头
+    int32  ret          = 1;    // 错误码=1时过滤,默认不过滤
+    string err          = 2;    // 错误信息
+    uint32 all_count    = 3; // 总计数
+    repeated CountInfo rsp_counts = 4; // 各个类型的未读消息数
+}
+
+//获取用户历史订单请求
+message GetCountReq {
+    Header header       = 500; //统一包头
+
+    uint32  user_uin    = 1; //用户ID 必填字段
+    UserType user_type  = 2; //用户类型 必填字段
+    uint64  count_types = 3; //计数类型按位与
+}
+
+//获取用户历史订单应答
+message GetCountRsp {
+    Header header       = 500; //统一包头
+
+    int32   ret         = 1; //返回码
+    string  err         = 2; //错误信息
+    uint32  user_uin    = 3; //用户ID 必填字段
+    UserType user_type  = 4; //用户类型 必填字段
+    repeated CountInfo rsp_counts = 5;
+    uint32  all_count   = 6; //总数
+}

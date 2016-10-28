@@ -1,0 +1,164 @@
+syntax = 'proto3';
+
+package Proto;
+
+import "header.proto";
+import "base.proto";
+import "const.proto";
+
+service RpcComment {
+    rpc Echo (EchoReq) returns (EchoRsp) {}
+
+    // 新增评论
+    // route: /api/comment/post                       method: POST
+    //   CommentInfo 需要:
+    //     booking_id
+    //     房东评租客时:
+    //       landlord_uin
+    //       by_landlord
+    //     租客评房东时:
+    //       tenant_uin
+    //       by_tenant
+    //   CommentContent 需要:
+    //     content
+    //     images (可选)
+    //     房东评租客时: tenant_score_*
+    //     租客评房东时: landlord_score_*
+    rpc AddComment           (CommentInfo)            returns (CommentAddRsp) {}
+
+    // 获取用户(收到)的评论 (包括用户作为房东和租客时收到的)
+    // route: /api/comment/user/<int:uin>             method: GET
+    //   ?n=10&l=100532_1447477035
+    //    n -> num, l -> last_id
+    rpc GetUserComment       (UserCommentReq)         returns (CommentListRsp) {}
+
+    // 获取房源(收到)的评论 (即房东在该房下收到的)
+    // route: /api/comment/house/<int:house_id>       method: GET
+    //   ?n=10&l=100532_1447477035
+    //    n -> num, l -> last_id
+    rpc GetHouseComment      (HouseCommentReq)        returns (CommentListRsp) {}
+
+    // 获取房源第三方搬过来的评论
+    // route: /api/comment/third/house/<int:house_id>       method: GET
+    //   ?n=10&l=100532_1447477035
+    //    n -> num, l -> last_id
+    rpc GetThirdComment      (HouseCommentReq)        returns (CommentListRsp) {}
+
+    // 房东发布第三方评论
+    // route: /api/comment/publish       method: POST
+    rpc PublishThirdComment  (PublishThirdCommentReq) returns (PublishThirdCommentRsp) {}
+}
+
+message CommentUserBaseInfo {
+    uint32 uin = 1;             // 用户id
+    string first_name = 2;      // 名
+    string last_name = 3;       // 姓
+    string real_name = 4;       // 全名
+    string head_url = 5;        // 头像
+}
+
+message CommentContent {
+    uint32 type = 1;         // 评论类型 (0x1: 租客评房东, 0x2: 房东评租客)
+    uint32 create_time = 2;  // 创建时间
+
+    CommentUserBaseInfo user = 10; // 评论者信息 (该字段在读取的时候由系统自动生成)
+
+    string content = 11;         // 评论正文
+    repeated Image images = 12;  // 评论图片
+    string murmur = 13;          // 私下反馈 (查询时不返回)
+    bool recommend_house = 14;   // 是否推荐该房源 (查询时不返回)
+    bool recommend_tenant = 15;  // 是否推荐该租客 (查询时不返回)
+
+    // 房客评房东(查询时不返回)
+    uint32 landlord_score_0 = 31;  // 总体评分
+    uint32 landlord_score_1 = 32;  // 准确性
+    uint32 landlord_score_2 = 33;  // 整洁程度
+    uint32 landlord_score_3 = 34;  // 入住帮助
+    uint32 landlord_score_4 = 35;  // 沟通
+    uint32 landlord_score_5 = 36;  // 位置
+    uint32 landlord_score_6 = 37;  // 性价比
+    uint32 landlord_score_7 = 38;  //
+
+    // 房东评房客(查询时不返回)
+    uint32 tenant_score_1 = 52;  // 整洁度
+    uint32 tenant_score_2 = 53;  // 沟通
+    uint32 tenant_score_3 = 54;  // 遵守<房屋准则>
+    uint32 tenant_score_4 = 55;  // 总体评分
+}
+
+enum CommentFrom {
+    CommentFromDefault  = 0;
+    CommentFrom11Bnb    = 1; // 11bnb
+    CommentFromPig      = 2; // 小猪
+    CommentFromAnt      = 3; // 蚂蚁
+    CommentFromYTX      = 4; // 游天下
+    CommentFromTuJia    = 5; // 途家
+    CommentFromMuNiao   = 6; // 木鸟
+    CommentFromAirBnb   = 7; // airbnb
+}
+
+message CommentInfo {
+    Header header = 500; //统一包头
+
+    //1~10 key,index级数据
+    uint64 comment_id = 1;    // 评论id
+    uint64 booking_id = 2;    // 订单id (这条评论是针对哪个订单的)
+    uint64 house_id = 3;      // 房屋id (这条评论是针对哪个房屋的)
+    uint32 landlord_uin = 4;  // 房东id (这条评论是哪个房东发表的)
+    uint32 tenant_uin = 5;    // 租客id (这条评论是哪个租客发表的)
+
+    CommentFrom from = 6;   // 评论来源
+    CommentVisibleType visible = 7; // 是否可见
+
+    uint32 status = 11;               // 评论状态 (0x1:租客已评论, 0x2:房东已评论)
+    CommentContent by_tenant = 12;    // 租客评房东
+    CommentContent by_landlord = 13;  // 房东评租客
+}
+
+message CommentAddRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;          // 返回码
+    string err = 2;         // 错误信息
+    uint64 comment_id = 3;  // 评论id
+}
+
+message UserCommentReq {
+    Header header = 500; //统一包头
+
+    uint32 uin = 1;            // 用户id
+    uint32 num = 3;            // 一次查询的数目 (建议20个以内)
+    string last_id = 4;        // 上一页返回的id (用于翻到下一页,查首页不填)
+}
+
+message HouseCommentReq {
+    Header header = 500; //统一包头
+
+    uint64 house_id = 1;       // 房屋id
+    uint32 num = 3;            // 一次查询的数目 (建议20个以内)
+    string last_id = 4;        // 上一页返回的id (用于翻到下一页,查首页不填)
+}
+
+message CommentListRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;                      // 返回码
+    string err = 2;                     // 错误信息
+    repeated CommentInfo comments = 3;  // 评论信息列表
+    string last_id = 4;                 // 翻页用 (如果存在下一页,则会填充该值)
+}
+
+message PublishThirdCommentReq {
+    Header header = 500;                // 统一包头
+
+    uint64 house_id = 1;                // 房屋id
+    repeated int64 comment_list = 2;
+}
+
+message PublishThirdCommentRsp {
+
+    Header header = 500;                //统一包头
+
+    int32 ret = 1;                      // 返回码
+    string err = 2;                     // 错误信息
+}

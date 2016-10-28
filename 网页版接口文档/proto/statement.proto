@@ -1,0 +1,75 @@
+syntax = 'proto3';
+
+package Proto;
+
+import "header.proto";
+
+service RpcCoupon {
+    rpc AddStatement(AddStatementReq) returns (AddStatementRsp) {}
+    rpc GetUserStatements(GetUserStatementsReq) returns (GetStatementsRsp) {}
+    rpc GetBookingStatements(GetBookingStatementsReq) returns (GetStatementsRsp) {}
+    rpc GetStatements(GetStatementsReq) returns (GetStatementsRsp) {}
+}
+
+message StatementInfo {
+    enum StatementType {
+        NoneStatType= 0; 
+        UnifiedOrder= 1; // 下单
+        RefundOrder = 2; // 退款
+        Transfers   = 3; // 转账
+        Rebate      = 4; // 返佣
+    }
+    StatementType st    = 1;    // 交易类型
+
+    enum PaymentPlatform {
+        NonePlatType= 0;
+        WeChatPay   = 1; // 微信支付
+        AliPay      = 2; // 支付宝
+        BankPay     = 3; // 银行卡
+    }
+    PaymentPlatform pp  = 2; // 平台类型
+
+    string bill_id      = 3; // 账单ID 微信或者支付宝生成的唯一ID
+    uint64 booking_id   = 4; // 内部订单ID
+    uint64 in_cash_fee  = 5; // 收入交易金额
+    uint64 out_cash_fee = 6; // 支出交易金额
+    string fee_type     = 7; // 交易货币类型
+    uint32 time         = 8; // 交易时间
+    string openid       = 9; // 用户微信OPENID
+    uint32 uin          = 10;// 交易用户
+    string phone        = 11;// 交易手机号
+}
+
+message AddStatementReq {
+    Header header           = 500;  // 统一包头
+    StatementInfo statement = 1;    // 账单信息
+}
+
+message AddStatementRsp {
+    Header header           = 500;  // 统一包头
+    int32  ret              = 1;    // 错误码
+    string err              = 2;    // 错误信息
+    StatementInfo statement = 3;    // 账单信息
+}
+
+message GetUserStatementsReq {
+    Header header           = 500;  // 统一包头
+    uint32 uin              = 1;    // 请求UIN
+}
+
+message GetBookingStatementsReq {
+    Header header           = 500;  // 统一包头
+    uint32 booking_id       = 1;    // 请求订单ID
+}
+
+message GetStatementsReq {
+    Header header           = 500;  // 统一包头
+}
+
+message GetStatementsRsp {
+    Header header           = 500;  // 统一包头
+    int32  ret              = 1;    // 错误码
+    string err              = 2;    // 错误信息
+    repeated StatementInfo statements = 3; // 账单信息
+}
+

@@ -1,0 +1,15 @@
+syntax = 'proto3';
+
+package Proto;
+
+enum BigHouseType {
+    NONE        = 0;
+    APARTMENT   = 1; // 公寓
+    VILLA       = 2; // 别墅
+}
+
+enum CommentVisibleType {
+    DEFUALT     = 0;
+    VISIBLE     = 1; // 可见
+    INVISIBLE   = 2; // 不可见
+}

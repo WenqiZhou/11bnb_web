@@ -1,0 +1,644 @@
+syntax = 'proto3';
+
+package Proto;
+
+import "header.proto";
+import "base.proto";
+import "comment.proto";
+import "search.proto";
+
+
+service RpcUser {
+    rpc Echo (EchoReq) returns (EchoRsp) {}
+
+    // 获取手机验证码
+    // route: /api/user/getverificationcode    method: POST
+    // 必需字段: phone
+    rpc SendVerifyCode (VerifyRequest) returns (VerifyReply) {}
+
+    // 用户注册
+    // route: /api/user/signup                 method: POST
+    // 必需字段: 全部
+    rpc UserRegister (UserRegisterReq) returns (UserRegisterRsp) {}
+
+    // 用户信息设置
+    // route: /api/user/update                 method: POST
+    // 必需字段: uin
+    rpc UserInfoSet (UserInfo) returns (UserInfoSetRsp) {}
+
+    // 用户收入信息设置
+    // route: /api/user/earning                method: POST
+    rpc UserEarningInfoSet (UserInfo) returns (UserInfoSetRsp) {}
+
+    // 用户信息获取
+    // route: /api/user/<int:uin>/userInfo     method: GET
+    rpc UserInfoGet (UserInfoGetReq) returns (UserInfoGetRsp) {}
+
+    // 用户收入信息获取
+    // route: /api/user/<int:uin>/earning      method: GET
+    // ?st=0
+    // st -> scene_type
+    rpc UserEarningInfoGet (UserInfoGetReq) returns (UserInfoGetRsp) {}
+
+    // 用户邮件地址验证
+    // route: /api/user/emailverify            method: GET
+    //   ?u=100001&v=SG3M084wJnhAxi1UmKWpqufQ6gYe7s
+    //    u -> uin, v -> verify
+    rpc UserEmailVerify (EmailVerifyReq) returns (EmailVerifyRsp) {}
+
+    // 根据环信id获取uin
+    // route: /api/user/<hxid>/uin             method: GET
+    rpc GetUinByHxID (UinByHxIDReq) returns (UinByHxIDRsp) {}
+
+    // 根据一些uin获取用户信息
+    // route: /api/user/infos                  method:POST
+    rpc GetUserinfosByHxIDs (UinByHxIDsReq) returns (UinByHxIDsRsp) {}
+
+    // 邀请
+    // route: /api/user/invite                 method:POST
+    rpc GetInviteUrl (GetInviteUrlReq) returns (GetInviteUrlRsp) {}
+
+    // 提交反馈
+    // route: /api/user/submitFeedback         method: POST
+    rpc SubmitFeedback (FeedbackSubReq) returns (FeedbackSubRsp) {}
+
+    // 微信公众号签名
+    // route: /api/user/genWXSignature         method: POST
+    rpc GenWXSignature (GenWXSignatureReq) returns (GenWXSignatureRsp) {}
+
+    // (用新手机的验证码)修改手机号
+    // route: /api/user/mod/phone              method: POST
+    rpc ModifyPhone (ModifyPhoneReq) returns (ModifyPhoneRsp) {}
+
+    // 用户学校自动补全
+    // route: /api/user/school/<school>        method: GET
+    rpc UserSchoolFix (UserSchoolFixReq) returns (UserSchoolFixRsp) {}
+
+    // 新房东故事
+    // route: /api/user/story                  method: GET
+    //   ?u=123&h=456
+    //    u -> uin
+    //    h -> house_id
+    rpc UserStory (UserStoryReq) returns (UserStoryRsp) {}
+
+    // 获取zmxy的sign
+    // route: /api/user/zmxy_sign              methods: GET
+    // n -> name
+    // c -> cardID
+    // p -> phone
+    // ct -> certType
+    // u -> uin
+    // a -> auth_code
+    rpc GetZmxySign (ZmxySignReq) returns (ZmxySignRsp) {}
+
+    // 获取zmxy score
+    // route: /api/user/zmxy_score             methods: POST
+    rpc GetZmxyScore (ZmxyScoreReq) returns (ZmxyScoreRsp) {}
+
+    // 商户获取openid
+    // route: /api/merchant/get_merchant_openid     methods: POST
+    rpc GetOpenid (MerchantOpenidReq) returns (MerchantOpenidRsp) {}
+
+    // 获得用户邀请列表
+    // route: /api/user/invite_list                 method: POST
+    rpc GetInviteList(InviteListReq) returns (InviteListRsp) {}
+
+    // 换票请求
+    // route: /api/user/new_token                method: GET
+    // u -> uin
+    // r -> refresh_token
+    rpc GetNewToken(NewTokenReq)     returns (NewTokenRsp)   {}
+
+    // 获得坐标对应位置
+    // route: /api/user/get_position                method: GET
+    rpc GetPosition(PositionReq)     returns (PositionRsp)   {}
+
+}
+
+message MerchantOpenidReq {
+    Header header = 500; //统一包头
+
+    string code = 1;        // code
+}
+
+message MerchantOpenidRsp {
+    Header header = 500; //统一包头
+
+    string merchant_openid = 1;       // openid
+    int32 ret = 2;          // 返回码
+    string err = 3;         // 错误信息
+}
+
+message VerifyRequest {
+    Header header = 500; //统一包头
+
+    string phone = 1;           // 手机号
+    uint32 is_check_exist = 2;  // 检查账号是否已存在, h5:1, app:2
+    uint32 msg_type = 3;        // 短信 -> 1   语音 -> 2
+}
+
+message VerifyReply {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;          // 返回码
+    string err = 2;         // 错误信息
+    string phone = 3;       // 手机号
+}
+
+message HouseBasicInfo {
+    uint64 house_id = 1;        // 房屋id
+    string title = 2;           // 房屋名
+    uint32 house_type = 3;      // 房屋类型 (0x1:整套房子, 0x2:独立房间, 0x4:合住房间)
+    string city = 4;            // 房屋所在城市
+    uint32 price = 5;           // 房屋价格
+    repeated Image images = 6;  // 房屋的图片
+    uint32 comment_num = 7;     // 总评论数
+    string baidu_city = 8;      // 百度抓取的城市
+    string baidu_district = 9;  // 百度抓取的行政区
+    float rating = 10;          // 评价几星级
+}
+
+message WXBaseInfo {
+    string openid   = 1; // 微信openid 用于微信转账
+    string nickname = 2; // 用户昵称
+    uint32 sex      = 3; // 用户的性别，值为1时是男性，值为2时是女性，值为0时是未知
+    string province = 4; // 用户个人资料填写的省份
+    string city     = 5; // 普通用户个人资料填写的城市
+    string country  = 6; // 国家，如中国为CN
+    string headimgurl=7; // 用户头像
+    string unionid  = 8; // 只有在用户将公众号绑定到微信开放平台帐号后，才会出现该字段
+}
+
+message AliPayBaseInfo {
+    string phone    = 1;
+    string name     = 2;
+    string account  = 3;
+}
+
+message EvaluateInfo {
+    uint32 good = 1;
+    uint32 bad = 2;
+    uint32 later = 3;
+}
+
+message UserInfo {
+    Header header = 500; //统一包头
+
+    // 最关键属性 1-20
+    uint32 uin = 1;             // 用户唯一标识
+    string name = 2;            // 用户名
+    string first_name = 3;      // 名
+    string last_name = 4;       // 姓
+    string real_name = 5;       // 全名 (4个名字了,再改请客吃饭)
+    int32 gender = 6;           // 性别 (1男, 2女, 3其他)
+    int32 age = 7;              // 年龄 (该字段由系统计算出来)
+    bool is_landlord = 8;       // 是否是房东
+    bool is_verified = 9;       // 是否认证
+    string head_url = 10;       // 头像
+    uint32 birth_year = 11;     // 出生年
+    uint32 birth_month = 12;    // 出生月
+    uint32 birth_day = 13;      // 出生日
+    string show_age = 14;       // 展示年龄 (如:90后) (该字段由系统计算出来)
+    uint32 landlord_type = 15;  // 房东类型 (1:个人房东)
+    uint32 stype = 16;          // 用户类型 (0: 默认, 1: OTA)
+
+    // 联系方式&位置信息相关 21-40
+    string phone = 21;          // 手机号 (修改用户资料时不能修改该字段)
+    string email = 22;          // 邮箱
+    bool phone_verified = 23;   // 手机是否认证
+    bool email_verified = 24;   // 邮箱是否认证
+    string country = 25;        // 国家
+    string province = 26;       // 省份
+    string city = 27;           // 城市
+    string igetui_cltid = 28;   // 个推sdk上获取到的客户端id
+    string hx_id = 29;          // 环信id (该字段由系统生成)
+    string hx_pwd = 30;         // 环信password (该字段由系统生成)
+    string hometown = 31;       // 故乡
+    string workplace = 32;      // 工作地点
+    bool student_verified = 33; // 学生认证
+    uint32 clt_type = 34;       // 来源: iOS -> 1, Android -> 2, Web -> 3
+    uint32 sms_block = 35;      // 短信屏蔽     屏蔽 -> 1 不屏蔽 -> 2
+    uint32 push_block = 36;     // 内推屏蔽     屏蔽 -> 1 不屏蔽 -> 2
+    uint32 wanted_block = 37;   // 求租屏蔽     屏蔽 -> 1 不屏蔽 -> 2
+    uint32 shake_feedback = 38; // 摇一摇反馈屏蔽      屏蔽 -> 1 不屏蔽 -> 2
+
+    // 用户使用历史反馈 41-60
+    int32 average_reply_time = 41;  // 平均回复时间
+    float reply_rate = 42;          // 回复率
+    float receptance_rate = 43;     // 接受率
+    string str_reply_rate = 44;     // 字符串回复率
+    string str_receptance_rate = 45;// 字符串接受率
+
+    // 非关键属性 61-100
+    string school = 62;                // 学校
+    string occupation = 63;            // 职业
+    string about = 64;                 // 描述
+    string blood_type = 65;            // 血型
+    string constellation = 66;         // 星座 (该字段由系统计算出来)
+    uint32 created_at = 67;            // 创建时间 (该字段由系统自动填写)
+    string education = 68;             // 教育程度
+    bool id_verification = 69;         // 身份证认证
+    bool microblog_verified = 71;      // 微博认证
+    bool passport_verified = 73;       // 护照认证
+    bool school_Verification = 75;     // 学校认证
+    uint32 updated_at = 76;            // 更新时间 (该字段由系统自动填写)
+    string story_url = 77;             // 房东故事
+    uint32 story_flag = 78;            // 1: 存在新版本的房东故事
+    uint32 zm_score = 79;              // 芝麻信用分
+    string zm_open_id = 80;            // 芝麻用户open_id
+    EvaluateInfo evaluate_app = 81;    // 用户评价app
+    int32 is_in_white_list = 82;       // 是否是白名单用户   1 -> 是  2 -> 否
+    string share_url = 83;             // 分享个人资料url
+    string thumbImage = 84;            // 分享个人资料icon
+    string member_number = 85;         // 会员卡号
+    string bigcode400 = 86;            // 400电话
+    uint32 extension = 87;             // 400电话分机号
+
+    // 注意：该字段在新增和修改的时候无效
+    uint32 house_num = 100; // 房东名下房源个数
+    repeated HouseBasicInfo houses = 101;       //该用户的房屋
+
+    //111~140 评论评价 (系列字段均由系统自动填写)
+    uint32 comment_num = 111;             // 总评论数
+    repeated CommentInfo comments = 112;  // 评论信息列表(只返回最新的10条)
+
+    // 151 ~ 160 收支情况 数据是累加的 不是直接设置大小
+    int32 total_income     = 151; // 总收入
+    int32 balance          = 152; // 余额
+    int32 feature_income   = 153; // 未来收入
+    int32 expenditure      = 154; // 支出情况
+
+    // 161 ~ 180 各种认证 (系列字段均由系统自动填写)
+    uint32 new_verified_id = 161;            // 身份证认证 (1:已认证, 4:认证失败)
+    uint32 new_verified_school_id = 162;     // 学生证认证 (1:已认证, 2:认证中, 4:认证失败)
+    uint32 new_verified_school_email = 163;  // 学生邮箱认证 (1:已认证, 2:认证中, 4:认证失败)
+    string img_id = 164;                     // 身份证正面照(地址)
+    string img_id_head = 165;                // 身份证人证合照(地址)
+    string img_school_id = 166;              // 学生证正面照(地址)
+    string id_name = 167;                    // 真实姓名(来源于身份证)
+    string id_number = 168;                  // 身份证号(来源于身份证)
+    string id_all = 169;                     // 身份证全部信息(来源于身份证)
+    string school_email = 170;               // 学生邮箱
+
+    enum PayType {
+        DefaultPayType  = 0; //默认是微信支付
+        WeChatPayType   = 1; //微信支付
+        AliPayType      = 2; //支付宝支付
+        ApplePayType    = 3; //苹果支付
+        UnionPayType    = 4; //银联支付
+        WeChatJSAPIPayType = 5; // 微信公众号支付
+    }
+    PayType pay_type                = 181; // 支付类型
+    WXBaseInfo wx_base_info         = 182; // 微信资料
+    AliPayBaseInfo alipay_base_info = 183; // 支付宝资料
+
+    // 200 ~ 新手教程
+    uint32 tutorial = 200;                   // 用户新手教程，1 -> 未填完  100 -> 填完
+
+    // 用户统计信息
+    uint64 income_m = 210;      // 当月未来收入
+    uint64 earning_m = 211;     // 当月已得收入
+    uint64 total_income_m = 212;// 当月总收入
+    uint64 tenant_num_m = 213;  // 当月访客数
+
+    uint64 income_y = 220;      // 当年未来收入
+    uint64 earning_y = 221;     // 当年已得收入
+    uint64 total_income_y = 222;// 当年总收入
+    uint64 tenant_num_y = 223;  // 当年访客数
+
+    uint32 landlord_verified= 240; // 按位操作 依依认证房东0x01
+    string id_verified_info = 241; // 身份验证信息展示内容
+
+    string type = 250;            // 用户类型,是否为商户
+    string merchant_openid = 251; // 商户openid
+    string shop_name = 252;       // 商铺名称
+    string merchant_sign = 253;   // 商铺签名
+    Location shop_location = 254; // 商铺GPS
+
+    // 用户类型  (1-->yes 2-->no)
+    uint32 is_agent = 300;          // 是否经纪人
+    uint32 is_promoter = 301;       // 是否推广人
+
+    // 由于 protobuf 3 将默认值(bool:false, int:0, string:"", list:[])视为不存在
+    // 在设置某字段为默认值时(主要为清除该字段),需要设置下面的字段
+    repeated string default_attrs = 511;    // 需要清理的字段名(写入时使用)
+}
+
+enum InviteType {
+    TypeCommon   = 0;  //邀请类型,用于正常邀请
+    TypeAgent    = 1;  //邀请类型,用于发展下线邀请
+}
+
+
+message UserRegisterReq {
+    Header header = 500;         // 统一包头
+
+    string phone = 1;            // 手机号
+    string verify_code = 2;      // 验证码
+    string password = 3;         // 密码
+    string source = 4;           // 来源
+    string invite_code = 5;      // 邀请码
+    string type = 6;             // 用户类型,是否为商户
+    string merchant_openid = 7;  // 商户openid
+    string shop_name = 8;        // 商铺名称
+    Location shop_location = 9;  // 商铺GPS
+    InviteType invite_type = 10; //邀请类型
+}
+
+message UserRegisterRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;            // 返回码
+    string err = 2;           // 错误信息
+    uint32 uin = 3;           // 用户id
+    string token = 4;      // 用户token
+    string qrcode = 5;        // 商户二维码
+    bytes refresh_token = 6;   // 用户token，有效期一个月
+    bytes access_token = 7;    // 用户token，有效期两小时
+}
+
+message UserInfoSetRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;            // 返回码
+    string err = 2;           // 错误信息
+    uint32 uin = 3;           // 用户id
+    UserInfo user = 4;        // 用户信息
+}
+
+message UserInfoGetReq {
+    Header header = 500; //统一包头
+
+    uint32 uin = 1;               // 用户id
+    enum SceneType {
+        DefaultSceneType    = 0;  // 默认场景
+        LandlordGetTenant   = 1;  // 房东端聊天页面查看房客信息
+        LandlordGetSelf     = 2;  // 房东端看自己的资料
+        LandlordGetHLandlord= 3;  // 房东端通过房源查看房源房东
+        TenantGetLandlord   = 4;  // 房客端聊天页面查看房客信息
+        TenantGetSelf       = 5;  // 房客端看自己的资料
+        TenantGetHLandlord  = 6;  // 房客端通过房源查看房源房东
+    }
+    SceneType scene_type = 2;
+    uint32 stype = 3;             // 用户类型 (0: 默认, 1: OTA)
+}
+
+message UserInfoGetRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;            // 返回码
+    string err = 2;           // 错误信息
+    UserInfo user = 3;        // 用户信息
+}
+
+message EmailVerifyReq {
+    Header header = 500; //统一包头
+
+    uint32 uin = 1;            // 用户id
+    string verify = 2;         // 验证串
+    int32 etype= 3;            // etype=1是邮箱验证, etype=2是学生邮箱验证
+}
+
+message EmailVerifyRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;            // 返回码
+    string err = 2;           // 错误信息
+}
+
+message UinByHxIDReq {
+    Header header = 500; //统一包头
+
+    string hx_id = 1;         // 环信id
+}
+
+message UinByHxIDRsp {
+    Header header = 500; //统一包头
+
+    uint32 uin = 1;           // 用户id
+    int32 ret = 2;            // 返回码
+    string err = 3;           // 错误信息
+}
+
+message UserinfoForHx {
+    uint32 uin = 1;         // 用户id
+    string real_name = 2;   // 全名
+    string head_url = 3;    // 头像
+    string hx_id = 4;       // 环信id
+    uint32 stype = 5;       // 用户类型 (0: 默认, 1: OTA)
+}
+
+message UinByHxIDsReq {
+    Header header = 500; //统一包头
+
+    repeated string hx_ids = 1;         // 环信id
+}
+
+message UinByHxIDsRsp {
+    Header header = 500; //统一包头
+
+    repeated UserinfoForHx infos = 1;   // 用户信息
+    int32 ret = 2;                      // 返回码
+    string err = 3;                     // 错误信息
+}
+
+message GetInviteUrlReq {
+    Header header = 500; //统一包头
+
+    uint32 uin = 1;         // 用户id
+    InviteType invite_type = 2; //邀请类型
+}
+
+message GetInviteUrlRsp {
+    Header header = 500;        // 统一包头
+
+    string url = 1;             // 邀请url
+    int32 ret = 2;              // 返回码
+    string err = 3;             // 错误信息
+    string title = 4;           // 邀请的title
+    string content = 5;         // 邀请的content
+    string inner_title = 6;     // 邀请点进去后的title
+    string inner_content = 7;   // 邀请点进去后的content
+    string thumbImage = 8;      // 邀请图片
+    string head_url = 9;        // 用户图像
+}
+
+message UploadImageRsp {
+    Header header = 500;        // 统一包头
+
+    int32 ret = 1;            // 返回码
+    string err = 2;           // 错误信息
+    string url = 3;           // 图片url
+    string iid = 4;           // 图片id
+}
+
+message FeedbackSubReq {
+    Header header = 500;            // 统一包头
+    uint32 uin = 1;                 // 用户id
+    string feedback_subject = 2;             // 反馈内容标题
+    string feedback_content = 3;             // 反馈内容正文
+    repeated string pictures = 4;     // 反馈图片地址
+    string client_type = 5;         // 设备型号
+    string client_version = 6;      // 设备版本
+    string app_version = 7;         // 应用版本
+    string app_build_number = 8;    // 应用build号
+}
+
+message FeedbackSubRsp {
+    Header header = 500;        // 统一包头
+    int32 ret = 1;            // 返回码
+    string err = 2;           // 错误信息
+}
+
+message GenWXSignatureReq {
+    Header header = 500;                // 统一包头
+    string url = 1;                     // 请求url
+}
+
+message GenWXSignatureRsp {
+    Header header = 500;                // 统一包头
+
+    int32 ret = 1;                      // 返回码
+    string err = 2;                     // 错误信息
+    string appId = 3;                   // 微信appid
+    string nonceStr = 4;                // 随机字符串
+    string timestamp = 5;               // 时间戳
+    string signature = 6;               // 签名
+}
+
+message ModifyPhoneReq {
+    Header header = 500; //统一包头
+
+    uint32 uin = 1;          // 用户ID
+    string old_phone = 2;    // 手机号(旧)
+    string new_phone = 3;    // 手机号(新)
+    string verify_code = 4;  // 验证码
+}
+
+message ModifyPhoneRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;            // 返回码
+    string err = 2;           // 错误信息
+}
+
+message UserSchoolFixReq {
+    Header header = 500; //统一包头
+
+    string school = 1; //学校
+}
+
+message UserSchoolFixRsp {
+    Header header = 500; //统一包头
+
+    repeated string schools = 1; //学校们
+}
+
+message UserStoryReq {
+    Header header = 500; //统一包头
+
+    uint32 uin = 1;       // 房东uin
+    uint64 house_id = 2;  // 房屋id
+}
+
+message UserStoryRsp {
+    Header header = 500; //统一包头
+
+    int32 ret = 1;            // 返回码
+    string err = 2;           // 错误信息
+
+    repeated ActivityItemNode ains = 3;  // 活动页面(项节点集)
+    ShareInfo activity_share = 4;        // 活动分享
+}
+
+message ZmxySignReq {
+    Header header = 500; // 统一包头
+
+    string name = 1;     // 身份证姓名
+    string cardID = 2;   // 身份证号码
+    string phone = 3;    // 手机号码
+    string certType = 4; // 验证类型
+    uint32 uin = 5;      // 用户uin
+    string auth_code = 6;// 网页端，app移动端不一样
+}
+
+message ZmxySignRsp {
+    Header header = 500;    // 统一包头
+
+    int32 ret = 1;          // 返回码
+    string err = 2;         // 错误信息
+    string param = 3;       // 加密后的param
+    string sign = 4;        // 加签后的sign
+}
+
+message ZmxyScoreReq {
+    Header header = 500; // 统一包头
+
+    string authResult = 1;     // 授权结果
+    string params = 2;         // params里面可以解析出来openid
+    string sign = 3;           // 验签要用
+    uint32 uin = 4;            // 用户uin
+    string auth_code = 5;      // 网页端，app移动端不一样
+}
+
+message ZmxyScoreRsp {
+    Header header = 500;    // 统一包头
+
+    int32 ret = 1;          // 返回码
+    string err = 2;         // 错误信息
+    uint32 zm_score = 3;    // 芝麻信用分
+}
+
+
+message InviteListReq{
+    Header header = 500;    // 统一包头
+
+    uint32 uin = 1;         // uin
+    uint32 request_num = 2; // 请求数目
+    string last_key_seen = 3;     // 翻页标志
+}
+
+message InviteListRsp{
+    Header header = 500;    // 统一包头
+
+    int32 ret = 1;          // 返回码
+    string err = 2;         // 错误信息
+    repeated UserInfo users = 3;         // 被邀请用户
+    string last_key_seen = 4;     // 翻页标志
+}
+
+message NewTokenReq{
+    Header header = 500;     // 统一包头
+
+    uint32 uin = 1;                // 用户uin
+    bytes refresh_token = 2;      // 旧的refresh_token,有效期为一个月
+}
+
+message NewTokenRsp{
+    Header header = 500;        //统一包头
+  
+    int32 ret = 1;                 // 返回码
+    string err = 2;                // 错误信息
+    bytes refresh_token = 3;      // 新的refresh_token
+    bytes access_token = 4;       // 新的access_token
+}
+
+message PositionReq{
+    Header header = 500;     // 统一包头
+    float lon = 1;              //经度
+    float lat = 2;              //纬度
+}
+
+message PositionRsp{
+    message Position{
+        string name = 1;
+        string desc = 2;
+    }
+
+    Header header = 500;        //统一包头
+    int32 ret = 1;                  //0成功1失败2数据正在加载
+    string err = 2;
+    repeated Position position = 3;
+//    string position_name = 3;
+//    string position_desc = 4;
+}

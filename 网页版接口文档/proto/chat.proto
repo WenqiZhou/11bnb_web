@@ -1,0 +1,170 @@
+syntax = 'proto3';
+
+package Proto;
+
+import "header.proto";
+import "base.proto";
+
+service RpcHxMsg {
+    rpc Echo (EchoReq) returns (EchoRsp) {}
+
+    // 路径: /api/chat/sendMsg  methods=["POST"]
+    rpc SendMsg              (MsgReq)                returns (MsgRsp) {}
+
+    // 路径: "/api/chat/saveMsg", methods=["POST"]
+    rpc SaveMsg              (SaveMsgReq)            returns (SaveMsgRsp) {}
+
+    // 路径: "/api/chat/deleteMsg", methods=["POST"]
+    rpc DeleteMsg            (DeleteMsgReq)          returns (DeleteMsgRsp) {}
+
+    // 路径: "/api/chat/<uin>/getMsgList", methods=["GET"]
+    rpc GetMsgList           (GetMsgListReq)         returns (GetMsgListRsp) {}
+
+    // 路径: "/api/chat/<uin>/getMsgNum", methods=["GET"]
+    rpc GetMsgNum            (GetMsgNumReq)          returns (GetMsgNumRsp) {}
+
+    // 路径: "/api/chat/getNotification", methods=["GET"]
+    // l: 拉取数量 lk: 上次读到的最后一个时间 u: uin
+    rpc GetNotification      (GetNotificationReq)          returns (GetNotificationRsp) {}
+}
+
+message MsgReq {
+    Header header = 500; //统一包头
+
+    uint32 from_uin     = 1;    // message发送方uin
+    uint32 to_uin       = 2;    // message接收方uin
+    string msg_body     = 3;    // message体
+
+    enum MsgType {
+        NO_TYPE = 0;            // 无
+        PLAIN_TEXT = 1;         // 普通文本
+        HOUSE_SHARE = 2;        // 房屋分享链接
+    }
+    MsgType msg_type    = 4;    // message类型, 1支持文本,只能填1
+    string from_hxid    = 5;    // message发送方环信id
+    string to_hxid      = 6;    // message接收方环信id
+
+    enum MsgFrom {
+        FromNone        = 0;    // 无
+        FromInbox       = 1;    // 来自于收件箱
+        FromHouse       = 2;    // 来自于房源详情
+        FromBooking     = 3;    // 来自于发起订单
+        FromKF          = 4;    // 来自于客服
+    }
+    MsgFrom msg_from    = 7;    // 来源
+    uint64 booking_id   = 8;    // 来源为订单时需要记录订单的ID
+    uint64 house_id     = 9;    // 如果是在聊天里分享房,则携带该字段
+    uint32 stype        = 10;   // 接受人类型(实际就是房东类型) (0: 默认, 1: OTA)
+    uint64 for_house_id = 11;   // 如果是咨询则会基于一个房(需要带给后端)
+}
+
+
+message MsgRsp {
+    Header header = 500;    // 统一包头
+
+    int32 ret = 1;          // 错误码=1时过滤,默认不过滤
+    string err = 2;         // 错误信息
+}
+
+
+message SaveMsgReq {
+    Header header = 500; // 统一包头
+
+    uint32 uin = 1;       // 触发收藏者的uin
+    string content = 2;  // 会话内容
+}
+
+message SaveMsgRsp {
+    Header header = 500;    // 统一包头
+
+    int32 ret = 1;          // 错误码
+    string err = 2;         // 错误信息
+    uint32 uin = 3;          // 触发收藏者的uin
+    string content = 4;     // 会话内容
+    uint64 collect_time = 5;// 收藏时间
+}
+
+
+message DeleteMsgReq {
+    Header header = 500;    // 统一包头
+
+    uint32 uin = 1;          // 触发收藏者的uin
+    uint64 collect_time = 2;// 收藏时间
+    string content = 3;     // 会话内容
+}
+
+message DeleteMsgRsp {
+    Header header = 500;    // 统一包头
+
+    int32 ret = 1;          // 错误码
+    string err = 2;         // 错误信息
+}
+
+
+message CollectedMsg {
+    uint32 uin = 3;          // 触发收藏者的uin
+    string content = 4;     // 会话内容
+    uint64 collect_time = 5;// 收藏时间
+}
+
+message GetMsgListReq {
+    Header header = 500;    //统一包头
+
+    uint32 uin = 1;          // 触发收藏者的uin
+    uint32 num = 2;        // 一次查询的数目 (建议20个以内)
+    string last_id = 3;    // 上一页返回的id (用于翻到下一页)
+}
+
+message GetMsgListRsp {
+    Header header = 500;            //统一包头
+
+    int32 ret = 1;                  // 错误码
+    string err = 2;                 // 错误信息
+    repeated CollectedMsg msgs = 3; // 会话内容集合
+    string last_id = 4;    // 上一页返回的id (用于翻到下一页)
+}
+
+
+message GetMsgNumReq {
+    Header header = 500;    // 统一包头
+
+    uint32 uin = 1;          // 触发收藏者的uin
+}
+
+message GetMsgNumRsp {
+    Header header = 500;    // 统一包头
+
+    int32 ret = 1;          // 错误码
+    string err = 2;         // 错误信息
+
+    int32 num = 3;          // 收藏的消息的数量
+}
+
+
+message GetNotificationReq {
+    Header header = 500;    // 统一包头
+
+    uint32 uin = 1;         // 触发收藏者的uin
+    uint64 last_key = 2;    // 最后一次的key
+    uint32 limit = 3;       // 拉取数量
+}
+
+
+message GetNotificationRsp {
+    Header header = 500;    // 统一包头
+
+    int32      ret         = 1;        // 错误码
+    string      err         = 2;        // 错误信息
+    uint64      last_key    = 3;        // 最后一次的key
+    repeated    Notification notifications = 4; // 消息列表
+}
+
+
+message Notification {
+    string sender = 1;      // 发送人
+    string sender_pic_url = 2;      // 发送人头像url
+    PushContent push_content = 3;   //推送内容
+    uint64 time = 4;        // 创建时间
+    uint32 read = 5;        // 是否读过 1: 已读
+    uint32 uin = 6;         // uin
+}

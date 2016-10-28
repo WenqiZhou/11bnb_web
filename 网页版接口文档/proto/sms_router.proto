@@ -1,0 +1,19 @@
+syntax = 'proto3';
+
+package Proto;
+
+service SmsRouter {
+    rpc GetRouter   (GetRouterReq)      returns (GetRouterRsp) {}
+}
+
+message GetRouterReq {
+
+    string data = 2;
+}
+
+message GetRouterRsp {
+    int32 ret = 1;      // 返回码
+    string err = 2;     // 错误信息
+
+    string result = 3;  // SUCCESS or FAILED
+}
